@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SPSFILE SYSTEM 'C:\XtencilDesigner\form\xtencil.dtd'>
+<SPSFILE name='SPS Commerce Xtencil' date='' fileType='FORM' contents='NORM'>
+<DOCUMENTDEF javaPackageName='' owner='' revision='' barcode='N' xtencilType='Flat File' justification='Left' display='Y' enable='Y' print='Y' exportSource='N' direction='O' resend='N' >
+<FORMAT>
+<FIELDFMT writeFormat='yyyyMMdd' maxLength='2147483647' minLength='0' justify='NONE' trim='NONE' dataType='DATE' name='all' keyType='all' desc='all'>yyyyMMdd</FIELDFMT>
+</FORMAT>
+<GROUPDEF name='EDI_DC40' javaName='edi_DC40' isRecord='Y' type='EDI_DC40' min='1' max='1'>
+<FIELDDEF name='TABNAM' javaName='tABNAM' minLength='1' maxLength='8' dataType='JString' mandatory='N' defaultValue='EDI_DC40' keyType='LANDMARK'>
+</FIELDDEF>
+<FIELDDEF name='UTF' javaName='uTF' minLength='1' maxLength='2' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='MANDT' javaName='mANDT' minLength='1' maxLength='3' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='DOCNUM' javaName='dOCNUM' minLength='1' maxLength='16' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='DOCREL' javaName='dOCREL' minLength='1' maxLength='4' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='STATUS' javaName='sTATUS' minLength='1' maxLength='2' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='DIRECT' javaName='dIRECT' minLength='1' maxLength='1' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='OUTMOD' javaName='oUTMOD' minLength='1' maxLength='1' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='EXPRSS' javaName='eXPRSS' minLength='1' maxLength='1' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='TEST' javaName='tEST' minLength='1' maxLength='1' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='IDOCTYP' javaName='iDOCTYP' minLength='1' maxLength='30' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='CIMTYP' javaName='cIMTYP' minLength='1' maxLength='30' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='MESTYP' javaName='mESTYP' minLength='1' maxLength='30' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='MESCOD' javaName='mESCOD' minLength='1' maxLength='3' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='MESFCT' javaName='mESFCT' minLength='1' maxLength='3' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='STD' javaName='sTD' minLength='1' maxLength='1' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='STDVRS' javaName='sTDVRS' minLength='1' maxLength='6' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='STDMES' javaName='sTDMES' minLength='1' maxLength='6' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='SNDPOR' javaName='sNDPOR' minLength='1' maxLength='10' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='SNDPRT' javaName='sNDPRT' minLength='1' maxLength='2' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='SNDPFC' javaName='sNDPFC' minLength='1' maxLength='2' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='SNDPRN' javaName='sNDPRN' minLength='1' maxLength='10' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='SNDSAD' javaName='sNDSAD' minLength='1' maxLength='21' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='SNDLAD' javaName='sNDLAD' minLength='1' maxLength='70' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='RCVPOR' javaName='rCVPOR' minLength='1' maxLength='10' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='RCVPRT' javaName='rCVPRT' minLength='1' maxLength='2' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='RCVPFC' javaName='rCVPFC' minLength='1' maxLength='2' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='RCVPRN' javaName='rCVPRN' minLength='1' maxLength='10' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='RCVSAD' javaName='rCVSAD' minLength='1' maxLength='21' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='RCVLAD' javaName='rCVLAD' minLength='1' maxLength='70' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='CREDAT' javaName='cREDAT' minLength='1' maxLength='8' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='CRETIM' javaName='cRETIM' minLength='1' maxLength='6' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='REFINT' javaName='rEFINT' minLength='1' maxLength='14' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='REFGRP' javaName='rEFGRP' minLength='1' maxLength='14' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='REFMES' javaName='rEFMES' minLength='1' maxLength='14' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='ARCKEY' javaName='aRCKEY' minLength='1' maxLength='70' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='SERIAL' javaName='sERIAL' minLength='1' maxLength='20' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+</GROUPDEF>
+<GROUPDEF name='Z2DI832H' javaName='z2DI832H' isRecord='Y' type='Z2DI832H' min='0' max='1'>
+<FIELDDEF name='SEGNAM' javaName='sEGNAM' minLength='1' maxLength='7' dataType='JString' mandatory='N' defaultValue='Z2DI832' keyType='LANDMARK'>
+</FIELDDEF>
+<FIELDDEF name='SEG_VER' javaName='sEGVER' minLength='1' maxLength='3' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='SEG_BUFFER' javaName='sEGBUF' minLength='1' maxLength='20' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='MANDT' javaName='mANDT' minLength='1' maxLength='3' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='DOCNUM' javaName='dOCNUM' minLength='1' maxLength='16' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='SEGNUM' javaName='sEGNUM' minLength='1' maxLength='6' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='PSGNUM' javaName='pSGNUM' minLength='1' maxLength='6' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='HLEVEL' javaName='hLEVEL' minLength='1' maxLength='2' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='VKORG' javaName='vKORG' minLength='1' maxLength='4' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='VTEXT' javaName='vTEXT' minLength='1' maxLength='20' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='STREET' javaName='sTREET' minLength='1' maxLength='60' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='CITY1' javaName='cITY1' minLength='1' maxLength='40' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='REGION' javaName='rEGION' minLength='1' maxLength='3' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='POST_CODE1' javaName='pOST_CODE1' minLength='1' maxLength='10' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='COUNTRY' javaName='cOUNTRY' minLength='1' maxLength='3' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<GROUPDEF name='Z2DI832L' javaName='z2DI832L' isRecord='Y' type='Z2DI832L' min='0' max='999999'>
+<GROUPDEF name='Z2DI832LRep' javaName='z2DI832LRep' isRecord='Y' type='Z2DI832L' min='1' max='1'>
+<FIELDDEF name='SEGNAM' javaName='sEGNAM' minLength='1' maxLength='7' dataType='JString' mandatory='N' defaultValue='Z2DI832' keyType='LANDMARK'>
+</FIELDDEF>
+<FIELDDEF name='SEG_VER' javaName='sEGVER' minLength='1' maxLength='3' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='SEG_BUFFER' javaName='sEGBUF' minLength='1' maxLength='20' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='MANDT' javaName='mANDT' minLength='1' maxLength='3' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='DOCNUM' javaName='dOCNUM' minLength='1' maxLength='16' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='SEGNUM' javaName='sEGNUM' minLength='1' maxLength='6' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='PSGNUM' javaName='pSGNUM' minLength='1' maxLength='6' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='HLEVEL' javaName='hLEVEL' minLength='1' maxLength='2' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='SPART' javaName='sPART' minLength='1' maxLength='2' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='EXTWG' javaName='eXTWG' minLength='1' maxLength='18' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='WERKS' javaName='wERKS' minLength='1' maxLength='4' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='MATNR' javaName='mATNR' minLength='1' maxLength='18' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='MAKTX' javaName='mAKTX' minLength='1' maxLength='40' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='EAN11' javaName='eAN11' minLength='1' maxLength='18' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='J_3AGEND' javaName='j_3AGEND' minLength='1' maxLength='2' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='SIZEDESC' javaName='sIZEDESC' minLength='1' maxLength='8' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='WKRST' javaName='wKRST' minLength='1' maxLength='48' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='MATKL' javaName='mATKL' minLength='1' maxLength='9' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='NRFSZ' javaName='nRFSZ' minLength='1' maxLength='5' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='J_3ACOL' javaName='j_3ACOL' minLength='1' maxLength='5' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='ZPRICE' javaName='zPRICE' minLength='1' maxLength='13' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='ZWHPRICE' javaName='zWHPRICE' minLength='1' maxLength='13' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='J_3APQTY' javaName='j_3APQTY' minLength='1' maxLength='15' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='STAWN' javaName='sTAWN' minLength='1' maxLength='17' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='TEXT1' javaName='tEXT1' minLength='1' maxLength='40' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='MFRGR' javaName='mFRGR' minLength='1' maxLength='8' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='GROES' javaName='gROES' minLength='1' maxLength='32' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='VTEXT' javaName='vTEXT' minLength='1' maxLength='20' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='J_3ANUMM' javaName='j_3ANUMM' minLength='1' maxLength='10' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='HERKL' javaName='hERKL' minLength='1' maxLength='3' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+<FIELDDEF name='J_3AKORDX' javaName='j_3AKORDX' minLength='1' maxLength='8' dataType='JString' mandatory='N' defaultValue='' keyType='NONE'>
+</FIELDDEF>
+</GROUPDEF>
+</GROUPDEF>
+</GROUPDEF>
+</DOCUMENTDEF>
+</SPSFILE>

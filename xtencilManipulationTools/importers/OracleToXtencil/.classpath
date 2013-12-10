@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="dist/lib/appframework-1.0.3.jar"/>
+	<classpathentry kind="lib" path="dist/lib/swing-worker-1.1.jar"/>
+	<classpathentry kind="lib" path="dist/OracleToXtencil.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/jv/impengineering/xtencilManipulationTools/importers/Utilities/ImportUtilities.jar"/>
+	<classpathentry kind="lib" path="C:/jv/impengineering/xtencilManipulationTools/importers/jars/xd.jar"/>
+	<classpathentry kind="lib" path="C:/Users/amcclintock/workspace/Jars/commons-io-2.4/commons-io-2.4.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

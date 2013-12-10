@@ -1,0 +1,8 @@
+Release 1.2
+	2013-01-12	Aaron McClintock
+		-Removed logic delimiting quotes in data
+
+Release 1.1
+	2012-12-26	Aaron McClintock
+		- fixed null pointer when no file is selected (cancel selected)
+		- force OMM to second position in HO record

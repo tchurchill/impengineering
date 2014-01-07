@@ -1,0 +1,1117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE SPSFILE SYSTEM "C:\XtencilDesigner\form\xtencil.dtd">
+<SPSFILE contents="NORM" date="01/06/2014" fileType="FORM" name="SPS Commerce Xtencil">
+  <DOCUMENTDEF designDate="01/06/2014" encoding="UTF-8" name="Warehouse Shipping Advice" quoteUnwrap="N" revision="4010" type="945" xtencilType="FEDS">
+    <FORMAT>
+      <FIELDFMT dataType="DATE" desc="all" justify="NONE" keyType="all" maxLength="2147483647" minLength="0" name="all" trim="NONE" writeFormat="yyyyMMdd">yyyyMMdd</FIELDFMT>
+    </FORMAT>
+    <GROUPDEF display="Y" enable="Y" exclude="N" javaName="w06_Group" max="1" min="1" name="W06_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w0601" mandatory="Y" maxLength="1" minLength="1" name="W0601" persistent="Y" position="1" present="Y" print="Y" referenceNum="514" segmentTag="W06" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Reporting Code</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w0602" maxLength="22" minLength="1" name="W0602" persistent="Y" position="2" present="Y" print="Y" referenceNum="285" segmentTag="W06" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Depositor Order Number</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JDate" display="Y" enable="Y" exclude="N" javaName="w0603" maxLength="8" minLength="8" name="W0603" persistent="Y" position="3" present="Y" print="Y" referenceNum="373" segmentTag="W06" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Date</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w0604" maxLength="30" minLength="1" name="W0604" persistent="Y" position="4" present="Y" print="Y" referenceNum="145" segmentTag="W06" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Shipment Identification Number</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w0605" maxLength="12" minLength="1" name="W0605" persistent="Y" position="5" present="Y" print="Y" referenceNum="531" segmentTag="W06" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Agent Shipment ID Number</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w0606" maxLength="22" minLength="1" name="W0606" persistent="Y" position="6" present="Y" print="Y" referenceNum="324" segmentTag="W06" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Purchase Order Number</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w0607" maxLength="22" minLength="1" name="W0607" persistent="Y" position="7" present="Y" print="Y" referenceNum="474" segmentTag="W06" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Master Reference (Link) Number</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JInteger" display="Y" enable="Y" exclude="N" javaName="w0608" maxLength="6" minLength="6" name="W0608" persistent="Y" position="8" present="Y" print="Y" referenceNum="472" segmentTag="W06" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Link Sequence Number</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w0609" maxLength="3" minLength="2" name="W0609" persistent="Y" position="9" present="Y" print="Y" referenceNum="152" segmentTag="W06" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Special Handling Code</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w0610" maxLength="2" minLength="1" name="W0610" persistent="Y" position="10" present="Y" print="Y" referenceNum="891" segmentTag="W06" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Shipping Date Change Reason Code</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w0611" maxLength="2" minLength="1" name="W0611" persistent="Y" position="11" present="Y" print="Y" referenceNum="640" segmentTag="W06" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Transaction Type Code</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w0612" maxLength="2" minLength="1" name="W0612" persistent="Y" position="12" present="Y" print="Y" referenceNum="306" segmentTag="W06" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Action Code</HELP>
+      </FIELDDEF>
+    </GROUPDEF>
+    <GROUPDEF display="Y" enable="Y" exclude="N" javaName="n1Loop1_Group" max="10" min="1" name="N1Loop1_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+      <GROUPDEF display="Y" enable="Y" exclude="N" javaName="n1Loop1_GroupRep" max="1" min="1" name="N1Loop1_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+        <GROUPDEF display="Y" enable="Y" exclude="N" javaName="n1_Group" max="1" min="1" name="N1_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n101" mandatory="Y" maxLength="3" minLength="2" name="N101" persistent="Y" position="1" present="Y" print="Y" referenceNum="98" segmentTag="N1" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Entity Identifier Code</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n102" maxLength="60" minLength="1" name="N102" persistent="Y" position="2" present="Y" print="Y" referenceNum="93" segmentTag="N1" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Name</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n103" maxLength="2" minLength="1" name="N103" persistent="Y" position="3" present="Y" print="Y" referenceNum="66" segmentTag="N1" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Identification Code Qualifier</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n104" maxLength="80" minLength="2" name="N104" persistent="Y" position="4" present="Y" print="Y" referenceNum="67" segmentTag="N1" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Identification Code</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n105" maxLength="2" minLength="1" name="N105" persistent="Y" position="5" present="Y" print="Y" referenceNum="706" segmentTag="N1" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Entity Relationship Code</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n106" maxLength="3" minLength="2" name="N106" persistent="Y" position="6" present="Y" print="Y" referenceNum="98" segmentTag="N1" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Entity Identifier Code</HELP>
+          </FIELDDEF>
+        </GROUPDEF>
+        <GROUPDEF display="Y" enable="Y" exclude="N" javaName="n2_Group" max="1" min="0" name="N2_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n201" mandatory="Y" maxLength="60" minLength="1" name="N201" persistent="Y" position="1" present="Y" print="Y" referenceNum="93" segmentTag="N2" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Name</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n202" maxLength="60" minLength="1" name="N202" persistent="Y" position="2" present="Y" print="Y" referenceNum="93" segmentTag="N2" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Name</HELP>
+          </FIELDDEF>
+        </GROUPDEF>
+        <GROUPDEF display="Y" enable="Y" exclude="N" javaName="n3_Group" max="2" min="0" name="N3_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+          <GROUPDEF display="Y" enable="Y" exclude="N" javaName="n3_GroupRep" max="1" min="1" name="N3_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+            <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n301" mandatory="Y" maxLength="55" minLength="1" name="N301" persistent="Y" position="1" present="Y" print="Y" referenceNum="166" segmentTag="N3" sourceFilter="No Filter" subPos="0" templatable="Y">
+              <HELP>Address Information</HELP>
+            </FIELDDEF>
+            <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n302" maxLength="55" minLength="1" name="N302" persistent="Y" position="2" present="Y" print="Y" referenceNum="166" segmentTag="N3" sourceFilter="No Filter" subPos="0" templatable="Y">
+              <HELP>Address Information</HELP>
+            </FIELDDEF>
+          </GROUPDEF>
+        </GROUPDEF>
+        <GROUPDEF display="Y" enable="Y" exclude="N" javaName="n4_Group" max="1" min="0" name="N4_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n401" maxLength="30" minLength="2" name="N401" persistent="Y" position="1" present="Y" print="Y" referenceNum="19" segmentTag="N4" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>City Name</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n402" maxLength="2" minLength="1" name="N402" persistent="Y" position="2" present="Y" print="Y" referenceNum="156" segmentTag="N4" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>State or Province Code</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n403" maxLength="15" minLength="3" name="N403" persistent="Y" position="3" present="Y" print="Y" referenceNum="116" segmentTag="N4" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Postal Code</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n404" maxLength="3" minLength="2" name="N404" persistent="Y" position="4" present="Y" print="Y" referenceNum="26" segmentTag="N4" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Country Code</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n405" maxLength="2" minLength="1" name="N405" persistent="Y" position="5" present="Y" print="Y" referenceNum="309" segmentTag="N4" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Location Qualifier</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n406" maxLength="30" minLength="1" name="N406" persistent="Y" position="6" present="Y" print="Y" referenceNum="310" segmentTag="N4" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Location Identifier</HELP>
+          </FIELDDEF>
+        </GROUPDEF>
+        <GROUPDEF display="Y" enable="Y" exclude="N" javaName="pER_Group" max="5" min="0" name="PER_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+          <GROUPDEF display="Y" enable="Y" exclude="N" javaName="pER_GroupRep" max="1" min="1" name="PER_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+            <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="pER01" mandatory="Y" maxLength="2" minLength="1" name="PER01" persistent="Y" position="1" present="Y" print="Y" referenceNum="366" segmentTag="PER" sourceFilter="No Filter" subPos="0" templatable="Y">
+              <HELP>Contact Function Code</HELP>
+            </FIELDDEF>
+            <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="pER02" maxLength="60" minLength="1" name="PER02" persistent="Y" position="2" present="Y" print="Y" referenceNum="93" segmentTag="PER" sourceFilter="No Filter" subPos="0" templatable="Y">
+              <HELP>Name</HELP>
+            </FIELDDEF>
+            <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="pER03" maxLength="2" minLength="1" name="PER03" persistent="Y" position="3" present="Y" print="Y" referenceNum="365" segmentTag="PER" sourceFilter="No Filter" subPos="0" templatable="Y">
+              <HELP>Communication Number Qualifier</HELP>
+            </FIELDDEF>
+            <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="pER04" maxLength="80" minLength="1" name="PER04" persistent="Y" position="4" present="Y" print="Y" referenceNum="364" segmentTag="PER" sourceFilter="No Filter" subPos="0" templatable="Y">
+              <HELP>Communication Number</HELP>
+            </FIELDDEF>
+            <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="pER05" maxLength="2" minLength="1" name="PER05" persistent="Y" position="5" present="Y" print="Y" referenceNum="365" segmentTag="PER" sourceFilter="No Filter" subPos="0" templatable="Y">
+              <HELP>Communication Number Qualifier</HELP>
+            </FIELDDEF>
+            <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="pER06" maxLength="80" minLength="1" name="PER06" persistent="Y" position="6" present="Y" print="Y" referenceNum="364" segmentTag="PER" sourceFilter="No Filter" subPos="0" templatable="Y">
+              <HELP>Communication Number</HELP>
+            </FIELDDEF>
+            <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="pER07" maxLength="2" minLength="1" name="PER07" persistent="Y" position="7" present="Y" print="Y" referenceNum="365" segmentTag="PER" sourceFilter="No Filter" subPos="0" templatable="Y">
+              <HELP>Communication Number Qualifier</HELP>
+            </FIELDDEF>
+            <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="pER08" maxLength="80" minLength="1" name="PER08" persistent="Y" position="8" present="Y" print="Y" referenceNum="364" segmentTag="PER" sourceFilter="No Filter" subPos="0" templatable="Y">
+              <HELP>Communication Number</HELP>
+            </FIELDDEF>
+            <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="pER09" maxLength="20" minLength="1" name="PER09" persistent="Y" position="9" present="Y" print="Y" referenceNum="443" segmentTag="PER" sourceFilter="No Filter" subPos="0" templatable="Y">
+              <HELP>Contact Inquiry Reference</HELP>
+            </FIELDDEF>
+          </GROUPDEF>
+        </GROUPDEF>
+      </GROUPDEF>
+    </GROUPDEF>
+    <GROUPDEF display="Y" enable="Y" exclude="N" javaName="n9_Group" max="10" min="0" name="N9_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+      <GROUPDEF display="Y" enable="Y" exclude="N" javaName="n9_GroupRep" max="1" min="1" name="N9_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n901" mandatory="Y" maxLength="3" minLength="2" name="N901" persistent="Y" position="1" present="Y" print="Y" referenceNum="128" segmentTag="N9" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Reference Identification Qualifier</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n902" maxLength="30" minLength="1" name="N902" persistent="Y" position="2" present="Y" print="Y" referenceNum="127" segmentTag="N9" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Reference Identification</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n903" maxLength="45" minLength="1" name="N903" persistent="Y" position="3" present="Y" print="Y" referenceNum="369" segmentTag="N9" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Free-form Description</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JDate" display="Y" enable="Y" exclude="N" javaName="n904" maxLength="8" minLength="8" name="N904" persistent="Y" position="4" present="Y" print="Y" referenceNum="373" segmentTag="N9" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Date</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JTime" display="Y" enable="Y" exclude="N" javaName="n905" maxLength="8" minLength="4" name="N905" persistent="Y" position="5" present="Y" print="Y" referenceNum="337" segmentTag="N9" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Time</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n906" maxLength="2" minLength="1" name="N906" persistent="Y" position="6" present="Y" print="Y" referenceNum="623" segmentTag="N9" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Time Code</HELP>
+        </FIELDDEF>
+        <GROUPDEF display="Y" enable="Y" exclude="N" javaName="n907_Group" max="1" min="0" name="N907_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n907_C01" mandatory="Y" maxLength="3" minLength="2" name="N907_C01" persistent="Y" position="7" present="Y" print="Y" referenceNum="128" segmentTag="N9" sourceFilter="No Filter" subPos="1" templatable="Y">
+            <HELP>Reference Identification Qualifier</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n907_C02" mandatory="Y" maxLength="30" minLength="1" name="N907_C02" persistent="Y" position="7" present="Y" print="Y" referenceNum="127" segmentTag="N9" sourceFilter="No Filter" subPos="2" templatable="Y">
+            <HELP>Reference Identification</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n907_C03" maxLength="3" minLength="2" name="N907_C03" persistent="Y" position="7" present="Y" print="Y" referenceNum="128" segmentTag="N9" sourceFilter="No Filter" subPos="3" templatable="Y">
+            <HELP>Reference Identification Qualifier</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n907_C04" maxLength="30" minLength="1" name="N907_C04" persistent="Y" position="7" present="Y" print="Y" referenceNum="127" segmentTag="N9" sourceFilter="No Filter" subPos="4" templatable="Y">
+            <HELP>Reference Identification</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n907_C05" maxLength="3" minLength="2" name="N907_C05" persistent="Y" position="7" present="Y" print="Y" referenceNum="128" segmentTag="N9" sourceFilter="No Filter" subPos="5" templatable="Y">
+            <HELP>Reference Identification Qualifier</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n907_C06" maxLength="30" minLength="1" name="N907_C06" persistent="Y" position="7" present="Y" print="Y" referenceNum="127" segmentTag="N9" sourceFilter="No Filter" subPos="6" templatable="Y">
+            <HELP>Reference Identification</HELP>
+          </FIELDDEF>
+        </GROUPDEF>
+      </GROUPDEF>
+    </GROUPDEF>
+    <GROUPDEF display="Y" enable="Y" exclude="N" javaName="g61_Group" max="3" min="0" name="G61_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+      <GROUPDEF display="Y" enable="Y" exclude="N" javaName="g61_GroupRep" max="1" min="1" name="G61_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g6101" mandatory="Y" maxLength="2" minLength="1" name="G6101" persistent="Y" position="1" present="Y" print="Y" referenceNum="366" segmentTag="G61" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Contact Function Code</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g6102" mandatory="Y" maxLength="60" minLength="1" name="G6102" persistent="Y" position="2" present="Y" print="Y" referenceNum="93" segmentTag="G61" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Name</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g6103" maxLength="2" minLength="1" name="G6103" persistent="Y" position="3" present="Y" print="Y" referenceNum="365" segmentTag="G61" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Communication Number Qualifier</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g6104" maxLength="80" minLength="1" name="G6104" persistent="Y" position="4" present="Y" print="Y" referenceNum="364" segmentTag="G61" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Communication Number</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g6105" maxLength="20" minLength="1" name="G6105" persistent="Y" position="5" present="Y" print="Y" referenceNum="443" segmentTag="G61" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Contact Inquiry Reference</HELP>
+        </FIELDDEF>
+      </GROUPDEF>
+    </GROUPDEF>
+    <GROUPDEF display="Y" enable="Y" exclude="N" javaName="g62_Group" max="5" min="0" name="G62_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+      <GROUPDEF display="Y" enable="Y" exclude="N" javaName="g62_GroupRep" max="1" min="1" name="G62_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g6201" maxLength="2" minLength="1" name="G6201" persistent="Y" position="1" present="Y" print="Y" referenceNum="432" segmentTag="G62" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Date Qualifier</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JDate" display="Y" enable="Y" exclude="N" javaName="g6202" maxLength="8" minLength="8" name="G6202" persistent="Y" position="2" present="Y" print="Y" referenceNum="373" segmentTag="G62" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Date</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g6203" maxLength="2" minLength="1" name="G6203" persistent="Y" position="3" present="Y" print="Y" referenceNum="176" segmentTag="G62" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Time Qualifier</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JTime" display="Y" enable="Y" exclude="N" javaName="g6204" maxLength="8" minLength="4" name="G6204" persistent="Y" position="4" present="Y" print="Y" referenceNum="337" segmentTag="G62" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Time</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g6205" maxLength="2" minLength="1" name="G6205" persistent="Y" position="5" present="Y" print="Y" referenceNum="623" segmentTag="G62" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Time Code</HELP>
+        </FIELDDEF>
+      </GROUPDEF>
+    </GROUPDEF>
+    <GROUPDEF display="Y" enable="Y" exclude="N" javaName="nTE_Group" max="20" min="0" name="NTE_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+      <GROUPDEF display="Y" enable="Y" exclude="N" javaName="nTE_GroupRep" max="1" min="1" name="NTE_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="nTE01" maxLength="3" minLength="1" name="NTE01" persistent="Y" position="1" present="Y" print="Y" referenceNum="363" segmentTag="NTE" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Note Reference Code</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="nTE02" mandatory="Y" maxLength="80" minLength="1" name="NTE02" persistent="Y" position="2" present="Y" print="Y" referenceNum="352" segmentTag="NTE" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Description</HELP>
+        </FIELDDEF>
+      </GROUPDEF>
+    </GROUPDEF>
+    <GROUPDEF display="Y" enable="Y" exclude="N" javaName="w27_Group" max="1" min="0" name="W27_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w2701" mandatory="Y" maxLength="2" minLength="1" name="W2701" persistent="Y" position="1" present="Y" print="Y" referenceNum="91" segmentTag="W27" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Transportation Method/Type Code</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w2702" maxLength="4" minLength="2" name="W2702" persistent="Y" position="2" present="Y" print="Y" referenceNum="140" segmentTag="W27" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Standard Carrier Alpha Code</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w2703" maxLength="35" minLength="1" name="W2703" persistent="Y" position="3" present="Y" print="Y" referenceNum="387" segmentTag="W27" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Routing</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w2704" maxLength="2" minLength="1" name="W2704" persistent="Y" position="4" present="Y" print="Y" referenceNum="146" segmentTag="W27" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Shipment Method of Payment</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w2705" maxLength="2" minLength="1" name="W2705" persistent="Y" position="5" present="Y" print="Y" referenceNum="40" segmentTag="W27" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Equipment Description Code</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w2706" maxLength="4" minLength="1" name="W2706" persistent="Y" position="6" present="Y" print="Y" referenceNum="206" segmentTag="W27" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Equipment Initial</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w2707" maxLength="10" minLength="1" name="W2707" persistent="Y" position="7" present="Y" print="Y" referenceNum="207" segmentTag="W27" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Equipment Number</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w2708" maxLength="2" minLength="1" name="W2708" persistent="Y" position="8" present="Y" print="Y" referenceNum="368" segmentTag="W27" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Shipment/Order Status Code</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w2709" maxLength="3" minLength="2" name="W2709" persistent="Y" position="9" present="Y" print="Y" referenceNum="152" segmentTag="W27" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Special Handling Code</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w2710" maxLength="2" minLength="1" name="W2710" persistent="Y" position="10" present="Y" print="Y" referenceNum="890" segmentTag="W27" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Carrier/Route Change Reason Code</HELP>
+      </FIELDDEF>
+    </GROUPDEF>
+    <GROUPDEF display="Y" enable="Y" exclude="N" javaName="w6_Group" max="1" min="0" name="W6_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w601" mandatory="Y" maxLength="3" minLength="2" name="W601" persistent="Y" position="1" present="Y" print="Y" referenceNum="152" segmentTag="W6" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Special Handling Code</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w602" maxLength="3" minLength="2" name="W602" persistent="Y" position="2" present="Y" print="Y" referenceNum="152" segmentTag="W6" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Special Handling Code</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w603" maxLength="3" minLength="2" name="W603" persistent="Y" position="3" present="Y" print="Y" referenceNum="152" segmentTag="W6" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Special Handling Code</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w604" maxLength="3" minLength="2" name="W604" persistent="Y" position="4" present="Y" print="Y" referenceNum="152" segmentTag="W6" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Special Handling Code</HELP>
+      </FIELDDEF>
+    </GROUPDEF>
+    <GROUPDEF display="Y" enable="Y" exclude="N" javaName="w28_Group" max="1" min="0" name="W28_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w2801" mandatory="Y" maxLength="1" minLength="1" name="W2801" persistent="Y" position="1" present="Y" print="Y" referenceNum="604" segmentTag="W28" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Consolidation Code</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="w2802" maxLength="10" minLength="1" name="W2802" persistent="Y" position="2" present="Y" print="Y" referenceNum="81" segmentTag="W28" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Weight</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w2803" maxLength="2" minLength="1" name="W2803" persistent="Y" position="3" present="Y" print="Y" referenceNum="187" segmentTag="W28" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Weight Qualifier</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w2804" maxLength="1" minLength="1" name="W2804" persistent="Y" position="4" present="Y" print="Y" referenceNum="188" segmentTag="W28" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Weight Unit Code</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JInteger" display="Y" enable="Y" exclude="N" javaName="w2805" maxLength="2" minLength="1" name="W2805" persistent="Y" position="5" present="Y" print="Y" referenceNum="466" segmentTag="W28" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Total Stopoffs</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w2806" maxLength="30" minLength="1" name="W2806" persistent="Y" position="6" present="Y" print="Y" referenceNum="310" segmentTag="W28" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Location Identifier</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w2807" maxLength="2" minLength="1" name="W2807" persistent="Y" position="7" present="Y" print="Y" referenceNum="309" segmentTag="W28" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Location Qualifier</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w2808" maxLength="12" minLength="1" name="W2808" persistent="Y" position="8" present="Y" print="Y" referenceNum="598" segmentTag="W28" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Bill of Lading/Waybill Number</HELP>
+      </FIELDDEF>
+    </GROUPDEF>
+    <GROUPDEF display="Y" enable="Y" exclude="N" javaName="w10_Group" max="10" min="0" name="W10_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+      <GROUPDEF display="Y" enable="Y" exclude="N" javaName="w10_GroupRep" max="1" min="1" name="W10_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w1001" maxLength="2" minLength="1" name="W1001" persistent="Y" position="1" present="Y" print="Y" referenceNum="400" segmentTag="W10" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Unit Load Option Code</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JInteger" display="Y" enable="Y" exclude="N" javaName="w1002" maxLength="3" minLength="1" name="W1002" persistent="Y" position="2" present="Y" print="Y" referenceNum="406" segmentTag="W10" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Quantity of Pallets Shipped</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w1003" maxLength="1" minLength="1" name="W1003" persistent="Y" position="3" present="Y" print="Y" referenceNum="399" segmentTag="W10" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Pallet Exchange Code</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w1004" maxLength="15" minLength="2" name="W1004" persistent="Y" position="4" present="Y" print="Y" referenceNum="225" segmentTag="W10" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Seal Number</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w1005" maxLength="15" minLength="2" name="W1005" persistent="Y" position="5" present="Y" print="Y" referenceNum="225" segmentTag="W10" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Seal Number</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="w1006" maxLength="4" minLength="1" name="W1006" persistent="Y" position="6" present="Y" print="Y" referenceNum="408" segmentTag="W10" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Temperature</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w1007" maxLength="2" minLength="1" name="W1007" persistent="Y" position="7" present="Y" print="Y" referenceNum="355" segmentTag="W10" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Unit or Basis for Measurement Code</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="w1008" maxLength="4" minLength="1" name="W1008" persistent="Y" position="8" present="Y" print="Y" referenceNum="408" segmentTag="W10" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Temperature</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w1009" maxLength="2" minLength="1" name="W1009" persistent="Y" position="9" present="Y" print="Y" referenceNum="355" segmentTag="W10" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Unit or Basis for Measurement Code</HELP>
+        </FIELDDEF>
+      </GROUPDEF>
+    </GROUPDEF>
+    <GROUPDEF display="Y" enable="Y" exclude="N" javaName="g72_Group" max="5" min="0" name="G72_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+      <GROUPDEF display="Y" enable="Y" exclude="N" javaName="g72_GroupRep" max="1" min="1" name="G72_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g7201" mandatory="Y" maxLength="3" minLength="1" name="G7201" persistent="Y" position="1" present="Y" print="Y" referenceNum="340" segmentTag="G72" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Allowance or Charge Code</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g7202" mandatory="Y" maxLength="2" minLength="1" name="G7202" persistent="Y" position="2" present="Y" print="Y" referenceNum="331" segmentTag="G72" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Allowance or Charge Method of Handling Code</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g7203" maxLength="16" minLength="1" name="G7203" persistent="Y" position="3" present="Y" print="Y" referenceNum="341" segmentTag="G72" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Allowance or Charge Number</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g7204" maxLength="16" minLength="1" name="G7204" persistent="Y" position="4" present="Y" print="Y" referenceNum="769" segmentTag="G72" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Exception Number</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="g7205" maxLength="15" minLength="1" name="G7205" persistent="Y" position="5" present="Y" print="Y" referenceNum="359" segmentTag="G72" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Allowance or Charge Rate</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="g7206" maxLength="10" minLength="1" name="G7206" persistent="Y" position="6" present="Y" print="Y" referenceNum="339" segmentTag="G72" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Allowance or Charge Quantity</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g7207" maxLength="2" minLength="1" name="G7207" persistent="Y" position="7" present="Y" print="Y" referenceNum="355" segmentTag="G72" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Unit or Basis for Measurement Code</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="g7208" maxLength="15" minLength="1" name="G7208" persistent="Y" position="8" present="Y" print="Y" referenceNum="360" segmentTag="G72" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Allowance or Charge Total Amount</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="g7209" maxLength="6" minLength="1" name="G7209" persistent="Y" position="9" present="Y" print="Y" referenceNum="332" segmentTag="G72" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Percent</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="g7210" maxLength="9" minLength="1" name="G7210" persistent="Y" position="10" present="Y" print="Y" referenceNum="828" segmentTag="G72" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Dollar Basis For Percent</HELP>
+        </FIELDDEF>
+        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g7211" maxLength="20" minLength="1" name="G7211" persistent="Y" position="11" present="Y" print="Y" referenceNum="770" segmentTag="G72" sourceFilter="No Filter" subPos="0" templatable="Y">
+          <HELP>Option Number</HELP>
+        </FIELDDEF>
+      </GROUPDEF>
+    </GROUPDEF>
+    <GROUPDEF display="Y" enable="Y" exclude="N" javaName="lMLoop1_Group" max="10" min="0" name="LMLoop1_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+      <GROUPDEF display="Y" enable="Y" exclude="N" javaName="lMLoop1_GroupRep" max="1" min="1" name="LMLoop1_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+        <GROUPDEF display="Y" enable="Y" exclude="N" javaName="lM_Group" max="1" min="1" name="LM_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="lM01" mandatory="Y" maxLength="2" minLength="1" name="LM01" persistent="Y" position="1" present="Y" print="Y" referenceNum="559" segmentTag="LM" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Agency Qualifier Code</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="lM02" maxLength="15" minLength="1" name="LM02" persistent="Y" position="2" present="Y" print="Y" referenceNum="822" segmentTag="LM" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Source Subqualifier</HELP>
+          </FIELDDEF>
+        </GROUPDEF>
+        <GROUPDEF display="Y" enable="Y" exclude="N" javaName="lQ_Group" max="100" min="1" name="LQ_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+          <GROUPDEF display="Y" enable="Y" exclude="N" javaName="lQ_GroupRep" max="1" min="1" name="LQ_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+            <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="lQ01" maxLength="3" minLength="1" name="LQ01" persistent="Y" position="1" present="Y" print="Y" referenceNum="1270" segmentTag="LQ" sourceFilter="No Filter" subPos="0" templatable="Y">
+              <HELP>Code List Qualifier Code</HELP>
+            </FIELDDEF>
+            <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="lQ02" maxLength="30" minLength="1" name="LQ02" persistent="Y" position="2" present="Y" print="Y" referenceNum="1271" segmentTag="LQ" sourceFilter="No Filter" subPos="0" templatable="Y">
+              <HELP>Industry Code</HELP>
+            </FIELDDEF>
+          </GROUPDEF>
+        </GROUPDEF>
+      </GROUPDEF>
+    </GROUPDEF>
+    <GROUPDEF display="Y" enable="Y" exclude="N" javaName="lXLoop1_Group" max="9999999" min="0" name="LXLoop1_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+      <GROUPDEF display="Y" enable="Y" exclude="N" javaName="lXLoop1_GroupRep" max="1" min="1" name="LXLoop1_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+        <GROUPDEF display="Y" enable="Y" exclude="N" javaName="lX_Group" max="1" min="1" name="LX_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+          <FIELDDEF dataType="JInteger" display="Y" enable="Y" exclude="N" javaName="lX01" mandatory="Y" maxLength="6" minLength="1" name="LX01" persistent="Y" position="1" present="Y" print="Y" referenceNum="554" segmentTag="LX" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Assigned Number</HELP>
+          </FIELDDEF>
+        </GROUPDEF>
+        <GROUPDEF display="Y" enable="Y" exclude="N" javaName="mAN_Group" max="9999999" min="0" name="MAN_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+          <GROUPDEF display="Y" enable="Y" exclude="N" javaName="mAN_GroupRep" max="1" min="1" name="MAN_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+            <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="mAN01" mandatory="Y" maxLength="2" minLength="1" name="MAN01" persistent="Y" position="1" present="Y" print="Y" referenceNum="88" segmentTag="MAN" sourceFilter="No Filter" subPos="0" templatable="Y">
+              <HELP>Marks and Numbers Qualifier</HELP>
+            </FIELDDEF>
+            <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="mAN02" mandatory="Y" maxLength="48" minLength="1" name="MAN02" persistent="Y" position="2" present="Y" print="Y" referenceNum="87" segmentTag="MAN" sourceFilter="No Filter" subPos="0" templatable="Y">
+              <HELP>Marks and Numbers</HELP>
+            </FIELDDEF>
+            <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="mAN03" maxLength="48" minLength="1" name="MAN03" persistent="Y" position="3" present="Y" print="Y" referenceNum="87" segmentTag="MAN" sourceFilter="No Filter" subPos="0" templatable="Y">
+              <HELP>Marks and Numbers</HELP>
+            </FIELDDEF>
+            <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="mAN04" maxLength="2" minLength="1" name="MAN04" persistent="Y" position="4" present="Y" print="Y" referenceNum="88" segmentTag="MAN" sourceFilter="No Filter" subPos="0" templatable="Y">
+              <HELP>Marks and Numbers Qualifier</HELP>
+            </FIELDDEF>
+            <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="mAN05" maxLength="48" minLength="1" name="MAN05" persistent="Y" position="5" present="Y" print="Y" referenceNum="87" segmentTag="MAN" sourceFilter="No Filter" subPos="0" templatable="Y">
+              <HELP>Marks and Numbers</HELP>
+            </FIELDDEF>
+            <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="mAN06" maxLength="48" minLength="1" name="MAN06" persistent="Y" position="6" present="Y" print="Y" referenceNum="87" segmentTag="MAN" sourceFilter="No Filter" subPos="0" templatable="Y">
+              <HELP>Marks and Numbers</HELP>
+            </FIELDDEF>
+          </GROUPDEF>
+        </GROUPDEF>
+        <GROUPDEF display="Y" enable="Y" exclude="N" javaName="pAL_Group" max="1" min="0" name="PAL_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="pAL01" maxLength="2" minLength="1" name="PAL01" persistent="Y" position="1" present="Y" print="Y" referenceNum="883" segmentTag="PAL" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Pallet Type Code</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JInteger" display="Y" enable="Y" exclude="N" javaName="pAL02" maxLength="3" minLength="1" name="PAL02" persistent="Y" position="2" present="Y" print="Y" referenceNum="884" segmentTag="PAL" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Pallet Tiers</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JInteger" display="Y" enable="Y" exclude="N" javaName="pAL03" maxLength="3" minLength="1" name="PAL03" persistent="Y" position="3" present="Y" print="Y" referenceNum="885" segmentTag="PAL" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Pallet Blocks</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JInteger" display="Y" enable="Y" exclude="N" javaName="pAL04" maxLength="6" minLength="1" name="PAL04" persistent="Y" position="4" present="Y" print="Y" referenceNum="356" segmentTag="PAL" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Pack</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="pAL05" maxLength="8" minLength="1" name="PAL05" persistent="Y" position="5" present="Y" print="Y" referenceNum="395" segmentTag="PAL" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Unit Weight</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="pAL06" maxLength="2" minLength="1" name="PAL06" persistent="Y" position="6" present="Y" print="Y" referenceNum="355" segmentTag="PAL" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Unit or Basis for Measurement Code</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="pAL07" maxLength="8" minLength="1" name="PAL07" persistent="Y" position="7" present="Y" print="Y" referenceNum="82" segmentTag="PAL" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Length</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="pAL08" maxLength="8" minLength="1" name="PAL08" persistent="Y" position="8" present="Y" print="Y" referenceNum="189" segmentTag="PAL" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Width</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="pAL09" maxLength="8" minLength="1" name="PAL09" persistent="Y" position="9" present="Y" print="Y" referenceNum="65" segmentTag="PAL" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Height</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="pAL10" maxLength="2" minLength="1" name="PAL10" persistent="Y" position="10" present="Y" print="Y" referenceNum="355" segmentTag="PAL" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Unit or Basis for Measurement Code</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="pAL11" maxLength="9" minLength="1" name="PAL11" persistent="Y" position="11" present="Y" print="Y" referenceNum="384" segmentTag="PAL" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Gross Weight per Pack</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="pAL12" maxLength="2" minLength="1" name="PAL12" persistent="Y" position="12" present="Y" print="Y" referenceNum="355" segmentTag="PAL" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Unit or Basis for Measurement Code</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="pAL13" maxLength="9" minLength="1" name="PAL13" persistent="Y" position="13" present="Y" print="Y" referenceNum="385" segmentTag="PAL" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Gross Volume per Pack</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="pAL14" maxLength="2" minLength="1" name="PAL14" persistent="Y" position="14" present="Y" print="Y" referenceNum="355" segmentTag="PAL" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Unit or Basis for Measurement Code</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="pAL15" maxLength="1" minLength="1" name="PAL15" persistent="Y" position="15" present="Y" print="Y" referenceNum="399" segmentTag="PAL" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Pallet Exchange Code</HELP>
+          </FIELDDEF>
+          <FIELDDEF dataType="JInteger" display="Y" enable="Y" exclude="N" javaName="pAL16" maxLength="6" minLength="1" name="PAL16" persistent="Y" position="16" present="Y" print="Y" referenceNum="810" segmentTag="PAL" sourceFilter="No Filter" subPos="0" templatable="Y">
+            <HELP>Inner Pack</HELP>
+          </FIELDDEF>
+        </GROUPDEF>
+        <GROUPDEF display="Y" enable="Y" exclude="N" javaName="n9_2_Group" max="5" min="0" name="N9_2_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+          <GROUPDEF display="Y" enable="Y" exclude="N" javaName="n9_2_GroupRep" max="1" min="1" name="N9_2_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+            <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n901" mandatory="Y" maxLength="3" minLength="2" name="N901" persistent="Y" position="1" present="Y" print="Y" referenceNum="128" segmentTag="N9" sourceFilter="No Filter" subPos="0" templatable="Y">
+              <HELP>Reference Identification Qualifier</HELP>
+            </FIELDDEF>
+            <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n902" maxLength="30" minLength="1" name="N902" persistent="Y" position="2" present="Y" print="Y" referenceNum="127" segmentTag="N9" sourceFilter="No Filter" subPos="0" templatable="Y">
+              <HELP>Reference Identification</HELP>
+            </FIELDDEF>
+            <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n903" maxLength="45" minLength="1" name="N903" persistent="Y" position="3" present="Y" print="Y" referenceNum="369" segmentTag="N9" sourceFilter="No Filter" subPos="0" templatable="Y">
+              <HELP>Free-form Description</HELP>
+            </FIELDDEF>
+            <FIELDDEF dataType="JDate" display="Y" enable="Y" exclude="N" javaName="n904" maxLength="8" minLength="8" name="N904" persistent="Y" position="4" present="Y" print="Y" referenceNum="373" segmentTag="N9" sourceFilter="No Filter" subPos="0" templatable="Y">
+              <HELP>Date</HELP>
+            </FIELDDEF>
+            <FIELDDEF dataType="JTime" display="Y" enable="Y" exclude="N" javaName="n905" maxLength="8" minLength="4" name="N905" persistent="Y" position="5" present="Y" print="Y" referenceNum="337" segmentTag="N9" sourceFilter="No Filter" subPos="0" templatable="Y">
+              <HELP>Time</HELP>
+            </FIELDDEF>
+            <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n906" maxLength="2" minLength="1" name="N906" persistent="Y" position="6" present="Y" print="Y" referenceNum="623" segmentTag="N9" sourceFilter="No Filter" subPos="0" templatable="Y">
+              <HELP>Time Code</HELP>
+            </FIELDDEF>
+            <GROUPDEF display="Y" enable="Y" exclude="N" javaName="n907_Group" max="1" min="0" name="N907_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n907_C01" mandatory="Y" maxLength="3" minLength="2" name="N907_C01" persistent="Y" position="7" present="Y" print="Y" referenceNum="128" segmentTag="N9" sourceFilter="No Filter" subPos="1" templatable="Y">
+                <HELP>Reference Identification Qualifier</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n907_C02" mandatory="Y" maxLength="30" minLength="1" name="N907_C02" persistent="Y" position="7" present="Y" print="Y" referenceNum="127" segmentTag="N9" sourceFilter="No Filter" subPos="2" templatable="Y">
+                <HELP>Reference Identification</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n907_C03" maxLength="3" minLength="2" name="N907_C03" persistent="Y" position="7" present="Y" print="Y" referenceNum="128" segmentTag="N9" sourceFilter="No Filter" subPos="3" templatable="Y">
+                <HELP>Reference Identification Qualifier</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n907_C04" maxLength="30" minLength="1" name="N907_C04" persistent="Y" position="7" present="Y" print="Y" referenceNum="127" segmentTag="N9" sourceFilter="No Filter" subPos="4" templatable="Y">
+                <HELP>Reference Identification</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n907_C05" maxLength="3" minLength="2" name="N907_C05" persistent="Y" position="7" present="Y" print="Y" referenceNum="128" segmentTag="N9" sourceFilter="No Filter" subPos="5" templatable="Y">
+                <HELP>Reference Identification Qualifier</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n907_C06" maxLength="30" minLength="1" name="N907_C06" persistent="Y" position="7" present="Y" print="Y" referenceNum="127" segmentTag="N9" sourceFilter="No Filter" subPos="6" templatable="Y">
+                <HELP>Reference Identification</HELP>
+              </FIELDDEF>
+            </GROUPDEF>
+          </GROUPDEF>
+        </GROUPDEF>
+        <GROUPDEF display="Y" enable="Y" exclude="N" javaName="w12Loop1_Group" max="9999999" min="0" name="W12Loop1_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+          <GROUPDEF display="Y" enable="Y" exclude="N" javaName="w12Loop1_GroupRep" max="1" min="1" name="W12Loop1_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+            <GROUPDEF display="Y" enable="Y" exclude="N" javaName="w12_Group" max="1" min="1" name="W12_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w1201" mandatory="Y" maxLength="2" minLength="1" name="W1201" persistent="Y" position="1" present="Y" print="Y" referenceNum="368" segmentTag="W12" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Shipment/Order Status Code</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="w1202" maxLength="15" minLength="1" name="W1202" persistent="Y" position="2" present="Y" print="Y" referenceNum="330" segmentTag="W12" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Quantity Ordered</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="w1203" maxLength="10" minLength="1" name="W1203" persistent="Y" position="3" present="Y" print="Y" referenceNum="382" segmentTag="W12" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Number of Units Shipped</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="w1204" maxLength="9" minLength="1" name="W1204" persistent="Y" position="4" present="Y" print="Y" referenceNum="383" segmentTag="W12" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Quantity Difference</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w1205" maxLength="2" minLength="1" name="W1205" persistent="Y" position="5" present="Y" print="Y" referenceNum="355" segmentTag="W12" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Unit or Basis for Measurement Code</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w1206" maxLength="12" minLength="1" name="W1206" persistent="Y" position="6" present="Y" print="Y" referenceNum="438" segmentTag="W12" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>U.P.C. Case Code</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w1207" maxLength="2" minLength="1" name="W1207" persistent="Y" position="7" present="Y" print="Y" referenceNum="235" segmentTag="W12" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Product/Service ID Qualifier</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w1208" maxLength="48" minLength="1" name="W1208" persistent="Y" position="8" present="Y" print="Y" referenceNum="234" segmentTag="W12" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Product/Service ID</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w1209" maxLength="12" minLength="1" name="W1209" persistent="Y" position="9" present="Y" print="Y" referenceNum="451" segmentTag="W12" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Warehouse Lot Number</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="w1210" maxLength="10" minLength="1" name="W1210" persistent="Y" position="10" present="Y" print="Y" referenceNum="81" segmentTag="W12" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Weight</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w1211" maxLength="2" minLength="1" name="W1211" persistent="Y" position="11" present="Y" print="Y" referenceNum="187" segmentTag="W12" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Weight Qualifier</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w1212" maxLength="1" minLength="1" name="W1212" persistent="Y" position="12" present="Y" print="Y" referenceNum="188" segmentTag="W12" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Weight Unit Code</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="w1213" maxLength="10" minLength="1" name="W1213" persistent="Y" position="13" present="Y" print="Y" referenceNum="81" segmentTag="W12" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Weight</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w1214" maxLength="2" minLength="1" name="W1214" persistent="Y" position="14" present="Y" print="Y" referenceNum="187" segmentTag="W12" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Weight Qualifier</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w1215" maxLength="1" minLength="1" name="W1215" persistent="Y" position="15" present="Y" print="Y" referenceNum="188" segmentTag="W12" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Weight Unit Code</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w1216" maxLength="12" minLength="1" name="W1216" persistent="Y" position="16" present="Y" print="Y" referenceNum="438" segmentTag="W12" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>U.P.C. Case Code</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w1217" maxLength="2" minLength="1" name="W1217" persistent="Y" position="17" present="Y" print="Y" referenceNum="235" segmentTag="W12" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Product/Service ID Qualifier</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w1218" maxLength="48" minLength="1" name="W1218" persistent="Y" position="18" present="Y" print="Y" referenceNum="234" segmentTag="W12" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Product/Service ID</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w1219" maxLength="2" minLength="1" name="W1219" persistent="Y" position="19" present="Y" print="Y" referenceNum="892" segmentTag="W12" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Line Item Change Reason Code</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w1220" maxLength="1" minLength="1" name="W1220" persistent="Y" position="20" present="Y" print="Y" referenceNum="893" segmentTag="W12" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Warehouse Detail Adjustment Identifier</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w1221" maxLength="2" minLength="1" name="W1221" persistent="Y" position="21" present="Y" print="Y" referenceNum="235" segmentTag="W12" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Product/Service ID Qualifier</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w1222" maxLength="48" minLength="1" name="W1222" persistent="Y" position="22" present="Y" print="Y" referenceNum="234" segmentTag="W12" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Product/Service ID</HELP>
+              </FIELDDEF>
+            </GROUPDEF>
+            <GROUPDEF display="Y" enable="Y" exclude="N" javaName="g69_Group" max="5" min="0" name="G69_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+              <GROUPDEF display="Y" enable="Y" exclude="N" javaName="g69_GroupRep" max="1" min="1" name="G69_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g6901" mandatory="Y" maxLength="45" minLength="1" name="G6901" persistent="Y" position="1" present="Y" print="Y" referenceNum="369" segmentTag="G69" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Free-form Description</HELP>
+                </FIELDDEF>
+              </GROUPDEF>
+            </GROUPDEF>
+            <GROUPDEF display="Y" enable="Y" exclude="N" javaName="n9_3_Group" max="200" min="0" name="N9_3_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+              <GROUPDEF display="Y" enable="Y" exclude="N" javaName="n9_3_GroupRep" max="1" min="1" name="N9_3_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n901" mandatory="Y" maxLength="3" minLength="2" name="N901" persistent="Y" position="1" present="Y" print="Y" referenceNum="128" segmentTag="N9" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Reference Identification Qualifier</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n902" maxLength="30" minLength="1" name="N902" persistent="Y" position="2" present="Y" print="Y" referenceNum="127" segmentTag="N9" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Reference Identification</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n903" maxLength="45" minLength="1" name="N903" persistent="Y" position="3" present="Y" print="Y" referenceNum="369" segmentTag="N9" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Free-form Description</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JDate" display="Y" enable="Y" exclude="N" javaName="n904" maxLength="8" minLength="8" name="N904" persistent="Y" position="4" present="Y" print="Y" referenceNum="373" segmentTag="N9" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Date</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JTime" display="Y" enable="Y" exclude="N" javaName="n905" maxLength="8" minLength="4" name="N905" persistent="Y" position="5" present="Y" print="Y" referenceNum="337" segmentTag="N9" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Time</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n906" maxLength="2" minLength="1" name="N906" persistent="Y" position="6" present="Y" print="Y" referenceNum="623" segmentTag="N9" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Time Code</HELP>
+                </FIELDDEF>
+                <GROUPDEF display="Y" enable="Y" exclude="N" javaName="n907_Group" max="1" min="0" name="N907_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                  <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n907_C01" mandatory="Y" maxLength="3" minLength="2" name="N907_C01" persistent="Y" position="7" present="Y" print="Y" referenceNum="128" segmentTag="N9" sourceFilter="No Filter" subPos="1" templatable="Y">
+                    <HELP>Reference Identification Qualifier</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n907_C02" mandatory="Y" maxLength="30" minLength="1" name="N907_C02" persistent="Y" position="7" present="Y" print="Y" referenceNum="127" segmentTag="N9" sourceFilter="No Filter" subPos="2" templatable="Y">
+                    <HELP>Reference Identification</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n907_C03" maxLength="3" minLength="2" name="N907_C03" persistent="Y" position="7" present="Y" print="Y" referenceNum="128" segmentTag="N9" sourceFilter="No Filter" subPos="3" templatable="Y">
+                    <HELP>Reference Identification Qualifier</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n907_C04" maxLength="30" minLength="1" name="N907_C04" persistent="Y" position="7" present="Y" print="Y" referenceNum="127" segmentTag="N9" sourceFilter="No Filter" subPos="4" templatable="Y">
+                    <HELP>Reference Identification</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n907_C05" maxLength="3" minLength="2" name="N907_C05" persistent="Y" position="7" present="Y" print="Y" referenceNum="128" segmentTag="N9" sourceFilter="No Filter" subPos="5" templatable="Y">
+                    <HELP>Reference Identification Qualifier</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n907_C06" maxLength="30" minLength="1" name="N907_C06" persistent="Y" position="7" present="Y" print="Y" referenceNum="127" segmentTag="N9" sourceFilter="No Filter" subPos="6" templatable="Y">
+                    <HELP>Reference Identification</HELP>
+                  </FIELDDEF>
+                </GROUPDEF>
+              </GROUPDEF>
+            </GROUPDEF>
+            <GROUPDEF display="Y" enable="Y" exclude="N" javaName="g62_2_Group" max="10" min="0" name="G62_2_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+              <GROUPDEF display="Y" enable="Y" exclude="N" javaName="g62_2_GroupRep" max="1" min="1" name="G62_2_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g6201" maxLength="2" minLength="1" name="G6201" persistent="Y" position="1" present="Y" print="Y" referenceNum="432" segmentTag="G62" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Date Qualifier</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JDate" display="Y" enable="Y" exclude="N" javaName="g6202" maxLength="8" minLength="8" name="G6202" persistent="Y" position="2" present="Y" print="Y" referenceNum="373" segmentTag="G62" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Date</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g6203" maxLength="2" minLength="1" name="G6203" persistent="Y" position="3" present="Y" print="Y" referenceNum="176" segmentTag="G62" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Time Qualifier</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JTime" display="Y" enable="Y" exclude="N" javaName="g6204" maxLength="8" minLength="4" name="G6204" persistent="Y" position="4" present="Y" print="Y" referenceNum="337" segmentTag="G62" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Time</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g6205" maxLength="2" minLength="1" name="G6205" persistent="Y" position="5" present="Y" print="Y" referenceNum="623" segmentTag="G62" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Time Code</HELP>
+                </FIELDDEF>
+              </GROUPDEF>
+            </GROUPDEF>
+            <GROUPDEF display="Y" enable="Y" exclude="N" javaName="qTY_Group" max="10" min="0" name="QTY_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+              <GROUPDEF display="Y" enable="Y" exclude="N" javaName="qTY_GroupRep" max="1" min="1" name="QTY_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="qTY01" mandatory="Y" maxLength="2" minLength="1" name="QTY01" persistent="Y" position="1" present="Y" print="Y" referenceNum="673" segmentTag="QTY" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Quantity Qualifier</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="qTY02" maxLength="15" minLength="1" name="QTY02" persistent="Y" position="2" present="Y" print="Y" referenceNum="380" segmentTag="QTY" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Quantity</HELP>
+                </FIELDDEF>
+                <GROUPDEF display="Y" enable="Y" exclude="N" javaName="qTY03_Group" max="1" min="0" name="QTY03_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                  <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="qTY03_C01" mandatory="Y" maxLength="2" minLength="1" name="QTY03_C01" persistent="Y" position="3" present="Y" print="Y" referenceNum="355" segmentTag="QTY" sourceFilter="No Filter" subPos="1" templatable="Y">
+                    <HELP>Unit or Basis for Measurement Code</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="qTY03_C02" maxLength="15" minLength="1" name="QTY03_C02" persistent="Y" position="3" present="Y" print="Y" referenceNum="1018" segmentTag="QTY" sourceFilter="No Filter" subPos="2" templatable="Y">
+                    <HELP>Exponent</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="qTY03_C03" maxLength="10" minLength="1" name="QTY03_C03" persistent="Y" position="3" present="Y" print="Y" referenceNum="649" segmentTag="QTY" sourceFilter="No Filter" subPos="3" templatable="Y">
+                    <HELP>Multiplier</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="qTY03_C04" maxLength="2" minLength="1" name="QTY03_C04" persistent="Y" position="3" present="Y" print="Y" referenceNum="355" segmentTag="QTY" sourceFilter="No Filter" subPos="4" templatable="Y">
+                    <HELP>Unit or Basis for Measurement Code</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="qTY03_C05" maxLength="15" minLength="1" name="QTY03_C05" persistent="Y" position="3" present="Y" print="Y" referenceNum="1018" segmentTag="QTY" sourceFilter="No Filter" subPos="5" templatable="Y">
+                    <HELP>Exponent</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="qTY03_C06" maxLength="10" minLength="1" name="QTY03_C06" persistent="Y" position="3" present="Y" print="Y" referenceNum="649" segmentTag="QTY" sourceFilter="No Filter" subPos="6" templatable="Y">
+                    <HELP>Multiplier</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="qTY03_C07" maxLength="2" minLength="1" name="QTY03_C07" persistent="Y" position="3" present="Y" print="Y" referenceNum="355" segmentTag="QTY" sourceFilter="No Filter" subPos="7" templatable="Y">
+                    <HELP>Unit or Basis for Measurement Code</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="qTY03_C08" maxLength="15" minLength="1" name="QTY03_C08" persistent="Y" position="3" present="Y" print="Y" referenceNum="1018" segmentTag="QTY" sourceFilter="No Filter" subPos="8" templatable="Y">
+                    <HELP>Exponent</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="qTY03_C09" maxLength="10" minLength="1" name="QTY03_C09" persistent="Y" position="3" present="Y" print="Y" referenceNum="649" segmentTag="QTY" sourceFilter="No Filter" subPos="9" templatable="Y">
+                    <HELP>Multiplier</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="qTY03_C10" maxLength="2" minLength="1" name="QTY03_C10" persistent="Y" position="3" present="Y" print="Y" referenceNum="355" segmentTag="QTY" sourceFilter="No Filter" subPos="10" templatable="Y">
+                    <HELP>Unit or Basis for Measurement Code</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="qTY03_C11" maxLength="15" minLength="1" name="QTY03_C11" persistent="Y" position="3" present="Y" print="Y" referenceNum="1018" segmentTag="QTY" sourceFilter="No Filter" subPos="11" templatable="Y">
+                    <HELP>Exponent</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="qTY03_C12" maxLength="10" minLength="1" name="QTY03_C12" persistent="Y" position="3" present="Y" print="Y" referenceNum="649" segmentTag="QTY" sourceFilter="No Filter" subPos="12" templatable="Y">
+                    <HELP>Multiplier</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="qTY03_C13" maxLength="2" minLength="1" name="QTY03_C13" persistent="Y" position="3" present="Y" print="Y" referenceNum="355" segmentTag="QTY" sourceFilter="No Filter" subPos="13" templatable="Y">
+                    <HELP>Unit or Basis for Measurement Code</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="qTY03_C14" maxLength="15" minLength="1" name="QTY03_C14" persistent="Y" position="3" present="Y" print="Y" referenceNum="1018" segmentTag="QTY" sourceFilter="No Filter" subPos="14" templatable="Y">
+                    <HELP>Exponent</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="qTY03_C15" maxLength="10" minLength="1" name="QTY03_C15" persistent="Y" position="3" present="Y" print="Y" referenceNum="649" segmentTag="QTY" sourceFilter="No Filter" subPos="15" templatable="Y">
+                    <HELP>Multiplier</HELP>
+                  </FIELDDEF>
+                </GROUPDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="qTY04" maxLength="30" minLength="1" name="QTY04" persistent="Y" position="4" present="Y" print="Y" referenceNum="61" segmentTag="QTY" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Free-Form Message</HELP>
+                </FIELDDEF>
+              </GROUPDEF>
+            </GROUPDEF>
+            <GROUPDEF display="Y" enable="Y" exclude="N" javaName="mEA_Group" max="5" min="0" name="MEA_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+              <GROUPDEF display="Y" enable="Y" exclude="N" javaName="mEA_GroupRep" max="1" min="1" name="MEA_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="mEA01" maxLength="2" minLength="1" name="MEA01" persistent="Y" position="1" present="Y" print="Y" referenceNum="737" segmentTag="MEA" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Measurement Reference ID Code</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="mEA02" maxLength="3" minLength="1" name="MEA02" persistent="Y" position="2" present="Y" print="Y" referenceNum="738" segmentTag="MEA" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Measurement Qualifier</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="mEA03" maxLength="20" minLength="1" name="MEA03" persistent="Y" position="3" present="Y" print="Y" referenceNum="739" segmentTag="MEA" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Measurement Value</HELP>
+                </FIELDDEF>
+                <GROUPDEF display="Y" enable="Y" exclude="N" javaName="mEA04_Group" max="1" min="0" name="MEA04_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                  <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="mEA04_C01" mandatory="Y" maxLength="2" minLength="1" name="MEA04_C01" persistent="Y" position="4" present="Y" print="Y" referenceNum="355" segmentTag="MEA" sourceFilter="No Filter" subPos="1" templatable="Y">
+                    <HELP>Unit or Basis for Measurement Code</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="mEA04_C02" maxLength="15" minLength="1" name="MEA04_C02" persistent="Y" position="4" present="Y" print="Y" referenceNum="1018" segmentTag="MEA" sourceFilter="No Filter" subPos="2" templatable="Y">
+                    <HELP>Exponent</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="mEA04_C03" maxLength="10" minLength="1" name="MEA04_C03" persistent="Y" position="4" present="Y" print="Y" referenceNum="649" segmentTag="MEA" sourceFilter="No Filter" subPos="3" templatable="Y">
+                    <HELP>Multiplier</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="mEA04_C04" maxLength="2" minLength="1" name="MEA04_C04" persistent="Y" position="4" present="Y" print="Y" referenceNum="355" segmentTag="MEA" sourceFilter="No Filter" subPos="4" templatable="Y">
+                    <HELP>Unit or Basis for Measurement Code</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="mEA04_C05" maxLength="15" minLength="1" name="MEA04_C05" persistent="Y" position="4" present="Y" print="Y" referenceNum="1018" segmentTag="MEA" sourceFilter="No Filter" subPos="5" templatable="Y">
+                    <HELP>Exponent</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="mEA04_C06" maxLength="10" minLength="1" name="MEA04_C06" persistent="Y" position="4" present="Y" print="Y" referenceNum="649" segmentTag="MEA" sourceFilter="No Filter" subPos="6" templatable="Y">
+                    <HELP>Multiplier</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="mEA04_C07" maxLength="2" minLength="1" name="MEA04_C07" persistent="Y" position="4" present="Y" print="Y" referenceNum="355" segmentTag="MEA" sourceFilter="No Filter" subPos="7" templatable="Y">
+                    <HELP>Unit or Basis for Measurement Code</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="mEA04_C08" maxLength="15" minLength="1" name="MEA04_C08" persistent="Y" position="4" present="Y" print="Y" referenceNum="1018" segmentTag="MEA" sourceFilter="No Filter" subPos="8" templatable="Y">
+                    <HELP>Exponent</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="mEA04_C09" maxLength="10" minLength="1" name="MEA04_C09" persistent="Y" position="4" present="Y" print="Y" referenceNum="649" segmentTag="MEA" sourceFilter="No Filter" subPos="9" templatable="Y">
+                    <HELP>Multiplier</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="mEA04_C10" maxLength="2" minLength="1" name="MEA04_C10" persistent="Y" position="4" present="Y" print="Y" referenceNum="355" segmentTag="MEA" sourceFilter="No Filter" subPos="10" templatable="Y">
+                    <HELP>Unit or Basis for Measurement Code</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="mEA04_C11" maxLength="15" minLength="1" name="MEA04_C11" persistent="Y" position="4" present="Y" print="Y" referenceNum="1018" segmentTag="MEA" sourceFilter="No Filter" subPos="11" templatable="Y">
+                    <HELP>Exponent</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="mEA04_C12" maxLength="10" minLength="1" name="MEA04_C12" persistent="Y" position="4" present="Y" print="Y" referenceNum="649" segmentTag="MEA" sourceFilter="No Filter" subPos="12" templatable="Y">
+                    <HELP>Multiplier</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="mEA04_C13" maxLength="2" minLength="1" name="MEA04_C13" persistent="Y" position="4" present="Y" print="Y" referenceNum="355" segmentTag="MEA" sourceFilter="No Filter" subPos="13" templatable="Y">
+                    <HELP>Unit or Basis for Measurement Code</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="mEA04_C14" maxLength="15" minLength="1" name="MEA04_C14" persistent="Y" position="4" present="Y" print="Y" referenceNum="1018" segmentTag="MEA" sourceFilter="No Filter" subPos="14" templatable="Y">
+                    <HELP>Exponent</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="mEA04_C15" maxLength="10" minLength="1" name="MEA04_C15" persistent="Y" position="4" present="Y" print="Y" referenceNum="649" segmentTag="MEA" sourceFilter="No Filter" subPos="15" templatable="Y">
+                    <HELP>Multiplier</HELP>
+                  </FIELDDEF>
+                </GROUPDEF>
+                <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="mEA05" maxLength="20" minLength="1" name="MEA05" persistent="Y" position="5" present="Y" print="Y" referenceNum="740" segmentTag="MEA" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Range Minimum</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="mEA06" maxLength="20" minLength="1" name="MEA06" persistent="Y" position="6" present="Y" print="Y" referenceNum="741" segmentTag="MEA" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Range Maximum</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="mEA07" maxLength="2" minLength="1" name="MEA07" persistent="Y" position="7" present="Y" print="Y" referenceNum="935" segmentTag="MEA" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Measurement Significance Code</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="mEA08" maxLength="2" minLength="1" name="MEA08" persistent="Y" position="8" present="Y" print="Y" referenceNum="936" segmentTag="MEA" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Measurement Attribute Code</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="mEA09" maxLength="2" minLength="1" name="MEA09" persistent="Y" position="9" present="Y" print="Y" referenceNum="752" segmentTag="MEA" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Surface/Layer/Position Code</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="mEA10" maxLength="4" minLength="2" name="MEA10" persistent="Y" position="10" present="Y" print="Y" referenceNum="1373" segmentTag="MEA" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Measurement Method or Device</HELP>
+                </FIELDDEF>
+              </GROUPDEF>
+            </GROUPDEF>
+            <GROUPDEF display="Y" enable="Y" exclude="N" javaName="aMT_Group" max="1" min="0" name="AMT_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="aMT01" mandatory="Y" maxLength="3" minLength="1" name="AMT01" persistent="Y" position="1" present="Y" print="Y" referenceNum="522" segmentTag="AMT" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Amount Qualifier Code</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="aMT02" mandatory="Y" maxLength="18" minLength="1" name="AMT02" persistent="Y" position="2" present="Y" print="Y" referenceNum="782" segmentTag="AMT" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Monetary Amount</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="aMT03" maxLength="1" minLength="1" name="AMT03" persistent="Y" position="3" present="Y" print="Y" referenceNum="478" segmentTag="AMT" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Credit/Debit Flag Code</HELP>
+              </FIELDDEF>
+            </GROUPDEF>
+            <GROUPDEF display="Y" enable="Y" exclude="N" javaName="r4_Group" max="5" min="0" name="R4_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+              <GROUPDEF display="Y" enable="Y" exclude="N" javaName="r4_GroupRep" max="1" min="1" name="R4_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="r401" mandatory="Y" maxLength="1" minLength="1" name="R401" persistent="Y" position="1" present="Y" print="Y" referenceNum="115" segmentTag="R4" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Port or Terminal Function Code</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="r402" maxLength="2" minLength="1" name="R402" persistent="Y" position="2" present="Y" print="Y" referenceNum="309" segmentTag="R4" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Location Qualifier</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="r403" maxLength="30" minLength="1" name="R403" persistent="Y" position="3" present="Y" print="Y" referenceNum="310" segmentTag="R4" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Location Identifier</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="r404" maxLength="24" minLength="2" name="R404" persistent="Y" position="4" present="Y" print="Y" referenceNum="114" segmentTag="R4" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Port Name</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="r405" maxLength="3" minLength="2" name="R405" persistent="Y" position="5" present="Y" print="Y" referenceNum="26" segmentTag="R4" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Country Code</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="r406" maxLength="30" minLength="2" name="R406" persistent="Y" position="6" present="Y" print="Y" referenceNum="174" segmentTag="R4" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Terminal Name</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="r407" maxLength="4" minLength="1" name="R407" persistent="Y" position="7" present="Y" print="Y" referenceNum="113" segmentTag="R4" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Pier Number</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="r408" maxLength="2" minLength="1" name="R408" persistent="Y" position="8" present="Y" print="Y" referenceNum="156" segmentTag="R4" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>State or Province Code</HELP>
+                </FIELDDEF>
+              </GROUPDEF>
+            </GROUPDEF>
+            <GROUPDEF display="Y" enable="Y" exclude="N" javaName="w27_2_Group" max="1" min="0" name="W27_2_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w2701" mandatory="Y" maxLength="2" minLength="1" name="W2701" persistent="Y" position="1" present="Y" print="Y" referenceNum="91" segmentTag="W27" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Transportation Method/Type Code</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w2702" maxLength="4" minLength="2" name="W2702" persistent="Y" position="2" present="Y" print="Y" referenceNum="140" segmentTag="W27" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Standard Carrier Alpha Code</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w2703" maxLength="35" minLength="1" name="W2703" persistent="Y" position="3" present="Y" print="Y" referenceNum="387" segmentTag="W27" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Routing</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w2704" maxLength="2" minLength="1" name="W2704" persistent="Y" position="4" present="Y" print="Y" referenceNum="146" segmentTag="W27" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Shipment Method of Payment</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w2705" maxLength="2" minLength="1" name="W2705" persistent="Y" position="5" present="Y" print="Y" referenceNum="40" segmentTag="W27" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Equipment Description Code</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w2706" maxLength="4" minLength="1" name="W2706" persistent="Y" position="6" present="Y" print="Y" referenceNum="206" segmentTag="W27" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Equipment Initial</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w2707" maxLength="10" minLength="1" name="W2707" persistent="Y" position="7" present="Y" print="Y" referenceNum="207" segmentTag="W27" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Equipment Number</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w2708" maxLength="2" minLength="1" name="W2708" persistent="Y" position="8" present="Y" print="Y" referenceNum="368" segmentTag="W27" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Shipment/Order Status Code</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w2709" maxLength="3" minLength="2" name="W2709" persistent="Y" position="9" present="Y" print="Y" referenceNum="152" segmentTag="W27" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Special Handling Code</HELP>
+              </FIELDDEF>
+              <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w2710" maxLength="2" minLength="1" name="W2710" persistent="Y" position="10" present="Y" print="Y" referenceNum="890" segmentTag="W27" sourceFilter="No Filter" subPos="0" templatable="Y">
+                <HELP>Carrier/Route Change Reason Code</HELP>
+              </FIELDDEF>
+            </GROUPDEF>
+            <GROUPDEF display="Y" enable="Y" exclude="N" javaName="n1_2_Group" max="5" min="0" name="N1_2_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+              <GROUPDEF display="Y" enable="Y" exclude="N" javaName="n1_2_GroupRep" max="1" min="1" name="N1_2_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n101" mandatory="Y" maxLength="3" minLength="2" name="N101" persistent="Y" position="1" present="Y" print="Y" referenceNum="98" segmentTag="N1" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Entity Identifier Code</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n102" maxLength="60" minLength="1" name="N102" persistent="Y" position="2" present="Y" print="Y" referenceNum="93" segmentTag="N1" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Name</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n103" maxLength="2" minLength="1" name="N103" persistent="Y" position="3" present="Y" print="Y" referenceNum="66" segmentTag="N1" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Identification Code Qualifier</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n104" maxLength="80" minLength="2" name="N104" persistent="Y" position="4" present="Y" print="Y" referenceNum="67" segmentTag="N1" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Identification Code</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n105" maxLength="2" minLength="1" name="N105" persistent="Y" position="5" present="Y" print="Y" referenceNum="706" segmentTag="N1" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Entity Relationship Code</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n106" maxLength="3" minLength="2" name="N106" persistent="Y" position="6" present="Y" print="Y" referenceNum="98" segmentTag="N1" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Entity Identifier Code</HELP>
+                </FIELDDEF>
+              </GROUPDEF>
+            </GROUPDEF>
+            <GROUPDEF display="Y" enable="Y" exclude="N" javaName="g72_2_Group" max="5" min="0" name="G72_2_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+              <GROUPDEF display="Y" enable="Y" exclude="N" javaName="g72_2_GroupRep" max="1" min="1" name="G72_2_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g7201" mandatory="Y" maxLength="3" minLength="1" name="G7201" persistent="Y" position="1" present="Y" print="Y" referenceNum="340" segmentTag="G72" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Allowance or Charge Code</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g7202" mandatory="Y" maxLength="2" minLength="1" name="G7202" persistent="Y" position="2" present="Y" print="Y" referenceNum="331" segmentTag="G72" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Allowance or Charge Method of Handling Code</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g7203" maxLength="16" minLength="1" name="G7203" persistent="Y" position="3" present="Y" print="Y" referenceNum="341" segmentTag="G72" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Allowance or Charge Number</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g7204" maxLength="16" minLength="1" name="G7204" persistent="Y" position="4" present="Y" print="Y" referenceNum="769" segmentTag="G72" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Exception Number</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="g7205" maxLength="15" minLength="1" name="G7205" persistent="Y" position="5" present="Y" print="Y" referenceNum="359" segmentTag="G72" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Allowance or Charge Rate</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="g7206" maxLength="10" minLength="1" name="G7206" persistent="Y" position="6" present="Y" print="Y" referenceNum="339" segmentTag="G72" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Allowance or Charge Quantity</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g7207" maxLength="2" minLength="1" name="G7207" persistent="Y" position="7" present="Y" print="Y" referenceNum="355" segmentTag="G72" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Unit or Basis for Measurement Code</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="g7208" maxLength="15" minLength="1" name="G7208" persistent="Y" position="8" present="Y" print="Y" referenceNum="360" segmentTag="G72" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Allowance or Charge Total Amount</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="g7209" maxLength="6" minLength="1" name="G7209" persistent="Y" position="9" present="Y" print="Y" referenceNum="332" segmentTag="G72" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Percent</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="g7210" maxLength="9" minLength="1" name="G7210" persistent="Y" position="10" present="Y" print="Y" referenceNum="828" segmentTag="G72" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Dollar Basis For Percent</HELP>
+                </FIELDDEF>
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g7211" maxLength="20" minLength="1" name="G7211" persistent="Y" position="11" present="Y" print="Y" referenceNum="770" segmentTag="G72" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Option Number</HELP>
+                </FIELDDEF>
+              </GROUPDEF>
+            </GROUPDEF>
+            <GROUPDEF display="Y" enable="Y" exclude="N" javaName="lMLoop2_Group" max="10" min="0" name="LMLoop2_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+              <GROUPDEF display="Y" enable="Y" exclude="N" javaName="lMLoop2_GroupRep" max="1" min="1" name="LMLoop2_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                <GROUPDEF display="Y" enable="Y" exclude="N" javaName="lM_2_Group" max="1" min="1" name="LM_2_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                  <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="lM01" mandatory="Y" maxLength="2" minLength="1" name="LM01" persistent="Y" position="1" present="Y" print="Y" referenceNum="559" segmentTag="LM" sourceFilter="No Filter" subPos="0" templatable="Y">
+                    <HELP>Agency Qualifier Code</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="lM02" maxLength="15" minLength="1" name="LM02" persistent="Y" position="2" present="Y" print="Y" referenceNum="822" segmentTag="LM" sourceFilter="No Filter" subPos="0" templatable="Y">
+                    <HELP>Source Subqualifier</HELP>
+                  </FIELDDEF>
+                </GROUPDEF>
+                <GROUPDEF display="Y" enable="Y" exclude="N" javaName="lQ_2_Group" max="100" min="1" name="LQ_2_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                  <GROUPDEF display="Y" enable="Y" exclude="N" javaName="lQ_2_GroupRep" max="1" min="1" name="LQ_2_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                    <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="lQ01" maxLength="3" minLength="1" name="LQ01" persistent="Y" position="1" present="Y" print="Y" referenceNum="1270" segmentTag="LQ" sourceFilter="No Filter" subPos="0" templatable="Y">
+                      <HELP>Code List Qualifier Code</HELP>
+                    </FIELDDEF>
+                    <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="lQ02" maxLength="30" minLength="1" name="LQ02" persistent="Y" position="2" present="Y" print="Y" referenceNum="1271" segmentTag="LQ" sourceFilter="No Filter" subPos="0" templatable="Y">
+                      <HELP>Industry Code</HELP>
+                    </FIELDDEF>
+                  </GROUPDEF>
+                </GROUPDEF>
+              </GROUPDEF>
+            </GROUPDEF>
+            <GROUPDEF display="Y" enable="Y" exclude="N" javaName="lSLoop1_Group" max="1" min="0" name="LSLoop1_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+              <GROUPDEF display="Y" enable="Y" exclude="N" javaName="lS_Group" max="1" min="1" name="LS_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="lS01" mandatory="Y" maxLength="6" minLength="1" name="LS01" persistent="Y" position="1" present="Y" print="Y" referenceNum="447" segmentTag="LS" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Loop Identifier Code</HELP>
+                </FIELDDEF>
+              </GROUPDEF>
+              <GROUPDEF display="Y" enable="Y" exclude="N" javaName="lXLoop2_Group" max="9999999" min="0" name="LXLoop2_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                <GROUPDEF display="Y" enable="Y" exclude="N" javaName="lXLoop2_GroupRep" max="1" min="1" name="LXLoop2_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                  <GROUPDEF display="Y" enable="Y" exclude="N" javaName="lX_2_Group" max="1" min="1" name="LX_2_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                    <FIELDDEF dataType="JInteger" display="Y" enable="Y" exclude="N" javaName="lX01" mandatory="Y" maxLength="6" minLength="1" name="LX01" persistent="Y" position="1" present="Y" print="Y" referenceNum="554" segmentTag="LX" sourceFilter="No Filter" subPos="0" templatable="Y">
+                      <HELP>Assigned Number</HELP>
+                    </FIELDDEF>
+                  </GROUPDEF>
+                  <GROUPDEF display="Y" enable="Y" exclude="N" javaName="n9_4_Group" max="9999999" min="0" name="N9_4_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                    <GROUPDEF display="Y" enable="Y" exclude="N" javaName="n9_4_GroupRep" max="1" min="1" name="N9_4_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n901" mandatory="Y" maxLength="3" minLength="2" name="N901" persistent="Y" position="1" present="Y" print="Y" referenceNum="128" segmentTag="N9" sourceFilter="No Filter" subPos="0" templatable="Y">
+                        <HELP>Reference Identification Qualifier</HELP>
+                      </FIELDDEF>
+                      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n902" maxLength="30" minLength="1" name="N902" persistent="Y" position="2" present="Y" print="Y" referenceNum="127" segmentTag="N9" sourceFilter="No Filter" subPos="0" templatable="Y">
+                        <HELP>Reference Identification</HELP>
+                      </FIELDDEF>
+                      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n903" maxLength="45" minLength="1" name="N903" persistent="Y" position="3" present="Y" print="Y" referenceNum="369" segmentTag="N9" sourceFilter="No Filter" subPos="0" templatable="Y">
+                        <HELP>Free-form Description</HELP>
+                      </FIELDDEF>
+                      <FIELDDEF dataType="JDate" display="Y" enable="Y" exclude="N" javaName="n904" maxLength="8" minLength="8" name="N904" persistent="Y" position="4" present="Y" print="Y" referenceNum="373" segmentTag="N9" sourceFilter="No Filter" subPos="0" templatable="Y">
+                        <HELP>Date</HELP>
+                      </FIELDDEF>
+                      <FIELDDEF dataType="JTime" display="Y" enable="Y" exclude="N" javaName="n905" maxLength="8" minLength="4" name="N905" persistent="Y" position="5" present="Y" print="Y" referenceNum="337" segmentTag="N9" sourceFilter="No Filter" subPos="0" templatable="Y">
+                        <HELP>Time</HELP>
+                      </FIELDDEF>
+                      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n906" maxLength="2" minLength="1" name="N906" persistent="Y" position="6" present="Y" print="Y" referenceNum="623" segmentTag="N9" sourceFilter="No Filter" subPos="0" templatable="Y">
+                        <HELP>Time Code</HELP>
+                      </FIELDDEF>
+                      <GROUPDEF display="Y" enable="Y" exclude="N" javaName="n907_Group" max="1" min="0" name="N907_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n907_C01" mandatory="Y" maxLength="3" minLength="2" name="N907_C01" persistent="Y" position="7" present="Y" print="Y" referenceNum="128" segmentTag="N9" sourceFilter="No Filter" subPos="1" templatable="Y">
+                          <HELP>Reference Identification Qualifier</HELP>
+                        </FIELDDEF>
+                        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n907_C02" mandatory="Y" maxLength="30" minLength="1" name="N907_C02" persistent="Y" position="7" present="Y" print="Y" referenceNum="127" segmentTag="N9" sourceFilter="No Filter" subPos="2" templatable="Y">
+                          <HELP>Reference Identification</HELP>
+                        </FIELDDEF>
+                        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n907_C03" maxLength="3" minLength="2" name="N907_C03" persistent="Y" position="7" present="Y" print="Y" referenceNum="128" segmentTag="N9" sourceFilter="No Filter" subPos="3" templatable="Y">
+                          <HELP>Reference Identification Qualifier</HELP>
+                        </FIELDDEF>
+                        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n907_C04" maxLength="30" minLength="1" name="N907_C04" persistent="Y" position="7" present="Y" print="Y" referenceNum="127" segmentTag="N9" sourceFilter="No Filter" subPos="4" templatable="Y">
+                          <HELP>Reference Identification</HELP>
+                        </FIELDDEF>
+                        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n907_C05" maxLength="3" minLength="2" name="N907_C05" persistent="Y" position="7" present="Y" print="Y" referenceNum="128" segmentTag="N9" sourceFilter="No Filter" subPos="5" templatable="Y">
+                          <HELP>Reference Identification Qualifier</HELP>
+                        </FIELDDEF>
+                        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n907_C06" maxLength="30" minLength="1" name="N907_C06" persistent="Y" position="7" present="Y" print="Y" referenceNum="127" segmentTag="N9" sourceFilter="No Filter" subPos="6" templatable="Y">
+                          <HELP>Reference Identification</HELP>
+                        </FIELDDEF>
+                      </GROUPDEF>
+                    </GROUPDEF>
+                  </GROUPDEF>
+                  <GROUPDEF display="Y" enable="Y" exclude="N" javaName="g62_3_Group" max="10" min="0" name="G62_3_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                    <GROUPDEF display="Y" enable="Y" exclude="N" javaName="g62_3_GroupRep" max="1" min="1" name="G62_3_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g6201" maxLength="2" minLength="1" name="G6201" persistent="Y" position="1" present="Y" print="Y" referenceNum="432" segmentTag="G62" sourceFilter="No Filter" subPos="0" templatable="Y">
+                        <HELP>Date Qualifier</HELP>
+                      </FIELDDEF>
+                      <FIELDDEF dataType="JDate" display="Y" enable="Y" exclude="N" javaName="g6202" maxLength="8" minLength="8" name="G6202" persistent="Y" position="2" present="Y" print="Y" referenceNum="373" segmentTag="G62" sourceFilter="No Filter" subPos="0" templatable="Y">
+                        <HELP>Date</HELP>
+                      </FIELDDEF>
+                      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g6203" maxLength="2" minLength="1" name="G6203" persistent="Y" position="3" present="Y" print="Y" referenceNum="176" segmentTag="G62" sourceFilter="No Filter" subPos="0" templatable="Y">
+                        <HELP>Time Qualifier</HELP>
+                      </FIELDDEF>
+                      <FIELDDEF dataType="JTime" display="Y" enable="Y" exclude="N" javaName="g6204" maxLength="8" minLength="4" name="G6204" persistent="Y" position="4" present="Y" print="Y" referenceNum="337" segmentTag="G62" sourceFilter="No Filter" subPos="0" templatable="Y">
+                        <HELP>Time</HELP>
+                      </FIELDDEF>
+                      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="g6205" maxLength="2" minLength="1" name="G6205" persistent="Y" position="5" present="Y" print="Y" referenceNum="623" segmentTag="G62" sourceFilter="No Filter" subPos="0" templatable="Y">
+                        <HELP>Time Code</HELP>
+                      </FIELDDEF>
+                    </GROUPDEF>
+                  </GROUPDEF>
+                  <GROUPDEF display="Y" enable="Y" exclude="N" javaName="n1_3_Group" max="1" min="0" name="N1_3_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                    <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n101" mandatory="Y" maxLength="3" minLength="2" name="N101" persistent="Y" position="1" present="Y" print="Y" referenceNum="98" segmentTag="N1" sourceFilter="No Filter" subPos="0" templatable="Y">
+                      <HELP>Entity Identifier Code</HELP>
+                    </FIELDDEF>
+                    <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n102" maxLength="60" minLength="1" name="N102" persistent="Y" position="2" present="Y" print="Y" referenceNum="93" segmentTag="N1" sourceFilter="No Filter" subPos="0" templatable="Y">
+                      <HELP>Name</HELP>
+                    </FIELDDEF>
+                    <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n103" maxLength="2" minLength="1" name="N103" persistent="Y" position="3" present="Y" print="Y" referenceNum="66" segmentTag="N1" sourceFilter="No Filter" subPos="0" templatable="Y">
+                      <HELP>Identification Code Qualifier</HELP>
+                    </FIELDDEF>
+                    <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n104" maxLength="80" minLength="2" name="N104" persistent="Y" position="4" present="Y" print="Y" referenceNum="67" segmentTag="N1" sourceFilter="No Filter" subPos="0" templatable="Y">
+                      <HELP>Identification Code</HELP>
+                    </FIELDDEF>
+                    <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n105" maxLength="2" minLength="1" name="N105" persistent="Y" position="5" present="Y" print="Y" referenceNum="706" segmentTag="N1" sourceFilter="No Filter" subPos="0" templatable="Y">
+                      <HELP>Entity Relationship Code</HELP>
+                    </FIELDDEF>
+                    <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="n106" maxLength="3" minLength="2" name="N106" persistent="Y" position="6" present="Y" print="Y" referenceNum="98" segmentTag="N1" sourceFilter="No Filter" subPos="0" templatable="Y">
+                      <HELP>Entity Identifier Code</HELP>
+                    </FIELDDEF>
+                  </GROUPDEF>
+                  <GROUPDEF display="Y" enable="Y" exclude="N" javaName="lMLoop3_Group" max="10" min="0" name="LMLoop3_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                    <GROUPDEF display="Y" enable="Y" exclude="N" javaName="lMLoop3_GroupRep" max="1" min="1" name="LMLoop3_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                      <GROUPDEF display="Y" enable="Y" exclude="N" javaName="lM_3_Group" max="1" min="1" name="LM_3_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="lM01" mandatory="Y" maxLength="2" minLength="1" name="LM01" persistent="Y" position="1" present="Y" print="Y" referenceNum="559" segmentTag="LM" sourceFilter="No Filter" subPos="0" templatable="Y">
+                          <HELP>Agency Qualifier Code</HELP>
+                        </FIELDDEF>
+                        <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="lM02" maxLength="15" minLength="1" name="LM02" persistent="Y" position="2" present="Y" print="Y" referenceNum="822" segmentTag="LM" sourceFilter="No Filter" subPos="0" templatable="Y">
+                          <HELP>Source Subqualifier</HELP>
+                        </FIELDDEF>
+                      </GROUPDEF>
+                      <GROUPDEF display="Y" enable="Y" exclude="N" javaName="lQ_3_Group" max="100" min="1" name="LQ_3_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                        <GROUPDEF display="Y" enable="Y" exclude="N" javaName="lQ_3_GroupRep" max="1" min="1" name="LQ_3_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="lQ01" maxLength="3" minLength="1" name="LQ01" persistent="Y" position="1" present="Y" print="Y" referenceNum="1270" segmentTag="LQ" sourceFilter="No Filter" subPos="0" templatable="Y">
+                            <HELP>Code List Qualifier Code</HELP>
+                          </FIELDDEF>
+                          <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="lQ02" maxLength="30" minLength="1" name="LQ02" persistent="Y" position="2" present="Y" print="Y" referenceNum="1271" segmentTag="LQ" sourceFilter="No Filter" subPos="0" templatable="Y">
+                            <HELP>Industry Code</HELP>
+                          </FIELDDEF>
+                        </GROUPDEF>
+                      </GROUPDEF>
+                    </GROUPDEF>
+                  </GROUPDEF>
+                </GROUPDEF>
+              </GROUPDEF>
+              <GROUPDEF display="Y" enable="Y" exclude="N" javaName="lE_Group" max="1" min="1" name="LE_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="lE01" mandatory="Y" maxLength="6" minLength="1" name="LE01" persistent="Y" position="1" present="Y" print="Y" referenceNum="447" segmentTag="LE" sourceFilter="No Filter" subPos="0" templatable="Y">
+                  <HELP>Loop Identifier Code</HELP>
+                </FIELDDEF>
+              </GROUPDEF>
+            </GROUPDEF>
+            <GROUPDEF display="Y" enable="Y" exclude="N" javaName="fA1Loop1_Group" max="9999999" min="0" name="FA1Loop1_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+              <GROUPDEF display="Y" enable="Y" exclude="N" javaName="fA1Loop1_GroupRep" max="1" min="1" name="FA1Loop1_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                <GROUPDEF display="Y" enable="Y" exclude="N" javaName="fA1_Group" max="1" min="1" name="FA1_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                  <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="fA101" mandatory="Y" maxLength="2" minLength="1" name="FA101" persistent="Y" position="1" present="Y" print="Y" referenceNum="559" segmentTag="FA1" sourceFilter="No Filter" subPos="0" templatable="Y">
+                    <HELP>Agency Qualifier Code</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="fA102" maxLength="4" minLength="1" name="FA102" persistent="Y" position="2" present="Y" print="Y" referenceNum="1300" segmentTag="FA1" sourceFilter="No Filter" subPos="0" templatable="Y">
+                    <HELP>Service, Promotion, Allowance, or Charge Code</HELP>
+                  </FIELDDEF>
+                  <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="fA103" maxLength="1" minLength="1" name="FA103" persistent="Y" position="3" present="Y" print="Y" referenceNum="248" segmentTag="FA1" sourceFilter="No Filter" subPos="0" templatable="Y">
+                    <HELP>Allowance or Charge Indicator</HELP>
+                  </FIELDDEF>
+                </GROUPDEF>
+                <GROUPDEF display="Y" enable="Y" exclude="N" javaName="fA2_Group" max="9999999" min="1" name="FA2_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                  <GROUPDEF display="Y" enable="Y" exclude="N" javaName="fA2_GroupRep" max="1" min="1" name="FA2_GroupRep" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+                    <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="fA201" mandatory="Y" maxLength="2" minLength="1" name="FA201" persistent="Y" position="1" present="Y" print="Y" referenceNum="1196" segmentTag="FA2" sourceFilter="No Filter" subPos="0" templatable="Y">
+                      <HELP>Breakdown Structure Detail Code</HELP>
+                    </FIELDDEF>
+                    <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="fA202" mandatory="Y" maxLength="80" minLength="1" name="FA202" persistent="Y" position="2" present="Y" print="Y" referenceNum="1195" segmentTag="FA2" sourceFilter="No Filter" subPos="0" templatable="Y">
+                      <HELP>Financial Information Code</HELP>
+                    </FIELDDEF>
+                  </GROUPDEF>
+                </GROUPDEF>
+              </GROUPDEF>
+            </GROUPDEF>
+          </GROUPDEF>
+        </GROUPDEF>
+      </GROUPDEF>
+    </GROUPDEF>
+    <GROUPDEF display="Y" enable="Y" exclude="N" javaName="w03_Group" max="1" min="0" name="W03_Group" persistent="Y" present="Y" print="Y" sourceFilter="No Filter" templatable="Y">
+      <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="w0301" mandatory="Y" maxLength="10" minLength="1" name="W0301" persistent="Y" position="1" present="Y" print="Y" referenceNum="382" segmentTag="W03" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Number of Units Shipped</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="w0302" maxLength="10" minLength="1" name="W0302" persistent="Y" position="2" present="Y" print="Y" referenceNum="81" segmentTag="W03" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Weight</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w0303" maxLength="2" minLength="1" name="W0303" persistent="Y" position="3" present="Y" print="Y" referenceNum="355" segmentTag="W03" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Unit or Basis for Measurement Code</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JDouble" display="Y" enable="Y" exclude="N" javaName="w0304" maxLength="8" minLength="1" name="W0304" persistent="Y" position="4" present="Y" print="Y" referenceNum="183" segmentTag="W03" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Volume</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w0305" maxLength="2" minLength="1" name="W0305" persistent="Y" position="5" present="Y" print="Y" referenceNum="355" segmentTag="W03" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Unit or Basis for Measurement Code</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JInteger" display="Y" enable="Y" exclude="N" javaName="w0306" maxLength="7" minLength="1" name="W0306" persistent="Y" position="6" present="Y" print="Y" referenceNum="80" segmentTag="W03" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Lading Quantity</HELP>
+      </FIELDDEF>
+      <FIELDDEF dataType="JString" display="Y" enable="Y" exclude="N" javaName="w0307" maxLength="2" minLength="1" name="W0307" persistent="Y" position="7" present="Y" print="Y" referenceNum="355" segmentTag="W03" sourceFilter="No Filter" subPos="0" templatable="Y">
+        <HELP>Unit or Basis for Measurement Code</HELP>
+      </FIELDDEF>
+    </GROUPDEF>
+  </DOCUMENTDEF>
+</SPSFILE>

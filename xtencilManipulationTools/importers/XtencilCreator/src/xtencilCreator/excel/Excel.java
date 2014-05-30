@@ -254,6 +254,11 @@ public class Excel {
         		parsedRow.setDefaultProperties(newGroupRep);
         		if (rename == null){
         			rename = attributes.get("name");
+                    char c[] = rename.toCharArray();
+                    c[0] = Character.toLowerCase(c[0]);
+                    rename = new String(c);
+                    //remove whitespace and non-alpha characters from java name
+                    rename = rename.trim().replaceAll("[^A-Za-z0-9]","");
         		}
         		xmlDocument.addProperties(newGroupRep, "name", attributes.get("name") + "Rep");
         		xmlDocument.addProperties(newGroupRep, "javaName", rename + "Rep");

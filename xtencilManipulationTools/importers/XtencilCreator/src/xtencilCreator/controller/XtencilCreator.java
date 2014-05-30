@@ -14,6 +14,7 @@ public class XtencilCreator implements XtencilFileCreator{
 
 
 	public static void main(String[] args) {
+        //buildXTL("\\Users\\mmerth\\Desktop\\test1_DesignDocTemplate.xlsx");
 		ImporterUtilities utils = new ImporterUtilities();
 
 		// Install plugin
@@ -30,7 +31,7 @@ public class XtencilCreator implements XtencilFileCreator{
 		return buildXTL(s);
 	}
 	
-	private File buildXTL(String fileName){
+	private static File buildXTL(String fileName){
 		currentFile = new File(fileName);
 	
 		//Get spreadsheet

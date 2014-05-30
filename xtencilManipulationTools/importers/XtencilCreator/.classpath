@@ -15,7 +15,7 @@
 	<classpathentry kind="lib" path="lib/poi-3.9/xmlbeans-qname.jar"/>
 	<classpathentry kind="lib" path="lib/poi-3.9/xmlpublic.jar"/>
 	<classpathentry kind="lib" path="lib/dom4j-1.6.1/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/amcclintock/workspace/Jars/xd.jar"/>
-	<classpathentry kind="lib" path="C:/Users/amcclintock/workspace/Jars/commons-io-2.4/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="lib/xd.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.4/commons-io-2.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

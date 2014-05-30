@@ -73,7 +73,7 @@ public class RowInfo {
 	
 	public String makeJavaName(String original){
 		original = Character.toLowerCase(original.charAt(0)) + (original.length() > 1 ? original.substring(1) : "");
-		original = original.trim().replaceAll("\\s", "");
+		original = original.trim().replaceAll("[\\W\\s]", "");
 		if (original.matches("abstract|assert|boolean|break|byte|case|catch|char|class|const|continue|default|double|do|else|enum|extends|false|final|finally|float|for|goto|if|implements|import|instanceof|int|interface|long|native|new|null|package|private|protected|public|return|short|static|strictfp|super|switch|synchronized|this|throw|throws|transient|true|try|void|volatile|while|^\\d.*")){
 			original = "j_" + original;
 		}

@@ -1,0 +1,559 @@
+                                                                                          Report Date:    12-SEP-2013 15:26
+                                           Transaction Layout Definition Report                  Page:            1 / 54
+
+      Transaction: DSNO                                               Description: OUT: Outbound Shipment Notice/Manifest
+            Level: 1:Delivery                                     Interface Table: Transaction
+                                                                  Extension Table: WSH_DSNO_DELIVERIES_V
+                                                                                   WSH_DSNO_DELIVERIES_V_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ COMMUNICATION_METHOD                                        10      10        2  VARCHAR2          101        CT     CTL
+ TP_TEST_FLAG                                                10      20        1  VARCHAR2          103        CT     CTL
+ TRANSACTION_TYPE                                            10      30        6  VARCHAR2          104        CT     CTL
+ TP_DOCUMENT_TYPE                                            10      40        5  VARCHAR2          110        CT     CTL
+ DOCUMENT_PURPOSE_CODE                                       10      50        2  VARCHAR2          115        CT     CTL
+ DOCUMENT_CODE                                               10      60       35  VARCHAR2          117        CT     CTL
+ TP_TRANSLATOR_CODE                                          10      70       30  VARCHAR2          152        CT     CTL
+ TP_LOCATION_CODE_EXT                                        10      80       35  VARCHAR2          182        CT     CTL
+ TP_DESCRIPTION                                              10      90       74  VARCHAR2          217        CT     CTL
+ TP_REFERENCE_EXT1                                           10     100       80  VARCHAR2          291        CT     CTL
+ TP_REFERENCE_EXT2                                           10     110       80  VARCHAR2          371        CT     CTL
+ TRANSACTION_DATE                                            10     120       15  DATE              451        CT     CTL
+ RUN_ID                                                      10     130       15  NUMBER            466        CT     CTL
+ ORGANIZATION_ID                                             10     140       22  NUMBER            481        CT     CTL
+ DOCUMENT_STANDARD                                           10     150       10  VARCHAR2          503        CT     CTL
+ TP_HEADER_CATEGORY                                          20      10       30  VARCHAR2          101        A1     TH1
+ TP_HEADER_ATTRIBUTE1                                        20      20       80  VARCHAR2          131        A1     TH1
+ TP_HEADER_ATTRIBUTE2                                        20      30       80  VARCHAR2          211        A1     TH1
+ TP_HEADER_ATTRIBUTE3                                        20      40       80  VARCHAR2          291        A1     TH1
+ TP_HEADER_ATTRIBUTE4                                        20      50       80  VARCHAR2          371        A1     TH1
+ TP_HEADER_ATTRIBUTE5                                        30      10       80  VARCHAR2          101        A2     TH2
+ TP_HEADER_ATTRIBUTE6                                        30      20       80  VARCHAR2          181        A2     TH2
+ TP_HEADER_ATTRIBUTE7                                        30      30       80  VARCHAR2          261        A2     TH2
+ TP_HEADER_ATTRIBUTE8                                        30      40       80  VARCHAR2          341        A2     TH2
+ TP_HEADER_ATTRIBUTE9                                        30      50       80  VARCHAR2          421        A2     TH2
+ TP_HEADER_ATTRIBUTE10                                       40      10       80  VARCHAR2          101        A2     TH3
+ TP_HEADER_ATTRIBUTE11                                       40      20       80  VARCHAR2          181        A2     TH3
+ TP_HEADER_ATTRIBUTE12                                       40      30       80  VARCHAR2          261        A2     TH3
+ TP_HEADER_ATTRIBUTE13                                       40      40       80  VARCHAR2          341        A2     TH3
+ TP_HEADER_ATTRIBUTE14                                       40      50       80  VARCHAR2          421        A2     TH3
+ TP_HEADER_ATTRIBUTE15                                       50      10       80  VARCHAR2          101        A2     TH4
+ TP_DETAIL_CATEGORY                                          60      10       30  VARCHAR2          101        A1     TD1
+ TP_DETAIL_ATTRIBUTE1                                        60      20       80  VARCHAR2          131        A1     TD1
+ TP_DETAIL_ATTRIBUTE2                                        60      30       80  VARCHAR2          211        A1     TD1
+ TP_DETAIL_ATTRIBUTE3                                        60      40       80  VARCHAR2          291        A1     TD1
+ TP_DETAIL_ATTRIBUTE4                                        60      50       80  VARCHAR2          371        A1     TD1
+ TP_DETAIL_ATTRIBUTE5                                        70      10       80  VARCHAR2          101        A2     TD2
+ TRIP_NAME                                                 1000      10       30  VARCHAR2          101        D1     DP1
+ DEPARTURE_DATE                                            1000      20       15  DATE              131        D1     DP1
+ DELIVERY_NAME                                             1000      30       30  VARCHAR2          146        D1     DP1
+ SHIPPER_NUMBER                                            1000      40       30  NUMBER            176        D1     DP1
+ WAYBILL_NUMBER                                            1000      50       30  VARCHAR2          206        D1     DP1
+                                                                                          Report Date:    12-SEP-2013 15:26
+                                           Transaction Layout Definition Report                  Page:            2 / 54
+
+      Transaction: DSNO                                               Description: OUT: Outbound Shipment Notice/Manifest
+            Level: 1:Delivery                                     Interface Table: Transaction
+                                                                  Extension Table: WSH_DSNO_DELIVERIES_V
+                                                                                   WSH_DSNO_DELIVERIES_V_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ BILL_OF_LADING                                            1000      60       30  VARCHAR2          236        D1     DP1
+ INVOICE_NUMBER                                            1000      70       30  NUMBER            266        D1     DP1
+ PACKING_SLIP_NUMBER                                       1000      80       30  VARCHAR2          296        D1     DP1
+ ACTUAL_SHIP_DATE                                          1000      90       15  DATE              326        D1     DP1
+ TIME_STAMP_DATE                                           1000     100       15  DATE              341        D1     DP1
+ TIME_STAMP_SEQUENCE_NUMBER                                1000     110       22  NUMBER            356        D1     DP1
+ EXPECTED_ARRIVAL_DATE                                     1000     120       15  DATE              378        D1     DP1
+ FREIGHT_TERMS_CODE_INT                                    1000     130       30  VARCHAR2          393     0  D1     DP1
+ FREIGHT_TERMS_CODE_EXT1                                   1000     140       30  VARCHAR2          423     1  D1     DP1
+ FREIGHT_TERMS_CODE_EXT2                                   1000     150       30  VARCHAR2          453     2  D1     DP1
+ TOTAL_LADING_QTY                                          1000     160       30  NUMBER            483        D1     DP1
+ FOB_POINT_CODE_INT                                        1000     170       30  VARCHAR2          513     0  D1     DP1
+ FOB_POINT_CODE_EXT1                                       1000     180       30  VARCHAR2          543     1  D1     DP1
+ FOB_POINT_CODE_EXT2                                       1000     190       30  VARCHAR2          573     2  D1     DP1
+ FOB_LOCATION_CODE_INT                                     1000     200       30  VARCHAR2          603     0  D1     DP1
+ FOB_LOCATION_CODE_EXT1                                    1000     210       30  VARCHAR2          633     1  D1     DP1
+ FOB_LOCATION_CODE_EXT2                                    1000     220        5  VARCHAR2          663     2  D1     DP1
+ EQUIPMENT_PREFIX                                          1010      10       10  VARCHAR2          101        D2     DP2
+ EQUIPMENT_NUMBER                                          1010      20       30  VARCHAR2          111        D2     DP2
+ EQUIPMENT_SEAL                                            1010      30       15  VARCHAR2          141        D2     DP2
+ SHIP_METHOD_CODE_INT                                      1010      40       30  VARCHAR2          156     0  D2     DP2
+ SHIP_METHOD_CODE_EXT1                                     1010      50       20  VARCHAR2          186     1  D2     DP2
+ SHIP_METHOD_CODE_EXT2                                     1010      60       20  VARCHAR2          206     2  D2     DP2
+ SHIP_METHOD_CODE_EXT3                                     1010      70       20  VARCHAR2          226     3  D2     DP2
+ SHIP_METHOD_CODE_EXT4                                     1010      80       20  VARCHAR2          246     4  D2     DP2
+ EQUIPMENT_TYPE_CODE_INT                                   1010      90       30  VARCHAR2          266     0  D2     DP2
+ EQUIPMENT_TYPE_CODE_EXT1                                  1010     100       30  VARCHAR2          296     1  D2     DP2
+ EQUIPMENT_TYPE_CODE_EXT2                                  1010     110       30  VARCHAR2          326     2  D2     DP2
+ DEPARTURE_GROSS_WEIGHT                                    1015      10       22  NUMBER            101        D3     DP3
+ DEPARTURE_GROSS_WEIGHT_UOM_INT                            1015      20        5  VARCHAR2          123     0  D3     DP3
+ DEPARTURE_GROSS_WEIGHT_UOM_EXT1                           1015      30        5  VARCHAR2          128     1  D3     DP3
+ DEPARTURE_NET_WEIGHT                                      1015      40       22  NUMBER            133        D3     DP3
+ DEPARTURE_NET_WEIGHT_UOM_INT                              1015      50        5  VARCHAR2          155     0  D3     DP3
+ DEPARTURE_NET_WEIGHT_UOM_EXT1                             1015      60        5  VARCHAR2          160     1  D3     DP3
+ DEPARTURE_TARE_WEIGHT                                     1015      70       22  NUMBER            165        D3     DP3
+ DEPARTURE_TARE_WEIGHT_UOM_INT                             1015      80        5  VARCHAR2          187     0  D3     DP3
+ DEPARTURE_TARE_WEIGHT_UOM_EXT1                            1015      90        5  VARCHAR2          192     1  D3     DP3
+ DEPARTURE_VOLUME                                          1015     100       22  NUMBER            197        D3     DP3
+ DEPARTURE_VOLUME_UOM_INT                                  1015     110        5  VARCHAR2          219     0  D3     DP3
+ DEPARTURE_VOLUME_UOM_EXT1                                 1015     120        5  VARCHAR2          224     1  D3     DP3
+ DELIVERY_GROSS_WEIGHT                                     1015     130       22  NUMBER            229        D3     DP3
+ DELIVERY_GROSS_WEIGHT_UOM_INT                             1015     140        5  VARCHAR2          251     0  D3     DP3
+                                                                                          Report Date:    12-SEP-2013 15:26
+                                           Transaction Layout Definition Report                  Page:            3 / 54
+
+      Transaction: DSNO                                               Description: OUT: Outbound Shipment Notice/Manifest
+            Level: 1:Delivery                                     Interface Table: Transaction
+                                                                  Extension Table: WSH_DSNO_DELIVERIES_V
+                                                                                   WSH_DSNO_DELIVERIES_V_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ DELIVERY_GROSS_WEIGHT_UOM_EXT1                            1015     150        5  VARCHAR2          256     1  D3     DP3
+ DELIVERY_VOLUME                                           1015     160       22  NUMBER            261        D3     DP3
+ DELIVERY_VOLUME_UOM_INT                                   1015     170        5  VARCHAR2          283     0  D3     DP3
+ DELIVERY_VOLUME_UOM_EXT1                                  1015     180        5  VARCHAR2          288     1  D3     DP3
+ DELIVERY_NET_WEIGHT                                       1015     190       22  NUMBER            293        D3     DP3
+ DELIVERY_NET_WEIGHT_UOM_INT                               1015     200        5  VARCHAR2          315     0  D3     DP3
+ DELIVERY_NET_WEIGHT_UOM_EXT1                              1015     210        5  VARCHAR2          320     1  D3     Dp3
+ DELIVERY_TARE_WEIGHT                                      1015     220       22  NUMBER            325        D3     DP3
+ DELIVERY_TARE_WEIGHT_UOM_INT                              1015     230        5  VARCHAR2          347     0  D3     DP3
+ DELIVERY_TARE_WEIGHT_UOM_EXT1                             1015     240        5  VARCHAR2          352     1  D3     DP3
+ ROUTING_INSTRUCTIONS1                                     1030      10      400  VARCHAR2          101        RT     IN1
+ ROUTING_INSTRUCTIONS2                                     1030      20      400  VARCHAR2          501        RT     IN1
+ ROUTING_INSTRUCTIONS3                                     1032      10      400  VARCHAR2          101        RT     IN1
+ ROUTING_INSTRUCTIONS4                                     1032      20      400  VARCHAR2          501        RT     IN1
+ ROUTING_INSTRUCTIONS5                                     1034      10      400  VARCHAR2          101        RT     IN1
+ WAREHOUSE_CODE_INT                                        2000      10       20  VARCHAR2          101        AX     SF
+ WAREHOUSE_EDI_LOC_CODE                                    2000      20       35  VARCHAR2          121     0  AX     SF
+ WAREHOUSE_NAME                                            2000      30       60  VARCHAR2          156        AX     SF
+ WAREHOUSE_ADDRESS1                                        2000      40       35  VARCHAR2          216        AX     SF
+ WAREHOUSE_ADDRESS2                                        2000      50       35  VARCHAR2          251        AX     SF
+ WAREHOUSE_ADDRESS3                                        2000      60       35  VARCHAR2          286        AX     SF
+ WAREHOUSE_CITY                                            2000      70       30  VARCHAR2          321        AX     SF
+ WAREHOUSE_POSTAL_CODE                                     2000      80       15  VARCHAR2          351        AX     SF
+ WAREHOUSE_COUNTRY_INT                                     2000      90       20  VARCHAR2          366     0  AX     SF
+ WAREHOUSE_COUNTRY_EXT1                                    2000     100        3  VARCHAR2          386     1  AX     SF
+ WAREHOUSE_REGION1_INT                                     2000     110       25  VARCHAR2          389     0  AX     SF
+ WAREHOUSE_REGION1_EXT1                                    2000     120       10  VARCHAR2          414     1  AX     SF
+ WAREHOUSE_REGION2_INT                                     2000     130       25  VARCHAR2          424     0  AX     SF
+ WAREHOUSE_REGION2_EXT1                                    2000     140       10  VARCHAR2          449     1  AX     SF
+ WAREHOUSE_REGION3_INT                                     2000     150       25  VARCHAR2          459     0  AX     SF
+ WAREHOUSE_REGION3_EXT1                                    2000     160       10  VARCHAR2          484     1  AX     SF
+ WAREHOUSE_LOCATION_ID                                     2000     170       20  NUMBER            494        AX     SF
+ WAREHOUSE_EDI_LOC_CODE_EXT1                               2000     180       35  VARCHAR2          514     1  AX     SF
+ WAREHOUSE_EDI_LOC_CODE_EXT2                               2000     190        4  VARCHAR2          549     2  AX     SF
+ WAREHOUSE_TELEPHONE_1                                     2010      10       80  VARCHAR2          101        CM     SF
+ WAREHOUSE_TELEPHONE_2                                     2010      20       80  VARCHAR2          181        CM     SF
+ WAREHOUSE_TELEPHONE_3                                     2010      30       80  VARCHAR2          261        CM     SF
+ POOLED_CODE_INT                                           2100      10       60  VARCHAR2          101        AD     IC
+ POOLED_EDI_LOC_CODE                                       2100      20       35  VARCHAR2          161     0  AD     IC
+ POOLED_NAME                                               2100      30       60  VARCHAR2          196        AD     IC
+ POOLED_ADDRESS1                                           2100      40       35  VARCHAR2          256        AD     IC
+ POOLED_ADDRESS2                                           2100      50       35  VARCHAR2          291        AD     IC
+                                                                                          Report Date:    12-SEP-2013 15:26
+                                           Transaction Layout Definition Report                  Page:            4 / 54
+
+      Transaction: DSNO                                               Description: OUT: Outbound Shipment Notice/Manifest
+            Level: 1:Delivery                                     Interface Table: Transaction
+                                                                  Extension Table: WSH_DSNO_DELIVERIES_V
+                                                                                   WSH_DSNO_DELIVERIES_V_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ POOLED_ADDRESS3                                           2100      60       35  VARCHAR2          326        AD     IC
+ POOLED_ADDRESS4                                           2100      70       35  VARCHAR2          361        AD     IC
+ POOLED_CITY                                               2100      80       30  VARCHAR2          396        AD     IC
+ POOLED_POSTAL_CODE                                        2100      90       15  VARCHAR2          426        AD     IC
+ POOLED_COUNTRY_INT                                        2100     100       20  VARCHAR2          441     0  AD     IC
+ POOLED_COUNTRY_EXT1                                       2100     110        3  VARCHAR2          461     1  AD     IC
+ POOLED_STATE_INT                                          2100     120       20  VARCHAR2          464     0  AD     IC
+ POOLED_STATE_EXT1                                         2100     130       10  VARCHAR2          484     1  AD     IC
+ POOLED_PROVINCE_INT                                       2100     140       20  VARCHAR2          494     0  AD     IC
+ POOLED_PROVINCE_EXT1                                      2100     150       10  VARCHAR2          514     1  AD     IC
+ POOLED_COUNTY                                             2100     160       25  VARCHAR2          524        AD     IC
+ POOLED_ADDRESS_ID                                         2100     170       20  NUMBER            549        AD     IC
+ POOLED_EDI_LOC_CODE_EXT1                                  2100     180       35  VARCHAR2          569     1  AD     IC
+ POOLED_EDI_LOC_CODE_EXT2                                  2100     190        4  VARCHAR2          604     2  AD     IC
+ POOLED_AREA_CODE                                          2110      10       10  VARCHAR2          101        CN     IC
+ POOLED_TELEPHONE                                          2110      20       60  VARCHAR2          111        CN     IC
+ CONSIGNEE_CODE_INT                                        2200      10       60  VARCHAR2          101        AD     CSG
+ CONSIGNEE_EDI_LOC_CODE                                    2200      20       35  VARCHAR2          161     0  AD     CSG
+ CONSIGNEE_NAME                                            2200      30       60  VARCHAR2          196        AD     CSG
+ CONSIGNEE_ADDRESS1                                        2200      40       35  VARCHAR2          256        AD     CSG
+ CONSIGNEE_ADDRESS2                                        2200      50       35  VARCHAR2          291        AD     CSG
+ CONSIGNEE_ADDRESS3                                        2200      60       35  VARCHAR2          326        AD     CSG
+ CONSIGNEE_ADDRESS4                                        2200      70       35  VARCHAR2          361        AD     CSG
+ CONSIGNEE_CITY                                            2200      80       30  VARCHAR2          396        AD     CSG
+ CONSIGNEE_POSTAL_CODE                                     2200      90       15  VARCHAR2          426        AD     CSG
+ CONSIGNEE_COUNTRY_INT                                     2200     100       20  VARCHAR2          441     0  AD     CSG
+ CONSIGNEE_COUNTRY_EXT1                                    2200     110        3  VARCHAR2          461     1  AD     CSG
+ CONSIGNEE_STATE_INT                                       2200     120       20  VARCHAR2          464     0  AD     CSG
+ CONSIGNEE_STATE_EXT1                                      2200     130       10  VARCHAR2          484     1  AD     CSG
+ CONSIGNEE_PROVINCE_INT                                    2200     140       20  VARCHAR2          494     0  AD     CSG
+ CONSIGNEE_PROVINCE_EXT1                                   2200     150       10  VARCHAR2          514     1  AD     CSG
+ CONSIGNEE_COUNTY                                          2200     160       25  VARCHAR2          524        AD     CSG
+ CONSIGNEE_ADDRESS_ID                                      2200     170       20  NUMBER            549        AD     CSG
+ CONSIGNEE_EDI_LOC_CODE_EXT1                               2200     180       35  VARCHAR2          569     1  AD     CSG
+ CONSIGNEE_EDI_LOC_CODE_EXT2                               2200     190        4  VARCHAR2          604     2  AD     CSG
+ CONSIGNEE_AREA_CODE                                       2210      10       10  VARCHAR2          101        CN     CSG
+ CONSIGNEE_TELEPHONE                                       2210      20       60  VARCHAR2          111        CN     CSG
+ DELIVERY_CODE_INT                                         2300      10       60  VARCHAR2          101        AD     DEL
+ DELIVERY_EDI_LOC_CODE                                     2300      20       35  VARCHAR2          161     0  AD     DEL
+ DELIVERY_CUST_NAME                                        2300      30       60  VARCHAR2          196        AD     DEL
+ DELIVERY_ADDRESS1                                         2300      40       35  VARCHAR2          256        AD     DEL
+ DELIVERY_ADDRESS2                                         2300      50       35  VARCHAR2          291        AD     DEL
+                                                                                          Report Date:    12-SEP-2013 15:26
+                                           Transaction Layout Definition Report                  Page:            5 / 54
+
+      Transaction: DSNO                                               Description: OUT: Outbound Shipment Notice/Manifest
+            Level: 1:Delivery                                     Interface Table: Transaction
+                                                                  Extension Table: WSH_DSNO_DELIVERIES_V
+                                                                                   WSH_DSNO_DELIVERIES_V_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ DELIVERY_ADDRESS3                                         2300      60       35  VARCHAR2          326        AD     DEL
+ DELIVERY_ADDRESS4                                         2300      70       35  VARCHAR2          361        AD     DEL
+ DELIVERY_CITY                                             2300      80       30  VARCHAR2          396        AD     DEL
+ DELIVERY_POSTAL_CODE                                      2300      90       15  VARCHAR2          426        AD     DEL
+ DELIVERY_COUNTRY_INT                                      2300     100       20  VARCHAR2          441     0  AD     DEL
+ DELIVERY_COUNTRY_EXT1                                     2300     110        3  VARCHAR2          461     1  AD     DEL
+ DELIVERY_STATE_INT                                        2300     120       20  VARCHAR2          464     0  AD     DEL
+ DELIVERY_STATE_EXT1                                       2300     130       10  VARCHAR2          484     1  AD     DEL
+ DELIVERY_PROVINCE_INT                                     2300     140       20  VARCHAR2          494     0  AD     DEL
+ DELIVERY_PROVINCE_EXT1                                    2300     150       10  VARCHAR2          514     1  AD     DEL
+ DELIVERY_COUNTY                                           2300     160       25  VARCHAR2          524        AD     DEL
+ DELIVERY_ADDRESS_ID                                       2300     170       20  NUMBER            549        AD     DEL
+ DELIVERY_EDI_LOC_CODE_EXT1                                2300     180       35  VARCHAR2          569     1  AD     DEL
+ DELIVERY_EDI_LOC_CODE_EXT2                                2300     190        4  VARCHAR2          604     2  AD     DEL
+ DELIVERY_AREA_CODE                                        2310      10       10  VARCHAR2          101        CN     DEL
+ DELIVERY_TELEPHONE                                        2310      20       60  VARCHAR2          111        CN     DEL
+ DESTINATION_CODE_INT                                      2400      10       60  VARCHAR2          101        AD     ST
+ DESTINATION_EDI_LOC_CODE                                  2400      20       35  VARCHAR2          161     0  AD     ST
+ DESTINATION_NAME                                          2400      30       60  VARCHAR2          196        AD     ST
+ DESTINATION_ADDRESS1                                      2400      40       35  VARCHAR2          256        AD     ST
+ DESTINATION_ADDRESS2                                      2400      50       35  VARCHAR2          291        AD     ST
+ DESTINATION_ADDRESS3                                      2400      60       35  VARCHAR2          326        AD     ST
+ DESTINATION_ADDRESS4                                      2400      70       35  VARCHAR2          361        AD     ST
+ DESTINATION_CITY                                          2400      80       30  VARCHAR2          396        AD     ST
+ DESTINATION_POSTAL_CODE                                   2400      90       15  VARCHAR2          426        AD     ST
+ DESTINATION_COUNTRY_INT                                   2400     100       20  VARCHAR2          441     0  AD     ST
+ DESTINATION_COUNTRY_EXT1                                  2400     110        3  VARCHAR2          461     1  AD     ST
+ DESTINATION_STATE_INT                                     2400     120       20  VARCHAR2          464     0  AD     ST
+ DESTINATION_STATE_EXT1                                    2400     130       10  VARCHAR2          484     1  AD     ST
+ DESTINATION_PROVINCE_INT                                  2400     140       20  VARCHAR2          494     0  AD     ST
+ DESTINATION_PROVINCE_EXT1                                 2400     150       10  VARCHAR2          514     1  AD     ST
+ DESTINATION_COUNTY                                        2400     160       25  VARCHAR2          524        AD     ST
+ DESTINATION_CUSTOMER_ID                                   2400     170       20  NUMBER            549        AD     ST
+ DESTINATION_ADDRESS_ID                                    2400     180       20  NUMBER            569        AD     ST
+ DESTINATION_EDI_LOC_CODE_EXT1                             2400     190       35  VARCHAR2          589     1  AD     ST
+ DESTINATION_EDI_LOC_CODE_EXT2                             2400     200        4  VARCHAR2          624     2  AD     ST
+ DESTINATION_CONTACT_LAST_NAME                             2410      10       35  VARCHAR2          101        CN     ST
+ DESTINATION_CONTACT_FIRST_NAME                            2410      20       35  VARCHAR2          136        CN     ST
+ DESTINATION_CONTACT_JOB_TITLE                             2410      30       40  VARCHAR2          171        CN     ST
+ DESTINATION_AREA_CODE                                     2410      40       10  VARCHAR2          211        CN     ST
+ DESTINATION_TELEPHONE                                     2410      50       60  VARCHAR2          221        CN     ST
+ POOLED_PROVINCE_EXT4                                                             VARCHAR2                  4  AD     IC
+                                                                                          Report Date:    12-SEP-2013 15:26
+                                           Transaction Layout Definition Report                  Page:            6 / 54
+
+      Transaction: DSNO                                               Description: OUT: Outbound Shipment Notice/Manifest
+            Level: 1:Delivery                                     Interface Table: Transaction
+                                                                  Extension Table: WSH_DSNO_DELIVERIES_V
+                                                                                   WSH_DSNO_DELIVERIES_V_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ POOLED_PROVINCE_EXT5                                                             VARCHAR2                  5  AD     IC
+ POOLED_TP_REF_1                                                                  VARCHAR2                     AD     IC
+ POOLED_TP_REF_2                                                                  VARCHAR2                     AD     IC
+ INTMED_SHIP_TO_LOCATION_ID                                                       NUMBER                       AD     CSG
+ DELIVERY_COUNTRY_EXT2                                                            VARCHAR2                  2  AD     DEL
+ DELIVERY_COUNTRY_EXT3                                                            VARCHAR2                  3  AD     DEL
+ DELIVERY_COUNTRY_EXT4                                                            VARCHAR2                  4  AD     DEL
+ DELIVERY_COUNTRY_EXT5                                                            VARCHAR2                  5  AD     DEL
+ DEPARTURE_NET_WEIGHT_UOM_EXT2                                                    VARCHAR2                  2  D3     DP3
+ DEPARTURE_NET_WEIGHT_UOM_EXT3                                                    VARCHAR2                  3  D3     DP3
+ DEPARTURE_NET_WEIGHT_UOM_EXT4                                                    VARCHAR2                  4  D3     DP3
+ DEPARTURE_NET_WEIGHT_UOM_EXT5                                                    VARCHAR2                  5  D3     DP3
+ DEPARTURE_TARE_WEIGHT_UOM_EXT2                                                   VARCHAR2                  2  D3     DP3
+ DEPARTURE_TARE_WEIGHT_UOM_EXT3                                                   VARCHAR2                  3  D3     DP3
+ DEPARTURE_TARE_WEIGHT_UOM_EXT4                                                   VARCHAR2                  4  D3     DP3
+ DEPARTURE_TARE_WEIGHT_UOM_EXT5                                                   VARCHAR2                  5  D3     DP3
+ DEPARTURE_VOLUME_UOM_EXT2                                                        VARCHAR2                  2  D3     DP3
+ DEPARTURE_VOLUME_UOM_EXT3                                                        VARCHAR2                  3  D3     DP3
+ DEPARTURE_VOLUME_UOM_EXT4                                                        VARCHAR2                  4  D3     DP3
+ DEPARTURE_VOLUME_UOM_EXT5                                                        VARCHAR2                  5  D3     DP3
+ DELIVERY_GROSS_WEIGHT_UOM_EXT2                                                   VARCHAR2                  2  D3     DP3
+ DELIVERY_GROSS_WEIGHT_UOM_EXT3                                                   VARCHAR2                  3  D3     DP3
+ DELIVERY_GROSS_WEIGHT_UOM_EXT4                                                   VARCHAR2                  4  D3     DP3
+ DELIVERY_GROSS_WEIGHT_UOM_EXT5                                                   VARCHAR2                  5  D3     DP3
+ DELIVERY_VOLUME_UOM_EXT2                                                         VARCHAR2                  2  D3     DP3
+ DELIVERY_VOLUME_UOM_EXT3                                                         VARCHAR2                  3  D3     DP3
+ DELIVERY_VOLUME_UOM_EXT4                                                         VARCHAR2                  4  D3     DP3
+ DELIVERY_VOLUME_UOM_EXT5                                                         VARCHAR2                  5  D3     DP3
+ CONSIGNEE_EDI_LOC_CODE_EXT3                                                      VARCHAR2                  3  AD     CSG
+ CONSIGNEE_EDI_LOC_CODE_EXT4                                                      VARCHAR2                  4  AD     CSG
+ CONSIGNEE_EDI_LOC_CODE_EXT5                                                      VARCHAR2                  5  AD     CSG
+ CONSIGNEE_COUNTRY_EXT2                                                           VARCHAR2                  2  AD     CSG
+ CONSIGNEE_COUNTRY_EXT3                                                           VARCHAR2                  3  AD     CSG
+ CONSIGNEE_COUNTRY_EXT4                                                           VARCHAR2                  4  AD     CSG
+ CONSIGNEE_COUNTRY_EXT5                                                           VARCHAR2                  5  AD     CSG
+ CONSIGNEE_STATE_EXT2                                                             VARCHAR2                  2  AD     CSG
+ CONSIGNEE_STATE_EXT3                                                             VARCHAR2                  3  AD     CSG
+ CONSIGNEE_STATE_EXT4                                                             VARCHAR2                  4  AD     CSG
+ CONSIGNEE_STATE_EXT5                                                             VARCHAR2                  5  AD     CSG
+ CONSIGNEE_PROVINCE_EXT2                                                          VARCHAR2                  2  AD     CSG
+ CONSIGNEE_PROVINCE_EXT3                                                          VARCHAR2                  3  AD     CSG
+ CONSIGNEE_PROVINCE_EXT4                                                          VARCHAR2                  4  AD     CSG
+                                                                                          Report Date:    12-SEP-2013 15:26
+                                           Transaction Layout Definition Report                  Page:            7 / 54
+
+      Transaction: DSNO                                               Description: OUT: Outbound Shipment Notice/Manifest
+            Level: 1:Delivery                                     Interface Table: Transaction
+                                                                  Extension Table: WSH_DSNO_DELIVERIES_V
+                                                                                   WSH_DSNO_DELIVERIES_V_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ CONSIGNEE_PROVINCE_EXT5                                                          VARCHAR2                  5  AD     CSG
+ CONSIGNEE_TP_REF_1                                                               VARCHAR2                     AD     CSG
+ CONSIGNEE_TP_REF_2                                                               VARCHAR2                     AD     CSG
+ DELIVERY_EDI_LOC_CODE_EXT3                                                       VARCHAR2                  3  AD     DEL
+ DELIVERY_EDI_LOC_CODE_EXT4                                                       VARCHAR2                  4  AD     DEL
+ DELIVERY_EDI_LOC_CODE_EXT5                                                       VARCHAR2                  5  AD     DEL
+ DSNO_LEV01_EXT14                                                                 VARCHAR2
+ DSNO_LEV01_EXT15                                                                 VARCHAR2
+ DELIVERY_STATE_EXT2                                                              VARCHAR2                  2  AD     DEL
+ DELIVERY_STATE_EXT3                                                              VARCHAR2                  3  AD     DEL
+ DELIVERY_STATE_EXT4                                                              VARCHAR2                  4  AD     DEL
+ DELIVERY_STATE_EXT5                                                              VARCHAR2                  5  AD     DEL
+ DELIVERY_PROVINCE_EXT2                                                           VARCHAR2                  2  AD     DEL
+ DELIVERY_PROVINCE_EXT3                                                           VARCHAR2                  3  AD     DEL
+ DELIVERY_PROVINCE_EXT4                                                           VARCHAR2                  4  AD     DEL
+ DELIVERY_PROVINCE_EXT5                                                           VARCHAR2                  5  AD     DEL
+ DELIVERY_TP_REF_1                                                                VARCHAR2                     AD     DEL
+ DELIVERY_TP_REF_2                                                                VARCHAR2                     AD     DEL
+ DESTINATION_EDI_LOC_CODE_EXT3                                                    VARCHAR2                  3  AD     ST
+ DESTINATION_EDI_LOC_CODE_EXT4                                                    VARCHAR2                  4  AD     ST
+ DESTINATION_EDI_LOC_CODE_EXT5                                                    VARCHAR2                  5  AD     ST
+ TP_DETAIL_ID                                                                     NUMBER
+ TP_EDI_FLAG                                                                      VARCHAR2
+ TP_PRINT_FLAG                                                                    VARCHAR2
+ TP_CONTACT_NAME                                                                  VARCHAR2
+ TP_CONTACT_JOB_TITLE                                                             VARCHAR2
+ TP_ADDRESS1                                                                      VARCHAR2
+ TP_ADDRESS2                                                                      VARCHAR2
+ TP_ADDRESS3                                                                      VARCHAR2
+ TP_ADDRESS4                                                                      VARCHAR2
+ TP_CITY                                                                          VARCHAR2
+ TP_STATE                                                                         VARCHAR2
+ TP_PROVINCE                                                                      VARCHAR2
+ TP_COUNTRY                                                                       VARCHAR2
+ TP_POSTAL_CODE                                                                   VARCHAR2
+ TP_PHONE                                                                         VARCHAR2
+ TP_FAX                                                                           VARCHAR2
+ TP_EMAIL                                                                         VARCHAR2
+ TP_HEADER_ID                                                                     NUMBER
+ TP_CODE                                                                          VARCHAR2
+ VEHICLE_ORGANIZATION_ID                                                          NUMBER
+ VEHICLE_ITEM_ID                                                                  NUMBER
+                                                                                          Report Date:    12-SEP-2013 15:26
+                                           Transaction Layout Definition Report                  Page:            8 / 54
+
+      Transaction: DSNO                                               Description: OUT: Outbound Shipment Notice/Manifest
+            Level: 1:Delivery                                     Interface Table: Transaction
+                                                                  Extension Table: WSH_DSNO_DELIVERIES_V
+                                                                                   WSH_DSNO_DELIVERIES_V_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ FREIGHT_TERMS_CODE_EXT3                                                          VARCHAR2                  3  D1     DP1
+ FREIGHT_TERMS_CODE_EXT4                                                          VARCHAR2                  4  D1     DP1
+ FREIGHT_TERMS_CODE_EXT5                                                          VARCHAR2                  5  D1     DP1
+ FOB_POINT_CODE_EXT3                                                              VARCHAR2                  3  D1     DP1
+ FOB_POINT_CODE_EXT4                                                              VARCHAR2                  4  D1     DP1
+ FOB_POINT_CODE_EXT5                                                              VARCHAR2                  5  D1     DP1
+ FOB_LOCATION_ID                                                                  NUMBER                       D1     DP1
+ FOB_LOCATION_CODE_EXT3                                                           VARCHAR2                  3  D1     DP1
+ FOB_LOCATION_CODE_EXT4                                                           VARCHAR2                  4  D1     DP1
+ FOB_LOCATION_CODE_EXT5                                                           VARCHAR2                  5  D1     DP1
+ SHIP_METHOD_CODE_EXT5                                                            VARCHAR2                  5  D2     DP2
+ WAREHOUSE_REGION3_EXT5                                                           VARCHAR2                  5  AX     SF
+ WAREHOUSE_TP_REF_1                                                               VARCHAR2                     AX     SF
+ WAREHOUSE_TP_REF_2                                                               VARCHAR2                     AX     SF
+ POOLED_SHIP_TO_LOCATION_ID                                                       NUMBER                       AD     IC
+ POOLED_EDI_LOC_CODE_EXT3                                                         VARCHAR2                  3  AD     IC
+ POOLED_EDI_LOC_CODE_EXT4                                                         VARCHAR2                  4  AD     IC
+ POOLED_EDI_LOC_CODE_EXT5                                                         VARCHAR2                  5  AD     IC
+ POOLED_COUNTRY_EXT2                                                              VARCHAR2                  2  AD     IC
+ POOLED_COUNTRY_EXT3                                                              VARCHAR2                  3  AD     IC
+ POOLED_COUNTRY_EXT4                                                              VARCHAR2                  4  AD     IC
+ POOLED_COUNTRY_EXT5                                                              VARCHAR2                  5  AD     IC
+ POOLED_STATE_EXT2                                                                VARCHAR2                  2  AD     IC
+ POOLED_STATE_EXT3                                                                VARCHAR2                  3  AD     IC
+ POOLED_STATE_EXT4                                                                VARCHAR2                  4  AD     IC
+ POOLED_STATE_EXT5                                                                VARCHAR2                  5  AD     IC
+ POOLED_PROVINCE_EXT2                                                             VARCHAR2                  2  AD     IC
+ POOLED_PROVINCE_EXT3                                                             VARCHAR2                  3  AD     IC
+ DESTINATION_COUNTRY_EXT2                                                         VARCHAR2                  2  AD     ST
+ DESTINATION_COUNTRY_EXT3                                                         VARCHAR2                  3  AD     ST
+ DESTINATION_COUNTRY_EXT4                                                         VARCHAR2                  4  AD     ST
+ DESTINATION_COUNTRY_EXT5                                                         VARCHAR2                  5  AD     ST
+ DESTINATION_STATE_EXT2                                                           VARCHAR2                  2  AD     ST
+ DESTINATION_STATE_EXT3                                                           VARCHAR2                  3  AD     ST
+ DESTINATION_STATE_EXT4                                                           VARCHAR2                  4  AD     ST
+ DESTINATION_STATE_EXT5                                                           VARCHAR2                  5  AD     ST
+ DESTINATION_PROVINCE_EXT2                                                        VARCHAR2                  2  AD     ST
+ DESTINATION_PROVINCE_EXT3                                                        VARCHAR2                  3  AD     ST
+ DESTINATION_PROVINCE_EXT4                                                        VARCHAR2                  4  AD     ST
+ DESTINATION_PROVINCE_EXT5                                                        VARCHAR2                  5  AD     ST
+ DESTINATION_TP_REF_1                                                             VARCHAR2                     AD     ST
+ DESTINATION_TP_REF_2                                                             VARCHAR2                     AD     ST
+                                                                                          Report Date:    12-SEP-2013 15:26
+                                           Transaction Layout Definition Report                  Page:            9 / 54
+
+      Transaction: DSNO                                               Description: OUT: Outbound Shipment Notice/Manifest
+            Level: 1:Delivery                                     Interface Table: Transaction
+                                                                  Extension Table: WSH_DSNO_DELIVERIES_V
+                                                                                   WSH_DSNO_DELIVERIES_V_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ DESTINATION_SITE_USE_ID                                                          NUMBER                       AD     ST
+ CONTACT_ID                                                                       NUMBER                       AD     CSG
+ DSNO_LEV01_EXT01                                                                 VARCHAR2
+ DSNO_LEV01_EXT02                                                                 VARCHAR2
+ DSNO_LEV01_EXT03                                                                 VARCHAR2
+ DELIVERY_NET_WEIGHT_UOM_EXT2                                                     VARCHAR2                  2  D3     DP3
+ DELIVERY_NET_WEIGHT_UOM_EXT3                                                     VARCHAR2                  3  D3     DP3
+ DELIVERY_NET_WEIGHT_UOM_EXT4                                                     VARCHAR2                  4  D3     DP3
+ DELIVERY_NET_WEIGHT_UOM_EXT5                                                     VARCHAR2                  5  D3     DP3
+ DELIVERY_TARE_WEIGHT_UOM_EXT2                                                    VARCHAR2                  2  D3     DP3
+ DELIVERY_TARE_WEIGHT_UOM_EXT3                                                    VARCHAR2                  3  D3     DP3
+ DELIVERY_TARE_WEIGHT_UOM_EXT4                                                    VARCHAR2                  4  D3     DP3
+ DELIVERY_TARE_WEIGHT_UOM_EXT5                                                    VARCHAR2                  5  D3     DP3
+ WAREHOUSE_EDI_LOC_CODE_EXT3                                                      VARCHAR2                  3  AX     SF
+ WAREHOUSE_EDI_LOC_CODE_EXT4                                                      VARCHAR2                  4  AX     SF
+ WAREHOUSE_EDI_LOC_CODE_EXT5                                                      VARCHAR2                  5  AX     SF
+ WAREHOUSE_COUNTRY_EXT2                                                           VARCHAR2                  2  AX     SF
+ WAREHOUSE_COUNTRY_EXT3                                                           VARCHAR2                  3  AX     SF
+ WAREHOUSE_COUNTRY_EXT4                                                           VARCHAR2                  4  AX     SF
+ WAREHOUSE_COUNTRY_EXT5                                                           VARCHAR2                  5  AX     SF
+ WAREHOUSE_REGION1_EXT2                                                           VARCHAR2                  2  AX     SF
+ WAREHOUSE_REGION1_EXT3                                                           VARCHAR2                  3  AX     SF
+ WAREHOUSE_REGION1_EXT4                                                           VARCHAR2                  4  AX     SF
+ WAREHOUSE_REGION1_EXT5                                                           VARCHAR2                  5  AX     SF
+ TRIP_ID                                                                          NUMBER
+ DELIVERY_ID                                                                      NUMBER
+ WAREHOUSE_REGION2_EXT2                                                           VARCHAR2                  2  AX     SF
+ WAREHOUSE_REGION2_EXT3                                                           VARCHAR2                  3  AX     SF
+ WAREHOUSE_REGION2_EXT4                                                           VARCHAR2                  4  AX     SF
+ WAREHOUSE_REGION2_EXT5                                                           VARCHAR2                  5  AX     SF
+ WAREHOUSE_REGION3_EXT2                                                           VARCHAR2                  2  AX     SF
+ WAREHOUSE_REGION3_EXT3                                                           VARCHAR2                  3  AX     SF
+ WAREHOUSE_REGION3_EXT4                                                           VARCHAR2                  4  AX     SF
+ EQUIPMENT_TYPE_CODE_EXT3                                                         VARCHAR2                  3  D2     DP2
+ EQUIPMENT_TYPE_CODE_EXT4                                                         VARCHAR2                  4  D2     DP2
+ EQUIPMENT_TYPE_CODE_EXT5                                                         VARCHAR2                  5  D2     DP2
+ DEPARTURE_GROSS_WEIGHT_UOM_EXT2                                                  VARCHAR2                  2  D3     DP3
+ DEPARTURE_GROSS_WEIGHT_UOM_EXT3                                                  VARCHAR2                  3  D3     DP3
+ DEPARTURE_GROSS_WEIGHT_UOM_EXT4                                                  VARCHAR2                  4  D3     DP3
+ DEPARTURE_GROSS_WEIGHT_UOM_EXT5                                                  VARCHAR2                  5  D3     DP3
+ DSNO_LEV01_EXT04                                                                 VARCHAR2
+ DSNO_LEV01_EXT05                                                                 VARCHAR2
+                                                                                          Report Date:    12-SEP-2013 15:26
+                                           Transaction Layout Definition Report                  Page:           10 / 54
+
+      Transaction: DSNO                                               Description: OUT: Outbound Shipment Notice/Manifest
+            Level: 1:Delivery                                     Interface Table: Transaction
+                                                                  Extension Table: WSH_DSNO_DELIVERIES_V
+                                                                                   WSH_DSNO_DELIVERIES_V_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ DSNO_LEV01_EXT06                                                                 VARCHAR2
+ DSNO_LEV01_EXT07                                                                 VARCHAR2
+ DSNO_LEV01_EXT08                                                                 VARCHAR2
+ DSNO_LEV01_EXT09                                                                 VARCHAR2
+ DSNO_LEV01_EXT10                                                                 VARCHAR2
+ DSNO_LEV01_EXT11                                                                 VARCHAR2
+ DSNO_LEV01_EXT12                                                                 VARCHAR2
+ DSNO_LEV01_EXT13                                                                 VARCHAR2
+                                                                                          Report Date:    12-SEP-2013 15:26
+                                           Transaction Layout Definition Report                  Page:           11 / 54
+
+      Transaction: DSNO                                               Description: OUT: Outbound Shipment Notice/Manifest
+            Level: 2:Delivery Attributes                          Interface Table: Transaction
+                                                                  Extension Table: WSH_DSNO_DELIVERY_ATTRIBS_V
+                                                                                   WSH_DSNO_DELIVERY_ATTRIBS_V_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ WAREHOUSE_CATEGORY                                        3060      10       30  VARCHAR2          101        A1     SF1
+ WAREHOUSE_ATTRIBUTE1                                      3060      20       80  VARCHAR2          131        A1     SF1
+ WAREHOUSE_ATTRIBUTE2                                      3060      30       80  VARCHAR2          211        A1     SF1
+ WAREHOUSE_ATTRIBUTE3                                      3060      40       80  VARCHAR2          291        A1     SF1
+ WAREHOUSE_ATTRIBUTE4                                      3060      50       80  VARCHAR2          371        A1     SF1
+ WAREHOUSE_ATTRIBUTE5                                      3070      10       80  VARCHAR2          101        A2     SF2
+ WAREHOUSE_ATTRIBUTE6                                      3070      20       80  VARCHAR2          181        A2     SF2
+ WAREHOUSE_ATTRIBUTE7                                      3070      30       80  VARCHAR2          261        A2     SF2
+ WAREHOUSE_ATTRIBUTE8                                      3070      40       80  VARCHAR2          341        A2     SF2
+ WAREHOUSE_ATTRIBUTE9                                      3070      50       80  VARCHAR2          421        A2     SF2
+ WAREHOUSE_ATTRIBUTE10                                     3080      10       80  VARCHAR2          101        A2     SF3
+ WAREHOUSE_ATTRIBUTE11                                     3080      20       80  VARCHAR2          181        A2     SF3
+ WAREHOUSE_ATTRIBUTE12                                     3080      30       80  VARCHAR2          261        A2     SF3
+ WAREHOUSE_ATTRIBUTE13                                     3080      40       80  VARCHAR2          341        A2     SF3
+ WAREHOUSE_ATTRIBUTE14                                     3080      50       80  VARCHAR2          421        A2     SF3
+ WAREHOUSE_ATTRIBUTE15                                     3090      10       80  VARCHAR2          101        A2     SF4
+ WAREHOUSE_ATTRIBUTE16                                     3090      20       80  VARCHAR2          181        A2     SF4
+ WAREHOUSE_ATTRIBUTE17                                     3090      30       80  VARCHAR2          261        A2     SF4
+ WAREHOUSE_ATTRIBUTE18                                     3090      40       80  VARCHAR2          341        A2     SF4
+ WAREHOUSE_ATTRIBUTE19                                     3090      50       80  VARCHAR2          421        A2     SF4
+ WAREHOUSE_ATTRIBUTE20                                     3095      10       80  VARCHAR2          101        A2     SF5
+ DESTINATION_CATEGORY                                      3100      10       30  VARCHAR2          101        A1     ST1
+ DESTINATION_ATTRIBUTE1                                    3100      20       80  VARCHAR2          131        A1     ST1
+ DESTINATION_ATTRIBUTE2                                    3100      30       80  VARCHAR2          211        A1     ST1
+ DESTINATION_ATTRIBUTE3                                    3100      40       80  VARCHAR2          291        A1     ST1
+ DESTINATION_ATTRIBUTE4                                    3100      50       80  VARCHAR2          371        A1     ST1
+ DESTINATION_ATTRIBUTE5                                    3110      10       80  VARCHAR2          101        A2     ST2
+ DESTINATION_ATTRIBUTE6                                    3110      20       80  VARCHAR2          181        A2     ST2
+ DESTINATION_ATTRIBUTE7                                    3110      30       80  VARCHAR2          261        A2     ST2
+ DESTINATION_ATTRIBUTE8                                    3110      40       80  VARCHAR2          341        A2     ST2
+ DESTINATION_ATTRIBUTE9                                    3110      50       80  VARCHAR2          421        A2     ST2
+ DESTINATION_ATTRIBUTE10                                   3120      10       80  VARCHAR2          101        A2     ST3
+ DESTINATION_ATTRIBUTE11                                   3120      20       80  VARCHAR2          181        A2     ST3
+ DESTINATION_ATTRIBUTE12                                   3120      30       80  VARCHAR2          261        A2     ST3
+ DESTINATION_ATTRIBUTE13                                   3120      40       80  VARCHAR2          341        A2     ST3
+ DESTINATION_ATTRIBUTE14                                   3120      50       80  VARCHAR2          421        A2     ST3
+ DESTINATION_ATTRIBUTE15                                   3130      10       80  VARCHAR2          101        A2     ST4
+ DESTINATION_ATTRIBUTE16                                   3130      20       80  VARCHAR2          181        A2     ST4
+ DESTINATION_ATTRIBUTE17                                   3130      30       80  VARCHAR2          261        A2     ST4
+ DESTINATION_ATTRIBUTE18                                   3130      40       80  VARCHAR2          341        A2     ST4
+ DESTINATION_ATTRIBUTE19                                   3130      50       80  VARCHAR2          421        A2     ST4

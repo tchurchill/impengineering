@@ -1,0 +1,405 @@
+                                                                                          Report Date:    28-DEC-2011 12:23
+                                           Transaction Layout Definition Report                  Page:            1 / 11
+
+      Transaction: GPOI                                               Description: IN: OPM Purchase Order (850/ORDERS)
+            Level: Header                                         Interface Table: OP_ORDR_HDR_INTERFACE
+                                                                  Extension Table: OP_ORDR_HDR_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ COMMUNICATION_METHOD                                        10      10        2  VARCHAR2          101        CT     CTL
+ TEST_INDICATOR                                              10      20        1  VARCHAR2          103        CT     CTL
+ TP_DOCUMENT_ID                                              10      30        6  VARCHAR2          104        CT     CTL
+ DOCUMENT_TYPE                                               10      50        5  VARCHAR2          110        CT     CTL
+ TP_PURPOSE_CODE                                             10      60        2  VARCHAR2          115        CT     CTL
+ TP_DOCUMENT_CODE                                            10      70       35  VARCHAR2          117        CT     CTL
+ TP_TRANSLATOR_CODE                                          10      80       30  VARCHAR2          152        CT     CTL
+ TP_LOCATION_CODE                                            10      90       35  VARCHAR2          182        CT     CTL
+ TP_DESCRIPTION                                              10     100       74  VARCHAR2          217        CT     CTL
+ TP_REFERENCE_EXT1                                           10     110       80  VARCHAR2          291        CT     CTL
+ TP_REFERENCE_EXT2                                           10     120       80  VARCHAR2          371        CT     CTL
+ TRANSACTION_DATE                                            10     130       15  DATE              451        CT     CTL
+ RUN_ID                                                      10     140       15  NUMBER            466        CT     CTL
+ TP_CONTROL_1                                                20      10       10  VARCHAR2          101        HZ     HDZ
+ TP_CONTROL_2                                                20      20       10  VARCHAR2          111        HZ     HDZ
+ TP_CONTROL_3                                                20      30       10  VARCHAR2          121        HZ     HDZ
+ ORDER_TYPE_CODE                                           1000      10        8  VARCHAR2          101        HA     HDA
+ CUSTPO_NO                                                 1000      20       22  VARCHAR2          109        HA     HDA
+ CUSTPO_DATE                                               1000      30       15  DATE              131        HA     HDA
+ ORDER_NO                                                  1000      40       32  VARCHAR2          146        HA     HDA
+ ORGN_CODE                                                 1000      50        4  VARCHAR2          178        HA     HDA
+ ORDER_COMMENT                                             1000      60       80  VARCHAR2          182        HA     HDA
+ SO_ACTION                                                 1000      70        1  VARCHAR2          262        HA     HDA
+ FROM_WHSE                                                 1000      80        4  VARCHAR2          263        HA     HDA
+ ATTRIBUTE_CATEGORY                                        1010      10       30  VARCHAR2          101        A1     OH1
+ ATTRIBUTE1                                                1010      20       80  VARCHAR2          131        A1     OH1
+ ATTRIBUTE2                                                1010      30       80  VARCHAR2          211        A1     OH1
+ ATTRIBUTE3                                                1010      40       80  VARCHAR2          291        A1     OH1
+ ATTRIBUTE4                                                1010      50       80  VARCHAR2          371        A1     OH1
+ ATTRIBUTE5                                                1020      10       80  VARCHAR2          101        A2     OH2
+ ATTRIBUTE6                                                1020      20       80  VARCHAR2          181        A2     OH2
+ ATTRIBUTE7                                                1020      30       80  VARCHAR2          261        A2     OH2
+ ATTRIBUTE8                                                1020      40       80  VARCHAR2          341        A2     OH2
+ ATTRIBUTE9                                                1020      50       80  VARCHAR2          421        A2     OH2
+ ATTRIBUTE10                                               1030      10       80  VARCHAR2          101        A2     OH3
+ ATTRIBUTE11                                               1030      20       80  VARCHAR2          181        A2     OH3
+ ATTRIBUTE12                                               1030      30       80  VARCHAR2          261        A2     OH3
+ ATTRIBUTE13                                               1030      40       80  VARCHAR2          341        A2     OH3
+ ATTRIBUTE14                                               1030      50       80  VARCHAR2          421        A2     OH3
+ ATTRIBUTE15                                               1040      10       80  VARCHAR2          101        A2     OH4
+ ATTRIBUTE16                                               1040      20       80  VARCHAR2          181        A2     OH4
+ ATTRIBUTE17                                               1040      30       80  VARCHAR2          261        A2     OH4
+ ATTRIBUTE18                                               1040      40       80  VARCHAR2          341        A2     OH4
+ ATTRIBUTE19                                               1040      50       80  VARCHAR2          421        A2     OH4
+ ATTRIBUTE20                                               1050      10       80  VARCHAR2          101        A2     OH5
+ ATTRIBUTE21                                               1050      20       80  VARCHAR2          181        A2     OH5
+                                                                                          Report Date:    28-DEC-2011 12:23
+                                           Transaction Layout Definition Report                  Page:            2 / 11
+
+      Transaction: GPOI                                               Description: IN: OPM Purchase Order (850/ORDERS)
+            Level: Header                                         Interface Table: OP_ORDR_HDR_INTERFACE
+                                                                  Extension Table: OP_ORDR_HDR_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ ATTRIBUTE22                                               1050      30       80  VARCHAR2          261        A2     OH5
+ ATTRIBUTE23                                               1050      40       80  VARCHAR2          341        A2     OH5
+ ATTRIBUTE24                                               1050      50       80  VARCHAR2          421        A2     OH5
+ ATTRIBUTE25                                               1060      10       80  VARCHAR2          101        A2     OH6
+ ATTRIBUTE26                                               1060      20       80  VARCHAR2          181        A2     OH6
+ ATTRIBUTE27                                               1060      30       80  VARCHAR2          261        A2     OH6
+ ATTRIBUTE28                                               1060      40       80  VARCHAR2          341        A2     OH6
+ ATTRIBUTE29                                               1060      50       80  VARCHAR2          421        A2     OH6
+ ATTRIBUTE30                                               1070      10       80  1080              101        A2     OH7
+ BILL_TO_ADDRESS_ID                                        1080      10       22  NUMBER            101        AD     BT1
+ BILL_TO_CUSTOMER_ID                                       1080      20       22  NUMBER            123        AD     BT1
+ BILL_TO_EDI_LOCATION_CODE                                 1080      30       35  VARCHAR2          145        AD     BT1
+ BILL_TO_CUSTOMER_NAME                                     1080      40       35  VARCHAR2          180        AD     BT1
+ BILL_TO_ADDRESS1                                          1080      50       35  VARCHAR2          215        AD     BT1
+ BILL_TO_ADDRESS2                                          1080      60       35  VARCHAR2          250        AD     BT1
+ BILL_TO_ADDRESS3                                          1080      70       35  VARCHAR2          285        AD     BT1
+ BILL_TO_ADDRESS4                                          1080      80       35  VARCHAR2          320        AD     BT1
+ BILL_TO_CITY                                              1080      90       30  VARCHAR2          355        AD     BT1
+ BILL_TO_POSTAL_CODE                                       1080     100       15  VARCHAR2          385        AD     BT1
+ BILL_TO_COUNTY                                            1080     110       30  VARCHAR2          400        AD     BT1
+ BILL_TO_ADDRESS_CODE                                      1080     120       65  VARCHAR2          430        AD     BT1
+ BILL_TO_COUNTRY_INT                                       1090      10       20  VARCHAR2          101     0  AE     BT2
+ BILL_TO_COUNTRY_EXT1                                      1090      20       10  VARCHAR2          121     1  AE     BT2
+ BILL_TO_STATE_INT                                         1090      30       20  VARCHAR2          131     0  AE     BT2
+ BILL_TO_STATE_EXT1                                        1090      40       10  VARCHAR2          151     1  AE     BT2
+ BILL_TO_PROVINCE_INT                                      1090      50       20  VARCHAR2          161     0  AE     BT2
+ BILL_TO_PROVINCE_EXT1                                     1090      60       10  VARCHAR2          181     1  AE     BT2
+ BILL_TO_LAST_NAME                                         1090      70       35  VARCHAR2          191        AE     BT2
+ BILL_TO_FIRST_NAME                                        1090      80       35  VARCHAR2          226        AE     BT2
+ BILL_TO_JOB_TITLE                                         1090      90       40  VARCHAR2          261        AE     BT2
+ BILL_TO_AREA_CODE                                         1090     100       10  VARCHAR2          301        AE     BT2
+ BILL_TO_PHONE_NUMBER                                      1090     110       60  VARCHAR2          311        AE     BT2
+ SHIP_TO_ADDRESS_ID                                        1100      10       22  NUMBER            101        AD     ST1
+ SHIP_TO_CUSTOMER_ID                                       1100      20       22  NUMBER            123        AD     ST1
+ SHIP_TO_EDI_LOCATION_CODE                                 1100      30       35  VARCHAR2          145        AD     ST1
+ SHIP_TO_CUSTOMER_NAME                                     1100      40       35  VARCHAR2          180        AD     ST1
+ SHIP_TO_ADDRESS1                                          1100      50       35  VARCHAR2          215        AD     ST1
+ SHIP_TO_ADDRESS2                                          1100      60       35  VARCHAR2          250        AD     ST1
+ SHIP_TO_ADDRESS3                                          1100      70       35  VARCHAR2          285        AD     ST1
+ SHIP_TO_ADDRESS4                                          1100      80       35  VARCHAR2          320        AD     ST1
+ SHIP_TO_CITY                                              1100      90       30  VARCHAR2          355        AD     ST1
+ SHIP_TO_POSTAL_CODE                                       1100     100       15  VARCHAR2          385        AD     ST1
+ SHIP_TO_COUNTY                                            1100     110       30  VARCHAR2          400        AD     ST1
+ SHIP_TO_ADDRESS_CODE                                      1100     120       65  VARCHAR2          430        AD     BT1
+ SHIP_TO_COUNTRY_INT                                       1110      10       20  VARCHAR2          101     0  AE     ST2
+ SHIP_TO_COUNTRY_EXT1                                      1110      20       10  VARCHAR2          121     1  AE     ST2
+                                                                                          Report Date:    28-DEC-2011 12:23
+                                           Transaction Layout Definition Report                  Page:            3 / 11
+
+      Transaction: GPOI                                               Description: IN: OPM Purchase Order (850/ORDERS)
+            Level: Header                                         Interface Table: OP_ORDR_HDR_INTERFACE
+                                                                  Extension Table: OP_ORDR_HDR_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ SHIP_TO_STATE_INT                                         1110      30       20  VARCHAR2          131     0  AE     ST2
+ SHIP_TO_STATE_EXT1                                        1110      40       10  VARCHAR2          151     1  AE     ST2
+ SHIP_TO_PROVINCE_INT                                      1110      50       20  VARCHAR2          161     0  AE     ST2
+ SHIP_TO_PROVINCE_EXT1                                     1110      60       10  VARCHAR2          181     1  AE     ST2
+ SHIP_TO_LAST_NAME                                         1110      70       35  VARCHAR2          191        AE     ST2
+ SHIP_TO_FIRST_NAME                                        1110      80       35  VARCHAR2          226        AE     ST2
+ SHIP_TO_JOB_TITLE                                         1110      90       40  VARCHAR2          261        AE     ST2
+ SHIP_TO_AREA_CODE                                         1110     100       10  VARCHAR2          301        AE     ST2
+ SHIP_TO_PHONE_NUMBER                                      1110     110       60  VARCHAR2          311        AE     ST2
+ SOLD_TO_ADDRESS_ID                                        1120      10       22  NUMBER            101        AD     SD1
+ SOLD_TO_CUSTOMER_ID                                       1120      20       22  NUMBER            123        AD     SD1
+ SOLD_TO_EDI_LOCATION_CODE                                 1120      30       35  VARCHAR2          145        AD     SD1
+ SOLD_TO_CUSTOMER_NAME                                     1120      40       35  VARCHAR2          180        AD     SD1
+ SOLD_TO_ADDRESS1                                          1120      50       35  VARCHAR2          215        AD     SD1
+ SOLD_TO_ADDRESS2                                          1120      60       35  VARCHAR2          250        AD     SD1
+ SOLD_TO_ADDRESS3                                          1120      70       35  VARCHAR2          285        AD     SD1
+ SOLD_TO_ADDRESS4                                          1120      80       35  VARCHAR2          320        AD     SD1
+ SOLD_TO_CITY                                              1120      90       30  VARCHAR2          355        AD     SD1
+ SOLD_TO_POSTAL_CODE                                       1120     100       15  VARCHAR2          385        AD     SD1
+ SOLD_TO_COUNTY                                            1120     110       30  VARCHAR2          400        AD     SD1
+ SOLD_TO_ADDRESS_CODE                                      1120     120       65  VARCHAR2          430        AD     BT1
+ SOLD_TO_COUNTRY_INT                                       1130      10       20  VARCHAR2          101     0  AE     SD2
+ SOLD_TO_COUNTRY_EXT1                                      1130      20       10  VARCHAR2          121     1  AE     SD2
+ SOLD_TO_STATE_INT                                         1130      30       20  VARCHAR2          131     0  AE     SD2
+ SOLD_TO_STATE_EXT1                                        1130      40       10  VARCHAR2          151     1  AE     SD2
+ SOLD_TO_PROVINCE_INT                                      1130      50       20  VARCHAR2          161     0  AE     SD2
+ SOLD_TO_PROVINCE_EXT1                                     1130      60       10  VARCHAR2          181     1  AE     SD2
+ SOLD_TO_LAST_NAME                                         1130      70       35  VARCHAR2          191        AE     SD2
+ SOLD_TO_FIRST_NAME                                        1130      80       35  VARCHAR2          226        AE     SD2
+ SOLD_TO_JOB_TITLE                                         1130      90       40  VARCHAR2          261        AE     SD2
+ SOLD_TO_AREA_CODE                                         1130     100       10  VARCHAR2          301        AE     SD2
+ SOLD_TO_PHONE_NUMBER                                      1130     110       60  VARCHAR2          311        AE     SD2
+ BILLING_CURRENCY                                          1140      10        4  VARCHAR2          101     0  HB     HDB
+ BILLING_CURRENCY_EXT1                                     1140      20       10  VARCHAR2          105     1  HB     HDB
+ BASE_CURRENCY                                             1140      30        4  VARCHAR2          115     0  HB     HDB
+ BASE_CURRENCY_EXT1                                        1140      40       10  VARCHAR2          119     1  HB     HDB
+ CONVERSION_TYPE                                           1140      50        4  VARCHAR2          129     0  HB     HDB
+ CONVERSION_TYPE_EXT1                                      1140      60       10  VARCHAR2          133     1  HB     HDB
+ EXCHANGE_RATE                                             1140      70       22  NUMBER            143        HB     HDB
+ EXCHANGE_RATE_DATE                                        1140      80       15  DATE              165        HB     HDB
+ FRTBILL_MTHD                                              1140      90        4  VARCHAR2          180     0  HB     HDB
+ FRTBILL_MTHD_EXT1                                         1140     100       10  VARCHAR2          184     1  HB     HDB
+ EMBARKATION_PORT                                          1140     110        8  VARCHAR2          194     0  HB     HDB
+ EMBARKATION_PORT_EXT1                                     1140     120       80  VARCHAR2          202     1  HB     HDB
+ DEBARKATION_PORT                                          1140     130        8  VARCHAR2          282     0  HB     HDB
+ DEBARKATION_PORT_EXT1                                     1140     140       80  VARCHAR2          290     1  HB     HDB
+                                                                                          Report Date:    28-DEC-2011 12:23
+                                           Transaction Layout Definition Report                  Page:            4 / 11
+
+      Transaction: GPOI                                               Description: IN: OPM Purchase Order (850/ORDERS)
+            Level: Header                                         Interface Table: OP_ORDR_HDR_INTERFACE
+                                                                  Extension Table: OP_ORDR_HDR_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ TERMS_CODE                                                1150      10        4  VARCHAR2          101     0  HC     HDC
+ TERMS_CODE_EXT1                                           1150      20       22  VARCHAR2          105     1  HC     HDC
+ FOB_CODE                                                  1150      30        4  VARCHAR2          127     0  HC     HDC
+ FOB_CODE_EXT1                                             1150      40       30  VARCHAR2          131     1  HC     HDC
+ SHIPPER_CODE                                              1150      50        4  VARCHAR2          161     0  HC     HDC
+ SHIPPER_CODE_EXT1                                         1150      60       30  VARCHAR2          165     1  HC     HDC
+ SHIP_MTHD                                                 1150      70        4  VARCHAR2          195     0  HC     HDC
+ SHIP_MTHD_EXT1                                            1150      80       30  VARCHAR2          199     1  HC     HDC
+ SCHED_SHIPDATE                                            1160      10       15  DATE              101        HD     HDD
+ REQUIRED_DLVDATE                                          1160      20       15  DATE              116        HD     HDD
+ REQUESTED_DLVDATE                                         1160      30       15  DATE              131        HD     HDD
+ COA_REQUIRED                                              1160      40        5  VARCHAR2          146        HD     HDD
+                                                                                          Report Date:    28-DEC-2011 12:23
+                                           Transaction Layout Definition Report                  Page:            5 / 11
+
+      Transaction: GPOI                                               Description: IN: OPM Purchase Order (850/ORDERS)
+            Level: Header SAC                                     Interface Table: OP_ORDR_HAC_INTERFACE
+                                                                  Extension Table: OP_ORDR_HAC_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ SAC_INDICATOR_INT                                         1400      10        5  VARCHAR2          101     0  AC     OAC
+ SAC_INDICATOR_EXT1                                        1400      20       20  VARCHAR2          106     1  AC     OAC
+ SAC_CODE_INT                                              1400      30       32  VARCHAR2          126     0  AC     OAC
+ SAC_CODE_EXT1                                             1400      40       20  VARCHAR2          158     1  AC     OAC
+ SAC_METHOD_INT                                            1400      50        5  NUMBER            178     0  AC     OAC
+ SAC_METHOD_CODE_EXT1                                      1400      60       20  VARCHAR2          183     1  AC     OAC
+ CHARGE_LINE_AMOUNT                                        1400      70       22  NUMBER            203        AC     OAC
+ CHARGE_RATE                                               1400      80       22  NUMBER            225        AC     OAC
+ CHARGE_UNIT_AMOUNT                                        1400      90       22  NUMBER            247        AC     OAC
+ CHARGE_UOM                                                1400     100        4  VARCHAR2          269        AC     OAC
+ CHARGE_QTY                                                1400     110       22  NUMBER            273        AC     OAC
+ SAC_DESCRIPTION                                           1400     120       80  VARCHAR2          295        AC     OAC
+                                                                                          Report Date:    28-DEC-2011 12:23
+                                           Transaction Layout Definition Report                  Page:            6 / 11
+
+      Transaction: GPOI                                               Description: IN: OPM Purchase Order (850/ORDERS)
+            Level: Header Text                                    Interface Table: OP_ORDR_HTX_INTERFACE
+                                                                  Extension Table: OP_ORDR_HTX_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ LANG_CODE                                                 1500      10        4  VARCHAR2          101     0  NT     DNT
+ LANG_CODE_EXT1                                            1500      20       10  VARCHAR2          105     1  NT     DNT
+ PARAGRAPH_CODE                                            1500      30        4  VARCHAR2          115     0  NT     DNT
+ PARAGRAPH_CODE_EXT1                                       1500      40       10  VARCHAR2          119     1  NT     DNT
+ SUB_PARACODE                                              1500      50        5  NUMBER            129        NT     DNT
+ LINE_NO                                                   1500      60        5  NUMBER            134        NT     DNT
+ TEXT                                                      1500      70       80                    139        NT     DNT
+                                                                                          Report Date:    28-DEC-2011 12:23
+                                           Transaction Layout Definition Report                  Page:            7 / 11
+
+      Transaction: GPOI                                               Description: IN: OPM Purchase Order (850/ORDERS)
+            Level: Detail                                         Interface Table: OP_ORDR_DTL_INTERFACE
+                                                                  Extension Table: OP_ORDR_DTL_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ LINE_NO                                                   2000      10        5  VARCHAR2          101        DA     DTA
+ LINE_COMMENT                                              2000      20       80  VARCHAR2          106        DA     DTA
+ LINE_ACTION                                               2000      30        1  VARCHAR2          186        DA     DTA
+ FROM_WHSE                                                 2000      40        4  VARCHAR2          187        DA     DTA
+ CUST_LINE_NO                                              2000      50       22  VARCHAR2          191        DA     DTA
+ ATTRIBUTE_CATEGORY                                        2010      10       30  VARCHAR2          101        A1     DH1
+ ATTRIBUTE1                                                2010      20       80  VARCHAR2          131        A1     DH1
+ ATTRIBUTE2                                                2010      30       80  VARCHAR2          211        A1     DH1
+ ATTRIBUTE3                                                2010      40       80  VARCHAR2          291        A1     DH1
+ ATTRIBUTE4                                                2010      50       80  VARCHAR2          371        A1     DH1
+ ATTRIBUTE5                                                2020      10       80  VARCHAR2          101        A2     DH2
+ ATTRIBUTE6                                                2020      20       80  VARCHAR2          181        A2     DH2
+ ATTRIBUTE7                                                2020      30       80  VARCHAR2          261        A2     DH2
+ ATTRIBUTE8                                                2020      40       80  VARCHAR2          341        A2     DH2
+ ATTRIBUTE9                                                2020      50       80  VARCHAR2          421        A2     DH2
+ ATTRIBUTE10                                               2030      10       80  VARCHAR2          101        A2     DH3
+ ATTRIBUTE11                                               2030      20       80  VARCHAR2          181        A2     DH3
+ ATTRIBUTE12                                               2030      30       80  VARCHAR2          261        A2     DH3
+ ATTRIBUTE13                                               2030      40       80  VARCHAR2          341        A2     DH3
+ ATTRIBUTE14                                               2030      50       80  VARCHAR2          421        A2     DH3
+ ATTRIBUTE15                                               2040      10       80  VARCHAR2          101        A2     DH4
+ ATTRIBUTE16                                               2040      20       80  VARCHAR2          181        A2     DH4
+ ATTRIBUTE17                                               2040      30       80  VARCHAR2          261        A2     DH4
+ ATTRIBUTE18                                               2040      40       80  VARCHAR2          341        A2     DH4
+ ATTRIBUTE19                                               2040      50       80  VARCHAR2          421        A2     DH4
+ ATTRIBUTE20                                               2050      10       80  VARCHAR2          101        A2     DH5
+ ATTRIBUTE21                                               2050      20       80  VARCHAR2          181        A2     DH5
+ ATTRIBUTE22                                               2050      30       80  VARCHAR2          261        A2     DH5
+ ATTRIBUTE23                                               2050      40       80  VARCHAR2          341        A2     DH5
+ ATTRIBUTE24                                               2050      50       80  VARCHAR2          421        A2     DH5
+ ATTRIBUTE25                                               2060      10       80  VARCHAR2          101        A2     DH6
+ ATTRIBUTE26                                               2060      20       80  VARCHAR2          181        A2     DH6
+ ATTRIBUTE27                                               2060      30       80  VARCHAR2          261        A2     DH6
+ ATTRIBUTE28                                               2060      40       80  VARCHAR2          341        A2     DH6
+ ATTRIBUTE29                                               2060      50       80  VARCHAR2          421        A2     DH6
+ ATTRIBUTE30                                               2070      10       80  VARCHAR2          101        A2     DH7
+ SHIP_TO_ADDRESS_ID                                        2080      10       22  NUMBER            101        AD     DS1
+ SHIP_TO_CUSTOMER_ID                                       2080      20       22  NUMBER            123        AD     DS1
+ SHIP_TO_EDI_LOCATION_CODE                                 2080      30       35  VARCHAR2          145        AD     DS1
+ SHIP_TO_CUSTOMER_NAME                                     2080      40       35  VARCHAR2          180        AD     DS1
+ SHIP_TO_ADDRESS1                                          2080      50       35  VARCHAR2          215        AD     DS1
+ SHIP_TO_ADDRESS2                                          2080      60       35  VARCHAR2          250        AD     DS1
+ SHIP_TO_ADDRESS3                                          2080      70       35  VARCHAR2          285        AD     DS1
+ SHIP_TO_ADDRESS4                                          2080      80       35  VARCHAR2          320        AD     DS1
+ SHIP_TO_CITY                                              2080      90       30  VARCHAR2          355        AD     DS1
+ SHIP_TO_POSTAL_CODE                                       2080     100       15  VARCHAR2          385        AD     DS1
+                                                                                          Report Date:    28-DEC-2011 12:23
+                                           Transaction Layout Definition Report                  Page:            8 / 11
+
+      Transaction: GPOI                                               Description: IN: OPM Purchase Order (850/ORDERS)
+            Level: Detail                                         Interface Table: OP_ORDR_DTL_INTERFACE
+                                                                  Extension Table: OP_ORDR_DTL_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ SHIP_TO_COUNTY                                            2080     110       30  VARCHAR2          400        AD     DS1
+ SHIP_TO_ADDRESS_CODE                                      2080     120       65  VARCHAR2          430        AD     BT1
+ SHIP_TO_COUNTRY_INT                                       2090      10       20  VARCHAR2          101     0  AE     DS2
+ SHIP_TO_COUNTRY_EXT1                                      2090      20       10  VARCHAR2          121     1  AE     DS2
+ SHIP_TO_STATE_INT                                         2090      30       20  VARCHAR2          131     0  AE     DS2
+ SHIP_TO_STATE_EXT1                                        2090      40       10  VARCHAR2          151     1  AE     DS2
+ SHIP_TO_PROVINCE_INT                                      2090      50       20  VARCHAR2          161     0  AE     DS2
+ SHIP_TO_PROVINCE_EXT1                                     2090      60       10  VARCHAR2          181     1  AE     DS2
+ SHIP_TO_LAST_NAME                                         2090      70       35  VARCHAR2          191        AE     DS2
+ SHIP_TO_FIRST_NAME                                        2090      80       35  VARCHAR2          226        AE     DS2
+ SHIP_TO_JOB_TITLE                                         2090      90       40  VARCHAR2          261        AE     DS2
+ SHIP_TO_AREA_CODE                                         2090     100       10  VARCHAR2          301        AE     DS2
+ SHIP_TO_PHONE_NUMBER                                      2090     110       60  VARCHAR2          311        AE     DS2
+ BILLING_CURRENCY                                          2100      10        4  VARCHAR2          101     0  HB     HDB
+ BILLING_CURRENCY_EXT1                                     2100      20       10  VARCHAR2          105     1  HB     HDB
+ BASE_CURRENCY                                             2100      30        4  VARCHAR2          115     0  HB     HDB
+ BASE_CURRENCY_EXT1                                        2100      40       10  VARCHAR2          119     1  HB     HDB
+ CONVERSION_TYPE                                           2100      50        4  VARCHAR2          129     0  DB     DTB
+ CONVERSION_TYPE_EXT1                                      2100      60       10  VARCHAR2          133     1  DB     DTB
+ EXCHANGE_RATE                                             2100      70       22  NUMBER            143        DB     DTB
+ EXCHANGE_RATE_DATE                                        2100      80       15  DATE              165        DB     DTB
+ FRTBILL_MTHD                                              2100      90        4  VARCHAR2          180     0  DB     DTB
+ FRTBILL_MTHD_EXT1                                         2100     100       10  VARCHAR2          184     1  DB     DTB
+ EMBARKATION_PORT                                          2100     110        8  VARCHAR2          194     0  DB     DTB
+ EMBARKATION_PORT_EXT1                                     2100     120       80  VARCHAR2          202     1  DB     DTB
+ DEBARKATION_PORT                                          2100     130        8  VARCHAR2          282     0  DB     DTB
+ DEBARKATION_PORT_EXT1                                     2100     140       80  VARCHAR2          290     1  DB     DTB
+ TERMS_CODE                                                2110      10        4  VARCHAR2          101     0  DC     DTC
+ FOB_CODE                                                  2110      60        4  VARCHAR2          105     0  DC     DTC
+ SHIPPER_CODE                                              2110      80        4  VARCHAR2          109     0  DC     DTC
+ SHIPPER_CODE_EXT1                                         2110      90       20  VARCHAR2          113     1  DC     DTC
+ SHIP_MTHD                                                 2110     100        4  VARCHAR2          133     0  DC     DTC
+ SCHED_SHIPDATE                                            2120      10       15  DATE              101        DD     DTD
+ REQUIRED_DLVDATE                                          2120      20       15  DATE              116        DD     DTD
+ REQUESTED_DLVDATE                                         2120      30       15  DATE              131        DD     DTD
+ COA_REQUIRED                                              2120      40        5  VARCHAR2          146        DD     DTD
+ LINE_DESC                                                 2130      10       80  VARCHAR2          101        DE     DTE
+ GENERIC_ITEM                                              2130      20       32  VARCHAR2          181        DE     DTE
+ ITEM_NO                                                   2130      30       32  VARCHAR2          213        DE     DTE
+ QC_GRADE_WANTED                                           2130      40        4  VARCHAR2          245        DE     DTE
+ NET_PRICE                                                 2130      50       22  NUMBER            249        DE     DTE
+ PRICEREAS_CODE                                            2130      60        4  VARCHAR2          271        DE     DTE
+ PRICE_UM                                                  2130      70        4  VARCHAR2          275     0  DE     DTE
+ PRICE_UM_EXT1                                             2130      80       20  VARCHAR2          279     1  DE     DTE
+ ORDER_QTY1                                                2130      90       22  NUMBER            299        DE     DTE
+ ORDER_UM1                                                 2130     100        4  VARCHAR2          321     0  DE     DTE
+                                                                                          Report Date:    28-DEC-2011 12:23
+                                           Transaction Layout Definition Report                  Page:            9 / 11
+
+      Transaction: GPOI                                               Description: IN: OPM Purchase Order (850/ORDERS)
+            Level: Detail                                         Interface Table: OP_ORDR_DTL_INTERFACE
+                                                                  Extension Table: OP_ORDR_DTL_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ ORDER_UM1_EXT1                                            2130     110       20  VARCHAR2          325     1  DE     DTE
+ ORDER_QTY2                                                2130     120       22  NUMBER            345        DE     DTE
+ ORDER_UM2                                                 2130     130        4  VARCHAR2          367     0  DE     DTE
+ ORDER_UM2_EXT1                                            2130     140       20  VARCHAR2          371     1  DE     DTE
+                                                                                          Report Date:    28-DEC-2011 12:23
+                                           Transaction Layout Definition Report                  Page:           10 / 11
+
+      Transaction: GPOI                                               Description: IN: OPM Purchase Order (850/ORDERS)
+            Level: Detail SAC                                     Interface Table: OP_ORDR_DAC_INTERFACE
+                                                                  Extension Table: OP_ORDR_DAC_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ SAC_INDICATOR_INT                                         2400      10        5  VARCHAR2          101     0  AC     DAC
+ SAC_INDICATOR_EXT1                                        2400      20       20  VARCHAR2          106     1  AC     DAC
+ SAC_CODE_INT                                              2400      30       32  VARCHAR2          126     0  AC     DAC
+ SAC_CODE_EXT1                                             2400      40       20  VARCHAR2          158     1  AC     DAC
+ SAC_METHOD_INT                                            2400      50        5  NUMBER            178     0  AC     DAC
+ SAC_METHOD_CODE_EXT1                                      2400      60       20  VARCHAR2          183     1  AC     DAC
+ CHARGE_LINE_AMOUNT                                        2400      70       22  NUMBER            203        AC     DAC
+ CHARGE_RATE                                               2400      80       22  NUMBER            225        AC     DAC
+ CHARGE_UNIT_AMOUNT                                        2400      90       22  NUMBER            247        AC     DAC
+ CHARGE_UOM                                                2400     100        4  VARCHAR2          269        AC     DAC
+ CHARGE_QTY                                                2400     110       22  NUMBER            273        AC     DAC
+ SAC_DESCRIPTION                                           2400     120       80  VARCHAR2          295        AC     DAC
+                                                                                          Report Date:    28-DEC-2011 12:23
+                                           Transaction Layout Definition Report                  Page:           11 / 11
+
+      Transaction: GPOI                                               Description: IN: OPM Purchase Order (850/ORDERS)
+            Level: Detail Text                                    Interface Table: OP_ORDR_DTX_INTERFACE
+                                                                  Extension Table: OP_ORDR_DTX_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ LANG_CODE                                                 2500      10        4  VARCHAR2          101     0  NT     DNT
+ LANG_CODE_EXT1                                            2500      20       10  VARCHAR2          105     1  NT     DNT
+ PARAGRAPH_CODE                                            2500      30        4  VARCHAR2          115     0  NT     DNT
+ PARAGRAPH_CODE_EXT1                                       2500      40       10  VARCHAR2          119     1  NT     DNT
+ SUB_PARACODE                                              2500      50        5  NUMBER            129        NT     DNT
+ LINE_NO                                                   2500      60        5  NUMBER            134        NT     DNT
+ TEXT                                                      2500      70       80                    139        NT     DNT

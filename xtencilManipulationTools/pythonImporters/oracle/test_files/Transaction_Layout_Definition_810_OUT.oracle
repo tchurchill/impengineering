@@ -1,0 +1,763 @@
+                                                                                          Report Date:    01-NOV-2011 11:22
+                                           Transaction Layout Definition Report                  Page:            1 / 14
+
+      Transaction: INO                                                Description: OUT: Invoice (810/INVOIC)
+            Level: Header                                         Interface Table: ECE_AR_TRX_HEADERS
+                                                                  Extension Table: ECE_AR_TRX_HEADERS_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ COMMUNICATION_METHOD                                        10      10        2  VARCHAR2          101        CT     CTL
+ TP_TEST_FLAG                                                10      20        1  VARCHAR2          103        CT     CTL
+ TP_DOCUMENT_ID                                              10      30        6  VARCHAR2          104        CT     CTL
+ DOCUMENT_TYPE                                               10      40        5  VARCHAR2          110        CT     CTL
+ TP_DOCUMENT_PURPOSE_CODE                                    10      50        2  VARCHAR2          115        CT     CTL
+ TP_DOCUMENT_CODE                                            10      60       35  VARCHAR2          117        CT     CTL
+ TP_TRANSLATOR_CODE                                          10      70       30  VARCHAR2          152        CT     CTL
+ TP_LOCATION_CODE_EXT                                        10      80       35  VARCHAR2          182        CT     CTL
+ TP_DESCRIPTION                                              10      90       74  VARCHAR2          217        CT     CTL
+ TP_REFERENCE_EXT1                                           10     100       80  VARCHAR2          291        CT     CTL
+ TP_REFERENCE_EXT2                                           10     110       80  VARCHAR2          371        CT     CTL
+ TRANSACTION_DATE                                            10     120       15  DATE              451        CT     CTL
+ RUN_ID                                                      10     130       15  NUMBER            466        CT     CTL
+ DOCUMENT_STANDARD                                           10     150       10  VARCHAR2          481        CT     CTL
+ TPH_ATTRIBUTE_CATEGORY                                      20      10       30  VARCHAR2          101        A3     TH1
+ TPH_ATTRIBUTE1                                              20      20       80  VARCHAR2          131        A3     TH1
+ TPH_ATTRIBUTE2                                              20      30       80  VARCHAR2          211        A3     TH1
+ TPH_ATTRIBUTE3                                              20      40       80  VARCHAR2          291        A3     TH1
+ TPH_ATTRIBUTE4                                              20      50       80  VARCHAR2          371        A3     TH1
+ TPH_ATTRIBUTE5                                              30      10       80  VARCHAR2          101        A4     TH2
+ TPH_ATTRIBUTE6                                              30      20       80  VARCHAR2          181        A4     TH2
+ TPH_ATTRIBUTE7                                              30      30       80  VARCHAR2          261        A4     TH2
+ TPH_ATTRIBUTE8                                              30      40       80  VARCHAR2          341        A4     TH2
+ TPH_ATTRIBUTE9                                              30      50       80  VARCHAR2          421        A4     TH2
+ TPH_ATTRIBUTE10                                             40      10       80  VARCHAR2          101        A4     TH3
+ TPH_ATTRIBUTE11                                             40      20       80  VARCHAR2          181        A4     TH3
+ TPH_ATTRIBUTE12                                             40      30       80  VARCHAR2          261        A4     TH3
+ TPH_ATTRIBUTE13                                             40      40       80  VARCHAR2          341        A4     TH3
+ TPH_ATTRIBUTE14                                             40      50       80  VARCHAR2          421        A4     TH3
+ TPH_ATTRIBUTE15                                             50      10       80  VARCHAR2          101        A4     TH4
+ TPD_ATTRIBUTE_CATEGORY                                      60      10       30  VARCHAR2          101        A3     TD1
+ TPD_ATTRIBUTE1                                              60      20       80  VARCHAR2          131        A3     TD1
+ TPD_ATTRIBUTE2                                              60      30       80  VARCHAR2          211        A3     TD1
+ TPD_ATTRIBUTE3                                              60      40       80  VARCHAR2          291        A3     TD1
+ TPD_ATTRIBUTE4                                              60      50       80  VARCHAR2          371        A3     TD1
+ TPD_ATTRIBUTE5                                              70      10       80  VARCHAR2          101        A4     TD2
+ BILL_TO_CUSTOMER_CODE_INT                                 1000      10       20  VARCHAR2          101        AD     BT1
+ BILL_TO_CUSTOMER_CODE_EXT                                 1000      20       20  VARCHAR2          121        AD     BT1
+ BILL_TO_CUSTOMER_NAME                                     1000      30       60  VARCHAR2          141        AD     BT1
+ BILL_TO_ADDRESS1                                          1000      40       35  VARCHAR2          201        AD     BT1
+ BILL_TO_ADDRESS2                                          1000      50       35  VARCHAR2          236        AD     BT1
+ BILL_TO_ADDRESS3                                          1000      60       35  VARCHAR2          271        AD     BT1
+ BILL_TO_ADDRESS4                                          1000      70       35  VARCHAR2          306        AD     BT1
+ BILL_TO_CITY                                              1000      80       30  VARCHAR2          341        AD     BT1
+ BILL_TO_POSTAL_CODE                                       1000      90       15  VARCHAR2          371        AD     BT1
+ BILL_TO_COUNTRY                                           1000     100       20  VARCHAR2          386     0  AD     BT1
+ BILL_TO_COUNTRY_EXT1                                      1000     110        3  VARCHAR2          406     1  AD     BT1
+ BILL_TO_STATE                                             1000     120       20  VARCHAR2          409     0  AD     BT1
+ BILL_TO_STATE_EXT1                                        1000     130       10  VARCHAR2          429     1  AD     BT1
+ BILL_TO_PROVINCE                                          1000     140       20  VARCHAR2          439     0  AD     BT1
+ BILL_TO_PROVINCE_EXT1                                     1000     150       10  VARCHAR2          459     1  AD     BT1
+ BILL_TO_COUNTY                                            1000     160       25  VARCHAR2          469        AD     BT1
+                                                                                          Report Date:    01-NOV-2011 11:22
+                                           Transaction Layout Definition Report                  Page:            2 / 14
+
+      Transaction: INO                                                Description: OUT: Invoice (810/INVOIC)
+            Level: Header                                         Interface Table: ECE_AR_TRX_HEADERS
+                                                                  Extension Table: ECE_AR_TRX_HEADERS_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ BILL_TO_CUSTOMER_LOCATION                                 1010      10       40  VARCHAR2          101        CM     BT1
+ BILL_TO_CUSTOMER_NUMBER                                   1010      20       30  VARCHAR2          141        CM     BT1
+ BILL_TO_CUSTOMER_SIC_CODE                                 1010      30       30  VARCHAR2          171        CM     BT1
+ BILL_TO_CUSTOMER_SALES_CHANNEL                            1010      40       30  VARCHAR2          201        CM     BT1
+ BILL_TO_CONTACT_LAST_NAME                                 1010      50       50  VARCHAR2          231        CM     BT1
+ BILL_TO_CONTACT_FIRST_NAME                                1010      60       40  VARCHAR2          281        CM     BT1
+ BILL_TO_CONTACT_JOB_TITLE                                 1010      70       50  VARCHAR2          321        CM     BT1
+ BILL_TO_TP_REFERENCE_EXT1                                 1015      10       80  VARCHAR2          101        RF     BT1
+ BILL_TO_TP_REFERENCE_EXT2                                 1015      20       80  VARCHAR2          181        RF     BT1
+ BILL_TO_CUSTOMER_ATT_CATEGORY                             1020      10       30  VARCHAR2          101        A1     BT1
+ BILL_TO_CUSTOMER_ATTRIBUTE1                               1020      20       80  VARCHAR2          131        A1     BT1
+ BILL_TO_CUSTOMER_ATTRIBUTE2                               1020      30       80  VARCHAR2          211        A1     BT1
+ BILL_TO_CUSTOMER_ATTRIBUTE3                               1020      40       80  VARCHAR2          291        A1     BT1
+ BILL_TO_CUSTOMER_ATTRIBUTE4                               1020      50       80  VARCHAR2          371        A1     BT1
+ BILL_TO_CUSTOMER_ATTRIBUTE5                               1030      10       80  VARCHAR2          101        A2     BT2
+ BILL_TO_CUSTOMER_ATTRIBUTE6                               1030      20       80  VARCHAR2          181        A2     BT2
+ BILL_TO_CUSTOMER_ATTRIBUTE7                               1030      30       80  VARCHAR2          261        A2     BT2
+ BILL_TO_CUSTOMER_ATTRIBUTE8                               1030      40       80  VARCHAR2          341        A2     BT2
+ BILL_TO_CUSTOMER_ATTRIBUTE9                               1030      50       80  VARCHAR2          421        A2     BT2
+ BILL_TO_CUSTOMER_ATTRIBUTE10                              1040      10       80  VARCHAR2          101        A2     BT3
+ BILL_TO_CUSTOMER_ATTRIBUTE11                              1040      20       80  VARCHAR2          181        A2     BT3
+ BILL_TO_CUSTOMER_ATTRIBUTE12                              1040      30       80  VARCHAR2          261        A2     BT3
+ BILL_TO_CUSTOMER_ATTRIBUTE13                              1040      40       80  VARCHAR2          341        A2     BT3
+ BILL_TO_CUSTOMER_ATTRIBUTE14                              1040      50       80  VARCHAR2          421        A2     BT3
+ BILL_TO_CUSTOMER_ATTRIBUTE15                              1050      10       80  VARCHAR2          101        A2     BT4
+ BILL_TO_SITE_ATT_CATEGORY                                 1060      10       30  VARCHAR2          101        A1     BS1
+ BILL_TO_SITE_ATTRIBUTE1                                   1060      20       80  VARCHAR2          131        A1     BS1
+ BILL_TO_SITE_ATTRIBUTE2                                   1060      30       80  VARCHAR2          211        A1     BS1
+ BILL_TO_SITE_ATTRIBUTE3                                   1060      40       80  VARCHAR2          291        A1     BS1
+ BILL_TO_SITE_ATTRIBUTE4                                   1060      50       80  VARCHAR2          371        A1     BS1
+ BILL_TO_SITE_ATTRIBUTE5                                   1070      10       80  VARCHAR2          101        A2     BS2
+ BILL_TO_SITE_ATTRIBUTE6                                   1070      20       80  VARCHAR2          181        A2     BS2
+ BILL_TO_SITE_ATTRIBUTE7                                   1070      30       80  VARCHAR2          261        A2     BS2
+ BILL_TO_SITE_ATTRIBUTE8                                   1070      40       80  VARCHAR2          341        A2     BS2
+ BILL_TO_SITE_ATTRIBUTE9                                   1070      50       80  VARCHAR2          421        A2     BS2
+ BILL_TO_SITE_ATTRIBUTE10                                  1080      10       80  VARCHAR2          101        A2     BS3
+ BILL_TO_SITE_ATTRIBUTE11                                  1080      20       80  VARCHAR2          181        A2     BS3
+ BILL_TO_SITE_ATTRIBUTE12                                  1080      30       80  VARCHAR2          261        A2     BS3
+ BILL_TO_SITE_ATTRIBUTE13                                  1080      40       80  VARCHAR2          341        A2     BS3
+ BILL_TO_SITE_ATTRIBUTE14                                  1080      50       80  VARCHAR2          421        A2     BS3
+ BILL_TO_SITE_ATTRIBUTE15                                  1090      10       80  VARCHAR2          101        A2     BS4
+ SHIP_TO_CUSTOMER_CODE_INT                                 1100      10       20  VARCHAR2          101        AD     ST1
+ SHIP_TO_CUSTOMER_CODE_EXT                                 1100      20       40  VARCHAR2          121        AD     ST1
+ SHIP_TO_CUSTOMER_NAME                                     1100      30       60  VARCHAR2          161        AD     ST1
+ SHIP_TO_ADDRESS1                                          1100      40       35  VARCHAR2          221        AD     ST1
+ SHIP_TO_ADDRESS2                                          1100      50       35  VARCHAR2          256        AD     ST1
+ SHIP_TO_ADDRESS3                                          1100      60       35  VARCHAR2          291        AD     ST1
+ SHIP_TO_ADDRESS4                                          1100      70       35  VARCHAR2          326        AD     ST1
+ SHIP_TO_CITY                                              1100      80       30  VARCHAR2          361        AD     ST1
+ SHIP_TO_POSTAL_CODE                                       1100      90       15  VARCHAR2          391        AD     ST1
+ SHIP_TO_COUNTRY                                           1100     100       20  VARCHAR2          406     0  AD     ST1
+ SHIP_TO_COUNTRY_EXT1                                      1100     110        3  VARCHAR2          426     1  AD     ST1
+                                                                                          Report Date:    01-NOV-2011 11:22
+                                           Transaction Layout Definition Report                  Page:            3 / 14
+
+      Transaction: INO                                                Description: OUT: Invoice (810/INVOIC)
+            Level: Header                                         Interface Table: ECE_AR_TRX_HEADERS
+                                                                  Extension Table: ECE_AR_TRX_HEADERS_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ SHIP_TO_STATE                                             1100     120       20  VARCHAR2          429     0  AD     ST1
+ SHIP_TO_STATE_EXT1                                        1100     130       10  VARCHAR2          449     1  AD     ST1
+ SHIP_TO_PROVINCE                                          1100     140       20  VARCHAR2          459     0  AD     ST1
+ SHIP_TO_PROVINCE_EXT1                                     1100     150       10  VARCHAR2          479     1  AD     ST1
+ SHIP_TO_COUNTY                                            1100     160       25  VARCHAR2          489        AD     ST1
+ SHIP_TO_CUSTOMER_LOCATION                                 1110      10       40  VARCHAR2          101        CM     ST1
+ SHIP_TO_CUSTOMER_NUMBER                                   1110      20       30  VARCHAR2          141        CM     ST1
+ SHIP_TO_CUSTOMER_SIC_CODE                                 1110      30       30  VARCHAR2          171        CM     ST1
+ SHIP_TO_CUSTOMER_SALES_CHANNEL                            1110      40       30  VARCHAR2          201        CM     ST1
+ SHIP_TO_CONTACT_LAST_NAME                                 1110      50       50  VARCHAR2          231        CM     ST1
+ SHIP_TO_CONTACT_FIRST_NAME                                1110      60       40  VARCHAR2          281        CM     ST1
+ SHIP_TO_CONTACT_JOB_TITLE                                 1110      70       50  VARCHAR2          321        CM     ST1
+ SHIP_TO_TP_REFERENCE_EXT1                                 1115      10       80  VARCHAR2          101        RF     ST1
+ SHIP_TO_TP_REFERENCE_EXT2                                 1115      20       80  VARCHAR2          181        RF     ST1
+ SOLD_TO_CUSTOMER_CODE_INT                                 1200      10       20  VARCHAR2          101        AD     SO1
+ SOLD_TO_CUSTOMER_CODE_EXT                                 1200      20       20  VARCHAR2          121        AD     SO1
+ SOLD_TO_CUSTOMER_NAME                                     1200      30       60  VARCHAR2          141        AD     SO1
+ SOLD_TO_ADDRESS1                                          1200      40       35  VARCHAR2          201        AD     SO1
+ SOLD_TO_ADDRESS2                                          1200      50       35  VARCHAR2          236        AD     SO1
+ SOLD_TO_ADDRESS3                                          1200      60       35  VARCHAR2          271        AD     SO1
+ SOLD_TO_ADDRESS4                                          1200      70       35  VARCHAR2          306        AD     SO1
+ SOLD_TO_CITY                                              1200      80       30  VARCHAR2          341        AD     SO1
+ SOLD_TO_POSTAL_CODE                                       1200      90       15  VARCHAR2          371        AD     SO1
+ SOLD_TO_COUNTRY                                           1200     100       20  VARCHAR2          386     0  AD     SO1
+ SOLD_TO_COUNTRY_EXT1                                      1200     110        3  VARCHAR2          406     1  AD     SO1
+ SOLD_TO_STATE                                             1200     120       20  VARCHAR2          409     0  AD     SO1
+ SOLD_TO_STATE_EXT1                                        1200     130       10  VARCHAR2          429     1  AD     SO1
+ SOLD_TO_PROVINCE                                          1200     140       20  VARCHAR2          439     0  AD     SO1
+ SOLD_TO_PROVINCE_EXT1                                     1200     150       10  VARCHAR2          459     1  AD     SO1
+ SOLD_TO_COUNTY                                            1200     160       25  VARCHAR2          469        AD     SO1
+ SOLD_TO_CUSTOMER_LOCATION                                 1210      10       40  VARCHAR2          101        CM     SO1
+ SOLD_TO_CUSTOMER_NUMBER                                   1210      20       30  VARCHAR2          141        CM     SO1
+ SOLD_TO_CUSTOMER_SIC_CODE                                 1210      30       30  VARCHAR2          171        CM     SO1
+ SOLD_TO_CUSTOMER_SALES_CHANNEL                            1210      40       30  VARCHAR2          201        CM     SO1
+ SOLD_TO_CONTACT_LAST_NAME                                 1210      50       50  VARCHAR2          231        CM     SO1
+ SOLD_TO_CONTACT_FIRST_NAME                                1210      60       40  VARCHAR2          281        CM     SO1
+ SOLD_TO_CONTACT_JOB_TITLE                                 1210      70       50  VARCHAR2          321        CM     SO1
+ SOLD_TO_TP_REFERENCE_EXT1                                 1215      10       80  VARCHAR2          101        RF     SO1
+ SOLD_TO_TP_REFERENCE_EXT2                                 1215      20       80  VARCHAR2          181        RF     SO1
+ REMIT_TO_CODE_INT                                         1300      10       20  VARCHAR2          101        AD     RE1
+ REMIT_TO_CODE_EXT                                         1300      20       20  VARCHAR2          121        AD     RE1
+ REMIT_TO_CUSTOMER_NAME                                    1300      30       60  VARCHAR2          141        AD     RE1
+ REMIT_TO_ADDRESS1                                         1300      40       35  VARCHAR2          201        AD     RE1
+ REMIT_TO_ADDRESS2                                         1300      50       35  VARCHAR2          236        AD     RE1
+ REMIT_TO_ADDRESS3                                         1300      60       35  VARCHAR2          271        AD     RE1
+ REMIT_TO_ADDRESS4                                         1300      70       35  VARCHAR2          306        AD     RE1
+ REMIT_TO_CITY                                             1300      80       30  VARCHAR2          341        AD     RE1
+ REMIT_TO_POSTAL_CODE                                      1300      90       15  VARCHAR2          371        AD     RE1
+ REMIT_TO_COUNTRY                                          1300     100       20  VARCHAR2          386     0  AD     RE1
+ REMIT_TO_COUNTRY_EXT1                                     1300     110        3  VARCHAR2          406     1  AD     RE1
+ REMIT_TO_STATE                                            1300     120       20  VARCHAR2          409     0  AD     RE1
+ REMIT_TO_STATE_EXT1                                       1300     130       10  VARCHAR2          429     1  AD     RE1
+                                                                                          Report Date:    01-NOV-2011 11:22
+                                           Transaction Layout Definition Report                  Page:            4 / 14
+
+      Transaction: INO                                                Description: OUT: Invoice (810/INVOIC)
+            Level: Header                                         Interface Table: ECE_AR_TRX_HEADERS
+                                                                  Extension Table: ECE_AR_TRX_HEADERS_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ REMIT_TO_PROVINCE                                         1300     140       20  VARCHAR2          439     0  AD     RE1
+ REMIT_TO_PROVINCE_EXT1                                    1300     150       10  VARCHAR2          459     1  AD     RE1
+ REMIT_TO_COUNTY                                           1300     160       25  VARCHAR2          469        AD     RE1
+ REMIT_TO_TP_REFERENCE_EXT1                                1315      10       80  VARCHAR2          101        RF     RE1
+ REMIT_TO_TP_REFERENCE_EXT2                                1315      20       80  VARCHAR2          181        RF     RE1
+ SHIP_FROM_CODE_INT                                        1400      10        3  VARCHAR2          101        SF     SF1
+ SHIP_FROM_CODE_EXT1                                       1400      20       15  VARCHAR2          104        SF     SF1
+ TRANSACTION_NUMBER                                        2000      10       20  VARCHAR2          101        IV     IV1
+ CREDITED_INVOICE_NUMBER                                   2000      20       20  VARCHAR2          121        IV     IV1
+ REFERENCE_INVOICE_NUMBER                                  2000      30       20  VARCHAR2          141        IV     IV1
+ PARENT_INVOICE_NUMBER                                     2000      40       20  VARCHAR2          161        IV     IV1
+ SHIPMENT_DATE                                             2000      50       15  DATE              181        IV     IV1
+ PURCHASE_ORDER_NUMBER                                     2000      60       50  VARCHAR2          196        IV     IV1
+ CREATION_DATE                                             2000      70       15  DATE              246        IV     IV1
+ PURCHASE_ORDER_REVISION_NUMBER                            2000      80       50  VARCHAR2          261        IV     IV1
+ COMMITMENT_START_DATE                                     2000      90       15  DATE              311        IV     IV1
+ PURCHASE_ORDER_DATE                                       2000     100       15  DATE              326        IV     IV1
+ COMMITMENT_END_DATE                                       2000     110       15  DATE              341        IV     IV1
+ INV_TRANSACTION_DATE                                      2000     120       15  DATE              356        IV     IV1
+ LAST_UPDATE_DATE                                          2000     130       15  DATE              371        IV     IV1
+ DUE_DATE                                                  2000     140       15  DATE              386        IV     IV1
+ TOTAL_AMOUNT_DUE                                          2000     150       22  NUMBER            401        IV     IV1
+ AMOUNT_TAX_DUE                                            2000     160       22  NUMBER            423        IV     IV1
+ AMOUNT_FREIGHT_DUE                                        2000     170       22  NUMBER            445        IV     IV1
+ AMOUNT_LINE_ITEMS_DUE                                     2000     180       22  NUMBER            467        IV     IV1
+ INVOICE_NAME                                              2000     190       20  VARCHAR2          489     0  IV     IV1
+ INVOICE_NAME_EXT1                                         2000     200       10  VARCHAR2          509     1  IV     IV1
+ GROSS_WEIGHT                                              2000     210       22  NUMBER            519        IV     IV1
+ NET_WEIGHT                                                2000     220       22  NUMBER            541        IV     IV1
+ WEIGHT_UOM_CODE_INT                                       2000     230        3  VARCHAR2          563        IV     IV1
+ WEIGHT_UOM_CODE_EXT1                                      2000     240        3  VARCHAR2          566        IV     IV1
+ VOLUME                                                    2000     250       22  NUMBER            569        IV     IV1
+ VOLUME_UOM_CODE_INT                                       2000     260        3  VARCHAR2          591        IV     IV1
+ VOLUME_UOM_CODE_EXT1                                      2000     270        3  VARCHAR2          594        IV     IV1
+ SHIPMENT_NUMBER                                           2000     280       30  VARCHAR2          597        IV     IV1
+ BOOKING_NUMBER                                            2000     290       30  VARCHAR2          627        IV     IV1
+ BILL_OF_LADING_NUMBER                                     2000     300       30  VARCHAR2          657        IV     IV1
+ AMOUNT_CHARGES_DUE                                        2010      10       22  NUMBER            101        IV     IV2
+ RECEIVABLES_CHARGES_REMAINING                             2010      20       22  NUMBER            123        IV     IV2
+ CREDIT_MEMO_REASON                                        2020      10       30  VARCHAR2          101        IV     IV3
+ TRANSMISSION_LEAD_DAYS                                    2020      20       22  NUMBER            131        IV     IV3
+ TRANSACTION_SOURCE                                        2020      30       50  VARCHAR2          153        IV     IV3
+ INSTALLMENT_NUMBER                                        2020      40       22  NUMBER            203        IV     IV3
+ MAXIMUM_INSTALLMENT_NUMBER                                2020      50       22  NUMBER            225        IV     IV3
+ SHIPMENT_WAYBILL_NUMBER                                   2030      10       30  VARCHAR2          101        IV     IV4
+ SHIP_VIA                                                  2030      20       30  VARCHAR2          131     0  IV     IV4
+ SHIP_VIA_EXT1                                             2030      30       30  VARCHAR2          161     1  IV     IV4
+ SHIP_VIA_EXT2                                             2030      40       30  VARCHAR2          191     2  IV     IV4
+ SHIP_VIA_EXT3                                             2030      50       30  VARCHAR2          221     3  IV     IV4
+ SHIP_VIA_EXT4                                             2030      60       30  VARCHAR2          251     4  IV     IV4
+ SHIP_VIA_EXT5                                             2030      70       30  VARCHAR2          281     5  IV     IV4
+ SHIPMENT_FOB_POINT                                        2030      80       30  VARCHAR2          311     0  IV     IV4
+                                                                                          Report Date:    01-NOV-2011 11:22
+                                           Transaction Layout Definition Report                  Page:            5 / 14
+
+      Transaction: INO                                                Description: OUT: Invoice (810/INVOIC)
+            Level: Header                                         Interface Table: ECE_AR_TRX_HEADERS
+                                                                  Extension Table: ECE_AR_TRX_HEADERS_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ SHIPMENT_FOB_POINT_EXT1                                   2030      90       30  VARCHAR2          341     1  IV     IV4
+ SHIPMENT_FOB_POINT_EXT2                                   2030     100       30  VARCHAR2          371     2  IV     IV4
+ SHIPMENT_FOB_POINT_EXT3                                   2030     110       30  VARCHAR2          401     3  IV     IV4
+ SHIPMENT_FOB_POINT_EXT4                                   2030     120       30  VARCHAR2          431     4  IV     IV4
+ SHIPMENT_FOB_POINT_EXT5                                   2030     130       30  VARCHAR2          461     5  IV     IV4
+ CURRENCY_CODE                                             2040      10       15  VARCHAR2          101     0  IV     IV5
+ CURRENCY_CODE_EXT1                                        2040      20       15  VARCHAR2          116     1  IV     IV5
+ CURRENCY_EXCHANGE_RATE                                    2040      30       22  NUMBER            131        IV     IV5
+ BASE_CURRENCY_CODE                                        2040      40       15  VARCHAR2          153     0  IV     IV5
+ BASE_CURRENCY_CODE_EXT1                                   2040      50       15  VARCHAR2          168     1  IV     IV5
+ PAYMENT_TERM_NAME                                         2050      10       40  VARCHAR2          101     0  IV     IV6
+ TERM_DUE_PERCENT                                          2050      20       10  NUMBER            141        IV     IV6
+ TERM_DUE_DATE                                             2050      30       15  DATE              151        IV     IV6
+ TERM_DUE_DAYS                                             2050      40       15  NUMBER            166        IV     IV6
+ TERM_DUE_DAY_OF_MONTH                                     2050      50       15  NUMBER            181        IV     IV6
+ TERM_DUE_CUTOFF_DAY                                       2050      60       15  NUMBER            196        IV     IV6
+ TERM_DUE_MONTHS_FORWARD                                   2050      70       15  NUMBER            211        IV     IV6
+ DISCOUNT_PERCENT1                                         2050      80       10  NUMBER            226        IV     IV6
+ DISCOUNT_DAYS1                                            2050      90       15  NUMBER            236        IV     IV6
+ DISCOUNT_DATE1                                            2050     100       15  DATE              251        IV     IV6
+ DISCOUNT_DAY_OF_MONTH1                                    2050     110       15  NUMBER            266        IV     IV6
+ DISCOUNT_MONTHS_FORWARD1                                  2050     120       15  NUMBER            281        IV     IV6
+ DISCOUNT_PERCENT2                                         2050     130       10  NUMBER            296        IV     IV6
+ DISCOUNT_DAYS2                                            2050     140       15  NUMBER            306        IV     IV6
+ DISCOUNT_DATE2                                            2050     150       15  DATE              321        IV     IV6
+ DISCOUNT_DAY_OF_MONTH2                                    2050     160       15  NUMBER            336        IV     IV6
+ DISCOUNT_MONTHS_FORWARD2                                  2050     170       15  NUMBER            351        IV     IV6
+ DISCOUNT_PERCENT3                                         2050     180       10  NUMBER            366        IV     IV6
+ DISCOUNT_DAYS3                                            2050     190       15  NUMBER            376        IV     IV6
+ DISCOUNT_DATE3                                            2050     200       15  DATE              391        IV     IV6
+ DISCOUNT_DAY_OF_MONTH3                                    2050     210       15  NUMBER            406        IV     IV6
+ DISCOUNT_MONTHS_FORWARD3                                  2050     220       15  NUMBER            421        IV     IV6
+ PAYMENT_TERM_NAME_EXT1                                    2050     230       30  VARCHAR2          436     1  IV     IV6
+ PAYMENT_TERM_NAME_EXT2                                    2050     240       30  VARCHAR2          466     2  IV     IV6
+ PAYMENT_TERM_NAME_EXT3                                    2050     250       30  VARCHAR2          496     3  IV     IV6
+ PAYMENT_TERM_NAME_EXT4                                    2050     260       30  VARCHAR2          526     4  IV     IV6
+ PAYMENT_TERM_NAME_EXT5                                    2050     270       30  VARCHAR2          556     5  IV     IV6
+ PRIMARY_SALESREP_NAME                                     2060      10       30  VARCHAR2          101        IV     IV7
+ COMMENTS                                                  2060      20      240  VARCHAR2          131        IV     IV7
+                                                                                          Report Date:    01-NOV-2011 11:22
+                                           Transaction Layout Definition Report                  Page:            6 / 14
+
+      Transaction: INO                                                Description: OUT: Invoice (810/INVOIC)
+            Level: Header 1                                       Interface Table: ECE_AR_TRX_HEADER_1
+                                                                  Extension Table: ECE_AR_TRX_HEADER_1_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ TRANSACTION_ATTRIBUTE_CATEGORY                            3000      10       30  VARCHAR2          101        A1     IH1
+ TRANSACTION_ATTRIBUTE1                                    3000      20       80  VARCHAR2          131        A1     IH1
+ TRANSACTION_ATTRIBUTE2                                    3000      30       80  VARCHAR2          211        A1     IH1
+ TRANSACTION_ATTRIBUTE3                                    3000      40       80  VARCHAR2          291        A1     IH1
+ TRANSACTION_ATTRIBUTE4                                    3000      50       80  VARCHAR2          371        A1     IH1
+ TRANSACTION_ATTRIBUTE5                                    3010      10       80  VARCHAR2          101        A2     IH2
+ TRANSACTION_ATTRIBUTE6                                    3010      20       80  VARCHAR2          181        A2     IH2
+ TRANSACTION_ATTRIBUTE7                                    3010      30       80  VARCHAR2          261        A2     IH2
+ TRANSACTION_ATTRIBUTE8                                    3010      40       80  VARCHAR2          341        A2     IH2
+ TRANSACTION_ATTRIBUTE9                                    3010      50       80  VARCHAR2          421        A2     IH2
+ TRANSACTION_ATTRIBUTE10                                   3020      10       80  VARCHAR2          101        A2     IH3
+ TRANSACTION_ATTRIBUTE11                                   3020      20       80  VARCHAR2          181        A2     IH3
+ TRANSACTION_ATTRIBUTE12                                   3020      30       80  VARCHAR2          261        A2     IH3
+ TRANSACTION_ATTRIBUTE13                                   3020      40       80  VARCHAR2          341        A2     IH3
+ TRANSACTION_ATTRIBUTE14                                   3020      50       80  VARCHAR2          421        A2     IH3
+ TRANSACTION_ATTRIBUTE15                                   3030      10       80  VARCHAR2          101        A2     IH4
+ INTERFACE_ATTRIBUTE_CATEGORY                              3040      10       30  VARCHAR2          101        A1     IH5
+ INTERFACE_ATTRIBUTE1                                      3040      20       80  VARCHAR2          131        A1     IH5
+ INTERFACE_ATTRIBUTE2                                      3040      30       80  VARCHAR2          211        A1     IH5
+ INTERFACE_ATTRIBUTE3                                      3040      40       80  VARCHAR2          291        A1     IH5
+ INTERFACE_ATTRIBUTE4                                      3040      50       80  VARCHAR2          371        A1     IH5
+ INTERFACE_ATTRIBUTE5                                      3050      10       80  VARCHAR2          101        A2     IH6
+ INTERFACE_ATTRIBUTE6                                      3050      20       80  VARCHAR2          181        A2     IH6
+ INTERFACE_ATTRIBUTE7                                      3050      30       80  VARCHAR2          261        A2     IH6
+ INTERFACE_ATTRIBUTE8                                      3050      40       80  VARCHAR2          341        A2     IH6
+ INTERFACE_ATTRIBUTE9                                      3050      50       80  VARCHAR2          421        A2     IH6
+ INTERFACE_ATTRIBUTE10                                     3060      10       80  VARCHAR2          101        A2     IH7
+ INTERFACE_ATTRIBUTE11                                     3060      20       80  VARCHAR2          181        A2     IH7
+ INTERFACE_ATTRIBUTE12                                     3060      30       80  VARCHAR2          261        A2     IH7
+ INTERFACE_ATTRIBUTE13                                     3060      40       80  VARCHAR2          341        A2     IH7
+ INTERFACE_ATTRIBUTE14                                     3060      50       80  VARCHAR2          421        A2     IH7
+ INTERFACE_ATTRIBUTE15                                     3070      10       80  VARCHAR2          101        A2     IH8
+ SHIP_FROM_CODE_INT                                        3072      10        3  VARCHAR2          101     0  A2     IH9
+ SHIP_FROM_CODE_INT_1                                      3072      20        3  VARCHAR2          104     0  A2     IH9
+ SHIP_FROM_CODE_EXT1                                       3072      30       15  VARCHAR2          107     1  A2     IH9
+ SHIP_FROM_CODE_EXT2                                       3072      40       15  VARCHAR2          122     2  A2     IH9
+ SHIP_FROM_CODE_EXT3                                       3072      50       15  VARCHAR2          137     3  A2     IH9
+ SHIP_FROM_CODE_EXT4                                       3072      60       15  VARCHAR2          152     4  A2     IH9
+ SHIP_FROM_CODE_EXT5                                       3072      70       15  VARCHAR2          167     5  A2     IH9
+ EQUIPMENT_PREFIX                                          3075      10       10  VARCHAR2          101        IV     IV8
+ EQUIPMENT_NUMBER                                          3075      20       30  VARCHAR2          111        IV     IV8
+ DELIVERY_ID                                               3075      30       30  VARCHAR2          141        IV     IV8
+ PACKING_SLIP_NUMBER                                       3075      40       50  VARCHAR2          171        IV     IV8
+ ROUTING_INSTRUCTIONS                                      3075      50      150  VARCHAR2          221        IV     IV8
+                                                                                          Report Date:    01-NOV-2011 11:22
+                                           Transaction Layout Definition Report                  Page:            7 / 14
+
+      Transaction: INO                                                Description: OUT: Invoice (810/INVOIC)
+            Level: Allowance Charges Header                       Interface Table: ECE_AR_TRX_ALLOWANCE_CHARGES
+                                                                  Extension Table: ECE_AR_TRX_ALLOWANCE_CHARGES_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ ALLOWANCE_CHARGE_INDICATOR                                3080      10        1  VARCHAR2          101        AH     AH1
+ ALLOWANCE_CHARGE_AMOUNT                                   3080      20       22  NUMBER            102        AH     AH1
+ SPECIAL_SERVICES_CODE                                     3080      30       10  VARCHAR2          124     0  AH     AH1
+ SPECIAL_SERVICES_CODE_EXT1                                3080      40       10  VARCHAR2          134     1  AH     AH1
+ SPECIAL_SERVICES_CODE_EXT2                                3080      50       10  VARCHAR2          144     2  AH     AH1
+ SPECIAL_SERVICES_CODE_EXT3                                3080      60       10  VARCHAR2          154     3  AH     AH1
+ SPECIAL_SERVICES_CODE_EXT4                                3080      70       10  VARCHAR2          164     4  AH     AH1
+ SPECIAL_SERVICES_CODE_EXT5                                3080      80       10  VARCHAR2          174     5  AH     AH1
+ METHOD_HANDLING_CODE                                      3080      90        3  VARCHAR2          184     0  AH     AH1
+ METHOD_HANDLING_CODE_EXT1                                 3080     100       10  VARCHAR2          187     1  AH     AH1
+ METHOD_HANDLING_CODE_EXT2                                 3080     110       10  VARCHAR2          197     2  AH     AH1
+ METHOD_HANDLING_CODE_EXT3                                 3080     120       10  VARCHAR2          207     3  AH     AH1
+ METHOD_HANDLING_CODE_EXT4                                 3080     130       10  VARCHAR2          217     4  AH     AH1
+ METHOD_HANDLING_CODE_EXT5                                 3080     140       10  VARCHAR2          227     5  AH     AH1
+ SPECIAL_CHARGES_CODE                                      3080     150        3  VARCHAR2          237     0  AH     AH1
+ SPECIAL_CHARGES_CODE_EXT1                                 3080     160       10  VARCHAR2          240     1  AH     AH1
+ SPECIAL_CHARGES_CODE_EXT2                                 3080     170       10  VARCHAR2          250     2  AH     AH1
+ SPECIAL_CHARGES_CODE_EXT3                                 3080     180       10  VARCHAR2          260     3  AH     AH1
+ SPECIAL_CHARGES_CODE_EXT4                                 3080     190       10  VARCHAR2          270     4  AH     AH1
+ SPECIAL_CHARGES_CODE_EXT5                                 3080     200       10  VARCHAR2          280     5  AH     AH1
+ ALLOWANCE_CHARGE_DESC                                     3090      10       80  VARCHAR2          101        AH     AH2
+ AGENCY_QUALIFIER_CODE                                     3090      20        3  VARCHAR2          181        AH     AH2
+ ALLOWANCE_CHARGE_RATE                                     3090      30       22  NUMBER            184        AH     AH2
+ ALLOWANCE_CHARGE_PCT_QUALIFIER                            3090      40        3  VARCHAR2          206        AH     AH2
+ ALLOWANCE_CHARGE_PCT                                      3090      50       22  NUMBER            209        AH     AH2
+ AC_ATTRIBUTE_CATEGORY                                     3091      10       80  VARCHAR2          101        AH     IH1
+ AC_ATTRIBUTE1                                             3091      20       80  VARCHAR2          181        AH     IH1
+ AC_ATTRIBUTE2                                             3091      30       80  VARCHAR2          261        AH     IH1
+ AC_ATTRIBUTE3                                             3091      40       80  VARCHAR2          341        AH     IH1
+ AC_ATTRIBUTE4                                             3091      50       80  VARCHAR2          421        AH     IH1
+ AC_ATTRIBUTE5                                             3092      10       80  VARCHAR2          101        AH     IH2
+ AC_ATTRIBUTE6                                             3092      20       80  VARCHAR2          181        AH     IH2
+ AC_ATTRIBUTE7                                             3092      30       80  VARCHAR2          261        AH     IH2
+ AC_ATTRIBUTE8                                             3092      40       80  VARCHAR2          341        AH     IH2
+ AC_ATTRIBUTE9                                             3092      50       80  VARCHAR2          421        AH     IH2
+ AC_ATTRIBUTE10                                            3093      10       80  VARCHAR2          101        AH     IH3
+ AC_ATTRIBUTE11                                            3093      20       80  VARCHAR2          181        AH     IH3
+ AC_ATTRIBUTE12                                            3093      30       80  VARCHAR2          261        AH     IH3
+ AC_ATTRIBUTE13                                            3093      40       80  VARCHAR2          341        AH     IH3
+ AC_ATTRIBUTE14                                            3093      50       80  VARCHAR2          421        AH     IH3
+ AC_ATTRIBUTE15                                            3094      10       80  VARCHAR2          101        AH     IH4
+                                                                                          Report Date:    01-NOV-2011 11:22
+                                           Transaction Layout Definition Report                  Page:            8 / 14
+
+      Transaction: INO                                                Description: OUT: Invoice (810/INVOIC)
+            Level: Line                                           Interface Table: ECE_AR_TRX_LINES
+                                                                  Extension Table: ECE_AR_TRX_LINES_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ LINE_NUMBER                                               4000      10       22  NUMBER            101        IT     IT1
+ CREDITED_LINE_NUMBER                                      4000      20       22  NUMBER            123        IT     IT1
+ LINE_ITEM_NUMBER                                          4000      30       50  VARCHAR2          145        IT     IT1
+ CUSTOMER_ITEM_NUMBER                                      4000      40       50  VARCHAR2          195        IT     IT1
+ ORDERED_QUANTITY                                          4000      50       22  NUMBER            245        IT     IT1
+ QUANTITY                                                  4000      60       22  NUMBER            267        IT     IT1
+ UOM_CODE                                                  4000      70        3  VARCHAR2          289     0  IT     IT1
+ UOM_CODE_EXT1                                             4000      80        5  VARCHAR2          292     1  IT     IT1
+ UNIT_STANDARD_PRICE                                       4000      90       22  NUMBER            297        IT     IT1
+ UNIT_SELLING_PRICE                                        4000     100       22  NUMBER            319        IT     IT1
+ LINE_AMOUNT                                               4000     110       22  NUMBER            341        IT     IT1
+ CREDIT_MEMO_REASON                                        4000     120       30  VARCHAR2          363        IT     IT1
+ ITEM_IDENTIFIER_TYPE                                      4000     130       20  VARCHAR2          393     0  IT     IT1
+ ITEM_IDENTIFIER_TYPE_EXT1                                 4000     140       20  VARCHAR2          413     1  IT     IT1
+ ORDERED_ITEM                                              4000     150      100  VARCHAR2          433        IT     IT1
+ CUST_MODEL_SERIAL_NUMBER                                  4000     160       50  VARCHAR2          533        IT     IT1
+ SHIPPED_QUANTITY                                          4000     170       22  NUMBER            583        IT     IT1
+ INVOICE_LINE_TYPE                                         4000     180        1  VARCHAR2          605        IT     IT1
+ INVOICE_LINE_REFERENCE                                    4000     190       22  NUMBER            606        IT     IT1
+ PURCHASE_ORDER_NUMBER                                     4000     200       50  VARCHAR2          628        IT     IT1
+ PURCHASE_ORDER_LINE_NUMBER                                4000     210       25  VARCHAR2          678        IT     IT1
+ GROSS_WEIGHT                                              4000     220       22  NUMBER            703        IT     IT1
+ NET_WEIGHT                                                4000     230       22  NUMBER            725        IT     IT1
+ WEIGHT_UOM_CODE_INT                                       4000     240        3  VARCHAR2          747     0  IT     IT1
+ WEIGHT_UOM_CODE_EXT1                                      4000     250        5  VARCHAR2          750     1  IT     IT1
+ VOLUME                                                    4000     260       22  NUMBER            755        IT     IT1
+ VOLUME_UOM_CODE_INT                                       4000     270        3  VARCHAR2          777     0  IT     IT1
+ VOLUME_UOM_CODE_EXT1                                      4000     280        5  VARCHAR2          780     1  IT     IT1
+ SHIPPED_QUANTITY2                                         4000     290       22  NUMBER            785        IT     IT1
+ SHIPPING_QUANTITY_UOM_INT                                 4000     300        3  VARCHAR2          807     0  IT     IT1
+ SHIPPING_QUANTITY_UOM_EXT1                                4000     310        3  VARCHAR2          810     1  IT     IT1
+ SALES_ORDER_NUMBER                                        4010      10       50  VARCHAR2          101        IT     IT2
+ SALES_ORDER_REVISION_NUMBER                               4010      20       22  NUMBER            151        IT     IT2
+ SALES_ORDER_LINE_NUMBER                                   4010      30       30  VARCHAR2          173        IT     IT2
+ SALES_ORDER_DATE                                          4010      40       15  DATE              203        IT     IT2
+ ITEM_DESCRIPTION                                          4010      50      125  VARCHAR2          218        IT     IT2
+ CUSTOMER_ITEM_DESC                                        4010      60      125  VARCHAR2          343        IT     IT2
+ PACKING_SLIP_NUMBER                                       4010      70       50  VARCHAR2          468        IT     IT2
+ DELIVERY_ID                                               4010      80       22  VARCHAR2          518        IT     IT2
+ BOOKING_NUMBER                                            4010      90       30  VARCHAR2          540        IT     IT2
+ BILL_OF_LADING_NUMBER                                     4010     100       30  VARCHAR2          570        IT     IT2
+ SHIPMENT_NUMBER                                           4010     110       30  NUMBER            600        IT     IT2
+ SALES_CHANNEL                                             4020      10       50  VARCHAR2          101        IT     IT3
+ SHIP_ORDER_STATUS_INT                                     4030      10       22  VARCHAR2          101     0  IT     IT4
+ SHIP_ORDER_STATUS_EXT1                                    4030      20       80  VARCHAR2          123     1  IT     IT4
+ TRANSACTION_REFERENCE_KEY                                 4030      30       30  VARCHAR2          203        IT     IT4
+ FREIGHT_TERMS_CODE                                        4040      10       30  VARCHAR2          101        IT     IT5
+ FREIGHT_TERMS_CODE_INT                                    4040      20       30  VARCHAR2          131     0  IT     IT5
+ FREIGHT_TERMS_CODE_EXT1                                   4040      30       30  VARCHAR2          161     1  IT     IT5
+ FREIGHT_TERMS_CODE_EXT2                                   4040      40       30  VARCHAR2          191     2  IT     IT5
+ FOB_LOCATION_CODE                                         4040      50       20  VARCHAR2          221     0  IT     IT5
+ FOB_LOCATION_CODE_EXT1                                    4040      60       20  VARCHAR2          241     1  IT     IT5
+                                                                                          Report Date:    01-NOV-2011 11:22
+                                           Transaction Layout Definition Report                  Page:            9 / 14
+
+      Transaction: INO                                                Description: OUT: Invoice (810/INVOIC)
+            Level: Line                                           Interface Table: ECE_AR_TRX_LINES
+                                                                  Extension Table: ECE_AR_TRX_LINES_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ FOB_LOCATION_CODE_EXT2                                    4040      70       20  VARCHAR2          261     2  IT     IT5
+ SHIP_FROM_EDI_LOC_CODE                                    4100      10       35  VARCHAR2          101        IT     IT6
+ SHIP_FROM_EDI_LOC_CODE_INT                                4100      20       35  VARCHAR2          136     0  IT     IT6
+ SHIP_FROM_EDI_LOC_CODE_EXT1                               4100      30       35  VARCHAR2          171     1  IT     IT6
+ SHIP_FROM_EDI_LOC_CODE_EXT2                               4100      40       35  VARCHAR2          206     2  IT     IT6
+ WAREHOUSE_CODE                                            4110      10        3  VARCHAR2          101        AX     SF
+ WAREHOUSE_NAME                                            4110      20       60  VARCHAR2          104        AX     SF
+ WAREHOUSE_ADDRESS1                                        4110      30       60  VARCHAR2          164        AX     SF
+ WAREHOUSE_ADDRESS2                                        4110      40       60  VARCHAR2          224        AX     SF
+ WAREHOUSE_ADDRESS3                                        4110      50       60  VARCHAR2          284        AX     SF
+ WAREHOUSE_CITY                                            4110      60       30  VARCHAR2          344        AX     SF
+ WAREHOUSE_POSTAL_CODE                                     4110      70       30  VARCHAR2          374        AX     SF
+ WAREHOUSE_COUNTRY_INT                                     4110      80       60  VARCHAR2          404     0  AX     SF
+ WAREHOUSE_COUNTRY_EXT1                                    4110      90       30  VARCHAR2          464     1  AX     SF
+ WAREHOUSE_REGION1_INT                                     4110     100       70  VARCHAR2          494     0  AX     SF
+ WAREHOUSE_REGION1_EXT1                                    4110     110       30  VARCHAR2          564     1  AX     SF
+ WAREHOUSE_REGION2_INT                                     4110     120       70  VARCHAR2          594     0  AX     SF
+ WAREHOUSE_REGION2_EXT1                                    4110     130       30  VARCHAR2          664     1  AX     SF
+ WAREHOUSE_REGION3_INT                                     4110     140       70  VARCHAR2          694     0  AX     SF
+ WAREHOUSE_REGION3_EXT1                                    4110     150       30  VARCHAR2          764     1  AX     SF
+ INTERFACE_LINE_CATEGORY                                   5000      10       30  VARCHAR2          101        A1     IL1
+ INTERFACE_LINE_ATTRIBUTE1                                 5000      20       30  VARCHAR2          131        A1     IL1
+ INTERFACE_LINE_ATTRIBUTE2                                 5000      30       30  VARCHAR2          161        A1     IL1
+ INTERFACE_LINE_ATTRIBUTE3                                 5000      40       30  VARCHAR2          191        A1     IL1
+ INTERFACE_LINE_ATTRIBUTE4                                 5000      50       30  VARCHAR2          221        A1     IL1
+ INTERFACE_LINE_ATTRIBUTE5                                 5010      10       30  VARCHAR2          101        A2     IL2
+ INTERFACE_LINE_ATTRIBUTE6                                 5010      20       30  VARCHAR2          131        A2     IL2
+ INTERFACE_LINE_ATTRIBUTE7                                 5010      30       30  VARCHAR2          161        A2     IL2
+ INTERFACE_LINE_ATTRIBUTE8                                 5010      40       30  VARCHAR2          191        A2     IL2
+ INTERFACE_LINE_ATTRIBUTE9                                 5010      50       30  VARCHAR2          221        A2     IL2
+ INTERFACE_LINE_ATTRIBUTE10                                5020      10       30  VARCHAR2          101        A2     IL3
+ INTERFACE_LINE_ATTRIBUTE11                                5020      20       30  VARCHAR2          131        A2     IL3
+ INTERFACE_LINE_ATTRIBUTE12                                5020      30       30  VARCHAR2          161        A2     IL3
+ INTERFACE_LINE_ATTRIBUTE13                                5020      40       30  VARCHAR2          191        A2     IL3
+ INTERFACE_LINE_ATTRIBUTE14                                5020      50       30  VARCHAR2          221        A2     IL3
+ INTERFACE_LINE_ATTRIBUTE15                                5030      10       30  VARCHAR2          101        A2     IL4
+ LINE_ATTRIBUTE_CATEGORY                                   5040      10       30  VARCHAR2          101        A1     LN1
+ LINE_ATTRIBUTE1                                           5040      20       80  VARCHAR2          131        A1     LN1
+ LINE_ATTRIBUTE2                                           5040      30       80  VARCHAR2          211        A1     LN1
+ LINE_ATTRIBUTE3                                           5040      40       80  VARCHAR2          291        A1     LN1
+ LINE_ATTRIBUTE4                                           5040      50       80  VARCHAR2          371        A1     LN1
+ LINE_ATTRIBUTE5                                           5050      10       80  VARCHAR2          101        A2     LN2
+ LINE_ATTRIBUTE6                                           5050      20       80  VARCHAR2          181        A2     LN2
+ LINE_ATTRIBUTE7                                           5050      30       80  VARCHAR2          261        A2     LN3
+ LINE_ATTRIBUTE8                                           5050      40       80  VARCHAR2          341        A2     LN2
+ LINE_ATTRIBUTE9                                           5050      50       80  VARCHAR2          421        A2     LN2
+ LINE_ATTRIBUTE10                                          5050      60       80  VARCHAR2          501        A2     LN2
+ LINE_ATTRIBUTE11                                          5060      10       80  VARCHAR2          101        A2     LN3
+ LINE_ATTRIBUTE12                                          5060      20       80  VARCHAR2          181        A2     LN3
+ LINE_ATTRIBUTE13                                          5060      30       80  VARCHAR2          261        A2     LN3
+ LINE_ATTRIBUTE14                                          5060      40       80  VARCHAR2          341        A2     LN3
+ LINE_ATTRIBUTE15                                          5070      10       80  VARCHAR2          101        A2     LN4
+                                                                                          Report Date:    01-NOV-2011 11:22
+                                           Transaction Layout Definition Report                  Page:           10 / 14
+
+      Transaction: INO                                                Description: OUT: Invoice (810/INVOIC)
+            Level: Line                                           Interface Table: ECE_AR_TRX_LINES
+                                                                  Extension Table: ECE_AR_TRX_LINES_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ LINE_ITEM_ATTRIB_CATEGORY                                 5100      10       30  VARCHAR2          101        A1     LP1
+ LINE_ITEM_ATTRIBUTE1                                      5100      20       80  VARCHAR2          131        A1     LP1
+ LINE_ITEM_ATTRIBUTE2                                      5100      30       80  VARCHAR2          211        A1     LP1
+ LINE_ITEM_ATTRIBUTE3                                      5100      40       80  VARCHAR2          291        A1     LP1
+ LINE_ITEM_ATTRIBUTE4                                      5100      50       80  VARCHAR2          371        A1     LP1
+ LINE_ITEM_ATTRIBUTE5                                      5110      10       80  VARCHAR2          101        A2     LP2
+ LINE_ITEM_ATTRIBUTE6                                      5110      20       80  VARCHAR2          181        A2     LP2
+ LINE_ITEM_ATTRIBUTE7                                      5110      30       80  VARCHAR2          261        A2     LP2
+ LINE_ITEM_ATTRIBUTE8                                      5110      40       80  VARCHAR2          341        A2     LP2
+ LINE_ITEM_ATTRIBUTE9                                      5110      50       80  VARCHAR2          421        A2     LP2
+ LINE_ITEM_ATTRIBUTE10                                     5120      10       80  VARCHAR2          101        A2     LP3
+ LINE_ITEM_ATTRIBUTE11                                     5120      20       80  VARCHAR2          181        A2     LP3
+ LINE_ITEM_ATTRIBUTE12                                     5120      30       80  VARCHAR2          261        A2     LP3
+ LINE_ITEM_ATTRIBUTE13                                     5120      40       80  VARCHAR2          341        A2     LP3
+ LINE_ITEM_ATTRIBUTE14                                     5120      50       80  VARCHAR2          421        A2     LP3
+ LINE_ITEM_ATTRIBUTE15                                     5130      10       80  VARCHAR2          101        A2     LP4
+ HEADER_TP_ATTRIBUTE1                                      5140      10       80  VARCHAR2          101        A2     HT1
+ HEADER_TP_ATTRIBUTE2                                      5140      20       80  VARCHAR2          181        A2     HT1
+ HEADER_TP_ATTRIBUTE3                                      5140      30       80  VARCHAR2          261        A2     HT1
+ HEADER_TP_ATTRIBUTE4                                      5140      40       80  VARCHAR2          341        A2     HT1
+ HEADER_TP_ATTRIBUTE5                                      5140      50       80  VARCHAR2          421        A2     HT1
+ HEADER_TP_ATTRIBUTE6                                      5150      10       80  VARCHAR2          101        A2     HT2
+ HEADER_TP_ATTRIBUTE7                                      5150      20       80  VARCHAR2          181        A2     HT2
+ HEADER_TP_ATTRIBUTE8                                      5150      30       80  VARCHAR2          261        A2     HT2
+ HEADER_TP_ATTRIBUTE9                                      5150      40       80  VARCHAR2          341        A2     HT2
+ HEADER_TP_ATTRIBUTE10                                     5150      50       80  VARCHAR2          421        A2     HT2
+ HEADER_TP_ATTRIBUTE11                                     5160      10       80  VARCHAR2          101        A2     HT3
+ HEADER_TP_ATTRIBUTE12                                     5160      20       80  VARCHAR2          181        A2     HT3
+ HEADER_TP_ATTRIBUTE13                                     5160      30       80  VARCHAR2          261        A2     HT3
+ HEADER_TP_ATTRIBUTE14                                     5160      40       80  VARCHAR2          341        A2     HT3
+ HEADER_TP_ATTRIBUTE15                                     5160      50       80  VARCHAR2          421        A2     HT3
+ LINE_TP_ATTRIBUTE1                                        5170      10       80  VARCHAR2          101        A2     LT1
+ LINE_TP_ATTRIBUTE2                                        5170      20       80  VARCHAR2          181        A2     LT1
+ LINE_TP_ATTRIBUTE3                                        5170      30       80  VARCHAR2          261        A2     LT1
+ LINE_TP_ATTRIBUTE4                                        5170      40       80  VARCHAR2          341        A2     LT1
+ LINE_TP_ATTRIBUTE5                                        5170      50       80  VARCHAR2          421        A2     LT1
+ LINE_TP_ATTRIBUTE6                                        5180      10       80  VARCHAR2          101        A2     LT2
+ LINE_TP_ATTRIBUTE7                                        5180      20       80  VARCHAR2          181        A2     LT2
+ LINE_TP_ATTRIBUTE8                                        5180      30       80  VARCHAR2          261        A2     LT2
+ LINE_TP_ATTRIBUTE9                                        5180      40       80  VARCHAR2          341        A2     LT2
+ LINE_TP_ATTRIBUTE10                                       5180      50       80  VARCHAR2          421        A2     LT2
+ LINE_TP_ATTRIBUTE11                                       5190      10       80  VARCHAR2          101        A2     LT3
+ LINE_TP_ATTRIBUTE12                                       5190      20       80  VARCHAR2          181        A2     LT3
+ LINE_TP_ATTRIBUTE13                                       5190      30       80  VARCHAR2          261        A2     LT3
+ LINE_TP_ATTRIBUTE14                                       5190      40       80  VARCHAR2          341        A2     LT3
+ LINE_TP_ATTRIBUTE15                                       5190      50       80  VARCHAR2          421        A2     LT3
+ INDUSTRY_ATTRIBUTE1                                       5200      10       80  VARCHAR2          101        A2     IA1
+ INDUSTRY_ATTRIBUTE2                                       5200      20       80  VARCHAR2          181        A2     IA1
+ INDUSTRY_ATTRIBUTE3                                       5200      30       80  VARCHAR2          261        A2     IA1
+ INDUSTRY_ATTRIBUTE4                                       5200      40       80  VARCHAR2          341        A2     IA1
+ INDUSTRY_ATTRIBUTE5                                       5200      50       80  VARCHAR2          421        A2     IA1
+ INDUSTRY_ATTRIBUTE6                                       5210      10       80  VARCHAR2          101        A2     IA2
+                                                                                          Report Date:    01-NOV-2011 11:22
+                                           Transaction Layout Definition Report                  Page:           11 / 14
+
+      Transaction: INO                                                Description: OUT: Invoice (810/INVOIC)
+            Level: Line                                           Interface Table: ECE_AR_TRX_LINES
+                                                                  Extension Table: ECE_AR_TRX_LINES_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ INDUSTRY_ATTRIBUTE7                                       5210      20       80  VARCHAR2          181        A2     IA2
+ INDUSTRY_ATTRIBUTE8                                       5210      30       80  VARCHAR2          261        A2     IA2
+ INDUSTRY_ATTRIBUTE9                                       5210      40       80  VARCHAR2          341        A2     IA2
+ INDUSTRY_ATTRIBUTE10                                      5210      50       80  VARCHAR2          421        A2     IA2
+ INDUSTRY_ATTRIBUTE11                                      5220      10       80  VARCHAR2          101        A2     IA3
+ INDUSTRY_ATTRIBUTE12                                      5220      20       80  VARCHAR2          181        A2     IA3
+ INDUSTRY_ATTRIBUTE13                                      5220      30       80  VARCHAR2          261        A2     IA3
+ INDUSTRY_ATTRIBUTE14                                      5220      40       80  VARCHAR2          341        A2     IA3
+ INDUSTRY_ATTRIBUTE15                                      5220      50       80  VARCHAR2          421        A2     IA3
+ INDUSTRY_CONTEXT                                          5220      60       30  VARCHAR2          501        A2     IA3
+                                                                                          Report Date:    01-NOV-2011 11:22
+                                           Transaction Layout Definition Report                  Page:           12 / 14
+
+      Transaction: INO                                                Description: OUT: Invoice (810/INVOIC)
+            Level: Line Tax                                       Interface Table: ECE_AR_TRX_LINE_TAX
+                                                                  Extension Table: ECE_AR_TRX_LINE_TAX_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ LINE_TYPE                                                 6000      10       20  VARCHAR2          101        TX     TX1
+ TAX_LINE_NUMBER                                           6000      20       22  NUMBER            121        TX     TX1
+ TAX_AMOUNT                                                6000      30       22  NUMBER            143        TX     TX1
+ TAX_RATE                                                  6000      40       22  NUMBER            165        TX     TX1
+ TAX_PRECEDENCE                                            6000      50       22  NUMBER            187        TX     TX1
+ LINE_NUMBER                                               6000      60       22  NUMBER            209        TX     TX1
+ DESCRIPTION                                               6000      70       60  VARCHAR2          231        TX     TX1
+ LOCATION                                                  6000      80       60  VARCHAR2          291        TX     TX1
+ TAX_TYPE                                                  6005      10       30  VARCHAR2          101     0  TX     TX2
+ TAX_TYPE_EXT1                                             6005      20       50  VARCHAR2          131     1  TX     TX2
+ TAX_TYPE_EXT2                                             6005      30       50  VARCHAR2          181     2  TX     TX2
+ TAX_TYPE_EXT3                                             6005      40       50  VARCHAR2          231     3  TX     TX2
+ TAX_TYPE_EXT4                                             6005      50       50  VARCHAR2          281     4  TX     TX2
+ TAX_TYPE_EXT5                                             6005      60       50  VARCHAR2          331     5  TX     TX2
+ TAX_EXEMPT_FLAG                                           6010      10        1  VARCHAR2          101        TX     TX3
+ TAX_EXEMPT_NUMBER                                         6010      20       80  VARCHAR2          102        TX     TX3
+ TAX_EXEMPT_REASON_CODE                                    6010      30       30  VARCHAR2          182        TX     TX3
+ TAX_CLASSIFICATION                                        6010      40       30  VARCHAR2          212     0  TX     TX3
+ TAX_CLASSIFICATION_EXT1                                   6010      50       50  VARCHAR2          242     1  TX     TX3
+ TAX_CLASSIFICATION_EXT2                                   6010      60       50  VARCHAR2          292     2  TX     TX3
+ TAX_CLASSIFICATION_EXT3                                   6010      70       50  VARCHAR2          342     3  TX     TX3
+ TAX_CLASSIFICATION_EXT4                                   6010      80       50  VARCHAR2          392     4  TX     TX3
+ TAX_CLASSIFICATION_EXT5                                   6010      90       50  VARCHAR2          442     5  TX     TX3
+ VAT_TAX_CODE_INT                                          6020      10       80  VARCHAR2          101     0  TX     TX4
+ VAT_TAX_CODE_EXT1                                         6020      20       80  VARCHAR2          181     1  TX     TX4
+ VAT_TAX_CODE_EXT2                                         6020      30       50  VARCHAR2          261     2  TX     TX4
+ VAT_TAX_CODE_EXT3                                         6020      40       50  VARCHAR2          311     3  TX     TX4
+ VAT_TAX_CODE_EXT4                                         6020      50       50  VARCHAR2          361     4  TX     TX4
+ VAT_TAX_CODE_EXT5                                         6020      60       50  VARCHAR2          411     5  TX     TX4
+ VAT_TRANSACTION_TYPE                                      6025      10       30  VARCHAR2          101     0  TX     TX5
+ VAT_TRANSACTION_TYPE_EXT1                                 6025      20       50  VARCHAR2          131     1  TX     TX5
+ VAT_TRANSACTION_TYPE_EXT2                                 6025      30       50  VARCHAR2          181     2  TX     TX5
+ VAT_TRANSACTION_TYPE_EXT3                                 6025      40       50  VARCHAR2          231     3  TX     TX5
+ VAT_TRANSACTION_TYPE_EXT4                                 6025      50       50  VARCHAR2          281     4  TX     TX5
+ VAT_TRANSACTION_TYPE_EXT5                                 6025      60       50  VARCHAR2          331     5  TX     TX5
+ TAX_ATTRIBUTE_CATEGORY                                    6030      10       30  VARCHAR2          101        A1     TX1
+ TAX_ATTRIBUTE1                                            6030      20       80  VARCHAR2          131        A1     TX1
+ TAX_ATTRIBUTE2                                            6030      30       80  VARCHAR2          211        A1     TX1
+ TAX_ATTRIBUTE3                                            6030      40       80  VARCHAR2          291        A1     TX1
+ TAX_ATTRIBUTE4                                            6030      50       80  VARCHAR2          371        A1     TX1
+ TAX_ATTRIBUTE5                                            6040      10       80  VARCHAR2          101        A2     TX2
+ TAX_ATTRIBUTE6                                            6040      20       80  VARCHAR2          181        A2     TX2
+ TAX_ATTRIBUTE7                                            6040      30       80  VARCHAR2          261        A2     TX2
+ TAX_ATTRIBUTE8                                            6040      40       80  VARCHAR2          341        A2     TX2
+ TAX_ATTRIBUTE9                                            6040      50       80  VARCHAR2          421        A2     TX2
+ TAX_ATTRIBUTE10                                           6050      10       80  VARCHAR2          101        A2     TX3
+ TAX_ATTRIBUTE11                                           6050      20       80  VARCHAR2          181        A2     TX3
+ TAX_ATTRIBUTE12                                           6050      30       80  VARCHAR2          261        A2     TX3
+ TAX_ATTRIBUTE13                                           6050      40       80  VARCHAR2          341        A2     TX3
+ TAX_ATTRIBUTE14                                           6050      50       80  VARCHAR2          421        A2     TX3
+ TAX_ATTRIBUTE15                                           6060      10       80  VARCHAR2          101        A2     TX4
+ VAT_TAX_ATTRIBUTE_CATEGORY                                6070      10       30  VARCHAR2          101        A1     VT1
+                                                                                          Report Date:    01-NOV-2011 11:22
+                                           Transaction Layout Definition Report                  Page:           13 / 14
+
+      Transaction: INO                                                Description: OUT: Invoice (810/INVOIC)
+            Level: Line Tax                                       Interface Table: ECE_AR_TRX_LINE_TAX
+                                                                  Extension Table: ECE_AR_TRX_LINE_TAX_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ VAT_TAX_ATTRIBUTE1                                        6070      20       80  VARCHAR2          131        A1     VT1
+ VAT_TAX_ATTRIBUTE2                                        6070      30       80  VARCHAR2          211        A1     VT1
+ VAT_TAX_ATTRIBUTE3                                        6070      40       80  VARCHAR2          291        A1     VT1
+ VAT_TAX_ATTRIBUTE4                                        6070      50       80  VARCHAR2          371        A1     VT1
+ VAT_TAX_ATTRIBUTE5                                        6080      10       80  VARCHAR2          101        A2     VT2
+ VAT_TAX_ATTRIBUTE6                                        6080      20       80  VARCHAR2          181        A2     VT2
+ VAT_TAX_ATTRIBUTE7                                        6080      30       80  VARCHAR2          261        A2     VT2
+ VAT_TAX_ATTRIBUTE8                                        6080      40       80  VARCHAR2          341        A2     VT2
+ VAT_TAX_ATTRIBUTE9                                        6080      50       80  VARCHAR2          421        A2     VT2
+ VAT_TAX_ATTRIBUTE10                                       6090      10       80  VARCHAR2          101        A2     VT3
+ VAT_TAX_ATTRIBUTE11                                       6090      20       80  VARCHAR2          181        A2     VT3
+ VAT_TAX_ATTRIBUTE12                                       6090      30       80  VARCHAR2          261        A2     VT3
+ VAT_TAX_ATTRIBUTE13                                       6090      40       80  VARCHAR2          341        A2     VT3
+ VAT_TAX_ATTRIBUTE14                                       6090      50       80  VARCHAR2          421        A2     VT3
+ VAT_TAX_ATTRIBUTE15                                       6095      10       80  VARCHAR2          101        A2     VT4
+                                                                                          Report Date:    01-NOV-2011 11:22
+                                           Transaction Layout Definition Report                  Page:           14 / 14
+
+      Transaction: INO                                                Description: OUT: Invoice (810/INVOIC)
+            Level: Allowance Charges Line                         Interface Table: ECE_AR_TRX_ALLOWANCE_CHARGES
+                                                                  Extension Table: ECE_AR_TRX_ALLOWANCE_CHARGES_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ LINE_NUMBER                                               7000      10       22  NUMBER            101        AL     AD1
+ ALLOWANCE_CHARGE_INDICATOR                                7000      20        1  VARCHAR2          123        AL     AD1
+ ALLOWANCE_CHARGE_AMOUNT                                   7000      30       22  NUMBER            124        AL     AD1
+ SPECIAL_SERVICES_CODE                                     7000      40       10  VARCHAR2          146     0  AL     AD1
+ SPECIAL_SERVICES_CODE_EXT1                                7000      50       10  VARCHAR2          156     1  AL     AD1
+ SPECIAL_SERVICES_CODE_EXT2                                7000      60       10  VARCHAR2          166     2  AL     AD1
+ SPECIAL_SERVICES_CODE_EXT3                                7000      70       10  VARCHAR2          176     3  AL     AD1
+ SPECIAL_SERVICES_CODE_EXT4                                7000      80       10  VARCHAR2          186     4  AL     AD1
+ SPECIAL_SERVICES_CODE_EXT5                                7000      90       10  VARCHAR2          196     5  AL     AD1
+ METHOD_HANDLING_CODE                                      7000     100        3  VARCHAR2          206     0  AL     AD1
+ METHOD_HANDLING_CODE_EXT1                                 7000     110       10  VARCHAR2          209     1  AL     AD1
+ METHOD_HANDLING_CODE_EXT2                                 7000     120       10  VARCHAR2          219     2  AL     AD1
+ METHOD_HANDLING_CODE_EXT3                                 7000     130       10  VARCHAR2          229     3  AL     AD1
+ METHOD_HANDLING_CODE_EXT4                                 7000     140       10  VARCHAR2          239     4  AL     AD1
+ METHOD_HANDLING_CODE_EXT5                                 7000     150       10  VARCHAR2          249     5  AL     AD1
+ SPECIAL_CHARGES_CODE                                      7000     160        3  VARCHAR2          259     0  AL     AD1
+ SPECIAL_CHARGES_CODE_EXT1                                 7000     170       10  VARCHAR2          262     1  AL     AD1
+ SPECIAL_CHARGES_CODE_EXT2                                 7000     180       10  VARCHAR2          272     2  AL     AD1
+ SPECIAL_CHARGES_CODE_EXT3                                 7000     190       10  VARCHAR2          282     3  AL     AD1
+ SPECIAL_CHARGES_CODE_EXT4                                 7000     200       10  VARCHAR2          292     4  AL     AD1
+ SPECIAL_CHARGES_CODE_EXT5                                 7000     210       10  VARCHAR2          302     5  AL     AD1
+ ALLOWANCE_CHARGE_DESC                                     7010      10       80  VARCHAR2          101        AL     AD2
+ AGENCY_QUALIFIER_CODE                                     7010      20        3  VARCHAR2          181        AL     AD2
+ ALLOWANCE_CHARGE_RATE                                     7010      30       22  NUMBER            184        AL     AD2
+ ALLOWANCE_CHARGE_PCT_QUALIFIER                            7010      40        3  VARCHAR2          206        AL     AD2
+ ALLOWANCE_CHARGE_PCT                                      7010      50       22  NUMBER            209        AL     AD2
+ ALLOWANCE_CHARGE_UOM_CODE                                 7010      60        3  VARCHAR2          231        AL     AD2
+ ALLOWANCE_CHARGE_QUANTITY                                 7010      70       22  NUMBER            234        AL     AD2
+ AC_ATTRIBUTE_CATEGORY                                     7100      10       80  VARCHAR2          101        AL     IL1
+ AC_ATTRIBUTE1                                             7100      20       80  VARCHAR2          181        AL     IL1
+ AC_ATTRIBUTE2                                             7100      30       80  VARCHAR2          261        AL     IL1
+ AC_ATTRIBUTE3                                             7100      40       80  VARCHAR2          341        AL     IL1
+ AC_ATTRIBUTE4                                             7100      50       80  VARCHAR2          421        AL     IL1
+ AC_ATTRIBUTE5                                             7110      10       80  VARCHAR2          101        AL     IL2
+ AC_ATTRIBUTE6                                             7110      20       80  VARCHAR2          181        AL     IL2
+ AC_ATTRIBUTE7                                             7110      30       80  VARCHAR2          261        AL     IL2
+ AC_ATTRIBUTE8                                             7110      40       80  VARCHAR2          341        AL     IL2
+ AC_ATTRIBUTE9                                             7110      50       80  VARCHAR2          421        AL     IL2
+ AC_ATTRIBUTE10                                            7120      10       80  VARCHAR2          101        AL     IL3
+ AC_ATTRIBUTE11                                            7120      20       80  VARCHAR2          181        AL     IL3
+ AC_ATTRIBUTE12                                            7120      30       80  VARCHAR2          261        AL     IL3
+ AC_ATTRIBUTE13                                            7120      40       80  VARCHAR2          341        AL     IL3
+ AC_ATTRIBUTE14                                            7120      50       80  VARCHAR2          421        AL     IL3
+ AC_ATTRIBUTE15                                            7130      10       80  VARCHAR2          101        AL     IL4

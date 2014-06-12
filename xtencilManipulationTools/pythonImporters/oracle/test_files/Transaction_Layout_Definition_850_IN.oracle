@@ -1,0 +1,1534 @@
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:            1 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Order Header                                   Interface Table: OE_HEADERS_INTERFACE
+                                                                  Extension Table: OE_HEADERS_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ Transaction_Method                                          10      10        2  VARCHAR2          101        CT     CTL
+ Test_Indicator                                              10      20        1  VARCHAR2          103        CT     CTL
+ Document_ID                                                 10      30        6  VARCHAR2          104        CT     CTL
+ Document_Type                                               10      40        5  VARCHAR2          110        CT     CTL
+ Document_Purpose_Code                                       10      50        2  VARCHAR2          115        CT     CTL
+ Document_Code                                               10      60       35  VARCHAR2          117        CT     CTL
+ TP_Translator_Code                                          10      70       30  VARCHAR2          152        CT     CTL
+ TP_Location_Code                                            10      80       35  VARCHAR2          182        CT     CTL
+ TP_Description                                              10      90       74  VARCHAR2          217        CT     CTL
+ TP_Reference_Ext1                                           10     100       80  VARCHAR2          291        CT     CTL
+ TP_Reference_Ext2                                           10     110       80  VARCHAR2          371        CT     CTL
+ Transaction_Date                                            10     120       15  DATE              451        CT     CTL
+ Transaction_Run_ID                                          10     130       15  NUMBER            466        CT     CTL
+ Document_Standard                                           10     140       10  VARCHAR2          481        CT     CTL
+ Org_ID                                                      10     150       15  NUMBER            491        CT     CTL
+ CONTROL1                                                    10     160       10  VARCHAR2          506        CT     CTL
+ CONTROL2                                                    10     170       10  VARCHAR2          516        CT     CTL
+ CONTROL3                                                    10     180       10  VARCHAR2          526        CT     CTL
+ PARTIAL_SHIPMENTS_ALLOWED                                 1000      10        1  VARCHAR2          101        PO     PO1
+ DROP_SHIP_FLAG                                            1000      20        1  VARCHAR2          102        PO     PO1
+ OPERATION_CODE                                            1000      30       10  VARCHAR2          103     0  PO     PO1
+ OPERATION_CODE_EXT1                                       1000      40        5  VARCHAR2          113     1  PO     PO1
+ CUSTOMER_PO_NUMBER                                        1000      50       50  VARCHAR2          118        PO     PO1
+ ORDERED_DATE                                              1000      60       15  DATE              168        PO     PO1
+ VERSION_NUMBER                                            1000      70       22  NUMBER            183        PO     PO1
+ Order_Type                                                1000      80       30  VARCHAR2          205     0  PO     PO1
+ Order_Type_Ext1                                           1000      90       10  VARCHAR2          235     1  PO     PO1
+ ORDER_CATEGORY                                            1000     100       30  VARCHAR2          245     0  PO     PO1
+ ORDER_CATEGORY_Ext1                                       1000     110       10  VARCHAR2          275     1  PO     PO1
+ ORIG_SYS_DOCUMENT_REF                                     1000     120       50  VARCHAR2          285        PO     PO1
+ ORDER_DATE_TYPE_CODE                                      1000     130       30  VARCHAR2          335     0  PO     PO1
+ ORDER_DATE_TYPE_CODE_EXT1                                 1000     140       30  VARCHAR2          365     1  PO     PO1
+ AGREEMENT                                                 1000     150       30  VARCHAR2          395     0  PO     PO1
+ AGREEMENT_EXT1                                            1000     160       30  VARCHAR2          425     1  PO     PO1
+ SALES_AGREEMENT_NUMBER                                    1000     170       22  NUMBER            455        PO     PO1
+ CANCELLED_FLAG                                            1010      10        1  VARCHAR2          101        PO     CHG
+ PO_REVISION_DATE                                          1010      20       15  DATE              102        PO     CHG
+ TRANSACTIONAL_CURR_CODE                                   1060      10        3  VARCHAR2          101     0  PY     CUR
+ TRANSACTIONAL_CURR_CODE_EXT1                              1060      20        3  VARCHAR2          104     1  PY     CUR
+ CONVERSION_RATE_DATE                                      1060      30       15  DATE              107        PY     CUR
+ CONVERSION_RATE                                           1060      40       22  NUMBER            122        PY     CUR
+ TRANSACTIONAL_CURR                                        1060      50       29  VARCHAR2          144        PY     CUR
+ CONVERSION_TYPE_CODE                                      1060      60       30  VARCHAR2          173     0  PY     CUR
+ CONVERSION_TYPE_CODE_EXT1                                 1060      70       10  VARCHAR2          203     1  PY     CUR
+ PAYMENT_AMOUNT                                            1060      80       22  NUMBER            213        PY     CUR
+ PAYMENT_TYPE_CODE                                         1060      90       30  VARCHAR2          235     0  PY     CUR
+ PAYMENT_TYPE_CODE_EXT1                                    1060     100       20  VARCHAR2          265     1  PY     CUR
+ CREDIT_CARD_CODE                                          1060     110       80  VARCHAR2          285     0  PY     CUR
+ CREDIT_CARD_Code_EXT1                                     1060     120       10  VARCHAR2          365     1  PY     CUR
+ CREDIT_CARD_NUMBER                                        1060     130       80  VARCHAR2          375        PY     CUR
+ CREDIT_CARD_EXPIRATION_DATE                               1060     140       15  DATE              455        PY     CUR
+ CREDIT_CARD_APPROVAL_DATE                                 1060     150       15  DATE              470        PY     CUR
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:            2 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Order Header                                   Interface Table: OE_HEADERS_INTERFACE
+                                                                  Extension Table: OE_HEADERS_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ CREDIT_CARD_HOLDER_NAME                                   1060     160       80  VARCHAR2          485        PY     CUR
+ CHECK_NUMBER                                              1060     170       50  VARCHAR2          565        PY     CUR
+ CUSTOMER_PAYMENT_TERM                                     1070      10       30  VARCHAR2          101     0  PY     TAX
+ CUSTOMER_PAYMENT_TERM_EXT1                                1070      20       10  VARCHAR2          131     1  PY     TAX
+ CUSTOMER_PAYMENT_TERM_EXT2                                1070      30       10  VARCHAR2          141     2  PY     TAX
+ CUSTOMER_PAYMENT_TERM_EXT3                                1070      40       10  VARCHAR2          151     3  PY     TAX
+ CUSTOMER_PAYMENT_TERM_EXT4                                1070      50       10  VARCHAR2          161     4  PY     TAX
+ CUSTOMER_PAYMENT_TERM_EXT5                                1070      60       10  VARCHAR2          171     5  PY     TAX
+ Tax_Exempt_Flag                                           1070      70        1  VARCHAR2          181        PY     TAX
+ Tax_Exempt_Number                                         1070      80       50  VARCHAR2          182        PY     TAX
+ Tax_Exempt_Reason                                         1070      90       30  VARCHAR2          232        PY     TAX
+ Tax_Exempt_Reason_Code                                    1070     100       30  VARCHAR2          262     0  PY     TAX
+ Tax_Exempt_Reason_Code_Ext1                               1070     110       30  VARCHAR2          292     1  PY     TAX
+ TAX_POINT                                                 1070     120       30  VARCHAR2          322        PY     TAX
+ TAX_POINT_CODE                                            1070     130       30  VARCHAR2          352     0  PY     TAX
+ TAX_POINT_CODE_ext1                                       1070     140       30  VARCHAR2          382     1  PY     TAX
+ PRICE_LIST                                                1070     150       30  VARCHAR2          412     0  PY     TAX
+ PRICE_LIST_EXT1                                           1070     160       30  VARCHAR2          442     1  PY     TAX
+ FOB_POINT                                                 1090      10       30  VARCHAR2          101        FB     SHP
+ FOB_POINT_CODE                                            1090      20       30  VARCHAR2          131     0  FB     SHP
+ FOB_POINT_Code_Ext1                                       1090      30       20  VARCHAR2          161     1  FB     SHP
+ FREIGHT_TERMS                                             1090      40       30  VARCHAR2          181        FB     SHP
+ Freight_Terms_Code                                        1090      50       30  VARCHAR2          211     0  FB     SHP
+ Freight_Terms_Code_Ext1                                   1090      60       10  VARCHAR2          241     1  FB     SHP
+ Freight_Terms_Code_Ext2                                   1090      70       10  VARCHAR2          251     2  FB     SHP
+ Freight_Terms_Code_Ext3                                   1090      80       10  VARCHAR2          261     3  FB     SHP
+ Freight_Terms_Code_Ext4                                   1090      90       10  VARCHAR2          271     4  FB     SHP
+ Freight_Terms_Code_Ext5                                   1090     100       10  VARCHAR2          281     5  FB     SHP
+ Shipment_Priority                                         1090     110       30  VARCHAR2          291        FB     SHP
+ Shipment_Priority_Code                                    1090     120       30  VARCHAR2          321     0  FB     SHP
+ Shipment_Priority_Code_Ext1                               1090     130       20  VARCHAR2          351     1  FB     SHP
+ FREIGHT_CARRIER_CODE                                      1090     140       30  VARCHAR2          371     0  FB     SHP
+ FREIGHT_CARRIER_CODE_EXT1                                 1090     150       30  VARCHAR2          401     1  FB     SHP
+ FREIGHT_CARRIER_CODE_EXT2                                 1090     160       10  VARCHAR2          431     2  FB     SHP
+ SHIPPING_METHOD_CODE                                      1090     170       30  VARCHAR2          441     0  FB     SHP
+ SHIPPING_Method_Code_Ext1                                 1090     180       30  VARCHAR2          471     1  FB     SHP
+ SHIPPING_Method_Code_Ext2                                 1090     190       10  VARCHAR2          501     2  FB     SHP
+ SHIP_TOLERANCE_ABOVE                                      1090     200       22  NUMBER            511        FB     SHP
+ SHIP_TOLERANCE_BELOW                                      1090     210       22  NUMBER            533        FB     SHP
+ Shipping_Instructions_A                                   1100      10      400  VARCHAR2          101        NT     SHP
+ Shipping_Instructions_B                                   1100      20      400  VARCHAR2          501        NT     SHP
+ Shipping_Instructions_C                                   1101      10      400  VARCHAR2          101        NT     SHP
+ Shipping_Instructions_D                                   1101      20      400  VARCHAR2          501        NT     SHP
+ Shipping_Instructions_E                                   1102      10      400  VARCHAR2          101        NT     SHP
+ Packing_Instructions_A                                    1105      10      400  VARCHAR2          101        NT     SHP
+ Packing_Instructions_B                                    1105      20      400  VARCHAR2          501        NT     SHP
+ Packing_Instructions_C                                    1106      10      400  VARCHAR2          101        NT     SHP
+ Packing_Instructions_D                                    1106      20      400  VARCHAR2          501        NT     SHP
+ Packing_Instructions_E                                    1107      10      400  VARCHAR2          101        NT     SHP
+ REQUEST_DATE                                              1110      10       15  DATE              101        MS     MIS
+ EARLIEST_SCHEDULE_LIMIT                                   1110      20       22  NUMBER            116        MS     MIS
+ LATEST_SCHEDULE_LIMIT                                     1110      30       22  NUMBER            138        MS     MIS
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:            3 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Order Header                                   Interface Table: OE_HEADERS_INTERFACE
+                                                                  Extension Table: OE_HEADERS_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ SALESREP                                                  1110      40       30  VARCHAR2          160        MS     MIS
+ DEMAND_CLASS                                              1110      50       30  VARCHAR2          190        MS     MIS
+ DEMAND_CLASS_CODE                                         1110      60       30  VARCHAR2          220     0  MS     MIS
+ DEMAND_CLASS_CODE_EXT1                                    1110      70       30  VARCHAR2          250     1  MS     MIS
+ CUSTOMER_PREFERENCE_SET_CODE                              1120      10       30  VARCHAR2          101        FB     SHP
+ CONTEXT                                                   1200      10       30  VARCHAR2          101        A1     HD1
+ ATTRIBUTE1                                                1200      20       80  VARCHAR2          131        A1     HD1
+ ATTRIBUTE2                                                1200      30       80  VARCHAR2          211        A1     HD1
+ ATTRIBUTE3                                                1200      40       80  VARCHAR2          291        A1     HD1
+ ATTRIBUTE4                                                1200      50       80  VARCHAR2          371        A1     HD1
+ ATTRIBUTE5                                                1210      10       80  VARCHAR2          101        A2     HD2
+ ATTRIBUTE6                                                1210      20       80  VARCHAR2          181        A2     HD2
+ ATTRIBUTE7                                                1210      30       80  VARCHAR2          261        A2     HD2
+ ATTRIBUTE8                                                1210      40       80  VARCHAR2          341        A2     HD2
+ ATTRIBUTE9                                                1210      50       80  VARCHAR2          421        A2     HD2
+ ATTRIBUTE10                                               1220      10       80  VARCHAR2          101        A2     HD3
+ ATTRIBUTE11                                               1220      20       80  VARCHAR2          181        A2     HD3
+ ATTRIBUTE12                                               1220      30       80  VARCHAR2          261        A2     HD3
+ ATTRIBUTE13                                               1220      40       80  VARCHAR2          341        A2     HD3
+ ATTRIBUTE14                                               1220      50       80  VARCHAR2          421        A2     HD3
+ ATTRIBUTE15                                               1230      10       80  VARCHAR2          101        A2     HD4
+ ATTRIBUTE16                                               1230      20       80  VARCHAR2          181        A2     HD4
+ ATTRIBUTE17                                               1230      30       80  VARCHAR2          261        A2     HD4
+ ATTRIBUTE18                                               1230      40       80  VARCHAR2          341        A2     HD4
+ ATTRIBUTE19                                               1230      50       80  VARCHAR2          421        A2     HD4
+ ATTRIBUTE20                                               1230      60       80  VARCHAR2          501        A2     HD4
+ HEADER_PO_CONTEXT                                         1240      10       30  VARCHAR2          101        A1     PO1
+ PO_Attribute_1                                            1240      20       80  VARCHAR2          131        A1     PO1
+ PO_Attribute_2                                            1240      30       80  VARCHAR2          211        A1     PO1
+ PO_Attribute_3                                            1240      40       80  VARCHAR2          291        A1     PO1
+ PO_Attribute_4                                            1240      50       80  VARCHAR2          371        A1     PO1
+ PO_Attribute_5                                            1250      10       80  VARCHAR2          101        A2     PO2
+ PO_Attribute_6                                            1250      20       80  VARCHAR2          181        A2     PO2
+ PO_Attribute_7                                            1250      30       80  VARCHAR2          261        A2     PO2
+ PO_Attribute_8                                            1250      40       80  VARCHAR2          341        A2     PO2
+ PO_Attribute_9                                            1250      50       80  VARCHAR2          421        A2     PO2
+ PO_Attribute_10                                           1260      10       80  VARCHAR2          101        A2     PO3
+ PO_Attribute_11                                           1260      20       80  VARCHAR2          181        A2     PO3
+ PO_Attribute_12                                           1260      30       80  VARCHAR2          261        A2     PO3
+ PO_Attribute_13                                           1260      40       80  VARCHAR2          341        A2     PO3
+ PO_Attribute_14                                           1260      50       80  VARCHAR2          421        A2     PO3
+ PO_Attribute_15                                           1270      10       80  VARCHAR2          101        A2     PO4
+ GLOBAL_ATTRIBUTE_CATEGORY                                 1280      10       30  VARCHAR2          101        A1     GL1
+ GLOBAL_Attribute_1                                        1280      20       80  VARCHAR2          131        A1     GL1
+ GLOBAL_Attribute_2                                        1280      30       80  VARCHAR2          211        A1     GL1
+ GLOBAL_Attribute_3                                        1280      40       80  VARCHAR2          291        A1     GL1
+ GLOBAL_Attribute_4                                        1280      50       80  VARCHAR2          371        A1     GL1
+ GLOBAL_Attribute_5                                        1290      10       80  VARCHAR2          101        A2     GL2
+ GLOBAL_Attribute_6                                        1290      20       80  VARCHAR2          181        A2     GL2
+ GLOBAL_Attribute_7                                        1290      30       80  VARCHAR2          261        A2     GL2
+ GLOBAL_Attribute_8                                        1290      40       80  VARCHAR2          341        A2     GL2
+ GLOBAL_Attribute_9                                        1290      50       80  VARCHAR2          421        A2     GL2
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:            4 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Order Header                                   Interface Table: OE_HEADERS_INTERFACE
+                                                                  Extension Table: OE_HEADERS_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ GLOBAL_Attribute_10                                       1300      10       80  VARCHAR2          101        A2     GL3
+ GLOBAL_Attribute_11                                       1300      20       80  VARCHAR2          181        A2     GL3
+ GLOBAL_Attribute_12                                       1300      30       80  VARCHAR2          261        A2     GL3
+ GLOBAL_Attribute_13                                       1300      40       80  VARCHAR2          341        A2     GL3
+ GLOBAL_Attribute_14                                       1300      50       80  VARCHAR2          421        A2     GL3
+ GLOBAL_Attribute_15                                       1310      10       80  VARCHAR2          101        A2     GL4
+ GLOBAL_Attribute_16                                       1310      20       80  VARCHAR2          181        A2     GL4
+ GLOBAL_Attribute_17                                       1310      30       80  VARCHAR2          261        A2     GL4
+ GLOBAL_Attribute_18                                       1310      40       80  VARCHAR2          341        A2     GL4
+ GLOBAL_Attribute_19                                       1310      50       80  VARCHAR2          421        A2     GL4
+ GLOBAL_Attribute_20                                       1320      10       80  VARCHAR2          101        A2     GL5
+ SOLD_TO_Address_Code                                      1400      10       60  VARCHAR2          101        AD     SLD
+ SOLD_TO_EDI_Location_Code                                 1400      20       35  VARCHAR2          161        AD     SLD
+ SOLD_TO_ADDRESS_NAME                                      1400      30       60  VARCHAR2          196        AD     SLD
+ SOLD_TO_ADDRESS1                                          1400      40       35  VARCHAR2          256        AD     SLD
+ SOLD_TO_ADDRESS2                                          1400      50       35  VARCHAR2          291        AD     SLD
+ SOLD_TO_ADDRESS3                                          1400      60       35  VARCHAR2          326        AD     SLD
+ SOLD_TO_ADDRESS4                                          1400      70       35  VARCHAR2          361        AD     SLD
+ SOLD_TO_CITY                                              1400      80       30  VARCHAR2          396        AD     SLD
+ SOLD_TO_POSTAL_CODE                                       1400      90       15  VARCHAR2          426        AD     SLD
+ SOLD_TO_COUNTRY_INT                                       1400     100       20  VARCHAR2          441     0  AD     SLD
+ SOLD_TO_COUNTRY_EXT1                                      1400     110        3  VARCHAR2          461     1  AD     SLD
+ SOLD_TO_STATE_INT                                         1400     120       20  VARCHAR2          464     0  AD     SLD
+ SOLD_TO_STATE_ext1                                        1400     130       10  VARCHAR2          484     1  AD     SLD
+ SOLD_TO_PROVINCE_INT                                      1400     140       20  VARCHAR2          494     0  AD     SLD
+ SOLD_TO_PROVINCE_ext1                                     1400     150       10  VARCHAR2          514     1  AD     SLD
+ SOLD_TO_COUNTY                                            1400     160       25  VARCHAR2          524        AD     SLD
+ SOLD_TO_ORG                                               1400     170       30  VARCHAR2          549        AD     SLD
+ SOLD_TO_CONTACT_LAST_NAME                                 1420      10       50  VARCHAR2          101        CN     SLD
+ SOLD_TO_CONTACT_FIRST_NAME                                1420      20       30  VARCHAR2          151        CN     SLD
+ SOLD_TO_Contact_Job_Title                                 1420      30       40  VARCHAR2          181        CN     SLD
+ SOLD_TO_Contact_Area_Code_1                               1420      40       10  VARCHAR2          221        CN     SLD
+ SOLD_TO_Phone_1                                           1420      50       60  VARCHAR2          231        CN     SLD
+ SOLD_TO_Contact_Area_Code_2                               1420      60       10  VARCHAR2          291        CN     SLD
+ SOLD_TO_Phone_2                                           1420      70       60  VARCHAR2          301        CN     SLD
+ SOLD_TO_Contact_Area_Code_3                               1420      80       10  VARCHAR2          361        CN     SLD
+ SOLD_TO_Phone_3                                           1420      90       60  VARCHAR2          371        CN     SLD
+ SOLD_TO_CONTACT                                           1420     100       30  VARCHAR2          431        CN     SLD
+ Ship_To_Address_Code                                      1500      10       60  VARCHAR2          101        AD     ST1
+ Ship_To_EDI_Location_Code                                 1500      20       35  VARCHAR2          161        AD     ST1
+ Ship_To_Address_Name                                      1500      30       60  VARCHAR2          196        AD     ST1
+ Ship_To_Address1                                          1500      40       35  VARCHAR2          256        AD     ST1
+ Ship_To_Address2                                          1500      50       35  VARCHAR2          291        AD     ST1
+ Ship_To_Address3                                          1500      60       35  VARCHAR2          326        AD     ST1
+ Ship_To_Address4                                          1500      70       35  VARCHAR2          361        AD     ST1
+ Ship_To_City                                              1500      80       30  VARCHAR2          396        AD     ST1
+ Ship_To_Postal_Code                                       1500      90       15  VARCHAR2          426        AD     ST1
+ Ship_To_Country_INT                                       1500     100       20  VARCHAR2          441     0  AD     ST1
+ Ship_To_Country_Ext1                                      1500     110        3  VARCHAR2          461     1  AD     ST1
+ Ship_To_State_INT                                         1500     120       20  VARCHAR2          464     0  AD     ST1
+ Ship_To_State_Ext1                                        1500     130       10  VARCHAR2          484     1  AD     ST1
+ Ship_To_Province_INT                                      1500     140       20  VARCHAR2          494     0  AD     ST1
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:            5 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Order Header                                   Interface Table: OE_HEADERS_INTERFACE
+                                                                  Extension Table: OE_HEADERS_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ Ship_To_Province_Ext1                                     1500     150       10  VARCHAR2          514     1  AD     ST1
+ Ship_To_County                                            1500     160       25  VARCHAR2          524        AD     ST1
+ SHIP_TO_ORG                                               1500     170       30  VARCHAR2          549        AD     ST1
+ SHIP_TO_CONTACT_LAST_NAME                                 1510      10       30  VARCHAR2          101        CN     ST1
+ SHIP_TO_CONTACT_FIRST_NAME                                1510      20       30  VARCHAR2          131        CN     ST1
+ Ship_To_Contact_Job_Title                                 1510      30       40  VARCHAR2          161        CN     ST1
+ Ship_To_Contact_Area_Code_1                               1510      40       10  VARCHAR2          201        CN     ST1
+ Ship_to_Phone_1                                           1510      50       60  VARCHAR2          211        CN     ST1
+ Ship_To_Contact_Area_Code_2                               1510      60       10  VARCHAR2          271        CN     ST1
+ Ship_to_Phone_2                                           1510      70       60  VARCHAR2          281        CN     ST1
+ Ship_To_Contact_Area_Code_3                               1510      80       10  VARCHAR2          341        CN     ST1
+ Ship_to_Phone_3                                           1510      90       60  VARCHAR2          351        CN     ST1
+ SHIP_TO_CONTACT                                           1510     100       30  VARCHAR2          411        CN     ST1
+ BILL_TO_Address_Code                                      1520      10       60  VARCHAR2          101        AD     BT1
+ BILL_TO_EDI_Location_Code                                 1520      20       35  VARCHAR2          161        AD     BT1
+ BILL_TO_ADDRESS_Name                                      1520      30       60  VARCHAR2          196        AD     BT1
+ BILL_TO_Address1                                          1520      40       35  VARCHAR2          256        AD     BT1
+ BILL_TO_Address2                                          1520      50       35  VARCHAR2          291        AD     BT1
+ BILL_TO_Address3                                          1520      60       35  VARCHAR2          326        AD     BT1
+ BILL_TO_Address4                                          1520      70       35  VARCHAR2          361        AD     BT1
+ BILL_TO_City                                              1520      80       30  VARCHAR2          396        AD     BT1
+ BILL_TO_Postal_Code                                       1520      90       15  VARCHAR2          426        AD     BT1
+ BILL_TO_Country_INT                                       1520     100       20  VARCHAR2          441     0  AD     BT1
+ BILL_TO_Country_Ext1                                      1520     110        3  VARCHAR2          461     1  AD     BT1
+ BILL_TO_State_INT                                         1520     120       20  VARCHAR2          464     0  AD     BT1
+ BILL_TO_State_Ext1                                        1520     130       10  VARCHAR2          484     1  AD     BT1
+ BILL_TO_Province_INT                                      1520     140       20  VARCHAR2          494     0  AD     BT1
+ BILL_TO_Province_Ext1                                     1520     150       10  VARCHAR2          514     1  AD     BT1
+ BILL_TO_County                                            1520     160       25  VARCHAR2          524        AD     BT1
+ BILL_TO_ORG                                               1520     170       30  VARCHAR2          549        AD     BT1
+ Invoice_to_Contact_Last_Name                              1530      10       50  VARCHAR2          101        CN     BT1
+ Invoice_to_Contact_First_Name                             1530      20       30  VARCHAR2          151        CN     BT1
+ Invoice_to_Contact_Job_Title                              1530      30       40  VARCHAR2          181        CN     BT1
+ Invoice_to_Contact_Area_Code_1                            1530      40       10  VARCHAR2          221        CN     BT1
+ Invoice_to_Phone_1                                        1530      50       60  VARCHAR2          231        CN     BT1
+ Invoice_to_Contact_Area_Code_2                            1530      60       10  VARCHAR2          291        CN     BT1
+ Invoice_to_Phone_2                                        1530      70       60  VARCHAR2          301        CN     BT1
+ Invoice_to_Contact_Area_Code_3                            1530      80       10  VARCHAR2          361        CN     BT1
+ Invoice_to_Phone_3                                        1530      90       60  VARCHAR2          371        CN     BT1
+ Ordered_by_Contact_First_Name                             1540      10       30  VARCHAR2          101        CN     OBY
+ Ordered_by_Contact_Last_Name                              1540      20       50  VARCHAR2          131        CN     OBY
+ SHIP_FROM_INT_Location_ID                                 1600      10       20  VARCHAR2          101        AD     SFM
+ SHIP_FROM_INT_EDI_Location_Code                           1600      20       35  VARCHAR2          121        AD     SFM
+ SHIP_FROM_INT_LOCATION_Name                               1600      30       60  VARCHAR2          156        AD     SFM
+ SHIP_FROM_INT_Address1                                    1600      40       35  VARCHAR2          216        AD     SFM
+ SHIP_FROM_INT_Address2                                    1600      50       35  VARCHAR2          251        AD     SFM
+ SHIP_FROM_INT_Address3                                    1600      60       35  VARCHAR2          286        AD     SFM
+ SHIP_FROM_INT_City                                        1600      70       30  VARCHAR2          321        AD     SFM
+ SHIP_FROM_INT_Postal_Code                                 1600      80       15  VARCHAR2          351        AD     SFM
+ SHIP_FROM_INT_Country                                     1600      90       20  VARCHAR2          366     0  AD     SFM
+ SHIP_FROM_INT_Country_Ext1                                1600     100        3  VARCHAR2          386     1  AD     SFM
+ SHIP_FROM_INT_REGION1                                     1600     110       25  VARCHAR2          389     0  AD     SFM
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:            6 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Order Header                                   Interface Table: OE_HEADERS_INTERFACE
+                                                                  Extension Table: OE_HEADERS_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ SHIP_FROM_INT_REGION1_Ext1                                1600     120       10  VARCHAR2          414     1  AD     SFM
+ SHIP_FROM_INT_REGION2                                     1600     130       25  VARCHAR2          424     0  AD     SFM
+ SHIP_FROM_INT_REGION2_Ext1                                1600     140       10  VARCHAR2          449     1  AD     SFM
+ SHIP_FROM_INT_REGION3                                     1600     150       25  VARCHAR2          459     0  AD     SFM
+ SHIP_FROM_INT_REGION3_EXT1                                1600     160       10  VARCHAR2          484     1  AD     SFM
+ SHIP_FROM_INT_ORG                                         1600     170       30  VARCHAR2          494
+ SHIP_FROM_INT_ORGANIZATION_ID                             1600     180       20  VARCHAR2          524        AD     SFM
+ Orig_Ship_Address_Ref                                     1610      10       50  VARCHAR2          101        NC     NCA
+ Orig_Bill_Address_Ref                                     1610      20       50  VARCHAR2          151        NC     NCA
+ Orig_Deliver_Address_Ref                                  1610      30       50  VARCHAR2          201        NC     NCA
+ Sold_To_Contact_Ref                                       1610      40       50  VARCHAR2          251        NC     NCC
+ Ship_To_Contact_Ref                                       1610      50       50  VARCHAR2          301        NC     NCC
+ Bill_To_Contact_Ref                                       1610      60       50  VARCHAR2          351        NC     NCC
+ Deliver_To_Contact_Ref                                    1610      70       50  VARCHAR2          401        NC     NCC
+ End_Customer_Name                                         1620      10       60  VARCHAR2          101        AD     ST1
+ End_Customer_Number                                       1620      20       60  VARCHAR2          161        AD     ST1
+ End_Customer_Address1                                     1620      30       35  VARCHAR2          221        AD     ST1
+ End_Customer_Address2                                     1620      40       35  VARCHAR2          256        AD     ST1
+ End_Customer_Address3                                     1620      50       35  VARCHAR2          291        AD     ST1
+ End_Customer_Address4                                     1620      60       35  VARCHAR2          326        AD     ST1
+ End_Customer_City                                         1620      70       30  VARCHAR2          361        AD     ST1
+ End_Customer_Postal_Code                                  1620      80       15  VARCHAR2          391        AD     ST1
+ End_Customer_Country                                      1620      90       20  VARCHAR2          406     0  AD     ST1
+ End_Customer_Country_Ext1                                 1620     100        3  VARCHAR2          426     1  AD     ST1
+ End_Customer_State                                        1620     110       20  VARCHAR2          429     0  AD     ST1
+ End_Customer_State_Ext1                                   1620     120       10  VARCHAR2          449     1  AD     ST1
+ End_Customer_Province                                     1620     130       20  VARCHAR2          459     0  AD     ST1
+ End_Customer_Province_Ext1                                1620     140       10  VARCHAR2          479     1  AD     ST1
+ End_Customer_COUNTY                                       1620     150       25  VARCHAR2          489        AD     ST1
+ End_Customer_Contact                                      1620     160       60  VARCHAR2          514        AD     ST1
+ IB_Owner                                                  1630      10       60  VARCHAR2          101        AD     ST1
+ IB_Current_Location                                       1630      20       60  VARCHAR2          161        AD     ST1
+ IB_Installed_At_Location                                  1630      30       60  VARCHAR2          221        AD     ST1
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:            7 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Credits (Header)                               Interface Table: OE_CREDITS_INTERFACE
+                                                                  Extension Table: OE_CREDITS_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ Orig_Sys_Document_Ref                                     1700      10       50  VARCHAR2          101        CR     CRD
+ Change_Sequence                                           1700      20       50  VARCHAR2          151        CR     CRD
+ Orig_Sys_Credit_Ref                                       1700      30       50  VARCHAR2          201        CR     CRD
+ Operation_Code                                            1700      40       30  VARCHAR2          251     0  CR     CRD
+ Operation_Code_Ext1                                       1700      50       10  VARCHAR2          281     1  CR     CRD
+ Quota_Flag                                                1700      60        1  VARCHAR2          291        CR     CRD
+ Percent                                                   1700      70       15  NUMBER            292        CR     CRD
+ Salesrep                                                  1700      80       30  VARCHAR2          307        CR     CRD
+ Sales_Credit_Type                                         1700      90       30  VARCHAR2          337        CR     CRD
+ SOLD_TO_ORG_ID                                            1700     100       22  NUMBER            367        CR     CRD
+ SOLD_TO_ORG                                               1700     110       30  VARCHAR2          389        CR     CRD
+ Context                                                   1710      10       30  VARCHAR2          101        A1     CR1
+ Attribute1                                                1710      20       80  VARCHAR2          131        A1     CR1
+ Attribute2                                                1710      30       80  VARCHAR2          211        A1     CR1
+ Attribute3                                                1710      40       80  VARCHAR2          291        A1     CR1
+ Attribute4                                                1710      50       80  VARCHAR2          371        A1     CR1
+ Attribute5                                                1720      10       80  VARCHAR2          101        A2     CR2
+ Attribute6                                                1720      20       80  VARCHAR2          181        A2     CR2
+ Attribute7                                                1720      30       80  VARCHAR2          261        A2     CR2
+ Attribute8                                                1720      40       80  VARCHAR2          341        A2     CR2
+ Attribute9                                                1720      50       80  VARCHAR2          421        A2     CR2
+ Attribute10                                               1730      10       80  VARCHAR2          101        A2     CR3
+ Attribute11                                               1730      20       80  VARCHAR2          181        A2     CR3
+ Attribute12                                               1730      30       80  VARCHAR2          261        A2     CR3
+ Attribute13                                               1730      40       80  VARCHAR2          341        A2     CR3
+ Attribute14                                               1730      50       80  VARCHAR2          421        A2     CR3
+ Attribute15                                               1740      10       80  VARCHAR2          101        A2     CR4
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:            8 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Price Adjustments (Header)                     Interface Table: OE_PRICE_ADJS_INTERFACE
+                                                                  Extension Table: OE_PRICE_ADJS_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ Orig_Sys_Document_Ref                                     1800      10       50  VARCHAR2          101        PR     ADJ
+ Change_Sequence                                           1800      20       50  VARCHAR2          151        PR     ADJ
+ Orig_Sys_Discount_Ref                                     1800      30       50  VARCHAR2          201        PR     ADJ
+ Operation_Code                                            1800      40       30  VARCHAR2          251     0  PR     ADJ
+ Operation_Code_Ext1                                       1800      50       10  VARCHAR2          281     1  PR     ADJ
+ Operand                                                   1800      60       15  NUMBER            291        PR     ADJ
+ Updated_Flag                                              1800      70        1  VARCHAR2          306        PR     ADJ
+ Applied_flag                                              1800      80        1  VARCHAR2          307        PR     ADJ
+ Automatic_Flag                                            1800      90        1  VARCHAR2          308        PR     ADJ
+ Percent                                                   1800     100       15  NUMBER            309        PR     ADJ
+ Modified_From                                             1800     110       15  VARCHAR2          324        PR     ADJ
+ Modified_To                                               1800     120       15  VARCHAR2          339        PR     ADJ
+ Adjusted_Amount                                           1800     130       20  NUMBER            354        PR     ADJ
+ List_Line_Type_Code                                       1800     140       30  VARCHAR2          374     0  PR     ADJ
+ List_Line_Type_Code_Ext1                                  1800     150       15  VARCHAR2          404     1  PR     ADJ
+ Modifier_Mechanism_Type_Code                              1800     160       30  VARCHAR2          419     0  PR     ADJ
+ Modifier_Mechanism_Type_Code_Ext1                         1800     170       15  VARCHAR2          449     1  PR     ADJ
+ Arithmetic_Operator                                       1800     180       30  VARCHAR2          464     0  PR     ADJ
+ Arithmetic_Operator_EXT1                                  1800     190       10  VARCHAR2          494     1  PR     ADJ
+ Sold_To_Org_Id                                            1800     200       22  NUMBER            504        PR     ADJ
+ Sold_To_Org                                               1800     210       30  VARCHAR2          526        PR     ADJ
+ Discount_Name                                             1810      10      240  VARCHAR2          101        PR     AD1
+ List_Name                                                 1810      20      240  VARCHAR2          341        PR     AD1
+ List_Line_Number                                          1810      30       30  VARCHAR2          581        PR     AD1
+ List_Header_Id                                            1810      40       22  NUMBER            611        PR     AD1
+ List_Line_Id                                              1810      50       22  NUMBER            633        PR     AD1
+ Context                                                   1820      10       30  VARCHAR2          101        A1     AD1
+ Attribute1                                                1820      20       80  VARCHAR2          131        A1     AD1
+ Attribute2                                                1820      30       80  VARCHAR2          211        A1     AD1
+ Attribute3                                                1820      40       80  VARCHAR2          291        A1     AD1
+ Attribute4                                                1820      50       80  VARCHAR2          371        A1     AD1
+ Attribute5                                                1830      10       80  VARCHAR2          101        A2     AD2
+ Attribute6                                                1830      20       80  VARCHAR2          181        A2     AD2
+ Attribute7                                                1830      30       80  VARCHAR2          261        A2     AD2
+ Attribute8                                                1830      40       80  VARCHAR2          341        A2     AD2
+ Attribute9                                                1830      50       80  VARCHAR2          421        A2     AD2
+ Attribute10                                               1840      10       80  VARCHAR2          101        A2     AD3
+ Attribute11                                               1840      20       80  VARCHAR2          181        A2     AD3
+ Attribute12                                               1840      30       80  VARCHAR2          261        A2     AD3
+ Attribute13                                               1840      40       80  VARCHAR2          341        A2     AD3
+ Attribute14                                               1840      50       80  VARCHAR2          421        A2     AD3
+ Attribute15                                               1850      10       80  VARCHAR2          101        A2     AD4
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:            9 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Pricing Attributes (Header)                    Interface Table: OE_PRICE_ATTS_IFACE_ALL
+                                                                  Extension Table: OE_PRICE_ATTS_IFACE_ALL_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ Orig_Sys_Document_Ref                                     1860      10       50  VARCHAR2          101        PH     PH1
+ Orig_Sys_Line_Ref                                         1860      20       50  VARCHAR2          151        PH     PH1
+ Orig_Sys_Shipment_Ref                                     1860      30       50  VARCHAR2          201        PH     PH1
+ Orig_Sys_Atts_Ref                                         1860      40       50  VARCHAR2          251        PH     PH1
+ Operation_Code                                            1860      50       30  VARCHAR2          301     0  PL     PL1
+ Operation_Code_Ext1                                       1860      60       10  VARCHAR2          331     1  PL     PL1
+ Pricing_Context                                           1860      70       30  VARCHAR2          341        PH     PH1
+ Pricing_Attribute1                                        1860      80       50  VARCHAR2          371        PH     PH1
+ Pricing_Attribute2                                        1860      90       50  VARCHAR2          421        PH     PH1
+ Pricing_Attribute3                                        1860     100       50  VARCHAR2          471        PH     PH1
+ Pricing_Attribute4                                        1860     110       50  VARCHAR2          521        PH     PH1
+ Pricing_Attribute5                                        1860     120       50  VARCHAR2          571        PH     PH1
+ Pricing_Attribute6                                        1860     130       50  VARCHAR2          621        PH     PH1
+ Pricing_Attribute7                                        1860     140       50  VARCHAR2          671        PH     PH1
+ Pricing_Attribute8                                        1860     150       50  VARCHAR2          721        PH     PH1
+ Pricing_Attribute9                                        1860     160       50  VARCHAR2          771        PH     PH1
+ Pricing_Attribute10                                       1860     170       50  VARCHAR2          821        PH     PH1
+ Pricing_Attribute11                                       1860     180       50  VARCHAR2          871        PH     PH2
+ Pricing_Attribute12                                       1860     190       50  VARCHAR2          921        PH     PH2
+ Pricing_Attribute13                                       1862      10       50  VARCHAR2          101        PH     PH2
+ Pricing_Attribute14                                       1862      20       50  VARCHAR2          151        PH     PH2
+ Pricing_Attribute15                                       1862      30       50  VARCHAR2          201        PH     PH2
+ Pricing_Attribute16                                       1862      40       50  VARCHAR2          251        PH     PH2
+ Pricing_Attribute17                                       1862      50       50  VARCHAR2          301        PH     PH2
+ Pricing_Attribute18                                       1862      60       50  VARCHAR2          351        PH     PH2
+ Pricing_Attribute19                                       1862      70       50  VARCHAR2          401        PH     PH2
+ Pricing_Attribute20                                       1862      80       50  VARCHAR2          451        PH     PH2
+ Pricing_Attribute21                                       1862      90       50  VARCHAR2          501        PH     PH2
+ Pricing_Attribute22                                       1862     100       50  VARCHAR2          551        PH     PH2
+ Pricing_Attribute23                                       1862     110       50  VARCHAR2          601        PH     PH2
+ Pricing_Attribute24                                       1862     120       50  VARCHAR2          651        PH     PH2
+ Pricing_Attribute25                                       1862     130       50  VARCHAR2          701        PH     PH2
+ Pricing_Attribute26                                       1862     140       50  VARCHAR2          751        PH     PH2
+ Pricing_Attribute27                                       1862     150       50  VARCHAR2          801        PH     PH2
+ Pricing_Attribute28                                       1862     160       50  VARCHAR2          851        PH     PH2
+ Pricing_Attribute29                                       1862     170       50  VARCHAR2          901        PH     PH2
+ Pricing_Attribute30                                       1862     180       50  VARCHAR2          951        PH     PH2
+ Sold_To_Org_Id                                            1870      10       22  NUMBER            101        PH     PH1
+ Sold_To_Org                                               1870      20       30  VARCHAR2          123        PH     PH1
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:           10 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Reservations (Header)                          Interface Table: OE_RESERVTNS_INTERFACE
+                                                                  Extension Table: OE_RESERVTNS_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ Orig_Sys_Document_Ref                                     1900      10       50  VARCHAR2          101        RS     RES
+ Change_Sequence                                           1900      20       50  VARCHAR2          151        RS     RES
+ Orig_Sys_Reservation_Ref                                  1900      30       50  VARCHAR2          201        RS     RES
+ Operation_Code                                            1900      40       30  VARCHAR2          251     0  RS     RES
+ Operation_Code_Ext1                                       1900      50       10  VARCHAR2          281     1  RS     RES
+ Revision                                                  1900      60        3  VARCHAR2          291        RS     RES
+ Quantity                                                  1900      70       20  NUMBER            294        RS     RES
+ Lot_Number                                                1900      80       30  VARCHAR2          314        RS     RES
+ Subinventory_Code                                         1900      90       10  VARCHAR2          344        RS     RES
+ Sold_To_Org_Id                                            1900     100       22  NUMBER            354        RS     RES
+ Sold_To_Org                                               1900     110       30  VARCHAR2          376        RS     RES
+ Attribute_Category                                        1910      10       30  VARCHAR2          101        A1     RSV1
+ Attribute1                                                1910      20       80  VARCHAR2          131        A1     RSV1
+ Attribute2                                                1910      30       80  VARCHAR2          211        A1     RSV1
+ Attribute3                                                1910      40       80  VARCHAR2          291        A1     RSV1
+ Attribute4                                                1910      50       80  VARCHAR2          371        A1     RSV1
+ Attribute5                                                1920      10       80  VARCHAR2          101        A2     RSV2
+ Attribute6                                                1920      20       80  VARCHAR2          181        A2     RSV2
+ Attribute7                                                1920      30       80  VARCHAR2          261        A2     RSV2
+ Attribute8                                                1920      40       80  VARCHAR2          341        A2     RSV2
+ Attribute9                                                1920      50       80  VARCHAR2          421        A2     RSV2
+ Attribute10                                               1930      10       80  VARCHAR2          101        A2     RSV3
+ Attribute11                                               1930      20       80  VARCHAR2          181        A2     RSV3
+ Attribute12                                               1930      30       80  VARCHAR2          261        A2     RSV3
+ Attribute13                                               1930      40       80  VARCHAR2          341        A2     RSV3
+ Attribute14                                               1930      50       80  VARCHAR2          421        A2     RSV3
+ Attribute15                                               1940      10       80  VARCHAR2          101        A2     RSV4
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:           11 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Actions (Header)                               Interface Table: OE_ACTIONS_INTERFACE
+                                                                  Extension Table: OE_ACTIONS_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ Orig_Sys_Document_Ref                                     1950      10       50  VARCHAR2          101        AC     ACT
+ Change_Sequence                                           1950      20       50  VARCHAR2          151        AC     ACT
+ Operation_Code                                            1950      30       30  VARCHAR2          201     0  AC     ACT
+ Operation_Code_Ext1                                       1950      40       10  VARCHAR2          231     1  AC     ACT
+ Hold_Until_Date                                           1950      50       15  DATE              241        AC     ACT
+ Hold_Type_Code                                            1950      60        1  VARCHAR2          256     0  AC     ACT
+ Hold_Type_Code_Ext1                                       1950      70       30  VARCHAR2          257     1  AC     ACT
+ Release_Reason_Code                                       1950      80       30  VARCHAR2          287     0  AC     ACT
+ Release_Reason_Code_EXT1                                  1950      90       30  VARCHAR2          317     1  AC     ACT
+ Comments                                                  1950     100      240  VARCHAR2          347        AC     ACT
+ Sold_To_Org_Id                                            1950     110       22  NUMBER            587        AC     ACT
+ Sold_To_Org                                               1950     120       30  VARCHAR2          609        AC     ACT
+ Context                                                   1960      10       30  VARCHAR2          101        A1     AC1
+ Attribute1                                                1960      20       80  VARCHAR2          131        A1     AC1
+ Attribute2                                                1960      30       80  VARCHAR2          211        A1     AC1
+ Attribute3                                                1960      40       80  VARCHAR2          291        A1     AC1
+ Attribute4                                                1960      50       80  VARCHAR2          371        A1     AC1
+ Attribute5                                                1970      10       80  VARCHAR2          101        A2     AC2
+ Attribute6                                                1970      20       80  VARCHAR2          181        A2     AC2
+ Attribute7                                                1970      30       80  VARCHAR2          261        A2     AC2
+ Attribute8                                                1970      40       80  VARCHAR2          341        A2     AC2
+ Attribute9                                                1970      50       80  VARCHAR2          421        A2     AC2
+ Attribute10                                               1980      10       80  VARCHAR2          101        A2     AC3
+ Attribute11                                               1980      20       80  VARCHAR2          181        A2     AC3
+ Attribute12                                               1980      30       80  VARCHAR2          261        A2     AC3
+ Attribute13                                               1980      40       80  VARCHAR2          341        A2     AC3
+ Attribute14                                               1980      50       80  VARCHAR2          421        A2     AC3
+ Attribute15                                               1990      10       80  VARCHAR2          101        A2     AC4
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:           12 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Customer (Header)                              Interface Table: OE_CUSTOMER_INFO_IFACE_ALL
+                                                                  Extension Table: OE_CUSTOMER_INFO_IFACE_ALL_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ CUSTOMER_INFO_TYPE_CODE                                   1992      10       10  VARCHAR2          101        NC     NCC
+ IS_SHIP_TO_ADDRESS                                        1992      20        1  VARCHAR2          111        NC     NCC
+ IS_BILL_TO_ADDRESS                                        1992      30        1  VARCHAR2          112        NC     NCC
+ IS_DELIVER_TO_ADDRESS                                     1992      40        1  VARCHAR2          113        NC     NCC
+ CUSTOMER_TYPE                                             1992      50       30  VARCHAR2          114        NC     NCC
+ CUSTOMER_NUMBER                                           1992      60       22  NUMBER            144        NC     NCC
+ CUSTOMER_INFO_REF                                         1992      70       50  VARCHAR2          166        NC     NCC
+ CURRENT_CUSTOMER_NUMBER                                   1992      80       22  NUMBER            216        NC     NCC
+ CURRENT_CUSTOMER_ID                                       1992      90       22  NUMBER            238        NC     NCC
+ PARTY_NUMBER                                              1992     100       30  VARCHAR2          260        NC     NCC
+ PARENT_CUSTOMER_REF                                       1992     110       50  VARCHAR2          290        NC     NCC
+ ORG_ID                                                    1992     120       22  NUMBER            340        NC     NCC
+ LOCATION_NUMBER                                           1993      10       40  VARCHAR2          101        NC     NCA
+ EDI_LOCATION_CODE                                         1993      20       35  VARCHAR2          141        NC     NCA
+ NAME                                                      1993      30       60  VARCHAR2          176        NC     NCA
+ ADDRESS1                                                  1993      40      100  VARCHAR2          236        NC     NCA
+ ADDRESS2                                                  1993      50      100  VARCHAR2          336        NC     NCA
+ ADDRESS3                                                  1993      60      100  VARCHAR2          436        NC     NCA
+ ADDRESS4                                                  1993      70      100  VARCHAR2          536        NC     NCA
+ CITY                                                      1993      80       60  VARCHAR2          636        NC     NCA
+ POSTAL_CODE                                               1993      90       30  VARCHAR2          696        NC     NCA
+ COUNTY                                                    1993     100       30  VARCHAR2          726     0  NC     NCA
+ COUNTY_EXT1                                               1993     110        3  VARCHAR2          756     1  NC     NCA
+ STATE                                                     1993     120       60  VARCHAR2          759     0  NC     NCA
+ STATE_EXT1                                                1993     130       10  VARCHAR2          819     1  NC     NCA
+ PROVINCE                                                  1993     140       60  VARCHAR2          829        NC     NCA
+ PROVINCE_EXT1                                             1993     150       10  VARCHAR2          889        NC     NCA
+ COUNTRY                                                   1993     160       30  VARCHAR2          899        NC     NCA
+ SITE_NUMBER                                               1993     170       80  VARCHAR2          929        NC     NCA
+ ORGANIZATION_NAME                                         1994      10      130  VARCHAR2          101        NC     NCP
+ PERSON_TITLE                                              1994      20       60  VARCHAR2          231        NC     NCP
+ PERSON_FIRST_NAME                                         1994      30      150  VARCHAR2          291        NC     NCP
+ PERSON_MIDDLE_NAME                                        1994      40       60  VARCHAR2          441        NC     NCP
+ PERSON_LAST_NAME                                          1994      50      150  VARCHAR2          501        NC     NCP
+ PERSON_NAME_SUFFIX                                        1994      60       30  VARCHAR2          651        NC     NCP
+ PHONE_COUNTRY_CODE                                        1994      70       10  VARCHAR2          681        NC     NCP
+ PHONE_AREA_CODE                                           1994      80       10  VARCHAR2          691        NC     NCP
+ PHONE_NUMBER                                              1994      90       40  VARCHAR2          701        NC     NCP
+ PHONE_EXTENSION                                           1994     100       20  VARCHAR2          741        NC     NCP
+ EMAIL_ADDRESS                                             1994     110      240  VARCHAR2          761        NC     NCP
+ ATTRIBUTE_CATEGORY                                        1995      10       30  VARCHAR2          101        NC     NCF
+ ATTRIBUTE1                                                1995      20      110  VARCHAR2          131        NC     NCF
+ ATTRIBUTE2                                                1995      30      110  VARCHAR2          241        NC     NCF
+ ATTRIBUTE3                                                1995      40      110  VARCHAR2          351        NC     NCF
+ ATTRIBUTE4                                                1995      50      110  VARCHAR2          461        NC     NCF
+ ATTRIBUTE5                                                1995      60      110  VARCHAR2          571        NC     NCF
+ ATTRIBUTE6                                                1995      70      110  VARCHAR2          681        NC     NCF
+ ATTRIBUTE7                                                1995      80      110  VARCHAR2          791        NC     NCF
+ ATTRIBUTE8                                                1995      90      110  VARCHAR2          901        NC     NCF
+ ATTRIBUTE9                                                1996      10      110  VARCHAR2          101        NC     NCF
+ ATTRIBUTE10                                               1996      20      110  VARCHAR2          211        NC     NCF
+ ATTRIBUTE11                                               1996      30      110  VARCHAR2          321        NC     NCF
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:           13 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Customer (Header)                              Interface Table: OE_CUSTOMER_INFO_IFACE_ALL
+                                                                  Extension Table: OE_CUSTOMER_INFO_IFACE_ALL_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ ATTRIBUTE12                                               1996      40      110  VARCHAR2          431        NC     NCF
+ ATTRIBUTE13                                               1996      50      110  VARCHAR2          541        NC     NCF
+ ATTRIBUTE14                                               1996      60      110  VARCHAR2          651        NC     NCF
+ ATTRIBUTE15                                               1996      70      110  VARCHAR2          761        NC     NCF
+ ATTRIBUTE16                                               1996      80      110  VARCHAR2          871        NC     NCF
+ ATTRIBUTE17                                               1997      10      110  VARCHAR2          101        NC     NCF
+ ATTRIBUTE18                                               1997      20      110  VARCHAR2          211        NC     NCF
+ ATTRIBUTE19                                               1997      30      110  VARCHAR2          321        NC     NCF
+ ATTRIBUTE20                                               1997      40      110  VARCHAR2          431        NC     NCF
+ ATTRIBUTE21                                               1997      50      110  VARCHAR2          541        NC     NCF
+ ATTRIBUTE22                                               1997      60      110  VARCHAR2          651        NC     NCF
+ ATTRIBUTE23                                               1997      70      110  VARCHAR2          761        NC     NCF
+ ATTRIBUTE24                                               1997      80      110  VARCHAR2          871        NC     NCF
+ GLOBAL_ATTRIBUTE_CATEGORY                                 1998      10       30  VARCHAR2          101        NC     NCG
+ GLOBAL_ATTRIBUTE1                                         1998      20       80  VARCHAR2          131        NC     NCG
+ GLOBAL_ATTRIBUTE2                                         1998      30       80  VARCHAR2          211        NC     NCG
+ GLOBAL_ATTRIBUTE3                                         1998      40       80  VARCHAR2          291        NC     NCG
+ GLOBAL_ATTRIBUTE4                                         1998      50       80  VARCHAR2          371        NC     NCG
+ GLOBAL_ATTRIBUTE5                                         1998      60       80  VARCHAR2          451        NC     NCG
+ GLOBAL_ATTRIBUTE6                                         1998      70       80  VARCHAR2          531        NC     NCG
+ GLOBAL_ATTRIBUTE7                                         1998      80       80  VARCHAR2          611        NC     NCG
+ GLOBAL_ATTRIBUTE8                                         1998      90       80  VARCHAR2          691        NC     NCG
+ GLOBAL_ATTRIBUTE9                                         1998     100       80  VARCHAR2          771        NC     NCG
+ GLOBAL_ATTRIBUTE10                                        1998     110       80  VARCHAR2          851        NC     NCG
+ GLOBAL_ATTRIBUTE11                                        1998     120       80  VARCHAR2          931        NC     NCG
+ GLOBAL_ATTRIBUTE12                                        1999      10       80  VARCHAR2          101        NC     NCG
+ GLOBAL_ATTRIBUTE13                                        1999      20       80  VARCHAR2          181        NC     NCG
+ GLOBAL_ATTRIBUTE14                                        1999      30       80  VARCHAR2          261        NC     NCG
+ GLOBAL_ATTRIBUTE15                                        1999      40       80  VARCHAR2          341        NC     NCG
+ GLOBAL_ATTRIBUTE16                                        1999      50       80  VARCHAR2          421        NC     NCG
+ GLOBAL_ATTRIBUTE17                                        1999      60       80  VARCHAR2          501        NC     NCG
+ GLOBAL_ATTRIBUTE18                                        1999      70       80  VARCHAR2          581        NC     NCG
+ GLOBAL_ATTRIBUTE19                                        1999      80       80  VARCHAR2          661        NC     NCG
+ GLOBAL_ATTRIBUTE20                                        1999      90       80  VARCHAR2          741        NC     NCG
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:           14 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Order Items                                    Interface Table: OE_LINES_INTERFACE
+                                                                  Extension Table: OE_LINES_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ Customer_Line_Number                                      2000      10       20  VARCHAR2          101        IT     ITM
+ Line_Number                                               2000      20       22  NUMBER            121        IT     ITM
+ Inventory_Item                                            2000      30       50  VARCHAR2          143        IT     ITM
+ Item_Revision                                             2000      40        3  VARCHAR2          193        IT     ITM
+ Customer_Item_Name                                        2000      50       50  VARCHAR2          196        IT     ITM
+ Customer_Item_Revision                                    2000      60       50  VARCHAR2          246        IT     ITM
+ CUSTOMER_ITEM_ID_TYPE                                     2000      70       30  VARCHAR2          296     0  IT     ITM
+ CUSTOMER_ITEM_ID_TYPE_ext1                                2000      80       10  VARCHAR2          326     1  IT     ITM
+ Orig_Sys_Document_Ref                                     2000      90       50  VARCHAR2          336        IT     ITM
+ Orig_Sys_Line_Ref                                         2000     100       50  VARCHAR2          386        IT     ITM
+ Item_Type_Code                                            2000     110       30  VARCHAR2          436     0  IT     ITM
+ Item_Type_Code_EXT1                                       2000     120       30  VARCHAR2          466     1  IT     ITM
+ LINE_TYPE                                                 2000     130       30  VARCHAR2          496        IT     ITM
+ SALES_AGREEMENT_NUMBER                                    2000     140       22  NUMBER            526        IT     ITM
+ Split_From_Line_ref                                       2000     150       50  VARCHAR2          548        IT     ITM
+ USER_ITEM_DESCRIPTION                                     2005      10      900  VARCHAR2          101        IT     ITM
+ Inventory_Item_Segment_1                                  2010      10       80  VARCHAR1          101        IT     IS1
+ Inventory_Item_Segment_2                                  2010      20       80  VARCHAR2          181        IT     IS1
+ Inventory_Item_Segment_3                                  2010      30       80  VARCHAR2          261        IT     IS1
+ Inventory_Item_Segment_4                                  2010      40       80  VARCHAR2          341        IT     IS1
+ Inventory_Item_Segment_5                                  2010      50       80  VARCHAR2          421        IT     IS1
+ Inventory_Item_Segment_6                                  2010      60       80  VARCHAR2          501        IT     IS1
+ Inventory_Item_Segment_7                                  2010      70       80  VARCHAR2          581        IT     IS1
+ Inventory_Item_Segment_8                                  2010      80       80  VARCHAR2          661        IT     IS1
+ Inventory_Item_Segment_9                                  2010      90       80  VARCHAR2          741        IT     IS1
+ Inventory_Item_Segment_10                                 2010     100       80  VARCHAR2          821        IT     IS1
+ Inventory_Item_Segment_11                                 2020      10       80  VARCHAR2          101        IT     IS2
+ Inventory_Item_Segment_12                                 2020      20       80  VARCHAR2          181        IT     IS2
+ Inventory_Item_Segment_13                                 2020      30       80  VARCHAR2          261        IT     IS2
+ Inventory_Item_Segment_14                                 2020      40       80  VARCHAR2          341        IT     IS2
+ Inventory_Item_Segment_15                                 2020      50       80  VARCHAR2          421        IT     IS2
+ Inventory_Item_Segment_16                                 2020      60       80  VARCHAR2          501        IT     IS2
+ Inventory_Item_Segment_17                                 2020      70       80  VARCHAR2          581        IT     IS2
+ Inventory_Item_Segment_18                                 2020      80       80  VARCHAR2          661        IT     IS2
+ Inventory_Item_Segment_19                                 2020      90       80  VARCHAR2          741        IT     IS2
+ Inventory_Item_Segment_20                                 2020     100       80  VARCHAR2          821        IT     IS2
+ Calculate_Price_Flag                                      3000      10        1  VARCHAR2          101        LN     LN1
+ Pricing_Quantity                                          3000      20       22  NUMBER            102        LN     LN1
+ Pricing_Quantity_UOM                                      3000      30        3  VARCHAR2          124     0  LN     LN1
+ Pricing_Quantity_UOM_EXT1                                 3000      40       10  VARCHAR2          127     1  LN     LN1
+ Customer_Item_Net_Price                                   3000      50       22  NUMBER            137        LN     LN1
+ Unit_List_Price                                           3000      60       22  NUMBER            159        LN     LN1
+ Unit_Selling_Price                                        3000      70       22  NUMBER            181        LN     LN1
+ Unit_Percent_Base_Price                                   3000      80       22  NUMBER            203        LN     LN1
+ Unit_Selling_Percent                                      3000      90       22  NUMBER            225        LN     LN1
+ Unit_List_Percent                                         3000     100       22  NUMBER            247        LN     LN1
+ Pricing_Date                                              3000     110       15  DATE              269        LN     LN1
+ Price_List                                                3000     120       30  VARCHAR2          284     0  LN     LN1
+ PRICE_LIST_EXT1                                           3000     130       30  VARCHAR2          314     1  LN     LN1
+ Agreement                                                 3000     140       30  VARCHAR2          344        LN     LN1
+ End_Item_Unit_Number                                      3000     150       30  VARCHAR2          374        LN     LN1
+ Source_Type_Code                                          3000     160       30  VARCHAR2          404        LN     LN1
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:           15 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Order Items                                    Interface Table: OE_LINES_INTERFACE
+                                                                  Extension Table: OE_LINES_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ Option_Flag                                               3000     170        1  VARCHAR2          434        LN     LN1
+ Top_Model_Line_Ref                                        3000     180       50  VARCHAR2          435        LN     LN1
+ Link_To_Line_Ref                                          3000     190       50  VARCHAR2          485        LN     LN1
+ Model_Group_Number                                        3000     200       22  NUMBER            535        LN     LN1
+ Option_Number                                             3000     210       22  NUMBER            557        LN     LN1
+ Component_Code                                            3000     220       50  VARCHAR2          579        LN     LN1
+ Sort_Order                                                3000     230      240  VARCHAR2          629        LN     LN1
+ Cancelled_Flag                                            3010      10        1  VARCHAR2          101        LN     CHG
+ Cancelled_Quantity                                        3010      20       15  NUMBER            102        LN     CHG
+ Cancelled_Quantity2                                       3010      30       15  NUMBER            117        LN     CHG
+ OVER_SHIP_REASON_CODE                                     3010      40       30  VARCHAR2          132     0  LN     CHG
+ OVER_SHIP_REASON_CODE_EXT1                                3010      50       30  VARCHAR2          162     1  LN     CHG
+ OVER_SHIP_RESOLVED_FLAG                                   3010     100       30  VARCHAR2          192        LN     CHG
+ RETURN_REASON_CODE                                        3010     110       30  VARCHAR2          222     0  LN     CHG
+ CUSTOMER_PAYMENT_TERM                                     3020      10       30  VARCHAR2          101     0  PY     TAX
+ CUSTOMER_PAYMENT_TERM_EXT1                                3020      20       20  VARCHAR2          131     1  PY     TAX
+ CUSTOMER_PAYMENT_TERM_EXT2                                3020      30       15  VARCHAR2          151     2  PY     TAX
+ CUSTOMER_PAYMENT_TERM_EXT3                                3020      40       20  VARCHAR2          166     3  PY     TAX
+ CUSTOMER_PAYMENT_TERM_EXT4                                3020      50       20  VARCHAR2          186     4  PY     TAX
+ CUSTOMER_PAYMENT_TERM_EXT5                                3020      60       20  VARCHAR2          206     5  PY     TAX
+ Tax_Exempt_Flag                                           3020      70        1  VARCHAR2          226        PY     TAX
+ Tax_Exempt_Number                                         3020      80       50  VARCHAR2          227        PY     TAX
+ Tax_Exempt_Reason                                         3020      90       30  VARCHAR2          277        PY     TAX
+ Tax_Exempt_Reason_Code                                    3020     100       30  VARCHAR2          307     0  PY     TAX
+ Tax_Exempt_Reason_Code_Ext1                               3020     110       30  VARCHAR2          337     1  PY     TAX
+ Tax_Point                                                 3020     120       30  VARCHAR2          367        PY     TAX
+ TAX_POINT_CODE                                            3020     130       30  VARCHAR2          397     0  PY     TAX
+ TAX_POINT_CODE_ext1                                       3020     140       30  VARCHAR2          427     1  PY     TAX
+ Tax_Date                                                  3020     150       15  DATE              457        PY     TAX
+ Tax                                                       3020     160       50  VARCHAR2          472        PY     TAX
+ Tax_Code                                                  3020     170       50  VARCHAR2          522        PY     TAX
+ Tax_Value                                                 3020     180       22  NUMBER            572        PY     TAX
+ PAYMENT_TERM                                              3020     190       30  VARCHAR2          594     0  PY     TAX
+ Project                                                   3030      10       30  VARCHAR2          101        PJ     SRV
+ Task                                                      3030      20       30  VARCHAR2          131        PJ     SRV
+ Customer_Job                                              3030      30       50  VARCHAR2          161        PJ     SRV
+ Contract_PO_Number                                        3030      40       20  VARCHAR2          211        PJ     SRV
+ Service_Coterminate_Flag                                  3030      50        1  VARCHAR2          231        PJ     SRV
+ Service_Duration                                          3030      60       22  NUMBER            232        PJ     SRV
+ Service_PERIOD                                            3030      70        3  VARCHAR2          254        PJ     SRV
+ Service_Start_Date                                        3030      80       15  DATE              257        PJ     SRV
+ Service_End_Date                                          3030      90       15  DATE              272        PJ     SRV
+ Service_Number                                            3030     110       22  NUMBER            287        PJ     SRV
+ Service_REFERENCE_LINE                                    3030     120       50  VARCHAR2          309        PJ     SRV
+ Service_REFERENCE_ORDER                                   3030     130       50  VARCHAR2          359        PJ     SRV
+ Service_REFERENCE_SYSTEM                                  3030     140       50  VARCHAR2          409        PJ     SRV
+ Service_REFERENCE_TYPE_CODE                               3030     150       30  VARCHAR2          459        PJ     SRV
+ Service_Txn_REASON_CODE                                   3030     160       30  VARCHAR2          489        PJ     SRV
+ Service_Txn_Comments-1                                    3050      10      400  VARCHAR2          101        SV     CM1
+ FOB_POINT                                                 3080      10       30  VARCHAR2          101        FB     SHP
+ FOB_POINT_CODE                                            3080      20       30  VARCHAR2          131     0  FB     SHP
+ FOB_POINT_Code_Ext1                                       3080      30       20  VARCHAR2          161     1  FB     SHP
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:           16 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Order Items                                    Interface Table: OE_LINES_INTERFACE
+                                                                  Extension Table: OE_LINES_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ FREIGHT_TERMS                                             3080      40       30  VARCHAR2          181        FB     SHP
+ Freight_Terms_Code                                        3080      50       30  VARCHAR2          211     0  FB     SHP
+ Freight_Terms_Code_Ext1                                   3080      60       10  VARCHAR2          241     1  FB     SHP
+ Freight_Terms_Code_Ext2                                   3080      70       10  VARCHAR2          251     2  FB     SHP
+ Freight_Terms_Code_Ext3                                   3080      80       10  VARCHAR2          261     3  FB     SHP
+ Freight_Terms_Code_Ext4                                   3080      90       10  VARCHAR2          271     4  FB     SHP
+ Freight_Terms_Code_Ext5                                   3080     100       10  VARCHAR2          281     5  FB     SHP
+ Shipment_Priority                                         3080     110       30  VARCHAR2          291        FB     SHP
+ Shipment_Priority_Code                                    3080     120       30  VARCHAR2          321     0  FB     SHP
+ Shipment_Priority_Code_Ext1                               3080     130       20  VARCHAR2          351     1  FB     SHP
+ FREIGHT_CARRIER_CODE                                      3080     140       30  VARCHAR2          371     0  FB     SHP
+ FREIGHT_CARRIER_CODE_EXT1                                 3080     150       30  VARCHAR2          401     1  FB     SHP
+ FREIGHT_CARRIER_CODE_EXT2                                 3080     160       10  VARCHAR2          431     2  FB     SHP
+ Shipping_Method                                           3080     170       30  VARCHAR2          441        FB     SHP
+ SHIPPING_METHOD_CODE                                      3080     180       30  VARCHAR2          471     0  FB     SHP
+ SHIPPING_Method_Code_Ext1                                 3080     190       30  VARCHAR2          501     1  FB     SHP
+ SHIPPING_Method_Code_Ext2                                 3080     200       10  VARCHAR2          531     2  FB     SHP
+ Demand_Bucket_Type                                        3090      10       50  VARCHAR2          101        DM     DMD
+ Demand_Bucket_Type_Code                                   3090      20       30  VARCHAR2          151     0  DM     DMD
+ Demand_Bucket_Type_Code_EXT1                              3090      30       30  VARCHAR2          181     1  DM     DMD
+ DEMAND_CLASS_CODE                                         3090      40       30  VARCHAR2          211     0  DM     DMD
+ DEMAND_CLASS_CODE_EXT1                                    3090      50       30  VARCHAR2          241     1  DM     DMD
+ DEMAND_STREAM_CODE                                        3090      60       30  VARCHAR2          271     0  DM     DMD
+ DEMAND_STREAM_CODE_EXT1                                   3090      70       30  VARCHAR2          301     1  DM     DMD
+ Ship_Model_Complete_Flag                                  4000      10        1  VARCHAR2          101        DT     QTY
+ AUTHORIZED_TO_SHIP_FLAG                                   4000      20        1  VARCHAR2          102        DT     QTY
+ Shipment_Number                                           4000      30       22  NUMBER            103        DT     QTY
+ Customer_Shipment_Number                                  4000      40       10  VARCHAR2          125        DT     QTY
+ Orig_Sys_Shipment_Ref                                     4000      50       50  VARCHAR2          135        DT     QTY
+ Request_Date                                              4000      60       15  DATE              185        DT     QTY
+ Schedule_Date                                             4000      70       15  DATE              200        DT     QTY
+ Schedule_Ship_Date                                        4000      80       15  DATE              215        DT     QTY
+ Promise_Date                                              4000      90       15  DATE              230        DT     QTY
+ Ordered_Quantity                                          4000     100       22  NUMBER            245        DT     QTY
+ Order_Quantity_UOM                                        4000     110        3  VARCHAR2          267     0  DT     QTY
+ Order_Quantity_UOM_EXT1                                   4000     120       10  VARCHAR2          270     1  DT     QTY
+ Ordered_Quantity2                                         4000     130       15  NUMBER            280        DT     QTY
+ Ordered_Quantity_UOM2                                     4000     140        3  VARCHAR2          295     0  DT     QTY
+ Order_Quantity_UOM2_EXT1                                  4000     150       10  VARCHAR2          298     1  DT     QTY
+ Shipped_Quantity                                          4000     160       22  NUMBER            308        DT     QTY
+ Shipped_Quantity2                                         4000     170       22  NUMBER            330        DT     QTY
+ REFERENCE_HEADER                                          4000     180       30  VARCHAR2          352        DT     QTY
+ REFERENCE_LINE                                            4000     190       30  VARCHAR2          382        DT     QTY
+ Reference_Type                                            4000     200       30  VARCHAR2          412        DT     QTY
+ Cust_Model_Serial_Number                                  4000     210       50  VARCHAR2          442        DT     QTY
+ SALESREP                                                  4000     220       30  VARCHAR2          492        DT     QTY
+ Operation_Code                                            4000     230       10  VARCHAR2          522     0  LN     LN1
+ Operation_Code_ext1                                       4000     240        5  VARCHAR2          532     1  LN     LN1
+ SALES_AGREEMENT_LINE_NUMBER                               4000     250       22  NUMBER            537        LN     LN1
+ ARRIVAL_SET_NAME                                          4000     260       30  VARCHAR2          559        DT     QTY
+ Schedule_Arrival_Date                                     4000     270       15  DATE              589        DT     QTY
+ Delivery_Not_After                                        4005      10       15  DATE              101        LN     LN1
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:           17 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Order Items                                    Interface Table: OE_LINES_INTERFACE
+                                                                  Extension Table: OE_LINES_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ Delivery_Not_Before                                       4005      20       15  DATE              116        LN     LN1
+ Shipping_Instructions_A                                   4010      10      400  VARCHAR2          101        NT     NTE
+ Shipping_Instructions_B                                   4010      20      400  VARCHAR2          501        NT     NTE
+ Shipping_Instructions_C                                   4011      10      400  VARCHAR2          101        NT     NTE
+ Shipping_Instructions_D                                   4011      20      400  VARCHAR2          501        NT     NTE
+ Shipping_Instructions_E                                   4012      10      400  VARCHAR2          101        NT     NTE
+ Packing_Instructions_A                                    4020      10      400  VARCHAR2          101        NT     NTE
+ Packing_Instructions_B                                    4020      20      400  VARCHAR2          501        NT     NTE
+ Packing_Instructions_C                                    4021      10      400  VARCHAR2          101        NT     NTE
+ Packing_Instructions_D                                    4021      20      400  VARCHAR2          501        NT     NTE
+ Packing_Instructions_E                                    4022      10      400  VARCHAR2          101        NT     NTE
+ Line_Type_Id                                              4100      10       30  NUMBER            101        LN     LN2
+ SHIP_SET_NAME                                             4100      20       30  VARCHAR2          131        LN     LN2
+ CONTEXT                                                   4200      10       30  VARCHAR2          101        A1     IT1
+ Attribute_1                                               4200      20       80  VARCHAR2          131        A1     IT1
+ Attribute_2                                               4200      30       80  VARCHAR2          211        A1     IT1
+ Attribute_3                                               4200      40       80  VARCHAR2          291        A1     IT1
+ Attribute_4                                               4200      50       80  VARCHAR2          371        A1     IT1
+ Attribute_5                                               4210      10       80  VARCHAR2          101        A2     IT2
+ Attribute_6                                               4210      20       80  VARCHAR2          181        A2     IT2
+ Attribute_7                                               4210      30       80  VARCHAR2          261        A2     IT2
+ Attribute_8                                               4210      40       80  VARCHAR2          341        A2     IT2
+ Attribute_9                                               4210      50       80  VARCHAR2          421        A2     IT2
+ attribute_10                                              4220      10       80  VARCHAR2          101        A2     IT3
+ Attribute_11                                              4220      20       80  VARCHAR2          181        A2     IT3
+ Attribute_12                                              4220      30       80  VARCHAR2          261        A2     IT3
+ Attribute_13                                              4220      40       80  VARCHAR2          341        A2     IT3
+ Attribute_14                                              4220      50       80  VARCHAR2          421        A2     IT3
+ Attribute_15                                              4230      10       80  VARCHAR2          101        A2     IT4
+ Attribute_16                                              4230      20       80  VARCHAR2          181        A2     IT4
+ Attribute_17                                              4230      30       80  VARCHAR2          261        A2     IT4
+ Attribute_18                                              4230      40       80  VARCHAR2          341        A2     IT4
+ Attribute_19                                              4230      50       80  VARCHAR2          421        A2     IT4
+ Attribute_20                                              4230      60       80  VARCHAR2          501        A2     IT4
+ GLOBAL_ATTRIBUTE_CATEGORY                                 4300      10       30  VARCHAR2          101        A1     GL1
+ GLOBAL_Attribute_1                                        4300      20       80  VARCHAR2          131        A1     GL1
+ GLOBAL_Attribute_2                                        4300      30       80  VARCHAR2          211        A1     GL1
+ GLOBAL_Attribute_3                                        4300      40       80  VARCHAR2          291        A1     GL1
+ GLOBAL_Attribute_4                                        4300      50       80  VARCHAR2          371        A1     GL1
+ GLOBAL_Attribute_5                                        4310      10       80  VARCHAR2          101        A2     GL2
+ GLOBAL_Attribute_6                                        4310      20       80  VARCHAR2          181        A2     GL2
+ GLOBAL_Attribute_7                                        4310      30       80  VARCHAR2          261        A2     GL2
+ GLOBAL_Attribute_8                                        4310      40       80  VARCHAR2          341        A2     GL2
+ GLOBAL_Attribute_9                                        4310      50       80  VARCHAR2          421        A2     GL2
+ GLOBAL_Attribute_10                                       4320      10       80  VARCHAR2          101        A2     GL3
+ GLOBAL_Attribute_11                                       4320      20       80  VARCHAR2          181        A2     GL3
+ GLOBAL_Attribute_12                                       4320      30       80  VARCHAR2          261        A2     GL3
+ GLOBAL_Attribute_13                                       4320      40       80  VARCHAR2          341        A2     GL3
+ GLOBAL_Attribute_14                                       4320      50       80  VARCHAR2          421        A2     GL3
+ GLOBAL_Attribute_15                                       4330      10       80  VARCHAR2          101        A2     GL4
+ GLOBAL_Attribute_16                                       4330      20       80  VARCHAR2          181        A2     GL4
+ GLOBAL_Attribute_17                                       4330      30       80  VARCHAR2          261        A2     GL4
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:           18 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Order Items                                    Interface Table: OE_LINES_INTERFACE
+                                                                  Extension Table: OE_LINES_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ GLOBAL_Attribute_18                                       4330      40       80  VARCHAR2          341        A2     GL4
+ GLOBAL_Attribute_19                                       4330      50       80  VARCHAR2          421        A2     GL4
+ GLOBAL_Attribute_20                                       4340      10       80  VARCHAR2          101        A2     GL5
+ Pricing_Context                                           4400      10       30  VARCHAR2          101        A1     PC1
+ Pricing_attribute_1                                       4400      20       80  VARCHAR2          131        A1     PC1
+ Pricing_attribute_2                                       4400      30       80  VARCHAR2          211        A1     PC1
+ Pricing_attribute_3                                       4400      40       80  VARCHAR2          291        A1     PC1
+ Pricing_attribute_4                                       4400      50       80  VARCHAR2          371        A1     PC1
+ Pricing_attribute_5                                       4410      10       80  VARCHAR2          101        A2     PC2
+ Pricing_attribute_6                                       4410      20       80  VARCHAR2          181        A2     PC2
+ Pricing_attribute_7                                       4410      30       80  VARCHAR2          261        A2     PC2
+ Pricing_attribute_8                                       4410      40       80  VARCHAR2          341        A2     PC2
+ Pricing_attribute_9                                       4410      50       80  VARCHAR2          421        A2     PC2
+ Pricing_attribute_10                                      4420      10       80  VARCHAR2          101        A2     PC3
+ INDUSTRY_CONTEXT                                          4500      10       30  VARCHAR2          101        A1     IN1
+ INDUSTRY_Attribute_1                                      4500      20       80  VARCHAR2          131        A1     IN1
+ INDUSTRY_Attribute_2                                      4500      30       80  VARCHAR2          211        A1     IN1
+ INDUSTRY_Attribute_3                                      4500      40       80  VARCHAR2          291        A1     IN1
+ INDUSTRY_Attribute_4                                      4500      50       80  VARCHAR2          371        A1     IN1
+ INDUSTRY_Attribute_5                                      4510      10       80  VARCHAR2          101        A2     IN2
+ INDUSTRY_Attribute_6                                      4510      20       80  VARCHAR2          181        A2     IN2
+ INDUSTRY_Attribute_7                                      4510      30       80  VARCHAR2          261        A2     IN2
+ INDUSTRY_Attribute_8                                      4510      40       80  VARCHAR2          341        A2     IN2
+ INDUSTRY_Attribute_9                                      4510      50       80  VARCHAR2          421        A2     IN2
+ INDUSTRY_Attribute_10                                     4520      10       80  VARCHAR2          101        A2     IN3
+ INDUSTRY_Attribute_11                                     4520      20       80  VARCHAR2          181        A2     IN3
+ INDUSTRY_Attribute_12                                     4520      30       80  VARCHAR2          261        A2     IN3
+ INDUSTRY_Attribute_13                                     4520      40       80  VARCHAR2          341        A2     IN3
+ INDUSTRY_Attribute_14                                     4520      50       80  VARCHAR2          421        A2     IN3
+ INDUSTRY_Attribute_15                                     4530      10       80  VARCHAR2          101        A2     IN4
+ INDUSTRY_Attribute_16                                     4530      20       80  VARCHAR2          181        A2     IN4
+ INDUSTRY_Attribute_17                                     4530      30       80  VARCHAR2          261        A2     IN4
+ INDUSTRY_Attribute_18                                     4530      40       80  VARCHAR2          341        A2     IN4
+ INDUSTRY_Attribute_19                                     4530      50       80  VARCHAR2          421        A2     IN4
+ INDUSTRY_Attribute_20                                     4540      10       80  VARCHAR2          101        A2     IN5
+ INDUSTRY_Attribute_21                                     4540      20       80  VARCHAR2          181        A2     IN5
+ INDUSTRY_Attribute_22                                     4540      30       80  VARCHAR2          261        A2     IN5
+ INDUSTRY_Attribute_23                                     4540      40       80  VARCHAR2          341        A2     IN5
+ INDUSTRY_Attribute_24                                     4540      50       80  VARCHAR2          421        A2     IN5
+ INDUSTRY_Attribute_25                                     4550      10       80  VARCHAR2          101        A2     IN6
+ INDUSTRY_Attribute_26                                     4550      20       80  VARCHAR2          181        A2     IN6
+ INDUSTRY_Attribute_27                                     4550      30       80  VARCHAR2          261        A2     IN6
+ INDUSTRY_Attribute_28                                     4550      40       80  VARCHAR2          341        A2     IN6
+ INDUSTRY_Attribute_29                                     4550      50       80  VARCHAR2          421        A2     IN6
+ INDUSTRY_Attribute_30                                     4560      10       80  VARCHAR3          101        A2     IN7
+ SERVICE_Context                                           4600      10       30  VARCHAR2          101        A1     SV1
+ SERVICE_attribute_1                                       4600      20       80  VARCHAR2          131        A1     SV1
+ SERVICE_attribute_2                                       4600      30       80  VARCHAR2          211        A1     SV1
+ SERVICE_attribute_3                                       4600      40       80  VARCHAR2          291        A1     SV1
+ SERVICE_attribute_4                                       4600      50       80  VARCHAR2          371        A1     SV1
+ SERVICE_attribute_5                                       4610      10       80  VARCHAR2          101        A2     SV2
+ SERVICE_attribute_6                                       4610      20       80  VARCHAR2          181        A2     SV2
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:           19 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Order Items                                    Interface Table: OE_LINES_INTERFACE
+                                                                  Extension Table: OE_LINES_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ SERVICE_attribute_7                                       4610      30       80  VARCHAR2          261        A2     SV2
+ SERVICE_attribute_8                                       4610      40       80  VARCHAR2          341        A2     SV2
+ SERVICE_attribute_9                                       4610      50       80  VARCHAR2          421        A2     SV2
+ SERVICE_attribute_10                                      4620      10       80  VARCHAR2          101        A2     SV3
+ SERVICE_attribute_11                                      4620      20       80  VARCHAR2          181        A2     SV3
+ SERVICE_attribute_12                                      4620      30       80  VARCHAR2          261        A2     SV3
+ SERVICE_attribute_13                                      4620      40       80  VARCHAR2          341        A2     SV3
+ SERVICE_attribute_14                                      4620      50       80  VARCHAR2          421        A2     SV3
+ SERVICE_attribute_15                                      4630      10       80  VARCHAR2          101        A2     SV4
+ RETURN_Context                                            4700      10       30  VARCHAR2          101        A1     RT1
+ RETURN_attribute_1                                        4700      20       80  VARCHAR2          131        A1     RT1
+ RETURN_attribute_2                                        4700      30       80  VARCHAR2          211        A1     RT1
+ RETURN_attribute_3                                        4700      40       80  VARCHAR2          291        A1     RT1
+ RETURN_attribute_4                                        4700      50       80  VARCHAR2          371        A1     RT1
+ RETURN_attribute_5                                        4710      10       80  VARCHAR2          101        A2     RT2
+ RETURN_attribute_6                                        4710      20       80  VARCHAR2          181        A2     RT2
+ RETURN_attribute_7                                        4710      30       80  VARCHAR2          261        A2     RT2
+ RETURN_attribute_8                                        4710      40       80  VARCHAR2          341        A2     RT2
+ RETURN_attribute_9                                        4710      50       80  VARCHAR2          421        A2     RT2
+ RETURN_attribute_10                                       4720      10       80  VARCHAR2          101        A2     RT3
+ RETURN_attribute_11                                       4720      20       80  VARCHAR2          181        A2     RT3
+ RETURN_attribute_12                                       4720      30       80  VARCHAR2          261        A2     RT3
+ RETURN_attribute_13                                       4720      40       80  VARCHAR2          341        A2     RT3
+ RETURN_attribute_14                                       4720      50       80  VARCHAR2          421        A2     RT3
+ RETURN_attribute_15                                       4730      10       80  VARCHAR2          101        A2     RT4
+ Ship_To_Address_Code                                      4800      10       60  VARCHAR2          101        AD     ST1
+ Ship_To_EDI_Location_Code                                 4800      20       35  VARCHAR2          161        AD     ST1
+ Ship_To_Address_Name                                      4800      30       60  VARCHAR2          196        AD     ST1
+ Ship_To_Address1                                          4800      40       35  VARCHAR2          256        AD     ST1
+ Ship_To_Address2                                          4800      50       35  VARCHAR2          291        AD     ST1
+ Ship_To_Address3                                          4800      60       35  VARCHAR2          326        AD     ST1
+ Ship_To_Address4                                          4800      70       35  VARCHAR2          361        AD     ST1
+ Ship_To_City                                              4800      80       30  VARCHAR2          396        AD     ST1
+ Ship_To_Postal_Code                                       4800      90       15  VARCHAR2          426        AD     ST1
+ Ship_To_Country_INT                                       4800     100       20  VARCHAR2          441     0  AD     ST1
+ Ship_To_Country_Ext1                                      4800     110        3  VARCHAR2          461     1  AD     ST1
+ Ship_To_State_INT                                         4800     120       20  VARCHAR2          464     0  AD     ST1
+ Ship_To_State_Ext1                                        4800     130       10  VARCHAR2          484     1  AD     ST1
+ Ship_To_Province_INT                                      4800     140       20  VARCHAR2          494     0  AD     ST1
+ Ship_To_Province_Ext1                                     4800     150       10  VARCHAR2          514     1  AD     ST1
+ Ship_To_County                                            4800     160       25  VARCHAR2          524        AD     ST1
+ Ship_To_Org                                               4800     170       30  VARCHAR2          549        AD     ST1
+ CUSTOMER_DOCK                                             4800     180       30  VARCHAR2          579        AD     ST1
+ Customer_Dock_Code_Int                                    4800     190       30  VARCHAR2          609     0  AD     ST1
+ Customer_Dock_Code_Ext1                                   4800     200       15  VARCHAR2          639     1  AD     ST1
+ LOAD_SEQ_NUMBER                                           4800     210       30  NUMBER            654        AD     ST1
+ Customer_Production_Line                                  4800     220       30  VARCHAR2          684        AD     ST1
+ Cust_Production_Seq_Num                                   4800     230       30  NUMBER            714        AD     ST1
+ SHIP_TO_CONTACT_LAST_NAME                                 4810      10       30  VARCHAR2          101        CN     ST1
+ SHIP_TO_CONTACT_FIRST_NAME                                4810      20       30  VARCHAR2          131        CN     ST1
+ SHIP_TO_CONTACT_JOB_TITLE                                 4810      30       30  VARCHAR2          161        CN     ST1
+ SHIP_TO_CONTACT_AREA_CODE1                                4810      40       10  VARCHAR2          191        CN     ST1
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:           20 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Order Items                                    Interface Table: OE_LINES_INTERFACE
+                                                                  Extension Table: OE_LINES_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ Ship_To_Phone_1                                           4810      50       60  VARCHAR2          201        CN     ST1
+ SHIP_TO_CONTACT_AREA_CODE2                                4810      60       10  VARCHAR2          261        CN     ST1
+ Ship_To_Phone_2                                           4810      70       60  VARCHAR2          271        CN     ST1
+ SHIP_TO_CONTACT_AREA_CODE3                                4810      80       10  VARCHAR2          331        CN     ST1
+ Ship_To_Phone_3                                           4810      90       60  VARCHAR2          341        CN     ST1
+ Ship_To_Contact                                           4810     100       30  VARCHAR2          401        CN     ST1
+ Invoice_To_Contact                                        4820      10       30  VARCHAR2          101        CN     IND
+ Deliver_To_Contact                                        4820      20       30  VARCHAR2          131        CN     IND
+ TP_CONTEXT                                                4830      10       30  VARCHAR2          101        A1     TP1
+ TP_Attribute_1                                            4830      20       80  VARCHAR2          131        A1     TP1
+ TP_Attribute_2                                            4830      30       80  VARCHAR2          211        A1     TP1
+ TP_Attribute_3                                            4830      40       80  VARCHAR2          291        A1     TP1
+ TP_Attribute_4                                            4830      50       80  VARCHAR2          371        A1     TP1
+ TP_Attribute_5                                            4840      10       80  VARCHAR2          101        A2     TP2
+ TP_Attribute_6                                            4840      20       80  VARCHAR2          181        A2     TP2
+ TP_Attribute_7                                            4840      30       80  VARCHAR2          261        A2     TP2
+ TP_Attribute_8                                            4840      40       80  VARCHAR2          341        A2     TP2
+ TP_Attribute_9                                            4840      50       80  VARCHAR2          421        A2     TP2
+ TP_Attribute_10                                           4850      10       80  VARCHAR2          101        A2     TP3
+ TP_Attribute_11                                           4850      20       80  VARCHAR2          181        A2     TP3
+ TP_Attribute_12                                           4850      30       80  VARCHAR2          261        A2     TP3
+ TP_Attribute_13                                           4850      40       80  VARCHAR2          341        A2     TP3
+ TP_Attribute_14                                           4850      50       80  VARCHAR2          421        A2     TP3
+ TP_Attribute_15                                           4860      10       80  VARCHAR2          101        A2     TP4
+ SHIP_FROM_INT_Location_ID                                 4870      10       20  VARCHAR2          101        AD     SFR
+ SHIP_FROM_INT_EDI_Location_Code                           4870      20       35  VARCHAR2          121        AD     SFR
+ SHIP_FROM_INT_LOCATION_Name                               4870      30       60  VARCHAR2          156        AD     SFR
+ SHIP_FROM_INT_Address1                                    4870      40       35  VARCHAR2          216        AD     SFR
+ SHIP_FROM_INT_Address2                                    4870      50       35  VARCHAR2          251        AD     SFR
+ SHIP_FROM_INT_Address3                                    4870      60       35  VARCHAR2          286        AD     SFR
+ SHIP_FROM_INT_City                                        4870      70       30  VARCHAR2          321        AD     SFR
+ SHIP_FROM_INT_Postal_Code                                 4870      80       15  VARCHAR2          351        AD     SFR
+ SHIP_FROM_INT_Country                                     4870      90       20  VARCHAR2          366     0  AD     SFR
+ SHIP_FROM_INT_Country_Ext1                                4870     100        3  VARCHAR2          386     1  AD     SFR
+ SHIP_FROM_INT_Region1                                     4870     110       25  VARCHAR2          389     0  AD     SFR
+ SHIP_FROM_INT_Region1_Ext1                                4870     120       10  VARCHAR2          414     1  AD     SFR
+ SHIP_FROM_INT_Region2                                     4870     130       25  VARCHAR2          424     0  AD     SFR
+ SHIP_FROM_INT_Region2_Ext1                                4870     140       10  VARCHAR2          449     1  AD     SFR
+ SHIP_FROM_INT_REGION3                                     4870     150       25  VARCHAR2          459     0  AD     SFR
+ SHIP_FROM_INT_REGION3_EXT1                                4870     160       10  VARCHAR2          484     1  AD     SFR
+ SHIP_FROM_INT_ORG                                         4870     170       30  VARCHAR2          494        AD     SFR
+ SHIP_FROM_INT_ORGANIZATION_ID                             4870     180       20  VARCHAR2          524        AD     SFR
+ Sold_To_Org                                               4870     190       30  VARCHAR2          544
+ Sold_To_Org_Id                                            4870     200       22  NUMBER            574
+ Orig_Ship_Address_Ref                                     4880      10       50  VARCHAR2          101        NC     NCA
+ Orig_Bill_Address_Ref                                     4880      20       50  VARCHAR2          151        NC     NCA
+ Orig_Deliver_Address_Ref                                  4880      30       50  VARCHAR2          201        NC     NCA
+ Ship_To_Contact_Ref                                       4880      40       50  VARCHAR2          251        NC     NCC
+ Bill_To_Contact_Ref                                       4880      50       50  VARCHAR2          301        NC     NCC
+ Deliver_To_Contact_Ref                                    4880      60       50  VARCHAR2          351        NC     NCC
+ End_Customer_Name                                         4890      10       60  VARCHAR2          101        AD     ST1
+ End_Customer_Number                                       4890      20       60  VARCHAR2          161        AD     ST1
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:           21 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Order Items                                    Interface Table: OE_LINES_INTERFACE
+                                                                  Extension Table: OE_LINES_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ End_Customer_Address1                                     4890      30       35  VARCHAR2          221        AD     ST1
+ End_Customer_Address2                                     4890      40       35  VARCHAR2          256        AD     ST1
+ End_Customer_Address3                                     4890      50       35  VARCHAR2          291        AD     ST1
+ End_Customer_Address4                                     4890      60       35  VARCHAR2          326        AD     ST1
+ End_Customer_City                                         4890      70       30  VARCHAR2          361        AD     ST1
+ End_Customer_Postal_Code                                  4890      80       15  VARCHAR2          391        AD     ST1
+ End_Customer_Country                                      4890      90       20  VARCHAR2          406     0  AD     ST1
+ End_Customer_Country_Ext1                                 4890     100        3  VARCHAR2          426     1  AD     ST1
+ End_Customer_State                                        4890     110       20  VARCHAR2          429     0  AD     ST1
+ End_Customer_State_Ext1                                   4890     120       10  VARCHAR2          449     1  AD     ST1
+ End_Customer_Province                                     4890     130       20  VARCHAR2          459     0  AD     ST1
+ End_Customer_Province_Ext1                                4890     140       10  VARCHAR2          479     1  AD     ST1
+ End_Customer_COUNTY                                       4890     150       25  VARCHAR2          489        AD     ST1
+ End_Customer_Contact                                      4890     160       60  VARCHAR2          514        AD     ST1
+ IB_Owner                                                  4895      10       60  VARCHAR2          101        AD     ST1
+ IB_Current_Location                                       4895      20       60  VARCHAR2          161        AD     ST1
+ IB_Installed_At_Location                                  4895      30       60  VARCHAR2          221        AD     ST1
+ Actual_Arrival_Date                                                          15  DATE                         DT     QTY
+ FULFILLED_FLAG                                                                1  VARCHAR2                     DT     QTY
+ INVOICE_SET_NAME                                                             30  VARCHAR2                     DT     QTY
+ FULFILLED_SET_NAME                                                           30  VARCHAR2                     DT     QTY
+ Schedule_ITEM_DETAIL                                                         30  VARCHAR2                     DT     QTY
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:           22 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Item Pricing                                   Interface Table: OE_CREDITS_INTERFACE
+                                                                  Extension Table: OE_CREDITS_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ Orig_Sys_Document_Ref                                     5000      10       50  VARCHAR2          101        CR     CRD
+ Change_Sequence                                           5000      20       50  VARCHAR2          151        CR     CRD
+ Orig_Sys_Line_Ref                                         5000      30       50  VARCHAR2          201        CR     CRD
+ Orig_Sys_Shipment_Ref                                     5000      40       50  VARCHAR2          251        CR     CRD
+ Orig_Sys_Credit_Ref                                       5000      50       50  VARCHAR2          301        CR     CRD
+ Operation_Code                                            5000      60       30  VARCHAR2          351     0  CR     CRD
+ Operation_Code_Ext1                                       5000      70       10  VARCHAR2          381     1  CR     CRD
+ Quota_Flag                                                5000      80        1  VARCHAR2          391        CR     CRD
+ Percent                                                   5000      90       15  NUMBER            392        CR     CRD
+ Salesrep                                                  5000     100       30  VARCHAR2          407        CR     CRD
+ Sales_Credit_Type                                         5000     110       30  VARCHAR2          437     0  CR     CRD
+ Sales_Credit_Type_EXT1                                    5000     120       30  VARCHAR2          467     1  CR     CRD
+ Sold_To_Org_Id                                            5000     130       22  NUMBER            497        CR     CRD
+ Sold_To_Org                                               5000     140       30  VARCHAR2          519        CR     CRD
+ Context                                                   5100      10       30  VARCHAR2          101        A1     CR1
+ Attribute1                                                5100      20       80  VARCHAR2          131        A1     CR1
+ Attribute2                                                5100      30       80  VARCHAR2          211        A1     CR1
+ Attribute3                                                5100      40       80  VARCHAR2          291        A1     CR1
+ Attribute4                                                5100      50       80  VARCHAR2          371        A1     CR1
+ Attribute5                                                5110      10       80  VARCHAR2          101        A2     CR2
+ Attribute6                                                5110      20       80  VARCHAR2          181        A2     CR2
+ Attribute7                                                5110      30       80  VARCHAR2          261        A2     CR2
+ Attribute8                                                5110      40       80  VARCHAR2          341        A2     CR2
+ Attribute9                                                5110      50       80  VARCHAR2          421        A2     CR2
+ Attribute10                                               5120      10       80  VARCHAR2          101        A2     CR3
+ Attribute11                                               5120      20       80  VARCHAR2          181        A2     CR3
+ Attribute12                                               5120      30       80  VARCHAR2          261        A2     CR3
+ Attribute13                                               5120      40       80  VARCHAR2          341        A2     CR3
+ Attribute14                                               5120      50       80  VARCHAR2          421        A2     CR3
+ Attribute15                                               5130      10       80  VARCHAR2          101        A2     CR4
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:           23 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Item Details                                   Interface Table: OE_PRICE_ADJS_INTERFACE
+                                                                  Extension Table: OE_PRICE_ADJS_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ Orig_Sys_Document_Ref                                     6000      10       50  VARCHAR2          101        PR     ADJ
+ Change_Sequence                                           6000      20       50  VARCHAR2          151        PR     ADJ
+ Orig_Sys_Line_Ref                                         6000      30       50  VARCHAR2          201        PR     ADJ
+ Orig_Sys_Shipment_Ref                                     6000      40       50  VARCHAR2          251        PR     ADJ
+ Orig_Sys_Discount_Ref                                     6000      50       50  VARCHAR2          301        PR     ADJ
+ Operation_Code                                            6000      60       30  VARCHAR2          351     0  PR     ADJ
+ Operation_Code_Ext1                                       6000      70       10  VARCHAR2          381     1  PR     ADJ
+ Operand                                                   6000      80       15  NUMBER            391        PR     ADJ
+ Updated_Flag                                              6000      90        1  VARCHAR2          406        PR     ADJ
+ Applied_flag                                              6000     100        1  VARCHAR2          407        PR     ADJ
+ Automatic_Flag                                            6000     110        1  VARCHAR2          408        PR     ADJ
+ Percent                                                   6000     120       15  NUMBER            409        PR     ADJ
+ Modified_From                                             6000     130       15  VARCHAR2          424        PR     ADJ
+ Modified_To                                               6000     140       15  VARCHAR2          439        PR     ADJ
+ Adjusted_Amount                                           6000     150       20  NUMBER            454        PR     ADJ
+ List_Line_Type_Code                                       6000     160       30  VARCHAR2          474     0  PR     ADJ
+ List_Line_Type_Code_Ext1                                  6000     170       15  VARCHAR2          504     1  PR     ADJ
+ Modifier_Mechanism_Type_Code                              6000     180       30  VARCHAR2          519     0  PR     ADJ
+ Modifier_Mechanism_Type_Code_Ext1                         6000     190       15  VARCHAR2          549     1  PR     ADJ
+ Arithmetic_Operator                                       6000     200       30  VARCHAR2          564     0  PR     ADJ
+ Arithmetic_Operator_EXT1                                  6000     210       10  VARCHAR2          594     1  PR     ADJ
+ Sold_To_Org_Id                                            6000     220       22  NUMBER            604        PR     ADJ
+ Sold_To_Org                                               6000     230       30  VARCHAR2          626        PR     ADJ
+ Discount_Name                                             6010      10      240  VARCHAR2          101        PR     AD1
+ List_Name                                                 6010      20      240  VARCHAR2          341        PR     AD1
+ List_Line_Number                                          6010      30       30  VARCHAR2          581        PR     AD1
+ List_Header_Id                                            6010      40       22  NUMBER            611        PR     AD1
+ List_Line_Id                                              6010      50       22  NUMBER            633        PR     AD1
+ Context                                                   6100      10       30  VARCHAR2          101        A1     AD1
+ Attribute1                                                6100      20       80  VARCHAR2          131        A1     AD1
+ Attribute2                                                6100      30       80  VARCHAR2          211        A1     AD1
+ Attribute3                                                6100      40       80  VARCHAR2          291        A1     AD1
+ Attribute4                                                6100      50       80  VARCHAR2          371        A1     AD1
+ Attribute5                                                6110      10       80  VARCHAR2          101        A2     AD2
+ Attribute6                                                6110      20       80  VARCHAR2          181        A2     AD2
+ Attribute7                                                6110      30       80  VARCHAR2          261        A2     AD2
+ Attribute8                                                6110      40       80  VARCHAR2          341        A2     AD2
+ Attribute9                                                6110      50       80  VARCHAR2          421        A2     AD2
+ Attribute10                                               6120      10       80  VARCHAR2          101        A2     AD3
+ Attribute11                                               6120      20       80  VARCHAR2          181        A2     AD3
+ Attribute12                                               6120      30       80  VARCHAR2          261        A2     AD3
+ Attribute13                                               6120      40       80  VARCHAR2          341        A2     AD3
+ Attribute14                                               6120      50       80  VARCHAR2          421        A2     AD3
+ Attribute15                                               6130      10       80  VARCHAR2          101        A2     AD4
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:           24 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Credits (Line)                                 Interface Table: OE_PRICE_ATTS_IFACE_ALL
+                                                                  Extension Table: OE_PRICE_ATTS_IFACE_ALL_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ Orig_Sys_Document_Ref                                     6500      10       50  VARCHAR2          101        PL     PL1
+ Orig_Sys_Line_Ref                                         6500      20       50  VARCHAR2          151        PL     PL1
+ Orig_Sys_Shipment_Ref                                     6500      30       50  VARCHAR2          201        PL     PL1
+ Orig_Sys_Atts_Ref                                         6500      40       50  VARCHAR2          251        PL     PL1
+ Operation_Code                                            6500      50       30  VARCHAR2          301     0  PL     PL1
+ Operation_Code_Ext1                                       6500      60       10  VARCHAR2          331     1  PL     PL1
+ Pricing_Context                                           6500      70      100  VARCHAR2          341        PL     PL1
+ Pricing_Attribute1                                        6500      80       50  VARCHAR2          441        PL     PL1
+ Pricing_Attribute2                                        6500      90       50  VARCHAR2          491        PL     PL1
+ Pricing_Attribute3                                        6500     100       50  VARCHAR2          541        PL     PL1
+ Pricing_Attribute4                                        6500     110       50  VARCHAR2          591        PL     PL1
+ Pricing_Attribute5                                        6500     120       50  VARCHAR2          641        PL     PL1
+ Pricing_Attribute6                                        6500     130       50  VARCHAR2          691        PL     PL1
+ Pricing_Attribute7                                        6500     140       50  VARCHAR2          741        PL     PL1
+ Pricing_Attribute8                                        6500     150       50  VARCHAR2          791        PL     PL1
+ Pricing_Attribute9                                        6500     160       50  VARCHAR2          841        PL     PL1
+ Pricing_Attribute10                                       6500     170       50  VARCHAR2          891        PL     PL1
+ Pricing_Attribute11                                       6500     180       50  VARCHAR2          941        PL     PL1
+ Pricing_Attribute12                                       6600      10       50  VARCHAR2          101        PL     PL1
+ Pricing_Attribute13                                       6600      20       50  VARCHAR2          151        PL     PL1
+ Pricing_Attribute14                                       6600      30       50  VARCHAR2          201        PL     PL1
+ Pricing_Attribute15                                       6600      40       50  VARCHAR2          251        PL     PL1
+ Pricing_Attribute16                                       6600      50       50  VARCHAR2          301        PL     PL1
+ Pricing_Attribute17                                       6600      60       50  VARCHAR2          351        PL     PL1
+ Pricing_Attribute18                                       6600      70       50  VARCHAR2          401        PL     PL1
+ Pricing_Attribute19                                       6600      80       50  VARCHAR2          451        PL     PL1
+ Pricing_Attribute20                                       6600      90       50  VARCHAR2          501        PL     PL1
+ Pricing_Attribute21                                       6600     100       50  VARCHAR2          551        PL     PL1
+ Pricing_Attribute22                                       6600     110       50  VARCHAR2          601        PL     PL1
+ Pricing_Attribute23                                       6600     120       50  VARCHAR2          651        PL     PL1
+ Pricing_Attribute24                                       6600     130       50  VARCHAR2          701        PL     PL1
+ Pricing_Attribute25                                       6600     140       50  VARCHAR2          751        PL     PL1
+ Pricing_Attribute26                                       6600     150       50  VARCHAR2          801        PL     PL1
+ Pricing_Attribute27                                       6600     160       50  VARCHAR2          851        PL     PL1
+ Pricing_Attribute28                                       6600     170       50  VARCHAR2          901        PL     PL1
+ Pricing_Attribute29                                       6600     180       50  VARCHAR2          951        PL     PL1
+ Pricing_Attribute30                                       6610      10       50  VARCHAR2          101        PL     PL1
+ Sold_To_Org_Id                                            6620      10       22  NUMBER            101
+ Sold_To_Org                                               6620      20       30  VARCHAR2          123
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:           25 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Price Adjustments (Line)                       Interface Table: OE_RESERVTNS_INTERFACE
+                                                                  Extension Table: OE_RESERVTNS_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ Orig_Sys_Document_Ref                                     7000      10       50  VARCHAR2          101        RS     RES
+ Change_Sequence                                           7000      20       50  VARCHAR2          151        RS     RES
+ Orig_Sys_Line_Ref                                         7000      30       50  VARCHAR2          201        RS     RES
+ Orig_Sys_Shipment_Ref                                     7000      40       50  VARCHAR2          251        RS     RES
+ Orig_Sys_Reservation_Ref                                  7000      50       50  VARCHAR2          301        RS     RES
+ Operation_Code                                            7000      60       30  VARCHAR2          351     0  RS     RES
+ Operation_Code_Ext1                                       7000      70       10  VARCHAR2          381     1  RS     RES
+ Revision                                                  7000      80        3  VARCHAR2          391        RS     RES
+ Quantity                                                  7000      90       20  NUMBER            394        RS     RES
+ Lot_Number                                                7000     100       30  VARCHAR2          414        RS     RES
+ Subinventory_Code                                         7000     110       10  VARCHAR2          444        RS     RES
+ Sold_To_Org_Id                                            7000     120       22  NUMBER            454        RS     RES
+ Sold_To_Org                                               7000     130       30  VARCHAR2          476        RS     RES
+ Attribute_Category                                        7100      10       30  VARCHAR2          101        A1     RSV1
+ Attribute1                                                7100      20       80  VARCHAR2          131        A1     RSV1
+ Attribute2                                                7100      30       80  VARCHAR2          211        A1     RSV1
+ Attribute3                                                7100      40       80  VARCHAR2          291        A1     RSV1
+ Attribute4                                                7100      50       80  VARCHAR2          371        A1     RSV1
+ Attribute5                                                7110      10       80  VARCHAR2          101        A2     RSV2
+ Attribute6                                                7110      20       80  VARCHAR2          181        A2     RSV2
+ Attribute7                                                7110      30       80  VARCHAR2          261        A2     RSV2
+ Attribute8                                                7110      40       80  VARCHAR2          341        A2     RSV2
+ Attribute9                                                7110      50       80  VARCHAR2          421        A2     RSV2
+ Attribute10                                               7120      10       80  VARCHAR2          101        A2     RSV3
+ Attribute11                                               7120      20       80  VARCHAR2          181        A2     RSV3
+ Attribute12                                               7120      30       80  VARCHAR2          261        A2     RSV3
+ Attribute13                                               7120      40       80  VARCHAR2          341        A2     RSV3
+ Attribute14                                               7120      50       80  VARCHAR2          421        A2     RSV3
+ Attribute15                                               7130      10       80  VARCHAR2          101        A2     RSV4
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:           26 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Pricing Attributes (Line)                      Interface Table: OE_ACTIONS_INTERFACE
+                                                                  Extension Table: OE_ACTIONS_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ Orig_Sys_Document_Ref                                     8000      10       50  VARCHAR2          101        AC     ACT
+ Change_Sequence                                           8000      20       50  VARCHAR2          151        AC     ACT
+ Orig_Sys_Line_Ref                                         8000      30       50  VARCHAR2          201        AC     ACT
+ Orig_Sys_Shipment_Ref                                     8000      40       50  VARCHAR2          251        AC     ACT
+ Operation_Code                                            8000      50       30  VARCHAR2          301     0  AC     ACT
+ Operation_Code_Ext1                                       8000      60       10  VARCHAR2          331     1  AC     ACT
+ Hold_Until_Date                                           8000      70       15  DATE              341        AC     ACT
+ Hold_Type_Code                                            8000      80        1  VARCHAR2          356     0  AC     ACT
+ Hold_Type_Code_Ext1                                       8000      90       30  VARCHAR2          357     1  AC     ACT
+ Release_Reason_Code                                       8000     100       30  VARCHAR2          387     0  AC     ACT
+ Release_Reason_Code_EXT1                                  8000     110       30  VARCHAR2          417     1  AC     ACT
+ Comments                                                  8000     120      240  VARCHAR2          447        AC     ACT
+ Sold_To_Org_Id                                            8000     130       22  NUMBER            687        AC     ACT
+ Sold_To_Org                                               8000     140       30  VARCHAR2          709        AC     ACT
+ Context                                                   8100      10       30  VARCHAR2          101        A1     AC1
+ Attribute1                                                8100      20       80  VARCHAR2          131        A1     AC1
+ Attribute2                                                8100      30       80  VARCHAR2          211        A1     AC1
+ Attribute3                                                8100      40       80  VARCHAR2          291        A1     AC1
+ Attribute4                                                8100      50       80  VARCHAR2          371        A1     AC1
+ Attribute5                                                8110      10       80  VARCHAR2          101        A2     AC2
+ Attribute6                                                8110      20       80  VARCHAR2          181        A2     AC2
+ Attribute7                                                8110      30       80  VARCHAR2          261        A2     AC2
+ Attribute8                                                8110      40       80  VARCHAR2          341        A2     AC2
+ Attribute9                                                8110      50       80  VARCHAR2          421        A2     AC2
+ Attribute10                                               8120      10       80  VARCHAR2          101        A2     AC3
+ Attribute11                                               8120      20       80  VARCHAR2          181        A2     AC3
+ Attribute12                                               8120      30       80  VARCHAR2          261        A2     AC3
+ Attribute13                                               8120      40       80  VARCHAR2          341        A2     AC3
+ Attribute14                                               8120      50       80  VARCHAR2          421        A2     AC3
+ Attribute15                                               8130      10       80  VARCHAR2          101        A2     AC4
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:           27 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Reservations (Line)                            Interface Table: OE_LOTSERIALS_INTERFACE
+                                                                  Extension Table: OE_LOTSERIALS_INTERFACE_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ Orig_Sys_Document_Ref                                     9000      10       50  VARCHAR2          101        LT     SER
+ Change_Sequence                                           9000      20       50  VARCHAR2          151        LT     SER
+ Orig_Sys_Line_Ref                                         9000      30       50  VARCHAR2          201        LT     SER
+ Orig_Sys_Shipment_Ref                                     9000      40       50  VARCHAR2          251        LT     SER
+ Orig_Sys_Lotserial_Ref                                    9000      50       50  VARCHAR2          301        LT     SER
+ Operation_Code                                            9000      60       10  VARCHAR2          351     0  LT     SER
+ Operation_Code_Ext1                                       9000      70       10  VARCHAR2          361     1  LT     SER
+ Lot_Number                                                9000      80       15  NUMBER            371        LT     SER
+ From_Serial_Number                                        9000      90       30  VARCHAR2          386        LT     SER
+ To_Serial_Number                                          9000     100       30  VARCHAR2          416        LT     SER
+ Quantity                                                  9000     110       20  NUMBER            446        LT     SER
+ Sold_To_Org_Id                                            9000     120       22  NUMBER            466        LT     SER
+ Sold_To_Org                                               9000     130       30  VARCHAR2          488        LT     SER
+ Context                                                   9100      10       30  VARCHAR2          101        A1     LT1
+ Attribute1                                                9100      20       80  VARCHAR2          131        A1     LT1
+ Attribute2                                                9100      30       80  VARCHAR2          211        A1     LT1
+ Attribute3                                                9100      40       80  VARCHAR2          291        A1     LT1
+ Attribute4                                                9100      50       80  VARCHAR2          371        A1     LT1
+ Attribute5                                                9110      10       80  VARCHAR2          101        A2     LT2
+ Attribute6                                                9110      20       80  VARCHAR2          181        A2     LT2
+ Attribute7                                                9110      30       80  VARCHAR2          261        A2     LT2
+ Attribute8                                                9110      40       80  VARCHAR2          341        A2     LT2
+ Attribute9                                                9110      50       80  VARCHAR2          421        A2     LT2
+ Attribute10                                               9120      10       80  VARCHAR2          101        A2     LT3
+ Attribute11                                               9120      20       80  VARCHAR2          181        A2     LT3
+ Attribute12                                               9120      30       80  VARCHAR2          261        A2     LT3
+ Attribute13                                               9120      40       80  VARCHAR2          341        A2     LT3
+ Attribute14                                               9120      50       80  VARCHAR2          421        A2     LT3
+ Attribute15                                               9130      10       80  VARCHAR2          101        A2     LT4
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:           28 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Actions (Line)                                 Interface Table: OE_CUSTOMER_INFO_IFACE_ALL
+                                                                  Extension Table: OE_CUSTOMER_INFO_IFACE_ALL_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ CUSTOMER_INFO_TYPE_CODE                                   9202      10       10  VARCHAR2          101        NC     NCC
+ IS_SHIP_TO_ADDRESS                                        9202      20        1  VARCHAR2          111        NC     NCC
+ IS_BILL_TO_ADDRESS                                        9202      30        1  VARCHAR2          112        NC     NCC
+ IS_DELIVER_TO_ADDRESS                                     9202      40        1  VARCHAR2          113        NC     NCC
+ CUSTOMER_TYPE                                             9202      50       30  VARCHAR2          114        NC     NCC
+ CUSTOMER_NUMBER                                           9202      60       22  NUMBER            144        NC     NCC
+ CUSTOMER_INFO_REF                                         9202      70       50  VARCHAR2          166        NC     NCC
+ CURRENT_CUSTOMER_NUMBER                                   9202      80       22  NUMBER            216        NC     NCC
+ CURRENT_CUSTOMER_ID                                       9202      90       22  NUMBER            238        NC     NCC
+ PARTY_NUMBER                                              9202     100       30  VARCHAR2          260        NC     NCC
+ PARENT_CUSTOMER_REF                                       9202     110       50  VARCHAR2          290        NC     NCC
+ ORG_ID                                                    9202     120       22  NUMBER            340        NC     NCC
+ LOCATION_NUMBER                                           9203      10       40  VARCHAR2          101        NC     NCA
+ EDI_LOCATION_CODe                                         9203      20       35  VARCHAR2          141        NC     NCA
+ NAME                                                      9203      30       60  VARCHAR2          176        NC     NCA
+ ADDRESS1                                                  9203      40      100  VARCHAR2          236        NC     NCA
+ ADDRESS2                                                  9203      50      100  VARCHAR2          336        NC     NCA
+ ADDRESS3                                                  9203      60      100  VARCHAR2          436        NC     NCA
+ ADDRESS4                                                  9203      70      100  VARCHAR2          536        NC     NCA
+ CITY                                                      9203      80       60  VARCHAR2          636        NC     NCA
+ POSTAL_CODE                                               9203      90       30  VARCHAR2          696        NC     NCA
+ COUNTY                                                    9203     100       30  VARCHAR2          726     0  NC     NCA
+ COUNTY_EXT1                                               9203     110        3  VARCHAR2          756     1  NC     NCA
+ STATE                                                     9203     120       60  VARCHAR2          759     0  NC     NCA
+ STATE_EXT1                                                9203     130       10  VARCHAR2          819     1  NC     NCA
+ PROVINCE                                                  9203     140       60  VARCHAR2          829        NC     NCA
+ PROVINCE_EXT1                                             9203     150       10  VARCHAR2          889        NC     NCA
+ COUNTRY                                                   9203     160       30  VARCHAR2          899        NC     NCA
+ SITE_NUMBER                                               9203     170       80  VARCHAR2          929        NC     NCA
+ ORGANIZATION_NAME                                         9204      10      130  VARCHAR2          101        NC     NCP
+ PERSON_TITLE                                              9204      20       60  VARCHAR2          231        NC     NCP
+ PERSON_FIRST_NAME                                         9204      30      150  VARCHAR2          291        NC     NCP
+ PERSON_MIDDLE_NAME                                        9204      40       60  VARCHAR2          441        NC     NCP
+ PERSON_LAST_NAME                                          9204      50      150  VARCHAR2          501        NC     NCP
+ PERSON_NAME_SUFFIX                                        9204      60       30  VARCHAR2          651        NC     NCP
+ PHONE_COUNTRY_CODE                                        9204      70       10  VARCHAR2          681        NC     NCP
+ PHONE_AREA_CODE                                           9204      80       10  VARCHAR2          691        NC     NCP
+ PHONE_NUMBER                                              9204      90       40  VARCHAR2          701        NC     NCP
+ PHONE_EXTENSION                                           9204     100       20  VARCHAR2          741        NC     NCP
+ EMAIL_ADDRESS                                             9204     110      240  VARCHAR2          761        NC     NCP
+ ATTRIBUTE_CATEGORY                                        9205      10       30  VARCHAR2          101        NC     NCF
+ ATTRIBUTE1                                                9205      20      110  VARCHAR2          131        NC     NCF
+ ATTRIBUTE2                                                9205      30      110  VARCHAR2          241        NC     NCF
+ ATTRIBUTE3                                                9205      40      110  VARCHAR2          351        NC     NCF
+ ATTRIBUTE4                                                9205      50      110  VARCHAR2          461        NC     NCF
+ ATTRIBUTE5                                                9205      60      110  VARCHAR2          571        NC     NCF
+ ATTRIBUTE6                                                9205      70      110  VARCHAR2          681        NC     NCF
+ ATTRIBUTE7                                                9205      80      110  VARCHAR2          791        NC     NCF
+ ATTRIBUTE8                                                9205      90      110  VARCHAR2          901        NC     NCF
+ ATTRIBUTE9                                                9206      10      110  VARCHAR2          101        NC     NCF
+ ATTRIBUTE10                                               9206      20      110  VARCHAR2          211        NC     NCF
+ ATTRIBUTE11                                               9206      30      110  VARCHAR2          321        NC     NCF
+                                                                                          Report Date:    01-NOV-2011 11:11
+                                           Transaction Layout Definition Report                  Page:           29 / 29
+
+      Transaction: POI                                                Description: IN: Purchase Order (850/ORDERS)
+            Level: Actions (Line)                                 Interface Table: OE_CUSTOMER_INFO_IFACE_ALL
+                                                                  Extension Table: OE_CUSTOMER_INFO_IFACE_ALL_X
+
+                                                                                                          -Record Layout-
+                                               Ext          Rec                   Data           Start
+ Interface Column                              Table        Num     Pos    Width  Type             Col    Seq  Code   Qual
+ --------------------------------------------  --------  ------   -----  -------  ------------   ------  ----  -----  ----
+ ATTRIBUTE12                                               9206      40      110  VARCHAR2          431        NC     NCF
+ ATTRIBUTE13                                               9206      50      110  VARCHAR2          541        NC     NCF
+ ATTRIBUTE14                                               9206      60      110  VARCHAR2          651        NC     NCF
+ ATTRIBUTE15                                               9206      70      110  VARCHAR2          761        NC     NCF
+ ATTRIBUTE16                                               9206      80      110  VARCHAR2          871        NC     NCF
+ ATTRIBUTE17                                               9207      10      110  VARCHAR2          101        NC     NCF
+ ATTRIBUTE18                                               9207      20      110  VARCHAR2          211        NC     NCF
+ ATTRIBUTE19                                               9207      30      110  VARCHAR2          321        NC     NCF
+ ATTRIBUTE20                                               9207      40      110  VARCHAR2          431        NC     NCF
+ ATTRIBUTE21                                               9207      50      110  VARCHAR2          541        NC     NCF
+ ATTRIBUTE22                                               9207      60      110  VARCHAR2          651        NC     NCF
+ ATTRIBUTE23                                               9207      70      110  VARCHAR2          761        NC     NCF
+ ATTRIBUTE24                                               9207      80      110  VARCHAR2          871        NC     NCF
+ GLOBAL_ATTRIBUTE_CATEGORY                                 9208      10       30  VARCHAR2          101        NC     NCG
+ GLOBAL_ATTRIBUTE1                                         9208      20       80  VARCHAR2          131        NC     NCG
+ GLOBAL_ATTRIBUTE2                                         9208      30       80  VARCHAR2          211        NC     NCG
+ GLOBAL_ATTRIBUTE3                                         9208      40       80  VARCHAR2          291        NC     NCG
+ GLOBAL_ATTRIBUTE4                                         9208      50       80  VARCHAR2          371        NC     NCG
+ GLOBAL_ATTRIBUTE5                                         9208      60       80  VARCHAR2          451        NC     NCG
+ GLOBAL_ATTRIBUTE6                                         9208      70       80  VARCHAR2          531        NC     NCG
+ GLOBAL_ATTRIBUTE7                                         9208      80       80  VARCHAR2          611        NC     NCG
+ GLOBAL_ATTRIBUTE8                                         9208      90       80  VARCHAR2          691        NC     NCG
+ GLOBAL_ATTRIBUTE9                                         9208     100       80  VARCHAR2          771        NC     NCG
+ GLOBAL_ATTRIBUTE10                                        9208     110       80  VARCHAR2          851        NC     NCG
+ GLOBAL_ATTRIBUTE11                                        9208     120       80  VARCHAR2          931        NC     NCG
+ GLOBAL_ATTRIBUTE12                                        9209      10       80  VARCHAR2          101        NC     NCG
+ GLOBAL_ATTRIBUTE13                                        9209      20       80  VARCHAR2          181        NC     NCG
+ GLOBAL_ATTRIBUTE14                                        9209      30       80  VARCHAR2          261        NC     NCG
+ GLOBAL_ATTRIBUTE15                                        9209      40       80  VARCHAR2          341        NC     NCG
+ GLOBAL_ATTRIBUTE16                                        9209      50       80  VARCHAR2          421        NC     NCG
+ GLOBAL_ATTRIBUTE17                                        9209      60       80  VARCHAR2          501        NC     NCG
+ GLOBAL_ATTRIBUTE18                                        9209      70       80  VARCHAR2          581        NC     NCG
+ GLOBAL_ATTRIBUTE19                                        9209      80       80  VARCHAR2          661        NC     NCG
+ GLOBAL_ATTRIBUTE20                                        9209      90       80  VARCHAR2          741        NC     NCG

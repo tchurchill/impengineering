@@ -75,7 +75,6 @@ def buildNodeTree(parentNode, childrenGroup, root):
 				type = convert_data_type(fieldInfo.get('edi_datatype'))
 				#N# =  implied Decimal of #
 				precision = re.sub("N([^0])", "\\1", fieldInfo.get('edi_datatype'))
-				print precision
 			else:
 				type = "JString"
 				precision = "N0"#this value will be checked for

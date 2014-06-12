@@ -62,13 +62,25 @@ def buildNodeTree(parentNode, childrenGroup, root):
 		#make Field nodes first
 		for field in fieldsToMake:
 			#find data type of field
-			if field.attrib.has_key('type'):
-				type = "J" + field.get('type').capitalize()
-			else:
-				type = "JString"
+			#if field.attrib.has_key('type'):
+			#	type = "J" + field.get('type').capitalize()
+			#else:
+			#	type = "JString"
 			
 			#get fieldInfo tag  or min/max tags for min/max length
 			fieldInfo = field.find(".//%sappinfo/*[1]" %xs)
+			
+			#get data Type
+			if fieldInfo.attrib.has_key('edi_datatype'):
+				type = convert_data_type(fieldInfo.get('edi_datatype'))
+				#N# =  implied Decimal of #
+				precision = re.sub("N([^0])", "\\1", fieldInfo.get('edi_datatype'))
+				print precision
+			else:
+				type = "JString"
+				precision = "N0"#this value will be checked for
+			
+			
 			minTag = field.find(".//%sminLength" %xs)
 			maxTag = field.find(".//%smaxLength" %xs)
 			lengthTag = field.find(".//%slength" %xs)
@@ -85,8 +97,11 @@ def buildNodeTree(parentNode, childrenGroup, root):
 				maxLen = ''
 				minLen = ''
 			
-			#create field tag
-			fieldNode = util.add(parentNode, util.make_field(field.get('name'), type ,minLen,maxLen))
+			#create field tag with/without implied decimals
+			if re.search("[1-9]+", precision):
+				fieldNode = util.add(parentNode, util.make_field(field.get('name'), type ,minLen,maxLen, precision))
+			else:
+				fieldNode = util.add(parentNode, util.make_field(field.get('name'), type ,minLen,maxLen))
 			
 			#find the help text for each field
 			helpText = field.find(".//%sdocumentation" %xs).text
@@ -108,6 +123,19 @@ def buildNodeTree(parentNode, childrenGroup, root):
 			
 			#find this child's children, make recursive call
 			buildNodeTree(curParent, root.find("%selement[@name='%s']/%scomplexType" %(xs, group.get('ref'), xs)), root)
+
+
+def convert_data_type(ediType):
+	#R = double, N0 = int, N# =  implied Decimal of #, ID & An = string
+	if ediType == "R":
+		return "JDouble"
+	elif ediType == "AN" or ediType == "ID":
+		return "JString"
+	elif ediType == "N0":
+		return "JInteger"
+	else:
+		return "JDouble"
+
 
 
 #use this check to see if this was called directly

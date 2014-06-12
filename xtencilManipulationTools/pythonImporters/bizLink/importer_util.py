@@ -24,6 +24,8 @@ import sys
 
 def to_java_name(name):
 	name = re.sub("[^a-zA-Z\d]+", "", name)
+	if re.match("\d", name):
+		name = "j" + name
 	name = str.lower(name[:1])+name[1:]
 	return name
 
@@ -44,8 +46,11 @@ def add(parent, child):
 def make_group(name, min='0', max='1'):
 	return node('GROUPDEF', {'name':to_xtl_name(name), 'javaName':to_java_name(name), 'min': min, 'max': max})
 
-def make_field(name, dataType="JString", min='', max='', ):
-	return node('FIELDDEF',{'name':to_xtl_name(name), 'javaName':to_java_name(name), 'minLength':min, 'maxLength':max, 'dataType':dataType})
+def make_field(name, dataType="JString", min='', max='', precision=None):
+	if precision != None:
+		return node('FIELDDEF',{'name':to_xtl_name(name), 'javaName':to_java_name(name), 'minLength':min, 'maxLength':max, 'dataType':dataType, 'precision':precision})
+	else:
+		return node('FIELDDEF',{'name':to_xtl_name(name), 'javaName':to_java_name(name), 'minLength':min, 'maxLength':max, 'dataType':dataType})
 
 def make_repGroup(name, min='0', max='999999'):
 	return node('GROUPDEF',{'name':to_xtl_name(name), 'javaName':to_java_name(name), 'min':min, 'max':max},\

@@ -11,7 +11,7 @@ parser.add_argument('infile', metavar = 'input', type = argparse.FileType('r'),
 args = parser.parse_args()
 
 #Variables
-data_file = []
+data_file = {}
 oracle_document = False
 field_type = set(['VARCHAR2', 'DATE', 'NUMBER', 'CHAR', 'VARCHAR'])
 trans = {'INO' : '810', 'POI' : '850', 'POAO' : '855', 'DSNO' : '856'}
@@ -31,14 +31,17 @@ for lines in args.infile:
     line = lines.split()
     if len(line) > 5 and line[0] == 'Transaction:':
         transaction_type = line[1]
-    if len(line) > 6 and line[5] in field_type:
-        data_file.append({line[1] : line})
+    if len(line) > 6 and line[4] in field_type:
+        data_file[line[1]] = line
 
 
-print transaction_type
+json_data = {'name' : 'oracle_data',
+        'children' : [{'name' : key, 'data' : value} for key, value in data_file.items()]}
+
+print json_data
 
 p = Popen([sys.executable, trans[transaction_type] + '_importer.py'], stdin=PIPE, stdout=PIPE)
-result = json.loads(p.communicate(json.dumps(sys.argv))[0])
+result = json.loads(p.communicate(json.dumps(json_data))[0])
 
 text = xtl(json.dumps(result))
 print text

@@ -23,10 +23,11 @@ def json_to_xtl(blob, parent):
 def main(json_file):
     '''Given a .json file, writes an .xtl file.
        Returns a pointer to created .xtl file.'''
-    with open(json_file, 'r') as myfile:
-        data = myfile.read().replace('\n', '')
+    #with open(json_file, 'r') as myfile:
+     #   data = myfile.read().replace('\n', '')
 
-    blob = json.loads(data)
+
+    blob = json.loads(json_file)
     root = etree.Element('root')  # placeholder element
     tree = etree.ElementTree(root)
     json_to_xtl(blob, root)

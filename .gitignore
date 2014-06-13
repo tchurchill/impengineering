@@ -1,0 +1,10 @@
+### Python ###
+*.py[cod]
+
+### Perl ###
+*.o
+*.bs
+
+### Vim ###
+*~
+*.swp

@@ -43,6 +43,9 @@ def add(parent, child):
 	parent.get('children').append(child)
 	return child
 
+def add_attr(node, newAtts):
+	node.get('atts').update(newAtts)
+
 def make_group(name, min='0', max='1'):
 	return node('GROUPDEF', {'name':to_xtl_name(name), 'javaName':to_java_name(name), 'min': min, 'max': max})
 

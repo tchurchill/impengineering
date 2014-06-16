@@ -32,16 +32,13 @@ for lines in args.infile:
     if len(line) > 5 and line[0] == 'Transaction:':
         transaction_type = line[1]
     if len(line) > 6 and line[4] in field_type:
-        data_file[line[1]] = line
+        data_file[line[0]] = {'group' : line[1], 'width' : line[3], 'data_type' : line[4]}
 
 
-json_data = {'name' : 'oracle_data',
-        'children' : [{'name' : key, 'data' : value} for key, value in data_file.items()]}
 
-print json_data
 
 p = Popen([sys.executable, trans[transaction_type] + '_importer.py'], stdin=PIPE, stdout=PIPE)
-result = json.loads(p.communicate(json.dumps(json_data))[0])
+result = json.loads(p.communicate(json.dumps(data_file))[0])
 
 text = xtl(json.dumps(result))
 print text

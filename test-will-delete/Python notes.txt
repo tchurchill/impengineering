@@ -1,0 +1,2 @@
+Python notes
+xmllint will validate xml files, pretty print, etc.

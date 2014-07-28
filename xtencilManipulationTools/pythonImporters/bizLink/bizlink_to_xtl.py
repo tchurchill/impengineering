@@ -14,11 +14,12 @@ xs = ''#global variable for the start of every tag name
 
 def main(inputFile):
 	bizLinkFileName = inputFile
+	#print inputFile
 	#open file
-	encoding = util.get_encoding(bizLinkFileName)
-	bizLinkFile = codecs.open(bizLinkFileName, "r", encoding)
-	tree = etree.parse(bizLinkFileName)
-	root = tree.getroot()
+	#encoding = util.get_encoding(bizLinkFileName)
+	#bizLinkFile = codecs.open(bizLinkFileName, "r", encoding)
+	root = etree.fromstring(bizLinkFileName)
+	#root = tree.getroot()
 	
 	#get the value of 'xs' in the schema
 	global xs
@@ -47,13 +48,14 @@ def main(inputFile):
 	buildNodeTree(xtlDoc, root.find("./%selement[@name='%s']/%scomplexType" %(xs,schemaName,xs)), root, 0)
 	
 	#create json file
-	with codecs.open("myJson.json", "w") as newJson:
-		jsonStr = json.dumps(xtlRoot)
-		newJson.write(jsonStr)
+	#with codecs.open("myJson.json", "w") as newJson:
+	jsonStr = json.dumps(xtlRoot)
+	return jsonStr
+	#	newJson.write(jsonStr)
 	
 	#create xtl file
-	with codecs.open("myXtl.xtl", "w") as newXtl:
-		newXtl.write(_jtx("myJson.json"))
+	#with codecs.open("myXtl.xtl", "w") as newXtl:
+	#	newXtl.write(_jtx("myJson.json"))
 
 def buildNodeTree(parentNode, childrenGroup, root, parentPos):
 	#childrenGroup = complexType tag
@@ -180,8 +182,5 @@ def convert_data_type(ediType):
 
 #use this check to see if this was called directly
 if __name__ == "__main__":
-	#check the parameters passed to this script
-	if len(argv) < 2:
-		print("Usage: python input_file.csv")
-	else:
-		main(argv[1])
+	fileString = sys.stdin.read()
+	print(main(fileString))

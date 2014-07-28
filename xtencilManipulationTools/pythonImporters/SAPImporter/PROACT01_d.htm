@@ -1,0 +1,608 @@
+<HTML>
+<HEAD>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<TITLE> Documentation for IDoc record types or IDoc type             </TITLE>
+</HEAD>
+<BODY>
+<HR>
+<h1><A NAME = "IDOCTYPE">Structure of basic type PROACT01                      </A></h1>
+<h1>
+Transfer of stock and sales data
+</h1><p><hr>
+<ul>
+<p>
+<li><b>E1EDK34                     : General header segment                                                                                                              </b>
+<p>
+Status: Required    ,
+min. number :          1     , max. number :          1      <p>
+<p>
+<A HREF = "#E1EDK34                    STRUCT"><i>Structure</i></A>
+<p>
+<li><b>E1EDK02                     : IDoc: Document header reference data                                                                                                </b>
+<p>
+Status: Optional    ,
+min. number :          1     , max. number :       9999      <p>
+<p>
+<A HREF = "#E1EDK02                    STRUCT"><i>Structure</i></A>
+<p>
+<li><b>E1ADRM1                     : Central Address Segment Group, Main Segment                                                                                         </b>
+<p>
+Status: Required    ,
+min. number :          1     , max. number :         10      <p>
+<p>
+<A HREF = "#E1ADRM1                    STRUCT"><i>Structure</i></A>
+<ul> =====> Here (18)
+<p>
+<li><b>E1ADRP1                     : Central Address Segment Group, Person Segment                                                                                       </b>
+<p>
+Status: Optional    ,
+min. number :          1     , max. number :         10      <p>
+<p>
+<A HREF = "#E1ADRP1                    STRUCT"><i>Structure</i></A>
+<p>
+<li><b>E1ADRE1                     : Central Address Segment Group, Additional Data Segment                                                                              </b>
+<p>
+Status: Optional    ,
+min. number :          1     , max. number :         10      <p>
+<p>
+<A HREF = "#E1ADRE1                    STRUCT"><i>Structure</i></A>
+</ul>
+<p>
+<li><b>E1EDP31                     : General item segment                                                                                                                </b>
+<p>
+Status: Required    ,
+min. number :          1     , max. number :       9999      <p>
+<p>
+<A HREF = "#E1EDP31                    STRUCT"><i>Structure</i></A>
+<ul>
+<p>
+<li><b>E1EDP19                     : IDoc: Document Item Object Identification                                                                                           </b>
+<p>
+Status: Required    ,
+min. number :          1     , max. number :          5      <p>
+<p>
+<A HREF = "#E1EDP19                    STRUCT"><i>Structure</i></A>
+<p>
+<li><b>E1EDP32                     : Stock and sales data                                                                                                                </b>
+<p>
+Status: Required    ,
+min. number :          1     , max. number :        999      <p>
+<p>
+<A HREF = "#E1EDP32                    STRUCT"><i>Structure</i></A>
+</ul>
+<p>
+<li><b>E1EDS02                     : IDoc: Summary segment                                                                                                               </b>
+<p>
+Status: Required    ,
+min. number :          1     , max. number :          1      <p>
+<p>
+<A HREF = "#E1EDS02                    STRUCT"><i>Structure</i></A>
+</ul>
+<hr>
+<h1>
+<A NAME = "SEGMENTSTRUCT">Segment structures</A>
+</h1><p><hr>
+<ul>
+<p><li><h2><A NAME = "E1EDK34                    STRUCT">E1EDK34                     : General header segment                                                                                                              </A></h2>
+<p>
+Segment definition E2EDK34000
+Released since Release 45A , Segment length: 0017
+<p>
+<ol>
+<li>ACTION                         : <b>Action code for the whole EDI message                                                                                               </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000003 characters<br>
+Position in segment : 001, Offset : 0063. external length : 000003<br>
+<li>DATUM                          : <b>IDOC: Date                                                                                                                          </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000008 characters<br>
+Position in segment : 002, Offset : 0066. external length : 000008<br>
+<li>UZEIT                          : <b>IDOC: Time                                                                                                                          </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000006 characters<br>
+Position in segment : 003, Offset : 0074. external length : 000006<br>
+</ol>
+<p>
+<p><li><h2><A NAME = "E1EDK02                    STRUCT">E1EDK02                     : IDoc: Document header reference data                                                                                                </A></h2>
+<p>
+Segment definition E2EDK02
+Released since Release 30A , Segment length: 0058
+<p>
+<ol>
+<li>QUALF                          : <b>IDOC qualifier reference document                                                                                                   </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000003 characters<br>
+Position in segment : 001, Offset : 0063. external length : 000003<br>
+<li>BELNR                          : <b>IDOC document number                                                                                                                </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000035 characters<br>
+Position in segment : 002, Offset : 0066. external length : 000035<br>
+<li>POSNR                          : <b>Item number                                                                                                                         </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000006 characters<br>
+Position in segment : 003, Offset : 0101. external length : 000006<br>
+<li>DATUM                          : <b>IDOC: Date                                                                                                                          </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000008 characters<br>
+Position in segment : 004, Offset : 0107. external length : 000008<br>
+<li>UZEIT                          : <b>IDOC: Time                                                                                                                          </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000006 characters<br>
+Position in segment : 005, Offset : 0115. external length : 000006<br>
+</ol>
+<p>
+<p><li><h2><A NAME = "E1ADRM1                    STRUCT">E1ADRM1                     : Central Address Segment Group, Main Segment                                                                                         </A></h2>
+<p>
+Segment definition E2ADRM1001
+Released since Release 46A , Segment length: 0952
+<p>
+<ol>
+<li>PARTNER_Q                      : <b>Qualifier for partner function                                                                                                      </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000003 characters<br>
+Position in segment : 001, Offset : 0063. external length : 000003<br>
+<li>ADDRESS_T                      : <b>Addr. type                                                                                                                          </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000001 characters<br>
+Position in segment : 002, Offset : 0066. external length : 000001<br>
+<li>PARTNER_ID                     : <b>Partner no. (SAP)                                                                                                                   </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000017 characters<br>
+Position in segment : 003, Offset : 0067. external length : 000017<br>
+<li>JURISDIC                       : <b>Location for tax calculation - Tax Jurisdiction Code                                                                                </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000017 characters<br>
+Position in segment : 004, Offset : 0084. external length : 000017<br>
+<li>LANGUAGE                       : <b>Language key                                                                                                                        </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000002 characters<br>
+Position in segment : 005, Offset : 0101. external length : 000002<br>
+<li>FORMOFADDR                     : <b>Form of address                                                                                                                     </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000015 characters<br>
+Position in segment : 006, Offset : 0103. external length : 000015<br>
+<li>NAME1                          : <b>Name or address line                                                                                                                </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000040 characters<br>
+Position in segment : 007, Offset : 0118. external length : 000040<br>
+<li>NAME2                          : <b>Name or address line                                                                                                                </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000040 characters<br>
+Position in segment : 008, Offset : 0158. external length : 000040<br>
+<li>NAME3                          : <b>Name or address line                                                                                                                </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000040 characters<br>
+Position in segment : 009, Offset : 0198. external length : 000040<br>
+<li>NAME4                          : <b>Name or address line                                                                                                                </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000040 characters<br>
+Position in segment : 010, Offset : 0238. external length : 000040<br>
+<li>NAME_TEXT                      : <b>Name or address line (formatted)                                                                                                    </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000050 characters<br>
+Position in segment : 011, Offset : 0278. external length : 000050<br>
+<li>NAME_CO                        : <b>Subsequent line for name or address (c/o)                                                                                           </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000040 characters<br>
+Position in segment : 012, Offset : 0328. external length : 000040<br>
+<li>LOCATION                       : <b>Location description of location                                                                                                    </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000040 characters<br>
+Position in segment : 013, Offset : 0368. external length : 000040<br>
+<li>BUILDING                       : <b>Location description: Building                                                                                                      </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000010 characters<br>
+Position in segment : 014, Offset : 0408. external length : 000010<br>
+<li>FLOOR                          : <b>Location description: Floor                                                                                                         </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000010 characters<br>
+Position in segment : 015, Offset : 0418. external length : 000010<br>
+<li>ROOM                           : <b>Location description: Room                                                                                                          </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000010 characters<br>
+Position in segment : 016, Offset : 0428. external length : 000010<br>
+<li>STREET1                        : <b>House number and street                                                                                                             </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000040 characters<br>
+Position in segment : 017, Offset : 0438. external length : 000040<br>
+<li>STREET2                        : <b>House number and street                                                                                                             </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000040 characters<br>
+Position in segment : 018, Offset : 0478. external length : 000040<br>
+<li>STREET3                        : <b>House number and street                                                                                                             </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000040 characters<br>
+Position in segment : 019, Offset : 0518. external length : 000040<br>
+<li>HOUSE_SUPL                     : <b>House number                                                                                                                        </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000004 characters<br>
+Position in segment : 020, Offset : 0558. external length : 000004<br>
+<li>HOUSE_RANG                     : <b>House no. (interval)                                                                                                                </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000010 characters<br>
+Position in segment : 021, Offset : 0562. external length : 000010<br>
+<li>POSTL_COD1                     : <b>Postal code                                                                                                                         </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000010 characters<br>
+Position in segment : 022, Offset : 0572. external length : 000010<br>
+<li>POSTL_COD3                     : <b>Postal code                                                                                                                         </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000010 characters<br>
+Position in segment : 023, Offset : 0582. external length : 000010<br>
+<li>POSTL_AREA                     : <b>Post delivery district                                                                                                              </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000015 characters<br>
+Position in segment : 024, Offset : 0592. external length : 000015<br>
+<li>CITY1                          : <b>Town or city                                                                                                                        </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000040 characters<br>
+Position in segment : 025, Offset : 0607. external length : 000040<br>
+<li>CITY2                          : <b>Town or city                                                                                                                        </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000040 characters<br>
+Position in segment : 026, Offset : 0647. external length : 000040<br>
+<li>POSTL_PBOX                     : <b>PO Box                                                                                                                              </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000010 characters<br>
+Position in segment : 027, Offset : 0687. external length : 000010<br>
+<li>POSTL_COD2                     : <b>Postal code                                                                                                                         </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000010 characters<br>
+Position in segment : 028, Offset : 0697. external length : 000010<br>
+<li>POSTL_CITY                     : <b>Town or city                                                                                                                        </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000040 characters<br>
+Position in segment : 029, Offset : 0707. external length : 000040<br>
+<li>TELEPHONE1                     : <b>Telephone number                                                                                                                    </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000030 characters<br>
+Position in segment : 030, Offset : 0747. external length : 000030<br>
+<li>TELEPHONE2                     : <b>Telephone number                                                                                                                    </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000030 characters<br>
+Position in segment : 031, Offset : 0777. external length : 000030<br>
+<li>TELEFAX                        : <b>Fax number                                                                                                                          </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000030 characters<br>
+Position in segment : 032, Offset : 0807. external length : 000030<br>
+<li>TELEX                          : <b>Telex number                                                                                                                        </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000030 characters<br>
+Position in segment : 033, Offset : 0837. external length : 000030<br>
+<li>E_MAIL                         : <b>E-Mail Address                                                                                                                      </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000070 characters<br>
+Position in segment : 034, Offset : 0867. external length : 000070<br>
+<li>COUNTRY1                       : <b>Country indicator (ISO alphanumeric)                                                                                                </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000003 characters<br>
+Position in segment : 035, Offset : 0937. external length : 000003<br>
+<li>COUNTRY2                       : <b>Country indicator (ISO numeric)                                                                                                     </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000003 characters<br>
+Position in segment : 036, Offset : 0940. external length : 000003<br>
+<li>REGION                         : <b>Region, state                                                                                                                       </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000003 characters<br>
+Position in segment : 037, Offset : 0943. external length : 000003<br>
+<li>COUNTY_COD                     : <b>County Code (e.g. in USA)                                                                                                           </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000003 characters<br>
+Position in segment : 038, Offset : 0946. external length : 000003<br>
+<li>COUNTY_TXT                     : <b>County name (for example, in USA)                                                                                                   </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000025 characters<br>
+Position in segment : 039, Offset : 0949. external length : 000025<br>
+<li>TZCODE                         : <b>Location for time zone (SAP code)                                                                                                   </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000006 characters<br>
+Position in segment : 040, Offset : 0974. external length : 000006<br>
+<li>TZDESC                         : <b>Location for time zone (external code)                                                                                              </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000035 characters<br>
+Position in segment : 041, Offset : 0980. external length : 000035<br>
+</ol>
+<p>
+<p><li><h2><A NAME = "E1ADRP1                    STRUCT">E1ADRP1                     : Central Address Segment Group, Person Segment                                                                                       </A></h2>
+<p>
+Segment definition E2ADRP1000
+Released since Release 40A , Segment length: 0242
+<p>
+<ol>
+<li>PERSON_Q                       : <b>Qualifier for contact person (person function)                                                                                      </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000003 characters<br>
+Position in segment : 001, Offset : 0063. external length : 000003<br>
+<li>TITLE                          : <b>Form-of-Address Key                                                                                                                 </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000004 characters<br>
+Position in segment : 002, Offset : 0066. external length : 000004<br>
+<li>NAME_FIRST                     : <b>Name components                                                                                                                     </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000035 characters<br>
+Position in segment : 003, Offset : 0070. external length : 000035<br>
+<li>NAME_LAST                      : <b>Last name                                                                                                                           </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000035 characters<br>
+Position in segment : 004, Offset : 0105. external length : 000035<br>
+<li>NAME2_PERS                     : <b>Name components                                                                                                                     </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000035 characters<br>
+Position in segment : 005, Offset : 0140. external length : 000035<br>
+<li>NICKNAME                       : <b>Nickname or first name                                                                                                              </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000020 characters<br>
+Position in segment : 006, Offset : 0175. external length : 000020<br>
+<li>INITIALS                       : <b>Initials or "middle initial"                                                                                                        </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000010 characters<br>
+Position in segment : 007, Offset : 0195. external length : 000010<br>
+<li>TITLE_ACA1                     : <b>Academic grades and names affixes                                                                                                   </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000004 characters<br>
+Position in segment : 008, Offset : 0205. external length : 000004<br>
+<li>TITLE_ACA2                     : <b>Academic grades and names affixes                                                                                                   </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000004 characters<br>
+Position in segment : 009, Offset : 0209. external length : 000004<br>
+<li>TITLE_SPPL                     : <b>Academic grades and names affixes                                                                                                   </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000004 characters<br>
+Position in segment : 010, Offset : 0213. external length : 000004<br>
+<li>PREFIX1                        : <b>Name prefix                                                                                                                         </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000004 characters<br>
+Position in segment : 011, Offset : 0217. external length : 000004<br>
+<li>PREFIX2                        : <b>Name prefix                                                                                                                         </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000004 characters<br>
+Position in segment : 012, Offset : 0221. external length : 000004<br>
+<li>DEPARTMENT                     : <b>Department                                                                                                                          </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000040 characters<br>
+Position in segment : 013, Offset : 0225. external length : 000040<br>
+<li>FUNCTION                       : <b>Function                                                                                                                            </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000040 characters<br>
+Position in segment : 014, Offset : 0265. external length : 000040<br>
+</ol>
+<p>
+<p><li><h2><A NAME = "E1ADRE1                    STRUCT">E1ADRE1                     : Central Address Segment Group, Additional Data Segment                                                                              </A></h2>
+<p>
+Segment definition E2ADRE1000
+Released since Release 40A , Segment length: 0073
+<p>
+<ol>
+<li>EXTEND_Q                       : <b>Qualifier for additional data, e.g. ILN or D&B number                                                                               </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000003 characters<br>
+Position in segment : 001, Offset : 0063. external length : 000003<br>
+<li>EXTEND_D                       : <b>Additional data, e.g. ILN or D&B no.                                                                                                </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000070 characters<br>
+Position in segment : 002, Offset : 0066. external length : 000070<br>
+</ol>
+<p>
+<p><li><h2><A NAME = "E1EDP31                    STRUCT">E1EDP31                     : General item segment                                                                                                                </A></h2>
+<p>
+Segment definition E2EDP31000
+Released since Release 45A , Segment length: 0009
+<p>
+<ol>
+<li>ACTION                         : <b>Action code for the whole EDI message                                                                                               </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000003 characters<br>
+Position in segment : 001, Offset : 0063. external length : 000003<br>
+<li>POSEX                          : <b>Item number                                                                                                                         </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000006 characters<br>
+Position in segment : 002, Offset : 0066. external length : 000006<br>
+</ol>
+<p>
+<p><li><h2><A NAME = "E1EDP19                    STRUCT">E1EDP19                     : IDoc: Document Item Object Identification                                                                                           </A></h2>
+<p>
+Segment definition E2EDP19002
+Released since Release 620 , Segment length: 0242
+<p>
+<ol>
+<li>QUALF                          : <b>IDOC object identification such as material no.,customer                                                                            </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000003 characters<br>
+Position in segment : 001, Offset : 0063. external length : 000003<br>
+<li>IDTNR                          : <b>IDOC material ID                                                                                                                    </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000035 characters<br>
+Position in segment : 002, Offset : 0066. external length : 000035<br>
+<li>KTEXT                          : <b>IDOC short text                                                                                                                     </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000070 characters<br>
+Position in segment : 003, Offset : 0101. external length : 000070<br>
+<li>MFRPN                          : <b>Manufacturer part number                                                                                                            </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000042 characters<br>
+Position in segment : 004, Offset : 0171. external length : 000042<br>
+<li>MFRNR                          : <b>Number of a Manufacturer                                                                                                            </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000010 characters<br>
+Position in segment : 005, Offset : 0213. external length : 000010<br>
+<li>IDTNR_EXTERNAL                 : <b>Length of Material (Future Development) for Field IDTNR                                                                             </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000040 characters<br>
+Position in segment : 006, Offset : 0223. external length : 000040<br>
+<li>IDTNR_VERSION                  : <b>Version Number (Future Development) for Field IDTNR                                                                                 </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000010 characters<br>
+Position in segment : 007, Offset : 0263. external length : 000010<br>
+<li>IDTNR_GUID                     : <b>External GUID (Future Development) for Field IDTNR                                                                                  </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000032 characters<br>
+Position in segment : 008, Offset : 0273. external length : 000032<br>
+</ol>
+<p>
+<p><li><h2><A NAME = "E1EDP32                    STRUCT">E1EDP32                     : Stock and sales data                                                                                                                </A></h2>
+<p>
+Segment definition E2EDP32001
+Released since Release 46C , Segment length: 0050
+<p>
+<ol>
+<li>QUALF                          : <b>Qualifier for quantity information in IDoc PROACT                                                                                   </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000003 characters<br>
+Position in segment : 001, Offset : 0063. external length : 000003<br>
+<li>QUANTITY                       : <b>Quantity                                                                                                                            </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000015 characters<br>
+Position in segment : 002, Offset : 0066. external length : 000015<br>
+<li>UNIT                           : <b>Unit of measure                                                                                                                     </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000003 characters<br>
+Position in segment : 003, Offset : 0081. external length : 000003<br>
+<li>DATE                           : <b>IDOC: Date                                                                                                                          </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000008 characters<br>
+Position in segment : 004, Offset : 0084. external length : 000008<br>
+<li>TIME                           : <b>IDOC: Time                                                                                                                          </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000006 characters<br>
+Position in segment : 005, Offset : 0092. external length : 000006<br>
+<li>DATE_TO                        : <b>IDOC: Date                                                                                                                          </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000008 characters<br>
+Position in segment : 006, Offset : 0098. external length : 000008<br>
+<li>TIME_TO                        : <b>IDOC: Time                                                                                                                          </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000006 characters<br>
+Position in segment : 007, Offset : 0106. external length : 000006<br>
+<li>ACTION                         : <b>Activity Code for IDoc Inbound Processing                                                                                           </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000001 characters<br>
+Position in segment : 008, Offset : 0112. external length : 000001<br>
+</ol>
+<p>
+<p><li><h2><A NAME = "E1EDS02                    STRUCT">E1EDS02                     : IDoc: Summary segment                                                                                                               </A></h2>
+<p>
+Segment definition E2EDS02
+Released since Release 30A , Segment length: 0024
+<p>
+<ol>
+<li>SUMID                          : <b>Qualifier for totals segment for shipping notification                                                                              </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000003 characters<br>
+Position in segment : 001, Offset : 0063. external length : 000003<br>
+<li>SUMME                          : <b>Total value of sum segment                                                                                                          </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000018 characters<br>
+Position in segment : 002, Offset : 0066. external length : 000018<br>
+<li>SUNIT                          : <b>Total value unit for totals segment in the shipping notif.                                                                          </b><p>
+<p>
+internal data type : CHAR<br>
+Internal length : 000003 characters<br>
+Position in segment : 003, Offset : 0084. external length : 000003<br>
+</ol>
+<p>
+</ul>
+<p>
+<hr>
+<p>
+<h2><A NAME = "INFO"> Info... </A></h2>
+Automatically generated HTML doc.<br>
+created on 11/17/2010           at 14:40:33             <br>
+Client 600
+<br>
+System PRD
+<br>
+Release 701
+<br>
+Lang. E
+<br>
+Transaction WE60
+<p>
+Display for Release 701  <br>
+Version 3 of IDoc record types : IDoc record types for SAP Release 4.0
+</BODY>
+</HTML>

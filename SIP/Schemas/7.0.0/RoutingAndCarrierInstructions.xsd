@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SIP XML RoutingAndCarrierInstructions (EDIDOC 853) -->
+<!-- C SPS Commerce, Inc., 2004
+
+SPS Commerce is providing this XML schema (XSD) and resultant XML Message as a service to its customers and partners. This schema and resultant XML message were developed by SPS Commerce and are based on over six years of experience with our Standard Interface Program (SIP). The XML Tag names used are the same as our Field Names in the SIP 5.0 Flat File definition. 
+
+Although efforts have been made to assure that the XML schema and resultant XML message are correct, reliable, and technically accurate, SPS COMMERCE MAKES NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML SCHEMA AND RESULTANT XML MESSAGE ARE CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE MERCHANTABLE OR SUITABLE FOR ANY PARTICULAR PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  THE USE OF THE DTD AND RESULTANT MESSAGE BY ANY PARTY ARE WITH THE EXPRESS UNDERSTANDING THAT SPS COMMERCE  ASSUMES NO LIABILITY FOR ANY CLAIM, DAMAGE OR LOSS OF ANY KIND OR NATURE.
+
+	Version Information:
+	Version 7.0
+	Date of Creation: January 20, 2009
+
+COMMENTS:
+
+The mandatory XML elements, specific codes and qualifiers used between Trading partners are defined in separate trading partner guidelines between the partners and are not part of this schema and resultant XML message. 
+ -->
+<xs:schema xmlns="http://www.spscommerce.net/SIP" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.spscommerce.net/SIP" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <!-- inclusion of SIPbase -->
+    <xs:include schemaLocation="SIPbase.xsd"/>
+    <xs:element name="ActionCode" type="xs:string"/>
+    <xs:element name="CarrierSpecialHandlingDetail" type="CarrierSpecialHandlingDetailType"/>
+    <xs:element name="CompositeUOM" type="xs:string"/>
+    <xs:element name="Factor" type="FactorType"/>
+    <xs:element name="FactorAmount1" type="xs:decimal"/>
+    <xs:element name="FactorAmount2" type="xs:decimal"/>
+    <xs:element name="FactorAmount3" type="xs:decimal"/>
+    <xs:element name="FactorAmount4" type="xs:decimal"/>
+    <xs:element name="FactorAmount5" type="xs:decimal"/>
+    <xs:element name="FactorAmount6" type="xs:decimal"/>
+    <xs:element name="FactorAmount7" type="xs:decimal"/>
+    <xs:element name="FactorAmount8" type="xs:decimal"/>
+    <xs:element name="HazardousMaterialCode" type="xs:string"/>
+    <xs:element name="HazardousMaterialClass" type="xs:string"/>
+    <xs:element name="Header" type="HeaderType"/>
+    <xs:element name="JunctionCode" type="xs:string"/>
+    <xs:element name="LineItem" type="LineItemType"/>
+    <xs:element name="LineItems" type="LineItemsType"/>
+    <xs:element name="MeasurementAttributeCode" type="xs:string"/>
+    <xs:element name="MeasurementMethodorDevice" type="xs:string"/>
+    <xs:element name="MeasurementQualifier" type="xs:string"/>
+    <xs:element name="MeasurementRefIDCode" type="xs:string"/>
+    <xs:element name="Measurements" type="MeasurementsType"/>
+    <xs:element name="MeasurementSignificanceCode" type="xs:string"/>
+    <xs:element name="MeasurementValue" type="xs:decimal"/>
+    <xs:element name="PercentageDivision" type="xs:int"/>
+    <xs:element name="RangeMaximum" type="xs:decimal"/>
+    <xs:element name="RangeMinimum" type="xs:decimal"/>
+    <xs:element name="ReferenceIDQualifier" type="xs:string"/>
+    <xs:element name="RoutingHeader" type="RoutingHeaderType"/>
+    <xs:element name="RoutingAndCarrierInstruction" type="RoutingAndCarrierInstructionType"/>
+    <xs:element name="SecurityLevel" type="xs:string"/>
+    <xs:element name="SpecialHandlingCode" type="xs:string"/>
+    <xs:element name="Summary" type="SummaryType"/>
+    <xs:element name="TotalLineItems" type="xs:int"/>
+    <xs:element name="TotalOrders" type="xs:string"/>
+    <xs:element name="TotalQuantity" type="xs:string"/>
+    <xs:element name="TotalWeight" type="xs:string"/>
+    <xs:element name="TsetTypeCode" type="xs:string"/>
+    <!-- top level elements -->
+    <xs:element name="RoutingAndCarrierInstructions">
+        <xs:annotation>
+            <xs:appinfo>7.0</xs:appinfo>
+            <xs:documentation>SIP XML RoutingAndCarrierInstructions schema, Version 7.0</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="RoutingAndCarrierInstruction" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- RoutingAndCarrierInstruction elements  -->
+    <xs:complexType name="RoutingAndCarrierInstructionType">
+        <xs:complexContent>
+            <xs:extension base="sipDocumentType">
+                <xs:sequence>
+                    <xs:element ref="Header"/>
+                    <xs:element ref="LineItems"/>
+                    <xs:element ref="Summary"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- Header elements  -->
+    <xs:complexType name="HeaderType">
+        <xs:complexContent>
+            <xs:extension base="sipHeaderType">
+                <xs:sequence>
+                    <xs:element ref="RoutingHeader"/>
+                    <xs:element ref="Notes" minOccurs="0" maxOccurs="100"/>
+                    <xs:element ref="Date" minOccurs="0" maxOccurs="10"/>
+                    <xs:element ref="Address" minOccurs="0" maxOccurs="200"/>
+                    <xs:element ref="Miscellaneous" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- RoutingHeader elements  -->
+    <xs:complexType name="RoutingHeaderType">
+        <xs:complexContent>
+            <xs:extension base="firstSipRecordType">
+                <xs:sequence>
+                    <xs:element ref="TsetPurposeCode"/>
+                    <xs:element ref="TsetTypeCode" minOccurs="0"/>
+                    <xs:element ref="Date1"/>
+                    <xs:element ref="Time1" minOccurs="0"/>
+                    <xs:element ref="ReferenceID" minOccurs="0"/>
+                    <xs:element ref="TimeCode1" minOccurs="0"/>
+                    <xs:element ref="ActionCode" minOccurs="0"/>
+                    <xs:element ref="SecurityLevel" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!--  LineItems elements -->
+    <xs:complexType name="LineItemsType">
+        <xs:complexContent>
+            <xs:extension base="sipDatasetType">
+                <xs:sequence>
+                    <xs:element ref="LineItem" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!--  LineItem elements -->
+    <xs:complexType name="LineItemType">
+        <xs:complexContent>
+            <xs:extension base="sipGroupType">
+                <xs:sequence>
+                    <xs:element ref="CarrierRoutingDetail"/>
+                    <xs:element ref="CarrierEquipmentDetail" minOccurs="0" maxOccurs="12"/>
+                    <xs:element ref="CarrierSpecialHandlingDetail" minOccurs="0" maxOccurs="5"/>
+                    <xs:element ref="Notes" minOccurs="0" maxOccurs="100"/>
+                    <xs:element ref="Reference" minOccurs="0" maxOccurs="200"/>
+                    <xs:element ref="Measurements" minOccurs="0" maxOccurs="40"/>
+                    <xs:element ref="Factor" minOccurs="0"/>
+                    <xs:element ref="Date" minOccurs="0" maxOccurs="10"/>
+                    <xs:element ref="Address" minOccurs="0" maxOccurs="200"/>
+                    <xs:element ref="Miscellaneous" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- CarrierSpecialHandlingDetail element -->
+    <xs:complexType name="CarrierSpecialHandlingDetailType">
+        <xs:complexContent>
+            <xs:extension base="sipRecordType">
+                <xs:sequence>
+                    <xs:element ref="SpecialHandlingCode" minOccurs="0"/>
+                    <xs:element ref="HazardousMaterialCode" minOccurs="0"/>
+                    <xs:element ref="HazardousMaterialClass" minOccurs="0"/>
+                    <xs:element ref="Description" minOccurs="0"/>
+                    <xs:element ref="YesOrNoResponse" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- Measurements element -->
+    <xs:complexType name="MeasurementsType">
+        <xs:complexContent>
+            <xs:extension base="sipRecordType">
+                <xs:sequence>
+                    <xs:element ref="SequenceNumber"/>
+                    <xs:element ref="ReferenceIDQualifier"/>
+                    <xs:element ref="ReferenceID"/>
+                    <xs:element ref="Description"/>
+                    <xs:element ref="MeasurementRefIDCode" minOccurs="0"/>
+                    <xs:element ref="MeasurementQualifier" minOccurs="0"/>
+                    <xs:element ref="MeasurementValue" minOccurs="0"/>
+                    <xs:element ref="CompositeUOM" minOccurs="0"/>
+                    <xs:element ref="RangeMinimum" minOccurs="0"/>
+                    <xs:element ref="RangeMaximum" minOccurs="0"/>
+                    <xs:element ref="MeasurementSignificanceCode" minOccurs="0"/>
+                    <xs:element ref="MeasurementAttributeCode" minOccurs="0"/>
+                    <xs:element ref="SurfaceLayerPositionCode" minOccurs="0"/>
+                    <xs:element ref="MeasurementMethodorDevice" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- Factor element -->
+    <xs:complexType name="FactorType">
+        <xs:complexContent>
+            <xs:extension base="sipRecordType">
+                <xs:sequence>
+                    <xs:element ref="CarrierAlphaCode" minOccurs="0"/>
+                    <xs:element ref="CarrierTransMethodCode" minOccurs="0"/>
+                    <xs:element ref="State" minOccurs="0"/>
+                    <xs:element ref="City" minOccurs="0"/>
+                    <xs:element ref="JunctionCode" minOccurs="0"/>
+                    <xs:element ref="PercentageDivision" minOccurs="0"/>
+                    <xs:element ref="FactorAmount1" minOccurs="0"/>
+                    <xs:element ref="FactorAmount2" minOccurs="0"/>
+                    <xs:element ref="FactorAmount3" minOccurs="0"/>
+                    <xs:element ref="FactorAmount4" minOccurs="0"/>
+                    <xs:element ref="FactorAmount5" minOccurs="0"/>
+                    <xs:element ref="FactorAmount6" minOccurs="0"/>
+                    <xs:element ref="FactorAmount7" minOccurs="0"/>
+                    <xs:element ref="FactorAmount8" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!--  Summary elements -->
+    <xs:complexType name="SummaryType">
+        <xs:complexContent>
+            <xs:extension base="sipRecordType">
+                <xs:sequence>
+                    <xs:element ref="TotalOrders" minOccurs="0"/>
+                    <xs:element ref="TotalLineItems" minOccurs="0"/>
+                    <xs:element ref="TotalQuantity" minOccurs="0"/>
+                    <xs:element ref="TotalWeight" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>

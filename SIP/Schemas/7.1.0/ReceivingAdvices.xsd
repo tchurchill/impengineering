@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SIP XML ReceivingAdvices (EDIDOC 861) -->
+<!-- C SPS Commerce, Inc., 2012
+
+SPS Commerce is providing this XML schema (XSD) and resultant XML Message as a service to its customers and partners. This schema and resultant XML message were developed by SPS Commerce and are based on years of experience with our Standard Interface Program (SIP).
+
+Although efforts have been made to assure that the XML schema and resultant XML message are correct, reliable, and technically accurate, SPS COMMERCE MAKES NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML SCHEMA AND RESULTANT XML MESSAGE ARE CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE MERCHANTABLE OR SUITABLE FOR ANY PARTICULAR PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  THE USE OF THE SCHEMA AND RESULTANT MESSAGE BY ANY PARTY ARE WITH THE EXPRESS UNDERSTANDING THAT SPS COMMERCE  ASSUMES NO LIABILITY FOR ANY CLAIM, DAMAGE OR LOSS OF ANY KIND OR NATURE.
+
+    Version Information:
+    Version 7.1.0
+    Date of Creation: November 2, 2006
+
+COMMENTS:
+The mandatory XML elements, specific codes and qualifiers used between Trading partners are defined in separate trading partner guidelines between the partners and are not part of this schema and resultant XML message. 
+ -->
+<xs:schema xmlns="http://www.spscommerce.net/SIP" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.spscommerce.net/SIP" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- inclusion of SIPbase -->
+	<xs:include schemaLocation="SIPbase.xsd"/>
+	<!-- top level elements -->
+	<xs:element name="ReceivingAdvices">
+		<xs:annotation>
+			<xs:appinfo>Version 7.1.0</xs:appinfo>
+			<xs:documentation/>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ReceivingAdvice" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ReceivingAdvice" type="ReceivingAdviceType"/>
+	<xs:complexType name="ReceivingAdviceType">
+		<xs:complexContent>
+			<xs:extension base="sipDocumentType">
+				<xs:sequence>
+					<xs:element ref="Header"/>
+					<xs:element ref="ReceivingConditions" minOccurs="0"/>
+					<xs:element ref="Summary"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="Header" type="HeaderType"/>
+	<xs:complexType name="HeaderType">
+		<xs:complexContent>
+			<xs:extension base="sipHeaderType">
+				<xs:sequence>
+					<xs:element ref="AdviceHeader"/>
+					<xs:element ref="Date" minOccurs="0" maxOccurs="10"/>
+					<xs:element ref="Contact" minOccurs="0" maxOccurs="3"/>
+					<xs:element ref="Address" minOccurs="0" maxOccurs="200"/>
+					<xs:element ref="Reference" minOccurs="0" maxOccurs="12"/>
+					<xs:element ref="Miscellaneous" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ReceivingConditions" type="ReceivingConditionsType"/>
+	<xs:complexType name="ReceivingConditionsType">
+		<xs:complexContent>
+			<xs:extension base="sipDatasetType">
+				<xs:sequence>
+					<xs:element ref="ReceivingCondition" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Header elements -->
+	<xs:element name="AdviceHeader" type="AdviceHeaderType"/>
+	<xs:complexType name="AdviceHeaderType">
+		<xs:complexContent>
+			<xs:extension base="firstSipRecordType">
+				<xs:sequence>
+					<xs:element ref="TsetPurposeCode"/>
+					<xs:element ref="Date1"/>
+					<xs:element ref="ReceivingAdviceCode"/>
+					<xs:element ref="ReceivingConditionCode"/>
+					<xs:element ref="ActionCode"/>
+					<xs:element ref="ReceivingNumber" minOccurs="0"/>
+					<xs:element ref="ShipDate" minOccurs="0"/>
+					<xs:element ref="ReceiveDate" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ReceivingAdviceCode" type="xs:string"/>
+	<xs:element name="ReceivingConditionCode" type="xs:string"/>
+	<xs:element name="ReceiveDate" type="xs:date"/>
+	<xs:element name="ReceivingNumber" type="xs:string"/>
+	<!-- LineItem elements -->
+	<xs:element name="ReceivingCondition" type="ReceivingConditionType"/>
+	<xs:complexType name="ReceivingConditionType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="ReceivingConditionLine"/>
+					<xs:element ref="LineItem" minOccurs="0" maxOccurs="100"/>
+					<xs:element ref="Date" minOccurs="0" maxOccurs="10"/>
+					<xs:element ref="Reference" minOccurs="0" maxOccurs="12"/>
+					<xs:element ref="KitSerialLot" minOccurs="0" maxOccurs="100"/>
+					<xs:element ref="Address" minOccurs="0" maxOccurs="200"/>
+					<xs:element ref="Miscellaneous" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ReceivingConditionLine" type="ReceivingConditionLineType"/>
+	<xs:complexType name="ReceivingConditionLineType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="LineSequenceNumber" minOccurs="0"/>
+					<xs:element ref="QtyReceivedAccepted" minOccurs="0"/>
+					<xs:element ref="QtyReceivedAcceptedUOM" minOccurs="0"/>
+					<xs:element ref="QtyReturned" minOccurs="0"/>
+					<xs:element ref="QtyReturnedUOM" minOccurs="0"/>
+					<xs:element ref="QtyInQuestion1" minOccurs="0"/>
+					<xs:element ref="QtyInQuestionUOM1" minOccurs="0"/>
+					<xs:element ref="ReceivingCondition1" minOccurs="0"/>
+					<xs:element ref="QtyInQuestion2" minOccurs="0"/>
+					<xs:element ref="QtyInQuestionUOM2" minOccurs="0"/>
+					<xs:element ref="ReceivingCondition2" minOccurs="0"/>
+					<xs:element ref="QtyInQuestion3" minOccurs="0"/>
+					<xs:element ref="QtyInQuestionUOM3" minOccurs="0"/>
+					<xs:element ref="ReceivingCondition3" minOccurs="0"/>
+					<xs:element ref="QtyInQuestion4" minOccurs="0"/>
+					<xs:element ref="QtyInQuestionUOM4" minOccurs="0"/>
+					<xs:element ref="ReceivingCondition4" minOccurs="0"/>
+					<xs:element ref="QtyInQuestion5" minOccurs="0"/>
+					<xs:element ref="QtyInQuestionUOM5" minOccurs="0"/>
+					<xs:element ref="ReceivingCondition5" minOccurs="0"/>
+					<xs:element ref="Quantity1" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="QtyInQuestionUOM1" type="xs:string"/>
+	<xs:element name="QtyInQuestionUOM2" type="xs:string"/>
+	<xs:element name="QtyInQuestionUOM3" type="xs:string"/>
+	<xs:element name="QtyInQuestionUOM4" type="xs:string"/>
+	<xs:element name="QtyInQuestionUOM5" type="xs:string"/>
+	<xs:element name="QtyInQuestion1" type="xs:decimal"/>
+	<xs:element name="QtyInQuestion2" type="xs:decimal"/>
+	<xs:element name="QtyInQuestion3" type="xs:decimal"/>
+	<xs:element name="QtyInQuestion4" type="xs:decimal"/>
+	<xs:element name="QtyInQuestion5" type="xs:decimal"/>
+	<xs:element name="QtyReceivedAccepted" type="xs:decimal"/>
+	<xs:element name="QtyReceivedAcceptedUOM" type="xs:string"/>
+	<xs:element name="QtyReturned" type="xs:decimal"/>
+	<xs:element name="QtyReturnedUOM" type="xs:string"/>
+	<xs:element name="ReceivingCondition1" type="xs:string"/>
+	<xs:element name="ReceivingCondition2" type="xs:string"/>
+	<xs:element name="ReceivingCondition3" type="xs:string"/>
+	<xs:element name="ReceivingCondition4" type="xs:string"/>
+	<xs:element name="ReceivingCondition5" type="xs:string"/>
+	<xs:element name="LineItem" type="LineItemType"/>
+	<xs:complexType name="LineItemType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="LineSequenceNumber" minOccurs="0"/>
+					<xs:group ref="ItemPartInfo"/>
+					<xs:group ref="PartInfo"/>
+					<xs:group ref="LineQty"/>
+					<xs:element ref="RetailUnitPrice" minOccurs="0"/>
+					<xs:group ref="ItemPack"/>
+					<xs:group ref="LineShipQty" minOccurs="0"/>
+					<xs:element ref="ShipDate" minOccurs="0"/>
+					<xs:element ref="QtyLeftToReceive" minOccurs="0"/>
+					<xs:element ref="ExtendedItemTotal" minOccurs="0"/>
+					<xs:group ref="ProductData"/>
+					<xs:element ref="Department" minOccurs="0"/>
+					<xs:element ref="Class" minOccurs="0"/>
+					<xs:element ref="Gender" minOccurs="0"/>
+					<xs:element ref="SellerDateCode" minOccurs="0"/>
+					<xs:element ref="ItemStatusCode" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ItemStatusCode" type="xs:string"/>
+	<xs:element name="RetailUnitPrice" type="xs:decimal"/>
+	<xs:element name="SellerDateCode" type="xs:string"/>
+	<!-- KitSerialLot element -->
+	<xs:element name="KitSerialLot" type="KitSerialLotType"/>
+	<xs:complexType name="KitSerialLotType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="LineSequenceNumber" minOccurs="0" maxOccurs="2"/>
+					<xs:group ref="ItemPartInfo"/>
+					<xs:group ref="PartNumbers"/>
+					<xs:element ref="PartDescription1" minOccurs="0"/>
+					<xs:element ref="PartDescription2" minOccurs="0"/>
+					<xs:group ref="ProductData"/>
+					<xs:element ref="QtyPer" minOccurs="0"/>
+					<xs:element ref="QtyPerUOM" minOccurs="0"/>
+					<xs:element ref="UnitPrice" minOccurs="0"/>
+					<xs:element ref="UnitPriceBasis" minOccurs="0"/>
+					<xs:element ref="SerialLotNumber" minOccurs="0"/>
+					<xs:element ref="SerialLotNumberInformation" minOccurs="0"/>
+					<xs:element ref="SerialWarrantyDate" minOccurs="0"/>
+					<xs:element ref="SerialLotEffectiveDate" minOccurs="0"/>
+					<xs:element ref="LotExpirationDate" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="LotExpirationDate" type="xs:date"/>
+	<xs:element name="QtyPer" type="xs:decimal"/>
+	<xs:element name="QtyPerUOM" type="xs:string"/>
+	<xs:element name="SerialLotEffectiveDate" type="xs:date"/>
+	<xs:element name="SerialLotNumber" type="xs:string"/>
+	<xs:element name="SerialLotNumberInformation" type="xs:string"/>
+	<xs:element name="SerialWarrantyDate" type="xs:date"/>
+	<!-- Summary elements -->
+	<xs:element name="Summary" type="SummaryType"/>
+	<xs:complexType name="SummaryType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="TotalNumberofLineItems" minOccurs="0"/>
+					<xs:element ref="TotalQuantity" minOccurs="0"/>
+					<xs:element ref="TotalWeight" minOccurs="0"/>
+					<xs:element ref="TotalWeightUOM" minOccurs="0"/>
+					<xs:element ref="TotalVolume" minOccurs="0"/>
+					<xs:element ref="TotalVolumeUOM" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="TotalNumberofLineItems" type="xs:int"/>
+	<xs:element name="TotalQuantity" type="xs:decimal"/>
+	<xs:element name="TotalWeight" type="xs:decimal"/>
+	<xs:element name="TotalWeightUOM" type="xs:string"/>
+	<xs:element name="TotalVolume" type="xs:decimal"/>
+	<xs:element name="TotalVolumeUOM" type="xs:string"/>
+</xs:schema>

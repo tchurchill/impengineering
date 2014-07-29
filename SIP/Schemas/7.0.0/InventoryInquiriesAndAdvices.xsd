@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SIP XML InventoryInquiriesAndAdvices (EDIDOC 846,EDIFACT INVRPT)-->
+<!-- C SPS Commerce, Inc., 2004
+
+SPS Commerce is providing this XML schema (XSD) and resultant XML Message as a service to its customers and partners. This schema and resultant XML message were developed by SPS Commerce and are based on over six years of experience with our Standard Interface Program (SIP). The XML Tag names used are the same as our Field Names in the SIP 5.0 Flat File definition. 
+
+Although efforts have been made to assure that the XML schema and resultant XML message are correct, reliable, and technically accurate, SPS COMMERCE MAKES NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML SCHEMA AND RESULTANT XML MESSAGE ARE CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE MERCHANTABLE OR SUITABLE FOR ANY PARTICULAR PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  THE USE OF THE DTD AND RESULTANT MESSAGE BY ANY PARTY ARE WITH THE EXPRESS UNDERSTANDING THAT SPS COMMERCE  ASSUMES NO LIABILITY FOR ANY CLAIM, DAMAGE OR LOSS OF ANY KIND OR NATURE.
+
+	Version Information:
+	Version 7.0
+	Date of Creation: July 15, 2006
+    Date Updated to Version 7.0: November 14, 2006
+
+COMMENTS:
+
+The mandatory XML elements, specific codes and qualifiers used between Trading partners are defined in separate trading partner guidelines between the partners and are not part of this schema and resultant XML message. 
+ -->
+<xs:schema xmlns="http://www.spscommerce.net/SIP" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.spscommerce.net/SIP" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <!-- inclusion of SIPbase -->
+    <xs:include schemaLocation="SIPbase.xsd"/>
+    <xs:element name="ActionCode" type="xs:string"/>
+    <xs:element name="Amount" type="xs:decimal"/>
+    <xs:element name="Batch" type="xs:string"/>
+    <xs:element name="ClassOfTradeCode" type="xs:string"/>
+    <xs:element name="CompositeUOM" type="xs:string"/>
+    <xs:element name="ConditionValue" type="xs:decimal"/>
+    <xs:element name="ExpirationDate" type="xs:date"/>
+    <xs:element name="FreeFormMessage" type="xs:string"/>
+    <xs:element name="Header" type="HeaderType"/>
+    <xs:element name="HeaderReport" type="HeaderReportType"/>
+    <xs:element name="InventoryInquiriesAndAdvice" type="InventoryInquiriesAndAdviceType"/>
+    <xs:element name="InventoryLine" type="InventoryLineType"/>
+    <xs:element name="InventoryLineItemSchedule" type="InventoryLineItemScheduleType"/>
+    <xs:element name="InventoryLineQuantities" type="InventoryLineQuantitiesType"/>
+    <xs:element name="InventoryLineQuantity" type="InventoryLineQuantityType"/>
+    <xs:element name="ItemQty" type="xs:decimal"/>
+    <xs:element name="ItemQtyUOM" type="xs:string"/>
+    <xs:element name="ItemStatusCode" type="xs:string"/>
+    <xs:element name="KitSerialLot" type="KitSerialLotType"/>
+    <xs:element name="LeadTimeCode" type="xs:string"/>
+    <xs:element name="LeadTimeDate" type="xs:date"/>
+    <xs:element name="LeadTimePeriodInterval" type="xs:string"/>
+    <xs:element name="LeadTimeQuantity" type="xs:decimal"/>
+    <xs:element name="LineItem" type="LineItemType"/>
+    <xs:element name="LineItems" type="LineItemsType"/>
+    <xs:element name="LotExpirationDate" type="xs:date"/>
+    <xs:element name="MaintananceTypeCode" type="xs:string"/>
+    <xs:element name="MarksAndNumbersCollection" type="MarksAndNumbersCollectionType"/>
+    <xs:element name="MarksAndNumbersQualifier1" type="xs:string"/>
+    <xs:element name="MarksAndNumbersQualifier2" type="xs:string"/>
+    <xs:element name="MarksAndNumbers1" type="xs:string"/>
+    <xs:element name="MarksAndNumbers1A" type="xs:string"/>
+    <xs:element name="MarksAndNumbers2" type="xs:string"/>
+    <xs:element name="MarksAndNumbers2A" type="xs:string"/>
+    <xs:element name="Measurements" type="MeasurementsType"/>
+    <xs:element name="MeasurementAttributeCode" type="xs:string"/>
+    <xs:element name="MeasurementMethodorDevice" type="xs:string"/>
+    <xs:element name="MeasurementQualifier" type="xs:string"/>
+    <xs:element name="MeasurementRefIDCode" type="xs:string"/>
+    <xs:element name="MeasurementSignificanceCode" type="xs:string"/>
+    <xs:element name="MeasurementValue" type="xs:decimal"/>
+    <xs:element name="MultiplePriceQuantity" type="xs:int"/>
+    <xs:element name="PriceMultiplierQual" type="xs:string"/>
+    <xs:element name="PriceMultiplier" type="xs:decimal"/>
+    <xs:element name="PriceTypeIDCode" type="xs:string"/>
+    <xs:element name="Pricing" type="PricingType"/>
+    <xs:element name="QuantityLine" type="QuantityLineType"/>
+    <xs:element name="QtyPer" type="xs:decimal"/>
+    <xs:element name="QtyPerUOM" type="xs:string"/>
+    <xs:element name="RangeMaximum" type="xs:decimal"/>
+    <xs:element name="RangeMinimum" type="xs:decimal"/>
+    <xs:element name="ReportTypeCode" type="xs:string"/>
+    <xs:element name="RetailUnitPrice" type="xs:decimal"/>
+    <xs:element name="SellerDateCode" type="xs:string"/>
+    <xs:element name="SerialLotEffectiveDate" type="xs:date"/>
+    <xs:element name="SerialLotNumber" type="xs:string"/>
+    <xs:element name="SerialLotNumberInformation" type="xs:string"/>
+    <xs:element name="SerialWarrantyDate" type="xs:date"/>
+    <xs:element name="Summary" type="SummaryType"/>
+    <xs:element name="TotalAmount" type="xs:int"/>
+    <xs:element name="TotalLineItemNumber" type="xs:int"/>
+    <xs:element name="TotalQuantity" type="xs:decimal"/>
+    <xs:element name="TsetHandlingCode" type="xs:string"/>
+    <xs:element name="QuantityQualifier" type="xs:string"/>
+    <!-- top level elements -->
+    <xs:element name="InventoryInquiriesAndAdvices">
+        <xs:annotation>
+            <xs:appinfo>7.0</xs:appinfo>
+            <xs:documentation>SIP XML InventoryInquiriesAndAdvices schema, Version 7.0</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="InventoryInquiriesAndAdvice" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="InventoryInquiriesAndAdviceType">
+        <xs:complexContent>
+            <xs:extension base="sipDocumentType">
+                <xs:sequence>
+                    <xs:element ref="Header"/>
+                    <xs:element ref="LineItems"/>
+                    <xs:element ref="Summary"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- Header defined -->
+    <xs:complexType name="HeaderType">
+        <xs:complexContent>
+            <xs:extension base="sipHeaderType">
+                <xs:sequence>
+                    <xs:element ref="HeaderReport"/>
+                    <xs:element ref="Date" minOccurs="0" maxOccurs="10"/>
+                    <xs:element ref="Contact" minOccurs="0" maxOccurs="3"/>
+                    <xs:element ref="Address" minOccurs="0" maxOccurs="5"/>
+                    <xs:element ref="Reference" minOccurs="0" maxOccurs="12"/>
+                    <xs:element ref="Measurements" minOccurs="0" maxOccurs="20"/>
+                    <xs:element ref="Miscellaneous" minOccurs="0" maxOccurs="10"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- HeaderReport element -->
+    <xs:complexType name="HeaderReportType">
+        <xs:complexContent>
+            <xs:extension base="firstSipRecordType">
+                <xs:sequence>
+                    <xs:element ref="TsetHandlingCode"/>
+                    <xs:element ref="ReportTypeCode"/>
+                    <xs:element ref="Date1"/>
+                    <xs:element ref="Time1" minOccurs="0"/>
+                    <xs:element ref="ActionCode" minOccurs="0"/>
+                    <xs:element ref="BuyersCurrency" minOccurs="0"/>
+                    <xs:element ref="SellersCurrency" minOccurs="0"/>
+                    <xs:element ref="ExchangeRate" minOccurs="0"/>
+                    <xs:element ref="Batch" minOccurs="0"/>
+                    <xs:element ref="Vendor" minOccurs="0"/>
+                    <xs:element ref="Division" minOccurs="0"/>
+                    <xs:element ref="Department" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- Measurements element -->
+    <xs:complexType name="MeasurementsType">
+        <xs:complexContent>
+            <xs:extension base="sipRecordType">
+                <xs:sequence>
+                    <xs:element ref="MeasurementRefIDCode" minOccurs="0"/>
+                    <xs:element ref="MeasurementQualifier" minOccurs="0"/>
+                    <xs:element ref="MeasurementValue" minOccurs="0"/>
+                    <xs:element ref="CompositeUOM" minOccurs="0"/>
+                    <xs:element ref="RangeMinimum" minOccurs="0"/>
+                    <xs:element ref="RangeMaximum" minOccurs="0"/>
+                    <xs:element ref="MeasurementSignificanceCode" minOccurs="0"/>
+                    <xs:element ref="MeasurementAttributeCode" minOccurs="0"/>
+                    <xs:element ref="SurfaceLayerPositionCode" minOccurs="0"/>
+                    <xs:element ref="MeasurementMethodorDevice" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!--LineItems defined -->
+    <xs:complexType name="LineItemsType">
+        <xs:complexContent>
+            <xs:extension base="sipDatasetType">
+                <xs:sequence>
+                    <xs:element ref="LineItem" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- LineItem elements -->
+    <xs:complexType name="LineItemType">
+        <xs:complexContent>
+            <xs:extension base="sipGroupType">
+                <xs:sequence>
+                    <xs:element ref="InventoryLine"/>
+                    <xs:element ref="Reference" minOccurs="0" maxOccurs="20"/>
+                    <xs:element ref="Date" minOccurs="0" maxOccurs="10"/>
+                    <xs:element ref="Measurements" minOccurs="0" maxOccurs="40"/>
+                    <xs:element ref="Address" minOccurs="0" maxOccurs="200"/>
+                    <xs:element ref="Pricing" minOccurs="0" maxOccurs="25"/>
+                    <xs:element ref="KitSerialLot" minOccurs="0" maxOccurs="1000"/>
+                    <xs:element ref="ShipDestinationQty" minOccurs="0" maxOccurs="500"/>
+                    <xs:element ref="ChargesAllowances" minOccurs="0" maxOccurs="25"/>
+                    <xs:element ref="InventoryLineQuantities" minOccurs="0"/>
+                    <xs:element ref="Miscellaneous" minOccurs="0" maxOccurs="10"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- InventoryLine element -->
+    <xs:complexType name="InventoryLineType">
+        <xs:complexContent>
+            <xs:extension base="sipRecordType">
+                <xs:sequence>
+                    <xs:element ref="LineSequenceNumber" minOccurs="0"/>
+                    <xs:group ref="ItemPartInfo"/>
+                    <xs:group ref="PartInfo"/>
+                    <xs:element ref="UnitPrice" minOccurs="0"/>
+                    <xs:element ref="UnitPriceBasis" minOccurs="0"/>
+                    <xs:element ref="RetailUnitPrice" minOccurs="0"/>
+                    <xs:element ref="ShipDate" minOccurs="0"/>
+                    <xs:element ref="QtyLeftToReceive" minOccurs="0"/>
+                    <xs:element ref="ExtendedItemTotal" minOccurs="0"/>
+                    <xs:group ref="ProductData"/>
+                    <xs:element ref="Department" minOccurs="0"/>
+                    <xs:element ref="Class" minOccurs="0"/>
+                    <xs:element ref="Gender" minOccurs="0"/>
+                    <xs:element ref="SellerDateCode" minOccurs="0"/>
+                    <xs:element ref="ItemStatusCode" minOccurs="0"/>
+                    <xs:element ref="ExpirationDate" minOccurs="0"/>
+                    <xs:element ref="LeadTimeCode" minOccurs="0"/>
+                    <xs:element ref="LeadTimeQuantity" minOccurs="0"/>
+                    <xs:element ref="LeadTimePeriodInterval" minOccurs="0"/>
+                    <xs:element ref="LeadTimeDate" minOccurs="0"/>
+                    <xs:element ref="MaintananceTypeCode" minOccurs="0"/>
+                    <xs:element ref="MarksAndNumbersQualifier1" minOccurs="0"/>
+                    <xs:element ref="MarksAndNumbers1" minOccurs="0"/>
+                    <xs:element ref="MarksAndNumbers1A" minOccurs="0"/>
+                    <xs:element ref="MarksAndNumbersQualifier2" minOccurs="0"/>
+                    <xs:element ref="MarksAndNumbers2" minOccurs="0"/>
+                    <xs:element ref="MarksAndNumbers2A" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!--MarksAndNumbersCollection elements -->
+    <xs:complexType name="MarksAndNumbersCollectionType">
+        <xs:complexContent>
+            <xs:extension base="sipRecordType">
+                <xs:sequence>
+                    <xs:element ref="MarksAndNumbersQualifier1"/>
+                    <xs:element ref="MarksAndNumbers1"/>
+                    <xs:element ref="MarksAndNumbers1A" minOccurs="0"/>
+                    <xs:element ref="MarksAndNumbersQualifier2" minOccurs="0"/>
+                    <xs:element ref="MarksAndNumbers2" minOccurs="0"/>
+                    <xs:element ref="MarksAndNumbers2A" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="PricingType">
+        <xs:complexContent>
+            <xs:extension base="sipRecordType">
+                <xs:sequence>
+                    <xs:element ref="LineSequenceNumber" minOccurs="0"/>
+                    <xs:element ref="ClassOfTradeCode" minOccurs="0"/>
+                    <xs:element ref="PriceTypeIDCode" minOccurs="0"/>
+                    <xs:element ref="UnitPrice" minOccurs="0"/>
+                    <xs:element ref="ItemQty" minOccurs="0"/>
+                    <xs:element ref="ItemQtyUOM" minOccurs="0"/>
+                    <xs:element ref="PriceMultiplierQual" minOccurs="0"/>
+                    <xs:element ref="PriceMultiplier" minOccurs="0"/>
+                    <xs:element ref="Amount" minOccurs="0"/>
+                    <xs:element ref="UnitPriceBasis" minOccurs="0"/>
+                    <xs:element ref="ConditionValue" minOccurs="0"/>
+                    <xs:element ref="MultiplePriceQuantity" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- KitSerialLot element -->
+    <xs:complexType name="KitSerialLotType">
+        <xs:complexContent>
+            <xs:extension base="sipRecordType">
+                <xs:sequence>
+                    <xs:element ref="LineSequenceNumber" minOccurs="0"/>
+                    <xs:group ref="ItemPartInfo"/>
+                    <xs:group ref="PartNumbers"/>
+                    <xs:element ref="PartDescription1" minOccurs="0"/>
+                    <xs:element ref="PartDescription2" minOccurs="0"/>
+                    <xs:group ref="ProductData"/>
+                    <xs:element ref="QtyPer" minOccurs="0"/>
+                    <xs:element ref="QtyPerUOM"/>
+                    <xs:element ref="UnitPrice" minOccurs="0"/>
+                    <xs:element ref="UnitPriceBasis" minOccurs="0"/>
+                    <xs:element ref="SerialLotNumber" minOccurs="0"/>
+                    <xs:element ref="SerialLotNumberInformation" minOccurs="0"/>
+                    <xs:element ref="SerialWarrantyDate" minOccurs="0"/>
+                    <xs:element ref="SerialLotEffectiveDate" minOccurs="0"/>
+                    <xs:element ref="LotExpirationDate" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- InventoryLineItemSchedule element -->
+    <xs:complexType name="InventoryLineItemScheduleType">
+        <xs:complexContent>
+            <xs:extension base="sipRecordType">
+                <xs:sequence>
+                    <xs:element ref="Qty1"/>
+                    <xs:element ref="Qty1UOM"/>
+                    <xs:element ref="DateTimeQualifier1"/>
+                    <xs:element ref="Date1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!--InventoryLineQuantities defined -->
+    <xs:complexType name="InventoryLineQuantitiesType">
+        <xs:complexContent>
+            <xs:extension base="sipDatasetType">
+                <xs:sequence>
+                    <xs:element ref="InventoryLineQuantity" maxOccurs="25"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!--InventoryLineQuantity element -->
+    <xs:complexType name="InventoryLineQuantityType">
+        <xs:complexContent>
+            <xs:extension base="sipGroupType">
+                <xs:sequence>
+                    <xs:element ref="QuantityLine"/>
+                    <xs:element ref="Measurements" minOccurs="0" maxOccurs="25"/>
+                    <xs:element ref="Date" minOccurs="0" maxOccurs="10"/>
+                    <xs:element ref="InventoryLineItemSchedule" minOccurs="0" maxOccurs="25"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- QuantityLine element -->
+    <xs:complexType name="QuantityLineType">
+        <xs:complexContent>
+            <xs:extension base="sipRecordType">
+                <xs:sequence>
+                    <xs:element ref="QuantityQualifier"/>
+                    <xs:element ref="Quantity1" minOccurs="0"/>
+                    <xs:element ref="QtyUOM" minOccurs="0"/>
+                    <xs:element ref="FreeFormMessage" minOccurs="0"/>
+                    <xs:element ref="UnitPrice" minOccurs="0"/>
+                    <xs:element ref="UnitPriceBasis" minOccurs="0"/>
+                    <xs:element ref="LeadTimeCode" minOccurs="0"/>
+                    <xs:element ref="LeadTimeQuantity" minOccurs="0"/>
+                    <xs:element ref="LeadTimePeriodInterval" minOccurs="0"/>
+                    <xs:element ref="LeadTimeDate" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- Summary elements -->
+    <xs:complexType name="SummaryType">
+        <xs:complexContent>
+            <xs:extension base="sipRecordType">
+                <xs:sequence>
+                    <xs:element ref="TotalAmount" minOccurs="0"/>
+                    <xs:element ref="TotalLineItemNumber" minOccurs="0"/>
+                    <xs:element ref="TotalQuantity" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>

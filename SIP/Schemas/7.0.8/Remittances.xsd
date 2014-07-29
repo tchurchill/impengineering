@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SIP XML Remittances (EDIDOC 820) -->
+<!-- C SPS Commerce, Inc., 2012
+
+SPS Commerce is providing this XML schema (XSD) and resultant XML Message as a service to its customers and partners. This schema and resultant XML message were developed by SPS Commerce and are based on years of experience with our Standard Interface Program (SIP).
+
+Although efforts have been made to assure that the XML schema and resultant XML message are correct, reliable, and technically accurate, SPS COMMERCE MAKES NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML SCHEMA AND RESULTANT XML MESSAGE ARE CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE MERCHANTABLE OR SUITABLE FOR ANY PARTICULAR PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  THE USE OF THE SCHEMA AND RESULTANT MESSAGE BY ANY PARTY ARE WITH THE EXPRESS UNDERSTANDING THAT SPS COMMERCE  ASSUMES NO LIABILITY FOR ANY CLAIM, DAMAGE OR LOSS OF ANY KIND OR NATURE.
+
+	Version Information:
+	Version 7.12.3
+	Date of Creation: October 19, 2006
+    Original Version: August 12 , 2004
+    Date Updated to Version 6.0: July 21, 2006
+    Date Updated to Version 7.0.0 October 26, 2006
+    Date Updated February 20, 2009  Add OrderLine to Adjustments, RemittanceAdvice and RemittanceAdviceAdjustment.  Add Date to RemittanceAdvice and RemittanceAdviceAdjustment.
+
+COMMENTS:
+
+The mandatory XML elements, specific codes and qualifiers used between Trading partners are defined in separate trading partner guidelines between the partners and are not part of this schema and resultant XML message. 
+ -->
+<xs:schema xmlns="http://www.spscommerce.net/SIP" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.spscommerce.net/SIP" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- inclusion of SIPbase -->
+	<xs:include schemaLocation="SIPbase.xsd"/>
+	<!-- top level elements -->
+	<xs:element name="Remittances">
+		<xs:annotation>
+			<xs:appinfo>7.12.3</xs:appinfo>
+			<xs:documentation>SIP XML Remittances schema, Version 7.12.3</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Remittance" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- Remittance elements  -->
+	<xs:element name="Remittance" type="RemittanceType"/>
+	<xs:complexType name="RemittanceType">
+		<xs:complexContent>
+			<xs:extension base="sipDocumentType">
+				<xs:sequence>
+					<xs:element ref="Header"/>
+					<xs:element ref="Entities"/>
+					<xs:element ref="Summary"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Header elements  -->
+	<xs:element name="Header" type="HeaderType"/>
+	<xs:complexType name="HeaderType">
+		<xs:complexContent>
+			<xs:extension base="sipHeaderType">
+				<xs:sequence>
+					<xs:element ref="AdviceHeader"/>
+					<xs:element ref="Notes" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Reference" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Date" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Address" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Miscellaneous" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- AdviceHeader elements -->
+	<xs:element name="AdviceHeader" type="AdviceHeaderType"/>
+	<xs:complexType name="AdviceHeaderType">
+		<xs:complexContent>
+			<xs:extension base="firstSipRecordType">
+				<xs:sequence>
+					<xs:element ref="TransactionHandlingCode"/>
+					<xs:element ref="MonetaryAmount"/>
+					<xs:element ref="CreditDebitFlag"/>
+					<xs:element ref="PaymentMethodCode"/>
+					<xs:element ref="PaymentFormatCode" minOccurs="0"/>
+					<xs:element ref="DFINumberQual" minOccurs="0"/>
+					<xs:element ref="OrigBankDFINumber" minOccurs="0"/>
+					<xs:element ref="OrigAcctNumberQual" minOccurs="0"/>
+					<xs:element ref="OrigBankAcctNumber" minOccurs="0"/>
+					<xs:element ref="OrigCompanyID" minOccurs="0"/>
+					<xs:element ref="OrigCompanySuppCode" minOccurs="0"/>
+					<xs:element ref="RcvDFINumberQual" minOccurs="0"/>
+					<xs:element ref="RcvBankDFINumber" minOccurs="0"/>
+					<xs:element ref="RcvAcctNumberQual" minOccurs="0"/>
+					<xs:element ref="RcvBankAcctNumber" minOccurs="0"/>
+					<xs:element ref="PaymentDate" minOccurs="0"/>
+					<xs:element ref="BusinessFuncCode" minOccurs="0"/>
+					<xs:element ref="DFINumberQual2" minOccurs="0"/>
+					<xs:element ref="DFIIdentificationNumber" minOccurs="0"/>
+					<xs:element ref="AccountNumberQual" minOccurs="0"/>
+					<xs:element ref="AccountNumber" minOccurs="0"/>
+					<xs:element ref="TraceTypeCode" minOccurs="0"/>
+					<xs:element ref="ReferenceID1" minOccurs="0"/>
+					<xs:element ref="OriginatingCompanyIdentifier" minOccurs="0"/>
+					<xs:element ref="ReferenceID2" minOccurs="0"/>
+					<xs:element ref="CurrencyCode" minOccurs="0"/>
+					<xs:element ref="ExchangeRate" minOccurs="0"/>
+					<xs:element ref="EntityIdentifierCode" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="TransactionHandlingCode" type="xs:string"/>
+	<xs:element name="PaymentFormatCode" type="xs:string"/>
+	<xs:element name="DFINumberQual" type="xs:string"/>
+	<xs:element name="OrigBankDFINumber" type="xs:string"/>
+	<xs:element name="OrigAcctNumberQual" type="xs:string"/>
+	<xs:element name="OrigBankAcctNumber" type="xs:string"/>
+	<xs:element name="OrigCompanyID" type="xs:string"/>
+	<xs:element name="OrigCompanySuppCode" type="xs:string"/>
+	<xs:element name="RcvDFINumberQual" type="xs:string"/>
+	<xs:element name="RcvBankDFINumber" type="xs:string"/>
+	<xs:element name="RcvAcctNumberQual" type="xs:string"/>
+	<xs:element name="RcvBankAcctNumber" type="xs:string"/>
+	<xs:element name="PaymentDate" type="xs:date"/>
+	<xs:element name="BusinessFuncCode" type="xs:string"/>
+	<xs:element name="DFINumberQual2" type="xs:string"/>
+	<xs:element name="DFIIdentificationNumber" type="xs:string"/>
+	<xs:element name="AccountNumberQual" type="xs:string"/>
+	<xs:element name="AccountNumber" type="xs:string"/>
+	<xs:element name="TraceTypeCode" type="xs:string"/>
+	<xs:element name="OriginatingCompanyIdentifier" type="xs:string"/>
+	<xs:element name="EntityIdentifierCode" type="xs:string"/>
+	<!--  Entities elements -->
+	<xs:element name="Entities" type="EntitiesType"/>
+	<xs:complexType name="EntitiesType">
+		<xs:complexContent>
+			<xs:extension base="sipDatasetType">
+				<xs:sequence>
+					<xs:element ref="Entity" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--  Entity elements -->
+	<xs:element name="Entity" type="EntityType"/>
+	<xs:complexType name="EntityType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="EntityLine" minOccurs="0"/>
+					<xs:element ref="RemittanceAddress" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Adjustments" minOccurs="0"/>
+					<xs:element ref="RemittanceAdvices" minOccurs="0"/>
+					<xs:element ref="TaxAndOrDeductions" minOccurs="0"/>
+					<xs:element ref="Miscellaneous" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- EntityLine elements  -->
+	<xs:element name="EntityLine" type="EntityLineType"/>
+	<xs:complexType name="EntityLineType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="AssignedNumber" minOccurs="0"/>
+					<xs:element ref="EntityIDCode1" minOccurs="0"/>
+					<xs:element ref="EntityIDCodeQual1" minOccurs="0"/>
+					<xs:element ref="IDCode1" minOccurs="0"/>
+					<xs:element ref="EntityIDCode2" minOccurs="0"/>
+					<xs:element ref="EntityIDCodeQual2" minOccurs="0"/>
+					<xs:element ref="IDCode2" minOccurs="0"/>
+					<xs:element ref="ReferenceID" minOccurs="0"/>
+					<xs:element ref="ReferenceIDQual" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="AssignedNumber" type="xs:string"/>
+	<xs:element name="EntityIDCode1" type="xs:string"/>
+	<xs:element name="EntityIDCodeQual1" type="xs:string"/>
+	<xs:element name="IDCode1" type="xs:string"/>
+	<xs:element name="EntityIDCode2" type="xs:string"/>
+	<xs:element name="EntityIDCodeQual2" type="xs:string"/>
+	<xs:element name="IDCode2" type="xs:string"/>
+	<xs:element name="ReferenceIDQual" type="xs:string"/>
+	<!--  Adjustments elements -->
+	<xs:element name="Adjustments" type="AdjustmentsType"/>
+	<xs:complexType name="AdjustmentsType">
+		<xs:complexContent>
+			<xs:extension base="sipDatasetType">
+				<xs:sequence>
+					<xs:element ref="Adjustment" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--  Adjustment elements -->
+	<xs:element name="Adjustment" type="AdjustmentType"/>
+	<xs:complexType name="AdjustmentType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="AdjustmentLine"/>
+					<xs:element ref="Notes" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Contact" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Reference" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Date" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="LineItems" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- AdjustmentLine elements  -->
+	<xs:element name="AdjustmentLine" type="AdjustmentLineType"/>
+	<xs:complexType name="AdjustmentLineType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="AdjAmount" minOccurs="0"/>
+					<xs:element ref="AdjReason" minOccurs="0"/>
+					<xs:element ref="RefIDQual" minOccurs="0"/>
+					<xs:element ref="AdjRefID" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="AdjAmount" type="xs:decimal"/>
+	<xs:element name="AdjReason" type="xs:string"/>
+	<xs:element name="RefIDQual" type="xs:string"/>
+	<xs:element name="AdjRefID" type="xs:string"/>
+	<!-- RemittanceAddress elements-->
+	<xs:element name="RemittanceAddress" type="RemittanceAddressType"/>
+	<xs:complexType name="RemittanceAddressType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="EntityIdentifierCode" minOccurs="0"/>
+					<xs:element ref="EntityTypeQual" minOccurs="0"/>
+					<xs:element ref="LastOrgName" minOccurs="0"/>
+					<xs:element ref="NameFirst" minOccurs="0"/>
+					<xs:element ref="NameMiddle" minOccurs="0"/>
+					<xs:element ref="NamePrefix" minOccurs="0"/>
+					<xs:element ref="NameSuffix" minOccurs="0"/>
+					<xs:element ref="LocationCodeQualifier" minOccurs="0"/>
+					<xs:element ref="IDNumber" minOccurs="0"/>
+					<xs:element ref="EntityRelationshipCode" minOccurs="0"/>
+					<xs:element ref="EntityIdentifierCode2" minOccurs="0"/>
+					<xs:element ref="AddressAlternateName" minOccurs="0"/>
+					<xs:element ref="Address1" minOccurs="0"/>
+					<xs:element ref="Address2" minOccurs="0"/>
+					<xs:element ref="Address3" minOccurs="0"/>
+					<xs:element ref="Address4" minOccurs="0"/>
+					<xs:element ref="City" minOccurs="0"/>
+					<xs:element ref="State" minOccurs="0"/>
+					<xs:element ref="PostalCode" minOccurs="0"/>
+					<xs:element ref="Country" minOccurs="0"/>
+					<xs:element ref="ContactName" minOccurs="0"/>
+					<xs:element ref="ContactPhone" minOccurs="0"/>
+					<xs:element ref="ContactFax" minOccurs="0"/>
+					<xs:element ref="ContactEmail" minOccurs="0"/>
+					<xs:element ref="AddressTaxIdNumber" minOccurs="0"/>
+					<xs:element ref="AddressTaxExemptNumber" minOccurs="0"/>
+					<xs:element ref="AddressAlternateName2" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="EntityTypeQual" type="xs:string"/>
+	<xs:element name="LastOrgName" type="xs:string"/>
+	<xs:element name="NameFirst" type="xs:string"/>
+	<xs:element name="NameMiddle" type="xs:string"/>
+	<xs:element name="NamePrefix" type="xs:string"/>
+	<xs:element name="NameSuffix" type="xs:string"/>
+	<xs:element name="IDNumber" type="xs:string"/>
+	<xs:element name="EntityRelationshipCode" type="xs:string"/>
+	<xs:element name="EntityIdentifierCode2" type="xs:string"/>
+	<!-- RemittanceAdvices elements-->
+	<xs:element name="RemittanceAdvices" type="RemittanceAdvicesType"/>
+	<xs:complexType name="RemittanceAdvicesType">
+		<xs:complexContent>
+			<xs:extension base="sipDatasetType">
+				<xs:sequence>
+					<xs:element ref="RemittanceAdvice" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- RemittanceAdvice elements-->
+	<xs:element name="RemittanceAdvice" type="RemittanceAdviceType"/>
+	<xs:complexType name="RemittanceAdviceType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="RemittanceLine"/>
+					<xs:element ref="Notes" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Reference" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Date" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="LineItems" minOccurs="0"/>
+					<xs:element ref="RemittanceAdviceAdjustments" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- RemittanceLine elements-->
+	<xs:element name="RemittanceLine" type="RemittanceLineType"/>
+	<!-- cannot derive from siprecord due to name conflicts -->
+	<xs:complexType name="RemittanceLineType">
+		<xs:sequence>
+			<xs:element ref="TradingPartnerId" minOccurs="0"/>
+			<xs:element ref="DocumentId" minOccurs="0"/>
+			<xs:element ref="RecordType" minOccurs="0"/>
+			<xs:element ref="DocNumberTypeCode" minOccurs="0"/>
+			<xs:element ref="DocNumber" minOccurs="0"/>
+			<xs:element ref="PaymentActionCode" minOccurs="0"/>
+			<xs:element ref="NetPaidAmount" minOccurs="0"/>
+			<xs:element ref="OrigAmount" minOccurs="0"/>
+			<xs:element ref="DiscAmountTaken" minOccurs="0"/>
+			<xs:element ref="AdjReasonCode" minOccurs="0"/>
+			<xs:element ref="MonetaryAmount" minOccurs="0"/>
+			<xs:element ref="DocDate" minOccurs="0"/>
+			<xs:element ref="PurchaseOrderNumber" minOccurs="0"/>
+			<xs:element ref="Department" minOccurs="0"/>
+			<xs:element ref="AddlDocID" minOccurs="0"/>
+			<xs:element ref="DocDescription" minOccurs="0"/>
+			<xs:element ref="ReferenceDate" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="DocNumberTypeCode" type="xs:string"/>
+	<xs:element name="DocNumber" type="xs:string"/>
+	<xs:element name="PaymentActionCode" type="xs:string"/>
+	<xs:element name="NetPaidAmount" type="xs:string"/>
+	<xs:element name="OrigAmount" type="xs:string"/>
+	<xs:element name="DiscAmountTaken" type="xs:string"/>
+	<xs:element name="AdjReasonCode" type="xs:string"/>
+	<xs:element name="DocDate" type="xs:string"/>
+	<xs:element name="AddlDocID" type="xs:string"/>
+	<xs:element name="DocDescription" type="xs:string"/>
+	<!--LineItems defined -->
+	<xs:element name="LineItems" type="LineItemsType"/>
+	<xs:complexType name="LineItemsType">
+		<xs:complexContent>
+			<xs:extension base="sipDatasetType">
+				<xs:sequence>
+					<xs:element ref="LineItem" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- LineItem elements -->
+	<xs:element name="LineItem" type="LineItemType"/>
+	<xs:complexType name="LineItemType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="OrderLine"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="OrderLine" type="OrderLineType"/>
+	<xs:complexType name="OrderLineType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="LineSequenceNumber" minOccurs="0"/>
+					<xs:group ref="ItemPartInfo"/>
+					<xs:group ref="PartInfo"/>
+					<xs:group ref="LineQty"/>
+					<xs:element ref="MfgSuggestedRetailPrice" minOccurs="0"/>
+					<xs:element ref="RetailUnitPrice" minOccurs="0"/>
+					<xs:group ref="ItemPack"/>
+					<xs:group ref="LineShipQty" minOccurs="0"/>
+					<xs:element ref="ShipDate" minOccurs="0"/>
+					<xs:element ref="QtyLeftToReceive" minOccurs="0"/>
+					<xs:element ref="ExtendedItemTotal" minOccurs="0"/>
+					<xs:group ref="ProductData"/>
+					<xs:element ref="Department" minOccurs="0"/>
+					<xs:element ref="Class" minOccurs="0"/>
+					<xs:element ref="Gender" minOccurs="0"/>
+					<xs:element ref="SellerDateCode" minOccurs="0"/>
+					<xs:element ref="EventType" minOccurs="0"/>
+					<xs:element ref="EventTypeInformation" minOccurs="0"/>
+					<xs:element ref="TicketType" minOccurs="0"/>
+					<xs:element ref="TicketTypeInformation" minOccurs="0"/>
+					<xs:element ref="ItemStatusCode" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="EventType" type="xs:string"/>
+	<xs:element name="EventTypeInformation" type="xs:string"/>
+	<xs:element name="ItemStatusCode" type="xs:string"/>
+	<xs:element name="MfgSuggestedRetailPrice" type="xs:decimal"/>
+	<xs:element name="RetailUnitPrice" type="xs:decimal"/>
+	<xs:element name="SellerDateCode" type="xs:string"/>
+	<xs:element name="TicketType" type="xs:string"/>
+	<xs:element name="TicketTypeInformation" type="xs:string"/>
+	<!-- RemittanceAdviceAdjustments elements-->
+	<xs:element name="RemittanceAdviceAdjustments" type="RemittanceAdviceAdjustmentsType"/>
+	<xs:complexType name="RemittanceAdviceAdjustmentsType">
+		<xs:complexContent>
+			<xs:extension base="sipDatasetType">
+				<xs:sequence>
+					<xs:element ref="RemittanceAdviceAdjustment" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- RemittanceAdviceAdjustment elements-->
+	<xs:element name="RemittanceAdviceAdjustment" type="RemittanceAdviceAdjustmentType"/>
+	<xs:complexType name="RemittanceAdviceAdjustmentType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="AdjustmentLine"/>
+					<xs:element ref="Notes" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Contact" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Reference" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Date" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="LineItems" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- TaxAndOrDeductions elements-->
+	<xs:element name="TaxAndOrDeductions" type="TaxAndOrDeductionsType"/>
+	<xs:complexType name="TaxAndOrDeductionsType">
+		<xs:complexContent>
+			<xs:extension base="sipDatasetType">
+				<xs:sequence>
+					<xs:element ref="TaxAndOrDeduction" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- TaxAndOrDeduction elements-->
+	<xs:element name="TaxAndOrDeduction" type="TaxAndOrDeductionType"/>
+	<xs:complexType name="TaxAndOrDeductionType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="LineTax"/>
+					<xs:element ref="LineDeduction" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- LineTax elements-->
+	<xs:element name="LineTax" type="LineTaxType"/>
+	<xs:complexType name="LineTaxType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="TaxIDNumber" minOccurs="0"/>
+					<xs:element ref="TaxPaymentTypeCode" minOccurs="0"/>
+					<xs:element ref="Date1" minOccurs="0"/>
+					<xs:group ref="TaxInfo" minOccurs="0"/>
+					<xs:element ref="TaxpayerVerification" minOccurs="0"/>
+					<xs:element ref="TaxTypeCode" minOccurs="0"/>
+					<xs:element ref="MonetaryAmount" minOccurs="0"/>
+					<xs:element ref="Percent" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="TaxIDNumber" type="xs:string"/>
+	<xs:element name="TaxPaymentTypeCode" type="xs:string"/>
+	<xs:element name="TaxpayerVerification" type="xs:string"/>
+	<!-- TaxInfo definition-->
+	<xs:group name="TaxInfo">
+		<xs:sequence>
+			<xs:element ref="TaxInfoIDNum1" minOccurs="0"/>
+			<xs:element ref="TaxAmount1" minOccurs="0"/>
+			<xs:element ref="TaxInfoIDNum2" minOccurs="0"/>
+			<xs:element ref="TaxAmount2" minOccurs="0"/>
+			<xs:element ref="TaxInfoIDNum3" minOccurs="0"/>
+			<xs:element ref="TaxAmount3" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:element name="TaxInfoIDNum1" type="xs:string"/>
+	<xs:element name="TaxAmount1" type="xs:string"/>
+	<xs:element name="TaxInfoIDNum2" type="xs:string"/>
+	<xs:element name="TaxAmount2" type="xs:string"/>
+	<xs:element name="TaxInfoIDNum3" type="xs:string"/>
+	<xs:element name="TaxAmount3" type="xs:string"/>
+	<!-- LineDeduction elements-->
+	<xs:element name="LineDeduction" type="LineDeductionType"/>
+	<xs:complexType name="LineDeductionType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="TypeDeduction" minOccurs="0"/>
+					<xs:element ref="ReferenceID1" minOccurs="0"/>
+					<xs:element ref="Date1" minOccurs="0"/>
+					<xs:element ref="Amount" minOccurs="0"/>
+					<xs:element ref="ReferenceID2" minOccurs="0"/>
+					<xs:element ref="ConditionResponseCode1" minOccurs="0"/>
+					<xs:element ref="Name" minOccurs="0"/>
+					<xs:element ref="ReferenceID3" minOccurs="0"/>
+					<xs:element ref="ConditionResponseCode2" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="TypeDeduction" type="xs:string"/>
+	<xs:element name="ConditionResponseCode1" type="xs:string"/>
+	<xs:element name="Name" type="xs:string"/>
+	<xs:element name="ConditionResponseCode2" type="xs:string"/>
+	<!-- SummaryType elements-->
+	<xs:element name="Summary" type="SummaryType"/>
+	<xs:complexType name="SummaryType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="TotalEntityNumber" minOccurs="0"/>
+					<xs:element ref="TotalRemitLineNumber" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="TotalEntityNumber" type="xs:decimal"/>
+	<xs:element name="TotalRemitLineNumber" type="xs:decimal"/>
+</xs:schema>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+		<!-- Order Management codes -->
+	<xs:element name="OrderManagement">
+		<xs:simpleType>
+			<xs:annotation>
+				<xs:documentation>Order Management Model code</xs:documentation>
+			</xs:annotation>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="Alternate Address"/>
+				<xs:enumeration value="Blanket"/>
+				<xs:enumeration value="Bulk"/>
+				<xs:enumeration value="Bulk-RDC"/>
+				<xs:enumeration value="Bulk - Ship to DC"/>
+				<xs:enumeration value="Bulk - Ship to DC/Store"/>
+				<xs:enumeration value="Case 1 - Grainger Parts"/>
+				<xs:enumeration value="Case 2 - Grainger 3rd Party"/>
+				<xs:enumeration value="Case 3 - FindMRO 3rd Party"/>
+				<xs:enumeration value="Case 4 - Grainger DC"/>
+				<xs:enumeration value="Cross Dock"/>
+				<xs:enumeration value="Cross Dock - TF"/>
+				<xs:enumeration value="Cross (Stock) Ship to DC/Store"/>
+				<xs:enumeration value="DC-Assorted"/>
+				<xs:enumeration value="DC-Mixed"/>
+				<xs:enumeration value="Direct to Consumer"/>
+				<xs:enumeration value="Direct to Customer"/>
+				<xs:enumeration value="Direct to Store"/>
+				<xs:enumeration value="Direct Ship"/>
+				<xs:enumeration value="Direct Store Delivery"/>
+				<xs:enumeration value="Domestic"/>
+				<xs:enumeration value="Drop Ship"/>
+				<xs:enumeration value="Drop Ship - Cancel"/>
+				<xs:enumeration value="Import"/>
+				<xs:enumeration value="International"/>
+				<xs:enumeration value="PrePack"/>
+				<xs:enumeration value="Publisher"/>
+				<xs:enumeration value="Ship to DC"/>
+				<xs:enumeration value="Ship to DC/Store"/>
+				<xs:enumeration value="Ship to Store"/>
+				<xs:enumeration value="Special Order"/>
+				<xs:enumeration value="Standard"/>
+				<xs:enumeration value="Stand Alone Bulk"/>
+				<xs:enumeration value="Store Release"/>
+				<xs:enumeration value="Studio"/>
+				<xs:enumeration value="Test Scenario 1 - Drop Ship"/>
+				<xs:enumeration value="Test Scenario 2 - Test Delete"/>
+				<xs:enumeration value="Test Scenario 3 - Drop Ship/180"/>
+				<xs:enumeration value="VMI"/>
+				<xs:enumeration value="Warehouse or Ship to Warehouse"/>
+				<xs:enumeration value="Warehouse/Store/Consumer"/>
+				<xs:enumeration value="(CTL DIST CENTER) Bulk"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+</xs:schema>

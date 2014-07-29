@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SIP XML WarehouseShippingOrder (EDIDOC 940) -->
+<!-- C SPS Commerce, Inc., 2012
+
+SPS Commerce is providing this XML schema (XSD) and resultant XML Message as a service to its customers and partners. This schema and resultant XML message were developed by SPS Commerce and are based on years of experience with our Standard Interface Program (SIP).
+
+Although efforts have been made to assure that the XML schema and resultant XML message are correct, reliable, and technically accurate, SPS COMMERCE MAKES NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML SCHEMA AND RESULTANT XML MESSAGE ARE CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE MERCHANTABLE OR SUITABLE FOR ANY PARTICULAR PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  THE USE OF THE SCHEMA AND RESULTANT MESSAGE BY ANY PARTY ARE WITH THE EXPRESS UNDERSTANDING THAT SPS COMMERCE  ASSUMES NO LIABILITY FOR ANY CLAIM, DAMAGE OR LOSS OF ANY KIND OR NATURE.
+
+	Version Information:
+	Version 7.12.3
+	Date of Creation: February 26, 2004
+    Date Updated to Version 7.0.0: November 25, 2006
+
+COMMENTS:
+
+The mandatory XML elements, specific codes and qualifiers used between Trading partners are defined in separate trading partner guidelines between the partners and are not part of this schema and resultant XML message. 
+ -->
+<xs:schema xmlns="http://www.spscommerce.net/SIP" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.spscommerce.net/SIP" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- 
+			inclusion of SIPbase -->
+	<xs:include schemaLocation="SIPbase.xsd"/>
+	<!-- 
+			top level element -->
+	<xs:element name="WarehouseShippingOrders">
+		<xs:annotation>
+			<xs:appinfo>7.12.3</xs:appinfo>
+			<xs:documentation>SIP XML WarehouseShippingOrders schema, Version 7.12.3</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="WarehouseShippingOrder" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="WarehouseShippingOrder" type="WarehouseShippingOrderType"/>
+	<xs:element name="Header" type="HeaderType"/>
+	<xs:element name="OrderHeader" type="WarehouseShippingOrderHeaderType"/>
+	<xs:element name="Amount1" type="xs:decimal"/>
+	<xs:element name="CODMethodOfPayment" type="xs:string"/>
+	<xs:element name="DepositorPurchaseOrderNumber" type="xs:string"/>
+	<xs:element name="LinkSequenceNumber" type="xs:int"/>
+	<xs:element name="MasterLinkNumber" type="xs:string"/>
+	<xs:element name="PurchaseOrderTypeCode" type="xs:string"/>
+	<xs:element name="OrderStatusCode" type="xs:string"/>
+	<xs:element name="PalletExchangeCode" type="xs:string"/>
+	<xs:element name="ShipmentMethodOfPayment" type="xs:string"/>
+	<xs:element name="TransactionTypeCode" type="xs:string"/>
+	<xs:element name="UnitLoadOptionCode" type="xs:string"/>
+	<xs:element name="LineItems" type="WarehouseShippingOrderLineItemsType"/>
+	<xs:element name="LineItem" type="LineItemType"/>
+	<xs:element name="OrderLine" type="OrderLineType"/>
+	<xs:element name="Amount2" type="xs:decimal"/>
+	<xs:element name="AmountQualifier1" type="xs:string"/>
+	<xs:element name="AmountQualifier2" type="xs:string"/>
+	<xs:element name="Color" type="xs:string"/>
+	<xs:element name="CreditDebitFlag1" type="xs:string"/>
+	<xs:element name="CreditDebitFlag2" type="xs:string"/>
+	<xs:element name="Pack" type="xs:decimal"/>
+	<xs:element name="Size" type="xs:decimal"/>
+	<xs:element name="UnitWeight" type="xs:decimal"/>
+	<xs:element name="UOM" type="xs:string"/>
+	<xs:element name="WeightUOM" type="xs:string"/>
+	<xs:element name="Summary" type="SummaryType"/>
+	<xs:element name="TotalOrders" type="xs:decimal"/>
+	<xs:element name="TotalVolume" type="xs:decimal"/>
+	<xs:element name="TotalWeight" type="xs:decimal"/>
+	<xs:complexType name="WarehouseShippingOrderType">
+		<xs:complexContent>
+			<xs:extension base="sipDocumentType">
+				<xs:sequence>
+					<xs:element ref="Header"/>
+					<xs:element ref="LineItems"/>
+					<xs:element ref="Summary"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="HeaderType">
+		<xs:complexContent>
+			<xs:extension base="sipHeaderType">
+				<xs:sequence>
+					<xs:element ref="OrderHeader"/>
+					<xs:element ref="Reference" minOccurs="0" maxOccurs="10"/>
+					<xs:element ref="Date" minOccurs="0" maxOccurs="10"/>
+					<xs:element ref="Contact" minOccurs="0" maxOccurs="3"/>
+					<xs:element ref="Address" minOccurs="0" maxOccurs="10"/>
+					<xs:element ref="Notes" minOccurs="0" maxOccurs="50"/>
+					<xs:element ref="Miscellaneous" minOccurs="0" maxOccurs="50"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="WarehouseShippingOrderHeaderType">
+		<xs:complexContent>
+			<xs:extension base="firstSipRecordType">
+				<xs:sequence>
+					<xs:element ref="DepositorPurchaseOrderNumber" minOccurs="0"/>
+					<xs:element ref="OrderStatusCode"/>
+					<xs:element ref="TransactionTypeCode" minOccurs="0"/>
+					<xs:element ref="ActionCode" minOccurs="0"/>
+					<xs:element ref="LinkSequenceNumber" minOccurs="0"/>
+					<xs:element ref="MasterLinkNumber" minOccurs="0"/>
+					<xs:element ref="PurchaseOrderTypeCode" minOccurs="0"/>
+					<xs:element ref="ShipmentMethodOfPayment" minOccurs="0"/>
+					<xs:element ref="CarrierTransMethodCode" minOccurs="0"/>
+					<xs:element ref="PalletExchangeCode" minOccurs="0"/>
+					<xs:element ref="UnitLoadOptionCode" minOccurs="0"/>
+					<xs:element ref="CarrierRouting" minOccurs="0"/>
+					<xs:element ref="FOBLocationQualifier" minOccurs="0"/>
+					<xs:element ref="FOBLocationDescription" minOccurs="0"/>
+					<xs:element ref="CODMethodOfPayment" minOccurs="0"/>
+					<xs:element ref="Amount1" minOccurs="0"/>
+					<xs:element ref="CarrierAlphaCode" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="WarehouseShippingOrderLineItemsType">
+		<xs:complexContent>
+			<xs:extension base="sipDatasetType">
+				<xs:sequence>
+					<xs:element ref="LineItem" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LineItemType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="OrderLine"/>
+					<xs:element ref="Reference" minOccurs="0" maxOccurs="5"/>
+					<xs:element ref="Notes" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Date" minOccurs="0" maxOccurs="10"/>
+					<xs:element ref="Address" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="ShipDestinationQty" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Miscellaneous" minOccurs="0" maxOccurs="50"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="OrderLineType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="LineSequenceNumber" minOccurs="0"/>
+					<xs:group ref="ItemPartInfo"/>
+					<xs:group ref="PartInfo"/>
+					<xs:sequence>
+						<xs:element ref="OrderQty"/>
+						<xs:element ref="OrderQtyUOM"/>
+					</xs:sequence>
+					<xs:element ref="Pack" minOccurs="0"/>
+					<xs:element ref="Size" minOccurs="0"/>
+					<xs:element ref="UOM" minOccurs="0"/>
+					<xs:element ref="Weight" minOccurs="0"/>
+					<xs:element ref="WeightQualifier" minOccurs="0"/>
+					<xs:element ref="WeightUOM" minOccurs="0"/>
+					<xs:element ref="UnitWeight" minOccurs="0"/>
+					<xs:element ref="Volume" minOccurs="0"/>
+					<xs:element ref="VolumeUOM" minOccurs="0"/>
+					<xs:element ref="Color" minOccurs="0"/>
+					<xs:element ref="AmountQualifier1" minOccurs="0"/>
+					<xs:element ref="Amount1" minOccurs="0"/>
+					<xs:element ref="CreditDebitFlag1" minOccurs="0"/>
+					<xs:element ref="AmountQualifier2" minOccurs="0"/>
+					<xs:element ref="Amount2" minOccurs="0"/>
+					<xs:element ref="CreditDebitFlag2" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SummaryType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="TotalOrders"/>
+					<xs:element ref="TotalWeight" minOccurs="0"/>
+					<xs:element ref="WeightUOM" minOccurs="0"/>
+					<xs:element ref="TotalVolume" minOccurs="0"/>
+					<xs:element ref="VolumeUOM" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

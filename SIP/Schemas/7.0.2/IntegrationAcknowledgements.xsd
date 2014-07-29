@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:iak="http://www.spscommerce.com/Integration" targetNamespace="http://www.spscommerce.com/Integration" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="IntegrationAcknowledgement.xsd"/>
+	<xs:element name="IntegrationAcknowledgements" type="iak:IntegrationAcknowledgementsType"/>
+	<xs:complexType name="IntegrationAcknowledgementsType">
+		<xs:sequence>
+			<xs:element name="IntegrationAcknowledgement" type="iak:IntegrationAcknowledgementType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

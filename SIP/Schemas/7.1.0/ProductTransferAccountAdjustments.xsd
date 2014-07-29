@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SIP XML ProductTransfer (EDIDOC 844) -->
+<!-- C SPS Commerce, Inc., 2012
+
+SPS Commerce is providing this XML Data Type Definition (DTD) and resultant XML Message as a service to its customers and partners. This DTD and resultant XML message were developed by SPS Commerce and are based on years of experience with our Standard Interface Program (SIP).
+
+Although efforts have been made to assure that the XML DTD and resultant XML message are correct, reliable, and technically accurate, SPS COMMERCE MAKES NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML DTD AND RESULTANT XML MESSAGE ARE CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE MERCHANTABLE OR SUITABLE FOR ANY PARTICULAR PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  THE USE OF THE SCHEMA AND RESULTANT MESSAGE BY ANY PARTY ARE WITH THE EXPRESS UNDERSTANDING THAT SPS COMMERCE  ASSUMES NO LIABILITY FOR ANY CLAIM, DAMAGE OR LOSS OF ANY KIND OR NATURE.
+
+	Version Information:
+	Version 7.1.0
+	Date of Creation: November 29, 2012
+
+	
+COMMENTS:
+
+The mandatory XML elements, specific codes and qualifiers used between Trading partners are defined in separate trading partner guidelines between the partners and are not part of this DTD and resultant XML message. 
+ -->
+<xs:schema xmlns="http://www.spscommerce.net/SIP" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.spscommerce.net/SIP" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!---->
+	<xs:include schemaLocation="SIPbase.xsd"/>
+	<!-- top level elements -->
+	<xs:element name="ProductTransferAccountAdjustments">
+		<xs:annotation>
+			<xs:appinfo>Version 7.1.0</xs:appinfo>
+			<xs:documentation/>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ProductTransferAccountAdjustment" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AgencyQualCode" type="xs:string"/>
+	<xs:element name="ChangeOrResponseTypeCode" type="xs:string"/>
+	<xs:element name="CompositeUOM" type="xs:string"/>
+	<xs:element name="ContractDetail" type="ContractDetailType"/>
+	<xs:element name="ContractNumber" type="xs:string"/>
+	<xs:element name="ContractPrice" type="xs:decimal"/>
+	<xs:element name="ContractStatusCode" type="xs:string"/>
+	<xs:element name="CorrectedContractNumber" type="xs:string"/>
+	<xs:element name="CreditDebitIndicator" type="xs:string"/>
+	<xs:element name="Currency" type="CurrencyType"/>
+	<xs:element name="FreeFormMessage" type="xs:string"/>
+	<xs:element name="Header" type="HeaderType"/>
+	<xs:element name="InvoiceDate" type="xs:dateTime"/>
+	<xs:element name="ItemIdentification" type="ItemIdentificationType"/>
+	<xs:element name="ItemQuantity" type="ItemQuantityType"/>
+	<xs:element name="ItemStatusCode" type="xs:string"/>
+	<xs:element name="LineItem" type="LineItemType"/>
+	<xs:element name="LineItems" type="LineItemsType"/>
+	<xs:element name="LineItemSalesInformation" type="LineItemSalesInformationType"/>
+	<xs:element name="MeasurementAttributeCode" type="xs:string"/>
+	<xs:element name="MeasurementMethodorDevice" type="xs:string"/>
+	<xs:element name="MeasurementQualifier" type="xs:string"/>
+	<xs:element name="MeasurementRefIDCode" type="xs:string"/>
+	<xs:element name="Measurements" type="MeasurementsType"/>
+	<xs:element name="MeasurementSignificanceCode" type="xs:string"/>
+	<xs:element name="MeasurementValue" type="xs:decimal"/>
+	<xs:element name="MonetaryAmounts" type="MonetaryAmountsType"/>
+	<xs:element name="PartNumber4Qualifier" type="xs:string"/>
+	<xs:element name="Pricing" type="PricingType"/>
+	<xs:element name="ProductAdjustmentDetail" type="ProductAdjustmentDetailType"/>
+	<xs:element name="ProductAdjustmentDetails" type="ProductAdjustmentDetailsType"/>
+	<xs:element name="ProductDetail" type="ProductDetailType"/>
+	<xs:element name="ProductTransferAccountAdjustmentHeader" type="ProductTransferAccountAdjustmentHeaderType"/>
+	<xs:element name="ProductTransferAccountAdjustment" type="ProductTransferAccountAdjustmentType"/>
+	<xs:element name="PurchaseOrderDate" type="xs:dateTime"/>
+	<xs:element name="QtyInQuestion" type="xs:decimal"/>
+	<xs:element name="QtyInQuestionUOM" type="xs:string"/>
+	<xs:element name="RangeMaximum" type="xs:decimal"/>
+	<xs:element name="RangeMinimum" type="xs:decimal"/>
+	<xs:element name="ReceivingCondition" type="xs:string"/>
+	<xs:element name="ReceivingConditionLine" type="ReceivingConditionLineType"/>
+	<xs:element name="ReferenceTime" type="xs:string"/>
+	<xs:element name="ReleaseNumber" type="xs:string"/>
+	<xs:element name="ResubmitNumber" type="xs:string"/>
+	<xs:element name="RetailUnitPrice" type="xs:decimal"/>
+	<xs:element name="SalesInformation" type="SalesInformationType"/>
+	<xs:element name="SellerDateCode" type="xs:string"/>
+	<xs:element name="SpecialServices" type="SpecialServicesType"/>
+	<xs:element name="SpecialServicesCode" type="xs:string"/>
+	<xs:element name="Summary" type="SummaryType"/>
+	<xs:element name="TotalLineNumber" type="xs:decimal"/>
+	<xs:element name="TotalQuantity" type="xs:decimal"/>
+	<xs:element name="Totals" type="TotalsType"/>
+	<xs:element name="TotalVolume" type="xs:decimal"/>
+	<xs:element name="TotalVolumeUOM" type="xs:string"/>
+	<xs:element name="TotalWeight" type="xs:decimal"/>
+	<xs:element name="TotalWeightUOM" type="xs:string"/>
+	<xs:element name="TransactionTypeCode" type="xs:string"/>
+	<xs:element name="TransferTypeCode" type="xs:string"/>
+	<xs:element name="WholesalePrice" type="xs:decimal"/>
+	<!--Complex types-->
+	<xs:complexType name="ProductTransferAccountAdjustmentType">
+		<xs:complexContent>
+			<xs:extension base="sipDocumentType">
+				<xs:sequence>
+					<xs:element ref="Header"/>
+					<xs:element ref="LineItems"/>
+					<xs:element ref="Summary"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--Header Type-->
+	<xs:complexType name="HeaderType">
+		<xs:complexContent>
+			<xs:extension base="sipHeaderType">
+				<xs:sequence>
+					<xs:element ref="ProductTransferAccountAdjustmentHeader"/>
+					<xs:element ref="Currency" minOccurs="0"/>
+					<xs:element ref="Notes" minOccurs="0" maxOccurs="10"/>
+					<xs:element ref="Reference" minOccurs="0" maxOccurs="12"/>
+					<xs:element ref="Contact" minOccurs="0" maxOccurs="3"/>
+					<xs:element ref="Date" minOccurs="0" maxOccurs="10"/>
+					<xs:element ref="Address" minOccurs="0" maxOccurs="50"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--ProductTransferAccountAdjustmentHeader Type-->
+	<xs:complexType name="ProductTransferAccountAdjustmentHeaderType">
+		<xs:complexContent>
+			<xs:extension base="firstSipRecordType">
+				<xs:sequence>
+					<xs:element ref="TsetPurposeCode" minOccurs="0"/>
+					<xs:element ref="TransactionTypeCode" minOccurs="0"/>
+					<xs:element ref="CreditDebitIndicator" minOccurs="0"/>
+					<xs:element ref="ReferenceDate" minOccurs="0"/>
+					<xs:element ref="ReferenceTime" minOccurs="0"/>
+					<xs:element ref="ResubmitNumber" minOccurs="0"/>
+					<xs:element ref="BuyersCurrency" minOccurs="0"/>
+					<xs:element ref="SellersCurrency" minOccurs="0"/>
+					<xs:element ref="ExchangeRate" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Currency Type-->
+	<xs:complexType name="CurrencyType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="CurrencyCodeType" minOccurs="0"/>
+					<xs:element ref="CurrencyCode" minOccurs="0"/>
+					<xs:element ref="ExchangeRate" minOccurs="0"/>
+					<xs:element ref="CurrencyCodeType2" minOccurs="0"/>
+					<xs:element ref="CurrencyCode2" minOccurs="0"/>
+					<xs:element ref="ExchangeCode" minOccurs="0"/>
+					<xs:element ref="Date" minOccurs="0" maxOccurs="10"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- LineItems Type-->
+	<xs:complexType name="LineItemsType">
+		<xs:complexContent>
+			<xs:extension base="sipDatasetType">
+				<xs:sequence>
+					<xs:element ref="LineItem" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--LineItem Type-->
+	<xs:complexType name="LineItemType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="ContractDetail"/>
+					<xs:element ref="Reference" minOccurs="0" maxOccurs="12"/>
+					<xs:element ref="Contact" minOccurs="0" maxOccurs="3"/>
+					<xs:element ref="Address" minOccurs="0" maxOccurs="50"/>
+					<xs:element ref="Date" minOccurs="0" maxOccurs="10"/>
+					<xs:element ref="LineItemSalesInformation" minOccurs="0" maxOccurs="1000"/>
+					<xs:element ref="ProductAdjustmentDetails" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ContractDetail Type-->
+	<xs:complexType name="ContractDetailType">
+		<xs:sequence>
+			<xs:element ref="TradingPartnerId" minOccurs="0"/>
+			<xs:element ref="DocumentId" minOccurs="0"/>
+			<xs:element ref="RecordType" minOccurs="0"/>
+			<xs:element ref="ContractNumber" minOccurs="0"/>
+			<xs:element ref="ContractStatusCode" minOccurs="0"/>
+			<xs:element ref="CorrectedContractNumber" minOccurs="0"/>
+			<xs:element ref="InvoiceNumber" minOccurs="0"/>
+			<xs:element ref="InvoiceDate" minOccurs="0"/>
+			<xs:element ref="PurchaseOrderNumber" minOccurs="0"/>
+			<xs:element ref="ReleaseNumber" minOccurs="0"/>
+			<xs:element ref="PurchaseOrderDate" minOccurs="0"/>
+			<xs:element ref="Department" minOccurs="0"/>
+			<xs:element ref="Vendor" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- LineItemSalesInformation Type-->
+	<xs:complexType name="LineItemSalesInformationType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="SalesInformation" minOccurs="0"/>
+					<xs:element ref="ReferenceIdentifications" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- SalesInformation Type-->
+	<xs:complexType name="SalesInformationType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="PartNumberQualifier1" minOccurs="0"/>
+					<xs:element ref="PartNumber1" minOccurs="0"/>
+					<xs:element ref="Quantity1" minOccurs="0"/>
+					<xs:element ref="QtyUOM" minOccurs="0"/>
+					<xs:element ref="WholesalePrice" minOccurs="0"/>
+					<xs:element ref="ContractPrice" minOccurs="0"/>
+					<xs:element ref="MonetaryAmount" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ProductAdjustmentDetails Type-->
+	<xs:complexType name="ProductAdjustmentDetailsType">
+		<xs:complexContent>
+			<xs:extension base="sipDatasetType">
+				<xs:sequence>
+					<xs:element ref="ProductAdjustmentDetail" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--ProductAdjustmentDetail Type-->
+	<xs:complexType name="ProductAdjustmentDetailType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="ProductDetail" minOccurs="0"/>
+					<xs:element ref="ItemIdentification"/>
+					<xs:element ref="Reference" minOccurs="0" maxOccurs="12"/>
+					<xs:element ref="ProductOrItemDescription" minOccurs="0" maxOccurs="10"/>
+					<xs:element ref="Measurements" minOccurs="0" maxOccurs="10"/>
+					<xs:element ref="Pricing" minOccurs="0" maxOccurs="12"/>
+					<xs:element ref="ItemQuantity" minOccurs="0"/>
+					<xs:element ref="MonetaryAmounts" minOccurs="0"/>
+					<xs:element ref="ReceivingConditionLine" minOccurs="0" maxOccurs="10"/>
+					<xs:element ref="Date" minOccurs="0" maxOccurs="10"/>
+					<xs:element ref="Currency" minOccurs="0"/>
+					<xs:element ref="SpecialServices" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ProductDetail Type-->
+	<xs:complexType name="ProductDetailType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="AssignedID" minOccurs="0"/>
+					<xs:element ref="TransferTypeCode" minOccurs="0"/>
+					<xs:element ref="ChangeOrResponseTypeCode" minOccurs="0"/>
+					<xs:element ref="PriceMultiplierQual" minOccurs="0"/>
+					<xs:element ref="PriceMultiplier" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ItemIdentification Type-->
+	<xs:complexType name="ItemIdentificationType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="LineSequenceNumber" minOccurs="0"/>
+					<xs:element ref="BuyerPartNumber" minOccurs="0"/>
+					<xs:element ref="VendorPartNumber" minOccurs="0"/>
+					<xs:element ref="ConsumerPackageCode" minOccurs="0"/>
+					<xs:element ref="GTIN" minOccurs="0"/>
+					<xs:element ref="UPCCaseCode" minOccurs="0"/>
+					<xs:element ref="NatlDrugCode" minOccurs="0"/>
+					<xs:element ref="PartNumberQualifier1" minOccurs="0"/>
+					<xs:element ref="PartNumber1" minOccurs="0"/>
+					<xs:element ref="PartNumberQualifier2" minOccurs="0"/>
+					<xs:element ref="PartNumber2" minOccurs="0"/>
+					<xs:element ref="PartNumberQualifier3" minOccurs="0"/>
+					<xs:element ref="PartNumber3" minOccurs="0"/>
+					<xs:element ref="PartNumber4Qualifier" minOccurs="0"/>
+					<xs:element ref="PartNumber4" minOccurs="0"/>
+					<xs:element ref="RetailInformation" minOccurs="0"/>
+					<xs:element ref="OrderQty" minOccurs="0"/>
+					<xs:element ref="OrderQtyUOM" minOccurs="0"/>
+					<xs:element ref="UnitPrice" minOccurs="0"/>
+					<xs:element ref="UnitPriceBasis" minOccurs="0"/>
+					<xs:element ref="RetailUnitPrice" minOccurs="0"/>
+					<xs:element ref="OuterPack" minOccurs="0"/>
+					<xs:element ref="PackSize" minOccurs="0"/>
+					<xs:element ref="PackUOM" minOccurs="0"/>
+					<xs:element ref="PackWeight" minOccurs="0"/>
+					<xs:element ref="PackWeightUOM" minOccurs="0"/>
+					<xs:element ref="PackVolume" minOccurs="0"/>
+					<xs:element ref="PackVolumeUOM" minOccurs="0"/>
+					<xs:element ref="PackLength" minOccurs="0"/>
+					<xs:element ref="PackWidth" minOccurs="0"/>
+					<xs:element ref="PackHeight" minOccurs="0"/>
+					<xs:element ref="InnerPack" minOccurs="0"/>
+					<xs:element ref="ShipQty" minOccurs="0"/>
+					<xs:element ref="ShipQtyUOM" minOccurs="0"/>
+					<xs:element ref="ShipDate" minOccurs="0"/>
+					<xs:element ref="QtyLeftToReceive" minOccurs="0"/>
+					<xs:element ref="ExtendedItemTotal" minOccurs="0"/>
+					<xs:element ref="ProductSizeCode" minOccurs="0"/>
+					<xs:element ref="ProductSizeDescription" minOccurs="0"/>
+					<xs:element ref="ProductColorCode" minOccurs="0"/>
+					<xs:element ref="ProductColorDescription" minOccurs="0"/>
+					<xs:element ref="ProductFabricCode" minOccurs="0"/>
+					<xs:element ref="ProductFabricDescription" minOccurs="0"/>
+					<xs:element ref="ProductProcessCode" minOccurs="0"/>
+					<xs:element ref="ProductProcessDescription" minOccurs="0"/>
+					<xs:element ref="Department" minOccurs="0"/>
+					<xs:element ref="Class" minOccurs="0"/>
+					<xs:element ref="Gender" minOccurs="0"/>
+					<xs:element ref="SellerDateCode" minOccurs="0"/>
+					<xs:element ref="ItemStatusCode" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ProductOrItemDescription Type-->
+	<xs:complexType name="ProductOrItemDescriptionType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="ItemDescriptionType" minOccurs="0"/>
+					<xs:element ref="ProductCharacteristicCode" minOccurs="0"/>
+					<xs:element ref="AgencyQualifierCode" minOccurs="0"/>
+					<xs:element ref="ProductDescriptionCode" minOccurs="0"/>
+					<xs:element ref="ProductDescription" minOccurs="0"/>
+					<xs:element ref="SurfaceLayerPositionCode" minOccurs="0"/>
+					<xs:element ref="SourceSubqualifier" minOccurs="0"/>
+					<xs:element ref="YesOrNoResponse" minOccurs="0"/>
+					<xs:element ref="LanguageCode" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Measurements Type-->
+	<xs:complexType name="MeasurementsType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="MeasurementRefIDCode" minOccurs="0"/>
+					<xs:element ref="MeasurementQualifier" minOccurs="0"/>
+					<xs:element ref="MeasurementValue" minOccurs="0"/>
+					<xs:element ref="CompositeUOM" minOccurs="0"/>
+					<xs:element ref="RangeMinimum" minOccurs="0"/>
+					<xs:element ref="RangeMaximum" minOccurs="0"/>
+					<xs:element ref="MeasurementSignificanceCode" minOccurs="0"/>
+					<xs:element ref="MeasurementAttributeCode" minOccurs="0"/>
+					<xs:element ref="SurfaceLayerPositionCode" minOccurs="0"/>
+					<xs:element ref="MeasurementMethodorDevice" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Pricing Type-->
+	<xs:complexType name="PricingType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="LineSequenceNumber" minOccurs="0"/>
+					<xs:element ref="ClassOfTradeCode" minOccurs="0"/>
+					<xs:element ref="PriceTypeIDCode" minOccurs="0"/>
+					<xs:element ref="UnitPrice" minOccurs="0"/>
+					<xs:element ref="ItemQty" minOccurs="0"/>
+					<xs:element ref="ItemQtyUOM" minOccurs="0"/>
+					<xs:element ref="PriceMultiplierQual" minOccurs="0"/>
+					<xs:element ref="PriceMultiplier" minOccurs="0"/>
+					<xs:element ref="Amount" minOccurs="0"/>
+					<xs:element ref="UnitPriceBasis" minOccurs="0"/>
+					<xs:element ref="ConditionValue" minOccurs="0"/>
+					<xs:element ref="MultiplePriceQuantity" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ItemQuantity Type-->
+	<xs:complexType name="ItemQuantityType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="QuantityQualifier" minOccurs="0"/>
+					<xs:element ref="Quantity1" minOccurs="0"/>
+					<xs:element ref="QtyUOM" minOccurs="0"/>
+					<xs:element ref="FreeFormMessage" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- MonetaryAmounts Type-->
+	<xs:complexType name="MonetaryAmountsType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="TotalAmountCode" minOccurs="0"/>
+					<xs:element ref="MonetaryAmount" minOccurs="0"/>
+					<xs:element ref="CreditDebitFlag" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ReceivingConditionLine Type-->
+	<xs:complexType name="ReceivingConditionLineType">
+		<xs:sequence>
+			<xs:element ref="LineSequenceNumber" minOccurs="0"/>
+			<xs:element ref="QtyInQuestion" minOccurs="0"/>
+			<xs:element ref="QtyInQuestionUOM" minOccurs="0"/>
+			<xs:element ref="ReceivingCondition" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- SpecialServices Type-->
+	<xs:complexType name="SpecialServicesType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="AllowChrgIndicator" minOccurs="0"/>
+					<xs:element ref="AgencyQualCode" minOccurs="0"/>
+					<xs:element ref="SpecialServicesCode" minOccurs="0"/>
+					<xs:element ref="MarksAndNumbers1" minOccurs="0"/>
+					<xs:element ref="AllowChrgRate" minOccurs="0"/>
+					<xs:element ref="AllowChrgAmt" minOccurs="0"/>
+					<xs:element ref="AllowChrgHandlingDescription" minOccurs="0"/>
+					<xs:element ref="AllowChrgQty" minOccurs="0"/>
+					<xs:element ref="SourceSubqualifier" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SummaryType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="MonetaryAmounts" minOccurs="0"/>
+					<xs:element ref="Totals"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--Totals Type-->
+	<xs:complexType name="TotalsType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="TotalLineNumber" minOccurs="0"/>
+					<xs:element ref="TotalQuantity" minOccurs="0"/>
+					<xs:element ref="TotalWeight" minOccurs="0"/>
+					<xs:element ref="TotalWeightUOM" minOccurs="0"/>
+					<xs:element ref="TotalVolume" minOccurs="0"/>
+					<xs:element ref="TotalVolumeUOM" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

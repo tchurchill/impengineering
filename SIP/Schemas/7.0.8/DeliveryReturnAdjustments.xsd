@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SIP XML DeliveryReturnAdjustment(EDIDOC 895)-->
+<!-- C SPS Commerce, Inc., 2012
+
+SPS Commerce is providing this XML schema (XSD) and resultant XML Message as a service to its customers and partners. This schema and resultant XML message were developed by SPS Commerce and are based on years of experience with our Standard Interface Program (SIP).
+
+Although efforts have been made to assure that the XML schema and resultant XML message are correct, reliable, and technically accurate, SPS COMMERCE MAKES NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML SCHEMA AND RESULTANT XML MESSAGE ARE CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE MERCHANTABLE OR SUITABLE FOR ANY PARTICULAR PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  THE USE OF THE SCHEMA AND RESULTANT MESSAGE BY ANY PARTY ARE WITH THE EXPRESS UNDERSTANDING THAT SPS COMMERCE  ASSUMES NO LIABILITY FOR ANY CLAIM, DAMAGE OR LOSS OF ANY KIND OR NATURE.
+
+	Version Information:
+	Version 7.12.3
+	Date of Creation: November 1, 2009
+
+COMMENTS:
+
+The mandatory XML elements, specific codes and qualifiers used between Trading partners are defined in separate trading partner guidelines between the partners and are not part of this schema and resultant XML message. 
+ -->
+<xs:schema xmlns="http://www.spscommerce.net/SIP" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.spscommerce.net/SIP" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- inclusion of SIPbase -->
+	<xs:include schemaLocation="SIPbase.xsd"/>
+	<xs:element name="AdjustmentNumber1" type="xs:int"/>
+	<xs:element name="DeliveryReturnAdjustment" type="DeliveryReturnAdjustmentType"/>
+	<xs:element name="DeliveryReturnAdjustmentHeader" type="DeliveryReturnAdjustmentHeaderType"/>
+	<xs:element name="DocumentId2" type="xs:string"/>
+	<xs:element name="FreeFormMessage" type="xs:string"/>
+	<xs:element name="Header" type="HeaderType"/>
+	<xs:element name="InitiatorCode" type="xs:string"/>
+	<xs:element name="IntegrityCheckValue" type="xs:string"/>
+	<xs:element name="LineItem" type="LineItemType"/>
+	<xs:element name="LineItemDetailAdjustment" type="LineItemDetailAdjustmentType"/>
+	<xs:element name="LineItems" type="LineItemsType"/>
+	<xs:element name="LoopHeaders" type="LoopHeadersType"/>
+	<xs:element name="LoopHeader" type="LoopHeaderType"/>
+	<xs:element name="LoopIdentifierHeader" type="LoopIdentifierHeaderType"/>
+	<xs:element name="LoopIDCode" type="xs:string"/>
+	<xs:element name="LoopTrailer" type="LoopTrailerType"/>
+	<xs:element name="PrepricedOptionCode" type="xs:string"/>
+	<xs:element name="PricingInformation" type="PricingInformationType"/>
+	<xs:element name="PurchaseOrderDate" type="xs:date"/>
+	<xs:element name="ReceiverLocationNumber" type="xs:string"/>
+	<xs:element name="RetailUnitPrice" type="xs:decimal"/>
+	<xs:element name="SignatureIndentification" type="xs:string"/>
+	<xs:element name="SignatureName" type="xs:string"/>
+	<xs:element name="ShipDeliveryDate" type="xs:date"/>
+	<xs:element name="Summary" type="SummaryType"/>
+	<xs:element name="TotalDepositAmount" type="xs:decimal"/>
+	<xs:element name="TotalQty" type="xs:decimal"/>
+	<xs:element name="Totals" type="TotalsType"/>
+	<!-- top level elements -->
+	<xs:element name="DeliveryReturnAdjustments">
+		<xs:annotation>
+			<xs:appinfo>7.12.3</xs:appinfo>
+			<xs:documentation>SIP XML DeliveryReturnAdjustments schema, Version 7.12.3</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="DeliveryReturnAdjustment" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="DeliveryReturnAdjustmentType">
+		<xs:complexContent>
+			<xs:extension base="sipDocumentType">
+				<xs:sequence>
+					<xs:element ref="Header"/>
+					<xs:element ref="LoopHeaders" minOccurs="0"/>
+					<xs:element ref="Summary"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="HeaderType">
+		<xs:complexContent>
+			<xs:extension base="sipHeaderType">
+				<xs:sequence>
+					<xs:element ref="DeliveryReturnAdjustmentHeader"/>
+					<xs:element ref="Miscellaneous" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Header elements -->
+	<xs:complexType name="DeliveryReturnAdjustmentHeaderType">
+		<xs:complexContent>
+			<xs:extension base="firstSipRecordType">
+				<xs:sequence>
+					<xs:element ref="InitiatorCode"/>
+					<xs:element ref="CreditDebitFlag"/>
+					<xs:element ref="IntegrityCheckValue"/>
+					<xs:element ref="AdjustmentNumber1"/>
+					<xs:element ref="DocumentId2" minOccurs="0"/>
+					<xs:element ref="ShipDate" minOccurs="0"/>
+					<xs:element ref="ShipDeliveryDate" minOccurs="0"/>
+					<xs:element ref="PurchaseOrderNumber" minOccurs="0"/>
+					<xs:element ref="PurchaseOrderDate" minOccurs="0"/>
+					<xs:element ref="ReceiverLocationNumber" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LoopHeadersType">
+		<xs:complexContent>
+			<xs:extension base="sipDatasetType">
+				<xs:sequence>
+					<xs:element ref="LoopHeader" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- LoopHeader elements -->
+	<xs:complexType name="LoopHeaderType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="LoopIdentifierHeader" minOccurs="0"/>
+					<xs:element ref="LineItems" minOccurs="0"/>
+					<xs:element ref="LoopTrailer"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--LoopIdentifierHeader elements -->
+	<xs:complexType name="LoopIdentifierHeaderType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="LoopIDCode"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--LoopTrailer elements -->
+	<xs:complexType name="LoopTrailerType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="LoopIDCode"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="LineItemsType">
+		<xs:complexContent>
+			<xs:extension base="sipDatasetType">
+				<xs:sequence>
+					<xs:element ref="LineItem" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- LineItem elements -->
+	<xs:complexType name="LineItemType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="LineItemDetailAdjustment" minOccurs="0"/>
+					<xs:element ref="PricingInformation" minOccurs="0"/>
+					<xs:element ref="ChargesAllowances" minOccurs="0" maxOccurs="10"/>
+					<xs:element ref="PaymentTerms" minOccurs="0" maxOccurs="20"/>
+					<xs:element ref="Miscellaneous" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- LineItemDetailAdjustment elements -->
+	<xs:complexType name="LineItemDetailAdjustmentType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="LineSequenceNumber" minOccurs="0"/>
+					<xs:group ref="LineQty"/>
+					<xs:element ref="ConsumerPackageCode" minOccurs="0"/>
+					<xs:element ref="PartNumberQualifier1" minOccurs="0"/>
+					<xs:element ref="PartNumber1" minOccurs="0"/>
+					<xs:element ref="UPCCaseCode" minOccurs="0"/>
+					<xs:element ref="OuterPack" minOccurs="0"/>
+					<xs:element ref="InnerPack" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- PricingInformation elements -->
+	<xs:complexType name="PricingInformationType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="PrepricedOptionCode" minOccurs="0"/>
+					<xs:element ref="RetailUnitPrice" minOccurs="0"/>
+					<xs:element ref="MultiplePriceQuantity" minOccurs="0"/>
+					<xs:element ref="FreeFormMessage" minOccurs="0"/>
+					<xs:element ref="Date1" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Summary elements (note that Summary is a group, not a record,) -->
+	<xs:complexType name="SummaryType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="ChargesAllowances" minOccurs="0" maxOccurs="20"/>
+					<xs:element ref="PaymentTerms" minOccurs="0" maxOccurs="20"/>
+					<xs:element ref="Totals"/>
+					<xs:element ref="Miscellaneous" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TotalsType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="TotalQty" minOccurs="0"/>
+					<xs:element ref="TotalAmount" minOccurs="0"/>
+					<xs:element ref="TotalDepositAmount" minOccurs="0"/>
+					<xs:element ref="SignatureIndentification" minOccurs="0"/>
+					<xs:element ref="SignatureName" minOccurs="0"/>
+					<xs:element ref="IntegrityCheckValue"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

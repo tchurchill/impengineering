@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SIP XML CreditDebitAdjustment (EDIDOC 812)-->
+<!-- C SPS Commerce, Inc., 2004
+
+SPS Commerce is providing this XML schema (XSD) and resultant XML Message as a service to its customers and partners. This schema and resultant XML message were developed by SPS Commerce and are based on over six years of experience with our Standard Interface Program (SIP). The XML Tag names used are the same as our Field Names in the SIP 5.0 Flat File definition. 
+
+Although efforts have been made to assure that the XML schema and resultant XML message are correct, reliable, and technically accurate, SPS COMMERCE MAKES NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML SCHEMA AND RESULTANT XML MESSAGE ARE CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE MERCHANTABLE OR SUITABLE FOR ANY PARTICULAR PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  THE USE OF THE DTD AND RESULTANT MESSAGE BY ANY PARTY ARE WITH THE EXPRESS UNDERSTANDING THAT SPS COMMERCE  ASSUMES NO LIABILITY FOR ANY CLAIM, DAMAGE OR LOSS OF ANY KIND OR NATURE.
+
+	Version Information:
+	Version 7.0
+	Date of Creation: April 25 , 2007
+
+COMMENTS:
+
+The mandatory XML elements, specific codes and qualifiers used between Trading partners are defined in separate trading partner guidelines between the partners and are not part of this schema and resultant XML message. 
+ -->
+<xs:schema xmlns="http://www.spscommerce.net/SIP" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.spscommerce.net/SIP" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <!-- inclusion of SIPbase -->
+    <xs:include schemaLocation="SIPbase.xsd"/>
+    <xs:element name="ActionCode" type="xs:string"/>
+    <xs:element name="AdjustmentReasonCode" type="xs:string"/>
+    <xs:element name="AgencyCode" type="xs:string"/>
+    <xs:element name="Amount" type="xs:decimal"/>
+    <xs:element name="AmtQualCode" type="xs:string"/>
+    <xs:element name="AssignedNumber" type="xs:decimal"/>
+    <xs:element name="AttachmentRefID" type="xs:string"/>
+    <xs:element name="BreakdownStructureCode" type="xs:string"/>
+    <xs:element name="BuyerCurrency" type="xs:string"/>
+    <xs:element name="CheckDate" type="xs:date"/>
+    <xs:element name="CheckNumber" type="xs:string"/>
+    <xs:element name="ConditionResponseCode" type="xs:string"/>
+    <xs:element name="ContractNumber" type="xs:string"/>
+    <xs:element name="CreditDebitAdjustment" type="CreditDebitAdjustmentType"/>
+    <xs:element name="CreditDebitAdjustmentDetail" type="CreditDebitAdjustmentDetailType"/>
+    <xs:element name="CreditDebitAdjustmentHeader" type="CreditDebitAdjustmentHeaderType"/>
+    <xs:element name="CreditDebitAdjustmentLine" type="CreditDebitAdjustmentLineType"/>
+    <xs:element name="CreditDebitFlag" type="xs:string"/>
+    <xs:element name="CreditDebitQuantity" type="xs:decimal"/>
+    <xs:element name="CreditDebitQuantityUOM" type="xs:string"/>
+    <xs:element name="FinancialInformationCode" type="xs:string"/>
+    <xs:element name="FinancialAccountingData" type="FinancialAccountingDataType"/>
+    <xs:element name="Header" type="HeaderType"/>
+    <xs:element name="InternalOrderNumber" type="xs:string"/>
+    <xs:element name="InternalOrderDate" type="xs:date"/>
+    <xs:element name="InvoiceDate" type="xs:date"/>
+    <xs:element name="ItemStatusCode" type="xs:string"/>
+    <xs:element name="LetterOfCredit" type="xs:string"/>
+    <xs:element name="LineItem" type="LineItemType"/>
+    <xs:element name="LineItems" type="LineItemsType"/>
+    <xs:element name="MfgSuggestedRetailPrice" type="xs:decimal"/>
+    <xs:element name="NumberUnitsShipped" type="xs:decimal"/>
+    <xs:element name="NumberUnitsShippedUOM" type="xs:string"/>
+    <xs:element name="Percent" type="xs:decimal"/>
+    <xs:element name="PercentQual" type="xs:string"/>
+    <xs:element name="PriceTypeIDCode1" type="xs:string"/>
+    <xs:element name="PriceTypeIDCode2" type="xs:string"/>
+    <xs:element name="PurchaseOrderDate" type="xs:date"/>
+    <xs:element name="ReleaseNumber" type="xs:string"/>
+    <xs:element name="RetailUnitPrice" type="xs:decimal"/>
+    <xs:element name="ReturnShipmentDate" type="xs:date"/>
+    <xs:element name="SellerCurrency" type="xs:string"/>
+    <xs:element name="SellerDateCode" type="xs:string"/>
+    <xs:element name="SellersInvoiceNumber" type="xs:string"/>
+    <xs:element name="ShipmentDeliveryTime" type="xs:time"/>
+    <xs:element name="StoreMonetary" type="StoreMonetaryType"/>
+    <xs:element name="StoreNumber" type="xs:string"/>
+    <xs:element name="Summary" type="SummaryType"/>
+    <xs:element name="TotalWeight" type="xs:decimal"/>
+    <xs:element name="TotalWeightUOM" type="xs:string"/>
+    <xs:element name="TransactionHandlingCode" type="xs:string"/>
+    <xs:element name="TransactionTypeCode" type="xs:string"/>
+    <xs:element name="TSetPurposeCode" type="xs:string"/>
+    <xs:element name="UnitPrice1" type="xs:decimal"/>
+    <xs:element name="UnitPrice2" type="xs:decimal"/>
+    <xs:element name="UnitPriceDifference" type="xs:decimal"/>
+    <!-- top level elements -->
+    <xs:element name="CreditDebitAdjustments">
+        <xs:annotation>
+            <xs:appinfo>7.0</xs:appinfo>
+            <xs:documentation>SIP XML CreditDebitAdjustments schema, Version 7.0</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="CreditDebitAdjustment" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- CreditDebitAdjustment elements  -->
+    <xs:complexType name="CreditDebitAdjustmentType">
+        <xs:complexContent>
+            <xs:extension base="sipDocumentType">
+                <xs:sequence>
+                    <xs:element ref="Header"/>
+                    <xs:element ref="LineItems" minOccurs="0"/>
+                    <xs:element ref="Summary"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- Header elements  -->
+    <xs:complexType name="HeaderType">
+        <xs:complexContent>
+            <xs:extension base="sipHeaderType">
+                <xs:sequence>
+                    <xs:element ref="CreditDebitAdjustmentHeader"/>
+                    <xs:element ref="PaymentTerms" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element ref="Date" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element ref="Contact" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element ref="Address" maxOccurs="200"/>
+                    <xs:element ref="Reference" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element ref="FinancialAccountingData" minOccurs="0" maxOccurs="100"/>
+                    <xs:element ref="ChargesAllowances" minOccurs="0" maxOccurs="25"/>
+                    <xs:element ref="Miscellaneous" minOccurs="0" maxOccurs="100"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="LineItemsType">
+        <xs:complexContent>
+            <xs:extension base="sipDatasetType">
+                <xs:sequence>
+                    <xs:element ref="LineItem" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- CreditDebitAdjustmentHeader elements  -->
+    <xs:complexType name="CreditDebitAdjustmentHeaderType">
+        <xs:complexContent>
+            <xs:extension base="firstSipRecordType">
+                <xs:sequence>
+                    <xs:element ref="Date1"/>
+                    <xs:element ref="TransactionHandlingCode"/>
+                    <xs:element ref="Amount"/>
+                    <xs:element ref="CreditDebitFlag"/>
+                    <xs:element ref="InvoiceNumber" minOccurs="0"/>
+                    <xs:element ref="InvoiceDate" minOccurs="0"/>
+                    <xs:element ref="PurchaseOrderNumber" minOccurs="0"/>
+                    <xs:element ref="PurchaseOrderDate" minOccurs="0"/>
+                    <xs:element ref="ReleaseNumber" minOccurs="0"/>
+                    <xs:element ref="ContractNumber" minOccurs="0"/>
+                    <xs:element ref="InternalOrderNumber" minOccurs="0"/>
+                    <xs:element ref="InternalOrderDate" minOccurs="0"/>
+                    <xs:element ref="TransactionTypeCode" minOccurs="0"/>
+                    <xs:element ref="TSetPurposeCode" minOccurs="0"/>
+                    <xs:sequence minOccurs="0">
+                        <xs:element ref="ReferenceQual"/>
+                        <xs:element ref="ReferenceID"/>
+                    </xs:sequence>
+                    <xs:element ref="ActionCode" minOccurs="0"/>
+                    <xs:element ref="BuyerCurrency" minOccurs="0"/>
+                    <xs:element ref="SellerCurrency" minOccurs="0"/>
+                    <xs:element ref="ExchangeRate" minOccurs="0"/>
+                    <xs:element ref="Department" minOccurs="0"/>
+                    <xs:element ref="Vendor" minOccurs="0"/>
+                    <xs:element ref="AttachmentRefID" minOccurs="0"/>
+                    <xs:element ref="SellersInvoiceNumber" minOccurs="0"/>
+                    <xs:element ref="CheckNumber" minOccurs="0"/>
+                    <xs:element ref="CheckDate" minOccurs="0"/>
+                    <xs:element ref="Description" minOccurs="0"/>
+                    <xs:element ref="LetterOfCredit" minOccurs="0"/>
+                    <xs:element ref="Division" minOccurs="0"/>
+                    <xs:element ref="CustomerAccountNumber" minOccurs="0"/>
+                    <xs:element ref="CustomerOrderNumber" minOccurs="0"/>
+                    <xs:element ref="ReturnShipmentDate" minOccurs="0"/>
+                    <xs:element ref="ShipmentDeliveryTime" minOccurs="0"/>
+                    <xs:element ref="NumberUnitsShipped" minOccurs="0"/>
+                    <xs:element ref="NumberUnitsShippedUOM" minOccurs="0"/>
+                    <xs:group ref="FOB"/>
+                    <xs:group ref="Carrier"/>
+                    <xs:element ref="CarrierEquipmentInitial" minOccurs="0"/>
+                    <xs:element ref="CarrierEquipmentNumber" minOccurs="0"/>
+                    <xs:element ref="BillOfLadingNumber" minOccurs="0"/>
+                    <xs:element ref="CarrierProNumber" minOccurs="0"/>
+                    <xs:element ref="TotalWeight" minOccurs="0"/>
+                    <xs:element ref="TotalWeightUOM" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- Top Level Line Item elements -->
+    <xs:complexType name="LineItemType">
+        <xs:sequence>
+            <xs:element ref="CreditDebitAdjustmentDetail" minOccurs="0"/>
+            <xs:element ref="CreditDebitAdjustmentLine" minOccurs="0"/>
+            <xs:element ref="Reference" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="Date" minOccurs="0" maxOccurs="5"/>
+            <xs:element ref="ChargesAllowances" minOccurs="0" maxOccurs="25"/>
+            <xs:element ref="StoreMonetary" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="FinancialAccountingData" minOccurs="0" maxOccurs="100"/>
+            <xs:element ref="Miscellaneous" minOccurs="0" maxOccurs="100"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- CreditDebitAdjustmentDetail elements -->
+    <xs:complexType name="CreditDebitAdjustmentDetailType">
+        <xs:complexContent>
+            <xs:extension base="sipRecordType">
+                <xs:sequence>
+                    <xs:element ref="AdjustmentReasonCode"/>
+                    <xs:element ref="CreditDebitFlag"/>
+                    <xs:element ref="AssignedID" minOccurs="0"/>
+                    <xs:element ref="Amount" minOccurs="0"/>
+                    <xs:element ref="ConditionResponseCode" minOccurs="0"/>
+                    <xs:element ref="CreditDebitQuantity" minOccurs="0"/>
+                    <xs:element ref="CreditDebitQuantityUOM" minOccurs="0"/>
+                    <xs:element ref="UnitPriceDifference" minOccurs="0"/>
+                    <xs:sequence minOccurs="0">
+                        <xs:element ref="PriceTypeIDCode1"/>
+                        <xs:element ref="UnitPrice1"/>
+                    </xs:sequence>
+                    <xs:sequence minOccurs="0">
+                        <xs:element ref="PriceTypeIDCode2"/>
+                        <xs:element ref="UnitPrice2"/>
+                    </xs:sequence>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- CreditDebitAdjustmentLine elements -->
+    <xs:complexType name="CreditDebitAdjustmentLineType">
+        <xs:complexContent>
+            <xs:extension base="sipRecordType">
+                <xs:sequence>
+                    <xs:element ref="LineSequenceNumber" minOccurs="0"/>
+                    <xs:group ref="ItemPartInfo"/>
+                    <xs:group ref="PartInfo"/>
+                    <xs:group ref="LineQty"/>
+                    <xs:element ref="MfgSuggestedRetailPrice" minOccurs="0"/>
+                    <xs:element ref="RetailUnitPrice" minOccurs="0"/>
+                    <xs:group ref="ItemPack"/>
+                    <xs:group ref="LineShipQty" minOccurs="0"/>
+                    <xs:element ref="ShipDate" minOccurs="0"/>
+                    <xs:element ref="QtyLeftToReceive" minOccurs="0"/>
+                    <xs:element ref="ExtendedItemTotal" minOccurs="0"/>
+                    <xs:group ref="ProductData"/>
+                    <xs:element ref="Department" minOccurs="0"/>
+                    <xs:element ref="Class" minOccurs="0"/>
+                    <xs:element ref="Gender" minOccurs="0"/>
+                    <xs:element ref="SellerDateCode" minOccurs="0"/>
+                    <xs:element ref="ItemStatusCode" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- StoreMonetary elements -->
+    <xs:complexType name="StoreMonetaryType">
+        <xs:complexContent>
+            <xs:extension base="sipRecordType">
+                <xs:sequence>
+                    <xs:element ref="StoreNumber"/>
+                    <xs:element ref="LocationID" minOccurs="0"/>
+                    <xs:element ref="ReferenceID" minOccurs="0"/>
+                    <xs:element ref="AmtQualCode" minOccurs="0"/>
+                    <xs:element ref="Amount" minOccurs="0"/>
+                    <xs:element ref="CreditDebitFlag" minOccurs="0"/>
+                    <xs:element ref="PercentQual" minOccurs="0"/>
+                    <xs:element ref="Percent" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- FinancialAccountingData Elements -->
+    <xs:complexType name="FinancialAccountingDataType">
+        <xs:complexContent>
+            <xs:extension base="sipRecordType">
+                <xs:sequence>
+                    <xs:element ref="AssignedNumber" minOccurs="0"/>
+                    <xs:element ref="AgencyCode"/>
+                    <xs:element ref="AllowChrgCode" minOccurs="0"/>
+                    <xs:element ref="AllowChrgIndicator" minOccurs="0"/>
+                    <xs:element ref="BreakdownStructureCode" minOccurs="0"/>
+                    <xs:element ref="FinancialInformationCode" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- Summary elements -->
+    <xs:complexType name="SummaryType">
+        <xs:complexContent>
+            <xs:extension base="sipRecordType"/>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>

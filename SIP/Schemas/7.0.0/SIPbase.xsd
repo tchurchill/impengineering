@@ -1,0 +1,1532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SIPbase:  common elements used by most SIP XML schemas -->
+<!-- NOTE: this is a version without substitution groups; use only for mapping purposes -->
+<!-- C SPS Commerce, Inc., 2005
+
+SPS Commerce is providing this XML schema (XSD) and resultant XML Message as a service to its customers and partners. This schema and resultant XML message were developed by SPS Commerce and are based on over six years of experience with our Standard Interface Program (SIP). The XML Tag names used are the same as our Field Names in the SIP 5.0 Flat File definition. 
+
+Although efforts have been made to assure that the XML schema and resultant XML message are correct, reliable, and technically accurate, SPS COMMERCE MAKES NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML SCHEMA AND RESULTANT XML MESSAGE ARE CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE MERCHANTABLE OR SUITABLE FOR ANY PARTICULAR PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  THE USE OF THE DTD AND RESULTANT MESSAGE BY ANY PARTY ARE WITH THE EXPRESS UNDERSTANDING THAT SPS COMMERCE  ASSUMES NO LIABILITY FOR ANY CLAIM, DAMAGE OR LOSS OF ANY KIND OR NATURE.
+
+	Version Information:
+	Version 7.0
+	Date of Creation: November 12, 2005
+
+COMMENTS:
+
+The mandatory XML elements, specific codes and qualifiers used between Trading partners are defined in separate trading partner guidelines between the partners and are not part of this schema and resultant XML message. 
+ -->
+<xs:schema xmlns="http://www.spscommerce.net/SIP" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.spscommerce.net/SIP" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="OrderManagement.xsd"/>
+	<!-- ====================  SIP base XML types and structures ======================== -->
+	<!-- +++++++++ abstract structural elements +++++++++++++++  -->
+	<!--<xs:element name="siprecord" type="sipRecordType" abstract="true"/>
+	<xs:element name="sipgroup" type="sipGroupType" abstract="true"/>
+	<xs:element name="sipdataset" type="sipDatasetType" abstract="true"/>
+	<xs:element name="sipdocument" type="sipDocumentType" abstract="true"/>
+	<xs:element name="sipheader" type="sipHeaderType" abstract="true"/>
+	<xs:element name="sipdocid" type="sipDocIDType" abstract="true"/> -->
+	<!-- +++++++++ abstract structural types ++++++++++++++++++ -->
+	<xs:complexType name="sipRecordType">
+		<xs:annotation>
+			<xs:documentation>Abstract SIP record structure.  Begins with optional trading partner, document ID, and record type fields, followed by one or more data field elements.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:group ref="RecordID" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="firstSipRecordType">
+		<xs:annotation>
+			<xs:documentation>Abstract SIP record structure.  Begins with manadatory trading partner, and document ID,  followed by one or more data field elements.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:group ref="FirstRecordID"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="sipGroupType">
+		<xs:annotation>
+			<xs:documentation>Abstract SIP group structure.  Contains one or more SIP record elements.</xs:documentation>
+		</xs:annotation>
+		<!-- <xs:sequence>
+			<xs:element name="siprecord" type="sipRecordType" minOccurs="0"/>
+		</xs:sequence> -->
+	</xs:complexType>
+	<xs:complexType name="sipDatasetType">
+		<xs:annotation>
+			<xs:documentation>Abstract SIP dataset structure.  Contains one or more SIP group elements.</xs:documentation>
+		</xs:annotation>
+		<!--	<xs:sequence>
+			<xs:element name="sipgroup" type="sipGroupType" minOccurs="0"/>
+		</xs:sequence> -->
+	</xs:complexType>
+	<xs:complexType name="sipHeaderType">
+		<xs:annotation>
+			<xs:documentation>Abstract SIP header dataset type.  Encloses all document header elements.</xs:documentation>
+		</xs:annotation>
+		<!--		<xs:sequence>
+			<xs:element name="sipgroup" type="sipGroupType" minOccurs="0"/>
+		</xs:sequence> -->
+	</xs:complexType>
+	<xs:complexType name="sipDocumentType">
+		<xs:annotation>
+			<xs:documentation>Abstract SIP document structure.  Always contains an element derived from sipHeaderType, followed by LineItems, Summary, etc.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<!--<xs:element ref="sipheader"/>  -->
+			<xs:element ref="Meta" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- +++++++++++ field types and code enumerations ++++++++++ -->
+	<!-- abstract document ID (30 characters or less) -->
+	<xs:simpleType name="sipDocIDType">
+		<xs:annotation>
+			<xs:documentation>Abstract SIP document ID type.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="30"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- ====================== SIP base XML elements ======================= -->
+	<!-- common field elements - general -->
+	<xs:element name="BillOfLadingNumber" type="xs:string"/>
+	<xs:element name="BuyersCurrency" type="xs:string"/>
+	<xs:element name="CarrierProNumber" type="xs:string"/>
+	<xs:element name="CatalogNumber" type="sipDocIDType"/>
+	<xs:element name="CreditDebitNumber" type="sipDocIDType"/>
+	<xs:element name="ReportStartDate" type="sipDocIDType"/>
+	<xs:element name="DepositorOrderNumber" type="sipDocIDType"/>
+	<xs:element name="Class" type="xs:string"/>
+	<xs:element name="Department" type="xs:string"/>
+	<xs:element name="Description" type="xs:string"/>
+	<xs:element name="Division" type="xs:string"/>
+	<xs:element name="CustomerAccountNumber" type="xs:string"/>
+	<xs:element name="CustomerOrderNumber" type="xs:string"/>
+	<xs:element name="DocumentId" type="sipDocIDType"/>
+	<xs:element name="ExchangeRate" type="xs:decimal"/>
+	<xs:element name="FileID" type="xs:string"/>
+	<xs:element name="Gender" type="xs:string"/>
+	<xs:element name="InvoiceNumber" type="sipDocIDType"/>
+	<xs:element name="JobNumber" type="xs:string"/>
+	<xs:element name="LanguageCode" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>ISO 639 language code</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="PromotionDealDescription" type="xs:string"/>
+	<xs:element name="PromotionDealNumber" type="xs:string"/>
+	<xs:element name="PromotionDescriptionID" type="xs:string"/>
+	<xs:element name="PurchaseOrderNumber" type="sipDocIDType"/>
+	<xs:element name="RecordType" type="xs:string"/>
+	<xs:element name="ReferenceDate" type="xs:string"/>
+	<xs:element name="ReferenceID" type="xs:string"/>
+	<xs:element name="SellersCurrency" type="xs:string"/>
+	<xs:element name="SequenceNumber" type="xs:string"/>
+	<xs:element name="ShipmentIdentification" type="sipDocIDType"/>
+	<xs:element name="TradingPartnerId" type="xs:string"/>
+	<xs:element name="TsetPurposeCode" type="xs:string"/>
+	<xs:element name="Vendor" type="xs:string"/>
+	<xs:element name="Time1" type="xs:time"/>
+	<xs:element name="Quantity1" type="xs:decimal"/>
+	<xs:element name="Quantity2" type="xs:decimal"/>
+	<xs:element name="AddressLocationNumber2" type="xs:string"/>
+	<xs:element name="Weight" type="xs:decimal"/>
+	<xs:element name="WeightUnitCode" type="xs:string"/>
+	<xs:element name="Volume" type="xs:decimal"/>
+	<xs:element name="VolumeQualifier" type="xs:string"/>
+	<xs:element name="VolumeUnitCode" type="xs:string"/>
+	<xs:element name="LadingQuantity" type="xs:string"/>
+	<xs:element name="CurrencyCode1" type="xs:string"/>
+	<xs:element name="CurrencyCode2" type="xs:string"/>
+	<xs:element name="CurrencyCode3" type="xs:string"/>
+	<!-- common field elements - carrier -->
+	<xs:element name="CarrierAlphaCode" type="xs:string"/>
+	<xs:element name="CarrierAlphaCode1" type="xs:string"/>
+	<xs:element name="CarrierAlphaCode2" type="xs:string"/>
+	<xs:element name="CarrierRouting" type="xs:string"/>
+	<xs:element name="CarrierServiceLevelCode" type="xs:string"/>
+	<xs:element name="CarrierTransMethodCode" type="xs:string"/>
+	<!-- common field elements - FOB -->
+	<xs:element name="FOBLocationDescription" type="xs:string"/>
+	<xs:element name="FOBLocationQualifier" type="xs:string"/>
+	<xs:element name="FOBPayCode" type="xs:string"/>
+	<xs:element name="FOBTitlePassageCode" type="xs:string"/>
+	<xs:element name="FOBTitlePassageLocation" type="xs:string"/>
+	<xs:element name="TransportationTermsQualifierCode" type="xs:string"/>
+	<xs:element name="TransportationTermsCode" type="xs:string"/>
+	<xs:element name="RiskOfLossCode" type="xs:string"/>
+	<!-- common field elements - shared LineItem info -->
+	<xs:element name="ExtendedItemTotal" type="xs:decimal"/>
+	<xs:element name="LineSequenceNumber" type="xs:string"/>
+	<xs:element name="OrderQty" type="xs:decimal"/>
+	<xs:element name="OrderQtyUOM" type="xs:string"/>
+	<xs:element name="PartDescription1" type="xs:string"/>
+	<xs:element name="PartDescription2" type="xs:string"/>
+	<xs:element name="BuyerPartNumber" type="xs:string"/>
+	<xs:element name="VendorPartNumber" type="xs:string"/>
+	<xs:element name="ConsumerPackageCode" type="xs:string"/>
+	<xs:element name="GTIN" type="xs:string"/>
+	<xs:element name="UPCCaseCode" type="xs:string"/>
+	<xs:element name="NatlDrugCode" type="xs:string"/>
+	<xs:element name="PartNumber1" type="xs:string"/>
+	<xs:element name="PartNumber2" type="xs:string"/>
+	<xs:element name="PartNumber3" type="xs:string"/>
+	<xs:element name="PartNumber4" type="xs:string"/>
+	<xs:element name="PartNumberQualifier1" type="xs:string"/>
+	<xs:element name="PartNumberQualifier2" type="xs:string"/>
+	<xs:element name="PartNumberQualifier3" type="xs:string"/>
+	<xs:element name="PartNumberQualifier4" type="xs:string"/>
+	<xs:element name="QtyLeftToReceive" type="xs:decimal"/>
+	<xs:element name="RetailInformation" type="xs:string"/>
+	<xs:element name="ShipDate" type="xs:date"/>
+	<xs:element name="ShipQty" type="xs:decimal"/>
+	<xs:element name="ShipQtyUOM" type="xs:string"/>
+	<xs:element name="UnitPrice" type="xs:decimal"/>
+	<xs:element name="UnitPriceBasis" type="xs:string"/>
+	<!-- common field elements - item packing -->
+	<xs:element name="InnerPack" type="xs:int"/>
+	<xs:element name="OuterPack" type="xs:int"/>
+	<xs:element name="PackHeight" type="xs:decimal"/>
+	<xs:element name="PackLength" type="xs:decimal"/>
+	<xs:element name="PackSize" type="xs:decimal"/>
+	<xs:element name="PackUOM" type="xs:string"/>
+	<xs:element name="PackVolume" type="xs:decimal"/>
+	<xs:element name="PackVolumeUOM" type="xs:string"/>
+	<xs:element name="PackWeight" type="xs:decimal"/>
+	<xs:element name="PackWeightUOM" type="xs:string"/>
+	<xs:element name="PackWidth" type="xs:decimal"/>
+	<!-- common field elements - additional product info -->
+	<xs:element name="ProductColorCode" type="xs:string"/>
+	<xs:element name="ProductColorDescription" type="xs:string"/>
+	<xs:element name="ProductFabricCode" type="xs:string"/>
+	<xs:element name="ProductFabricDescription" type="xs:string"/>
+	<xs:element name="ProductProcessCode" type="xs:string"/>
+	<xs:element name="ProductProcessDescription" type="xs:string"/>
+	<xs:element name="ProductSizeCode" type="xs:string"/>
+	<xs:element name="ProductSizeDescription" type="xs:string"/>
+	<!-- common field elements - Terms -->
+	<xs:element name="TermsBasisDateCode" type="xs:string"/>
+	<xs:element name="TermsDeferredAmountDue" type="xs:decimal"/>
+	<xs:element name="TermsDeferredDueDate" type="xs:date"/>
+	<xs:element name="PercentOfInvoicePayable" type="xs:decimal"/>
+	<xs:element name="TermsDescription" type="xs:string"/>
+	<xs:element name="TermsDiscountAmount" type="xs:decimal"/>
+	<xs:element name="TermsDiscountDate" type="xs:date"/>
+	<xs:element name="TermsDiscountDueDays" type="xs:int"/>
+	<xs:element name="TermsDiscountPercentage" type="xs:decimal"/>
+	<xs:element name="TermsDueDay" type="xs:int"/>
+	<xs:element name="TermsNetDueDate" type="xs:date"/>
+	<xs:element name="TermsNetDueDays" type="xs:int"/>
+	<xs:element name="TermsType" type="xs:string"/>
+	<xs:element name="TermsStartDate" type="xs:date"/>
+	<xs:element name="TermsDueDateQual" type="xs:string"/>
+	<xs:element name="AmountSubjectToDiscount" type="xs:int"/>
+	<xs:element name="InstallmentAmountDue" type="xs:int"/>
+	<xs:element name="InstallmentGroupIndicator" type="xs:int"/>
+	<!--common field elements - Date -->
+	<xs:element name="RequestedPickupDate" type="xs:date"/>
+	<xs:element name="AdditionalDateQualifier1" type="xs:string"/>
+	<xs:element name="AdditionalDateQualifier2" type="xs:string"/>
+	<xs:element name="AdditionalDateQualifier3" type="xs:string"/>
+	<xs:element name="Date1" type="xs:date"/>
+	<xs:element name="Date2" type="xs:date"/>
+	<xs:element name="Date3" type="xs:date"/>
+	<!-- ====================== groups representing common entities ============================== -->
+	<xs:group name="Carrier">
+		<xs:sequence>
+			<xs:element ref="CarrierAlphaCode" minOccurs="0"/>
+			<xs:element ref="CarrierTransMethodCode" minOccurs="0"/>
+			<xs:element ref="CarrierRouting" minOccurs="0"/>
+			<xs:element ref="CarrierServiceLevelCode" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="FOB">
+		<xs:sequence>
+			<xs:element ref="FOBPayCode" minOccurs="0"/>
+			<xs:element ref="FOBLocationQualifier" minOccurs="0"/>
+			<xs:element ref="FOBLocationDescription" minOccurs="0"/>
+			<xs:element ref="FOBTitlePassageCode" minOccurs="0"/>
+			<xs:element ref="FOBTitlePassageLocation" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="FOBInstructionInfo">
+		<xs:sequence>
+			<xs:group ref="FOB" minOccurs="0"/>
+			<xs:element ref="TransportationTermsQualifierCode" minOccurs="0"/>
+			<xs:element ref="TransportationTermsCode" minOccurs="0"/>
+			<xs:element ref="RiskOfLossCode" minOccurs="0"/>
+			<xs:element ref="Description" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="ItemPack">
+		<xs:sequence>
+			<xs:element ref="OuterPack" minOccurs="0"/>
+			<xs:element ref="PackSize" minOccurs="0"/>
+			<xs:element ref="PackUOM" minOccurs="0"/>
+			<xs:element ref="PackWeight" minOccurs="0"/>
+			<xs:element ref="PackWeightUOM" minOccurs="0"/>
+			<xs:sequence minOccurs="0">
+				<xs:element ref="PackVolume"/>
+				<xs:element ref="PackVolumeUOM"/>
+			</xs:sequence>
+			<xs:element ref="PackLength" minOccurs="0"/>
+			<xs:element ref="PackWidth" minOccurs="0"/>
+			<xs:element ref="PackHeight" minOccurs="0"/>
+			<xs:element ref="InnerPack" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="LineQty">
+		<xs:sequence>
+			<xs:sequence minOccurs="0">
+				<xs:element ref="OrderQty"/>
+				<xs:element ref="OrderQtyUOM"/>
+			</xs:sequence>
+			<xs:element ref="UnitPrice" minOccurs="0"/>
+			<xs:element ref="UnitPriceBasis" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="LineShipQty">
+		<xs:sequence>
+			<xs:element ref="ShipQty"/>
+			<xs:element ref="ShipQtyUOM"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="ItemPartInfo">
+		<xs:sequence>
+			<xs:element ref="BuyerPartNumber" minOccurs="0"/>
+			<xs:element ref="VendorPartNumber" minOccurs="0"/>
+			<xs:element ref="ConsumerPackageCode" minOccurs="0"/>
+			<xs:element ref="GTIN" minOccurs="0"/>
+			<xs:element ref="UPCCaseCode" minOccurs="0"/>
+			<xs:element ref="NatlDrugCode" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PartInfo">
+		<xs:sequence>
+			<xs:element ref="PartNumberQualifier1" minOccurs="0"/>
+			<xs:element ref="PartNumber1" minOccurs="0"/>
+			<xs:element ref="PartNumberQualifier2" minOccurs="0"/>
+			<xs:element ref="PartNumber2" minOccurs="0"/>
+			<xs:element ref="PartNumberQualifier3" minOccurs="0"/>
+			<xs:element ref="PartNumber3" minOccurs="0"/>
+			<xs:element ref="PartNumberQualifier4" minOccurs="0"/>
+			<xs:element ref="PartNumber4" minOccurs="0"/>
+			<xs:element ref="RetailInformation" minOccurs="0"/>
+			<xs:element ref="PartDescription1" minOccurs="0"/>
+			<xs:element ref="PartDescription2" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="PartNumbers">
+		<xs:sequence>
+			<xs:element ref="PartNumberQualifier1" minOccurs="0"/>
+			<xs:element ref="PartNumber1" minOccurs="0"/>
+			<xs:element ref="PartNumberQualifier2" minOccurs="0"/>
+			<xs:element ref="PartNumber2" minOccurs="0"/>
+			<xs:element ref="PartNumberQualifier3" minOccurs="0"/>
+			<xs:element ref="PartNumber3" minOccurs="0"/>
+			<xs:element ref="PartNumberQualifier4" minOccurs="0"/>
+			<xs:element ref="PartNumber4" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="ProductData">
+		<xs:sequence>
+			<xs:element ref="ProductSizeCode" minOccurs="0"/>
+			<xs:element ref="ProductSizeDescription" minOccurs="0"/>
+			<xs:element ref="ProductColorCode" minOccurs="0"/>
+			<xs:element ref="ProductColorDescription" minOccurs="0"/>
+			<xs:element ref="ProductFabricCode" minOccurs="0"/>
+			<xs:element ref="ProductFabricDescription" minOccurs="0"/>
+			<xs:element ref="ProductProcessCode" minOccurs="0"/>
+			<xs:element ref="ProductProcessDescription" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="FirstRecordID">
+		<xs:sequence>
+			<xs:element ref="TradingPartnerId"/>
+			<!-- <xs:element ref="sipdocid"/>  -->
+			<xs:choice>
+				<xs:element ref="DocumentId"/>
+				<xs:element ref="InvoiceNumber"/>
+				<xs:element ref="ShipmentIdentification"/>
+				<xs:element ref="PurchaseOrderNumber"/>
+				<xs:element ref="CatalogNumber"/>
+				<xs:element ref="CreditDebitNumber"/>
+				<xs:element ref="DepositorOrderNumber"/>
+				<xs:element ref="ReportStartDate"/>
+			</xs:choice>
+			<xs:element ref="RecordType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="RecordID">
+		<xs:sequence>
+			<xs:element ref="TradingPartnerId" minOccurs="0"/>
+			<!--<xs:element ref="sipdocid" minOccurs="0"/> -->
+			<xs:choice>
+				<xs:element ref="DocumentId" minOccurs="0"/>
+				<xs:element ref="InvoiceNumber" minOccurs="0"/>
+				<xs:element ref="ReportStartDate" minOccurs="0"/>
+				<xs:element ref="CatalogNumber" minOccurs="0"/>
+				<xs:element ref="ShipmentIdentification" minOccurs="0"/>
+				<xs:element ref="PurchaseOrderNumber" minOccurs="0"/>
+				<xs:element ref="CreditDebitNumber" minOccurs="0"/>
+				<xs:element ref="DepositorOrderNumber" minOccurs="0"/>
+			</xs:choice>
+			<xs:element ref="RecordType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="Terms">
+		<xs:sequence>
+			<xs:element ref="TermsType" minOccurs="0"/>
+			<xs:element ref="TermsBasisDateCode" minOccurs="0"/>
+			<xs:element ref="TermsDiscountPercentage" minOccurs="0"/>
+			<xs:element ref="TermsDiscountDate" minOccurs="0"/>
+			<xs:element ref="TermsDiscountDueDays" minOccurs="0"/>
+			<xs:element ref="TermsNetDueDate" minOccurs="0"/>
+			<xs:element ref="TermsNetDueDays" minOccurs="0"/>
+			<xs:element ref="TermsDiscountAmount" minOccurs="0"/>
+			<xs:element ref="TermsDeferredDueDate" minOccurs="0"/>
+			<xs:element ref="TermsDeferredAmountDue" minOccurs="0"/>
+			<xs:element ref="PercentOfInvoicePayable" minOccurs="0"/>
+			<xs:element ref="TermsDescription" minOccurs="0"/>
+			<xs:element ref="TermsDueDay" minOccurs="0"/>
+			<xs:element ref="TermsStartDate" minOccurs="0"/>
+			<xs:element ref="TermsDueDateQual" minOccurs="0"/>
+			<xs:element ref="AmountSubjectToDiscount" minOccurs="0"/>
+			<xs:element ref="InstallmentAmountDue" minOccurs="0"/>
+			<xs:element ref="InstallmentGroupIndicator" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<!-- ====================== common record elements ========================= -->
+	<!-- Meta record definition -->
+	<xs:element name="Meta">
+		<xs:annotation>
+			<xs:documentation>Meta SIP record.  Contains internal information.Need a RecordID for flat file applications.
+					RecordType is set to 'META'.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="sipRecordType">
+					<xs:sequence>
+						<xs:element ref="SenderUniqueID" minOccurs="0"/>
+						<xs:element ref="SenderCompanyName" minOccurs="0"/>
+						<xs:element ref="ReceiverUniqueID" minOccurs="0"/>
+						<xs:element ref="ReceiverCompanyName" minOccurs="0"/>
+						<xs:element ref="IsDropShip" minOccurs="0"/>
+						<xs:element ref="InterchangeControlNumber" minOccurs="0"/>
+						<xs:element ref="GroupControlIdentifier" minOccurs="0"/>
+						<xs:element ref="GroupControlNumber" minOccurs="0"/>
+						<xs:element ref="DocumentControlIdentifier" minOccurs="0"/>
+						<xs:element ref="DocumentControlNumber" minOccurs="0"/>
+						<xs:element ref="InterchangeSenderID" minOccurs="0"/>
+						<xs:element ref="InterchangeReceiverID" minOccurs="0"/>
+						<xs:element ref="GroupSenderID" minOccurs="0"/>
+						<xs:element ref="GroupReceiverID" minOccurs="0"/>
+						<!--Part BatchPart of BatchTotal-->
+						<xs:element ref="BatchPart" minOccurs="0"/>
+						<!--Part BatchPart of BatchTotal-->
+						<xs:element ref="BatchTotal" minOccurs="0"/>
+						<!--Optional Unique ID for the overall batch-->
+						<xs:element ref="BatchID" minOccurs="0"/>
+						<xs:element ref="Comments" minOccurs="0"/>
+						<xs:element ref="Validation" minOccurs="0"/>
+						<xs:element ref="OrderManagement" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SenderUniqueID" type="xs:int">
+		<xs:annotation>
+			<xs:documentation>Company UID of sender.  “SenderKey” JMS header in DC4</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="SenderCompanyName" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Company Name of sender.  “SenderName” JMS header in DC4</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ReceiverUniqueID" type="xs:int">
+		<xs:annotation>
+			<xs:documentation>Company UID of receiver.  “ReceiverKey” JMS header in DC4</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ReceiverCompanyName" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Company Name of receiver.  “ReceiverName” JMS header in DC4</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="IsDropShip" type="xs:boolean">
+		<xs:annotation>
+			<xs:documentation>Flag set to “true” if the document is a drop ship document, otherwise “false”</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="InterchangeControlNumber" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>ISA control number from the FEDS I record.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GroupControlIdentifier" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Code identifying a group of application related transaction sets.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GroupControlNumber" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Group control number from FEDS F record.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="DocumentControlIdentifier" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Code uniquely identifying a Transaction Set.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="DocumentControlNumber" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Document control number from FEDS T record.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="InterchangeSenderID" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>ISA sender ID, would come in on C record, maybe CINTSENDER=XXXXXX</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="InterchangeReceiverID" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>ISA receiver ID, would come in on C record CINTRECEIVER=XXXXXX</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GroupSenderID" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Group sender ID, would come in on C record CGRPSENDER=XXXXXX</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="GroupReceiverID" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Group receiver ID, would come in on C record CGRPRECEIVER=XXXXXX</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="BatchPart" type="xs:int">
+		<xs:annotation>
+			<xs:documentation>CDefine use later</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="BatchTotal" type="xs:int">
+		<xs:annotation>
+			<xs:documentation>Define use later</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="BatchID" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Define use later</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Comments" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Key value pairs indicating custom operation.  Usage is similar to FEDS usage of 'comments'</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Validation" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Key value pairs indicating exceptions to or additions to validating data</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<!-- FOBRelatedInstruction record definition -->
+	<xs:element name="FOBRelatedInstruction">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="sipRecordType">
+					<xs:sequence>
+						<xs:group ref="FOBInstructionInfo"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<!-- Address record definition -->
+	<xs:element name="Address">
+		<xs:annotation>
+			<xs:documentation>Address SIP record (HA, LA, etc.).  Corresponds to EDI N1-N2-N3-N4 segments, plus contact info.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="sipRecordType">
+					<xs:sequence>
+						<xs:element ref="AddressTypeCode"/>
+						<xs:element ref="LocationCodeQualifier" minOccurs="0"/>
+						<xs:element ref="AddressLocationNumber" minOccurs="0"/>
+						<xs:element ref="AddressName" minOccurs="0"/>
+						<xs:element ref="AddressAlternateName" minOccurs="0"/>
+						<xs:element ref="Address1" minOccurs="0"/>
+						<xs:element ref="Address2" minOccurs="0"/>
+						<xs:element ref="Address3" minOccurs="0"/>
+						<xs:element ref="Address4" minOccurs="0"/>
+						<xs:element ref="City" minOccurs="0"/>
+						<xs:element ref="State" minOccurs="0"/>
+						<xs:element ref="PostalCode" minOccurs="0"/>
+						<xs:element ref="Country" minOccurs="0"/>
+						<xs:element ref="ContactName" minOccurs="0"/>
+						<xs:element ref="ContactPhone" minOccurs="0"/>
+						<xs:element ref="ContactFax" minOccurs="0"/>
+						<xs:element ref="ContactEmail" minOccurs="0"/>
+						<xs:element ref="AddressTaxIdNumber" minOccurs="0"/>
+						<xs:element ref="AddressTaxExemptNumber" minOccurs="0"/>
+						<xs:element ref="AddressAlternateName2" minOccurs="0"/>
+						<xs:element ref="Reference" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="Contact" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element ref="Date" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Address1" type="xs:string"/>
+	<xs:element name="Address2" type="xs:string"/>
+	<xs:element name="Address3" type="xs:string"/>
+	<xs:element name="Address4" type="xs:string"/>
+	<xs:element name="AddressAlternateName" type="xs:string"/>
+	<xs:element name="AddressAlternateName2" type="xs:string"/>
+	<xs:element name="AddressLocationNumber" type="xs:string"/>
+	<xs:element name="AddressName" type="xs:string"/>
+	<xs:element name="AddressTaxExemptNumber" type="xs:string"/>
+	<xs:element name="AddressTaxIdNumber" type="xs:string"/>
+	<xs:element name="AddressTypeCode" type="xs:string"/>
+	<xs:element name="City" type="xs:string"/>
+	<xs:element name="ContactName" type="xs:string"/>
+	<xs:element name="ContactEmail" type="xs:string"/>
+	<xs:element name="ContactFax" type="xs:string"/>
+	<xs:element name="ContactPhone" type="xs:string"/>
+	<xs:element name="Country" type="xs:string"/>
+	<xs:element name="LocationCodeQualifier" type="xs:string"/>
+	<xs:element name="PostalCode" type="xs:string"/>
+	<xs:element name="State" type="xs:string"/>
+	<!-- ChargesAllowances record definition -->
+	<xs:element name="ChargesAllowances" type="ChargesAllowancesType"/>
+	<xs:complexType name="ChargesAllowancesType">
+		<xs:annotation>
+			<xs:documentation>Charges and allowances SIP record (HC, LC, etc.).  Corresponds to EDI SAC segment.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="AllowChrgIndicator" minOccurs="0"/>
+					<xs:element ref="AllowChrgCode" minOccurs="0"/>
+					<xs:element ref="AllowChrgAgencyCode" minOccurs="0"/>
+					<xs:element ref="AllowChrgAgency" minOccurs="0"/>
+					<xs:element ref="AllowChrgAmt" minOccurs="0"/>
+					<xs:element ref="AllowChrgPercentBasis" minOccurs="0"/>
+					<xs:element ref="AllowChrgPercent" minOccurs="0"/>
+					<xs:element ref="AllowChrgRate" minOccurs="0"/>
+					<xs:element ref="AllowChrgQtyUOM" minOccurs="0"/>
+					<xs:element ref="AllowChrgQty" minOccurs="0"/>
+					<xs:element ref="AllowChrgHandlingCode" minOccurs="0"/>
+					<xs:element ref="ReferenceIdentification" minOccurs="0"/>
+					<xs:element ref="AllowChrgHandlingDescription" minOccurs="0"/>
+					<xs:element ref="OptionNumber" minOccurs="0"/>
+					<xs:element ref="ExceptionNumber" minOccurs="0"/>
+					<xs:element ref="AllowChrgQty2" minOccurs="0"/>
+					<xs:element ref="LanguageCode" minOccurs="0"/>
+					<xs:element ref="Tax" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="AllowChrgAgency" type="xs:string"/>
+	<xs:element name="AllowChrgAgencyCode" type="xs:string"/>
+	<xs:element name="AllowChrgAmt" type="xs:decimal"/>
+	<xs:element name="AllowChrgCode" type="xs:string"/>
+	<xs:element name="AllowChrgHandlingCode" type="xs:string"/>
+	<xs:element name="AllowChrgHandlingDescription" type="xs:string"/>
+	<xs:element name="AllowChrgIndicator" type="xs:string"/>
+	<xs:element name="AllowChrgPercent" type="xs:decimal"/>
+	<xs:element name="AllowChrgPercentBasis" type="xs:string"/>
+	<xs:element name="AllowChrgRate" type="xs:decimal"/>
+	<xs:element name="AllowChrgQty" type="xs:decimal"/>
+	<xs:element name="AllowChrgQtyUOM" type="xs:string"/>
+	<xs:element name="ReferenceIdentification" type="xs:string"/>
+	<xs:element name="OptionNumber" type="xs:string"/>
+	<xs:element name="ExceptionNumber" type="xs:string"/>
+	<xs:element name="AllowChrgQty2" type="xs:decimal"/>
+	<!-- Contact record definition -->
+	<xs:element name="Contact" type="ContactType"/>
+	<xs:complexType name="ContactType">
+		<xs:annotation>
+			<xs:documentation>Contact SIP record (CH, CL, etc.).  Corresponds to EDI PER segment.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="ContactTypeCode"/>
+					<xs:element ref="ContactName" minOccurs="0"/>
+					<xs:element ref="ContactPhone" minOccurs="0"/>
+					<xs:element ref="ContactFax" minOccurs="0"/>
+					<xs:element ref="ContactEmail" minOccurs="0"/>
+					<xs:element ref="ContactReference" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ContactTypeCode" type="xs:string"/>
+	<xs:element name="ContactReference" type="xs:string"/>
+	<!-- Notes record definition -->
+	<xs:element name="Notes">
+		<xs:annotation>
+			<xs:documentation>Notes SIP record (HN, LN, etc.).  Use for free-form text comments and instructions.  Corresponds to EDI MSG segment, plus language and format information used by EDIFACT.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="sipRecordType">
+					<xs:sequence>
+						<xs:element ref="NoteInformationField"/>
+						<!-- the following are added for UN/EDIFACT -->
+						<xs:element ref="LanguageCode" minOccurs="0"/>
+						<xs:element ref="NoteFormatCode" minOccurs="0"/>
+						<xs:element ref="NoteFunctionCode" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NoteFormatCode" type="xs:string"/>
+	<xs:element name="NoteFunctionCode" type="xs:string"/>
+	<xs:element name="NoteInformationField" type="xs:string"/>
+	<!-- Reference record definition -->
+	<xs:element name="Reference">
+		<xs:annotation>
+			<xs:documentation>Reference number and qualfier SIP record (HR, etc.).  Corresponds to EDI REF segment.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="sipRecordType">
+					<xs:sequence>
+						<xs:element ref="ReferenceQual" minOccurs="0"/>
+						<xs:element ref="ReferenceID" minOccurs="0"/>
+						<xs:element ref="Description" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ReferenceQual" type="xs:string"/>
+	<!-- Date record definition -->
+	<xs:element name="Date">
+		<xs:annotation>
+			<xs:documentation>Generic date and time SIP record (DH, etc.).  Corresponds to EDI DTM segment.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="sipRecordType">
+					<xs:sequence>
+						<xs:element ref="DateTimeQualifier1"/>
+						<xs:element ref="Date1"/>
+						<xs:element ref="Time1" minOccurs="0"/>
+						<xs:element ref="TimeCode1" minOccurs="0"/>
+						<xs:element ref="DateTimeFormQualifier1" minOccurs="0"/>
+						<xs:element ref="DateTimePeriod" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TimeCode1" type="xs:string"/>
+	<xs:element name="DateTimeFormQualifier1" type="xs:string"/>
+	<xs:element name="DateTimePeriod" type="xs:string"/>
+	<!-- Miscellaneous record definition -->
+	<xs:element name="Miscellaneous">
+		<xs:annotation>
+			<xs:documentation>Use for miscellaneous descriptions and dates.  Replaces flex fields of earlier SIP versions.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="sipRecordType">
+					<xs:sequence>
+						<xs:element ref="Qualifier1" minOccurs="0"/>
+						<xs:element ref="Description1" minOccurs="0"/>
+						<xs:element ref="Qualifier2" minOccurs="0"/>
+						<xs:element ref="Description2" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Qualifier1" type="xs:string"/>
+	<xs:element name="Description1" type="xs:string"/>
+	<xs:element name="Qualifier2" type="xs:string"/>
+	<xs:element name="Description2" type="xs:string"/>
+	<!-- PaymentTerms record definition -->
+	<xs:element name="PaymentTerms">
+		<xs:annotation>
+			<xs:documentation>Payment terms SIP record (HT, LT, etc.).  Corresponds to EDI ITD segment.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="sipRecordType">
+					<xs:sequence>
+						<xs:group ref="Terms"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<!-- ShipDestinationQty element -->
+	<xs:element name="ShipDestinationQty">
+		<xs:annotation>
+			<xs:documentation>Ship destination and quantity SIP record (LD).  Describes item quantities to be sent to each location.  Corresponds to EDI SDQ segment.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="sipRecordType">
+					<xs:sequence>
+						<xs:element ref="Destination1"/>
+						<xs:element ref="Qty1"/>
+						<xs:sequence minOccurs="0">
+							<xs:element ref="Destination2"/>
+							<xs:element ref="Qty2"/>
+						</xs:sequence>
+						<xs:sequence minOccurs="0">
+							<xs:element ref="Destination3"/>
+							<xs:element ref="Qty3"/>
+						</xs:sequence>
+						<xs:sequence minOccurs="0">
+							<xs:element ref="Destination4"/>
+							<xs:element ref="Qty4"/>
+						</xs:sequence>
+						<xs:sequence minOccurs="0">
+							<xs:element ref="Destination5"/>
+							<xs:element ref="Qty5"/>
+						</xs:sequence>
+						<xs:sequence minOccurs="0">
+							<xs:element ref="Destination6"/>
+							<xs:element ref="Qty6"/>
+						</xs:sequence>
+						<xs:sequence minOccurs="0">
+							<xs:element ref="Destination7"/>
+							<xs:element ref="Qty7"/>
+						</xs:sequence>
+						<xs:sequence minOccurs="0">
+							<xs:element ref="Destination8"/>
+							<xs:element ref="Qty8"/>
+						</xs:sequence>
+						<xs:sequence minOccurs="0">
+							<xs:element ref="Destination9"/>
+							<xs:element ref="Qty9"/>
+						</xs:sequence>
+						<xs:sequence minOccurs="0">
+							<xs:element ref="Destination10"/>
+							<xs:element ref="Qty10"/>
+						</xs:sequence>
+						<xs:element ref="QtyUOM"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Destination1" type="xs:string"/>
+	<xs:element name="Destination2" type="xs:string"/>
+	<xs:element name="Destination3" type="xs:string"/>
+	<xs:element name="Destination4" type="xs:string"/>
+	<xs:element name="Destination5" type="xs:string"/>
+	<xs:element name="Destination6" type="xs:string"/>
+	<xs:element name="Destination7" type="xs:string"/>
+	<xs:element name="Destination8" type="xs:string"/>
+	<xs:element name="Destination9" type="xs:string"/>
+	<xs:element name="Destination10" type="xs:string"/>
+	<xs:element name="Qty1" type="xs:decimal"/>
+	<xs:element name="Qty2" type="xs:decimal"/>
+	<xs:element name="Qty3" type="xs:decimal"/>
+	<xs:element name="Qty4" type="xs:decimal"/>
+	<xs:element name="Qty5" type="xs:decimal"/>
+	<xs:element name="Qty6" type="xs:decimal"/>
+	<xs:element name="Qty7" type="xs:decimal"/>
+	<xs:element name="Qty8" type="xs:decimal"/>
+	<xs:element name="Qty9" type="xs:decimal"/>
+	<xs:element name="Qty10" type="xs:decimal"/>
+	<xs:element name="QtyUOM" type="xs:string"/>
+	<!-- Schedule element -->
+	<xs:element name="Schedule">
+		<xs:annotation>
+			<xs:documentation>Shipping schedule SIP record (SR, etc.).  Describes schedule for shipping and delivery of items.  Corresponds to EDI SCH segment.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="sipRecordType">
+					<xs:sequence>
+						<xs:element ref="Qty1"/>
+						<xs:element ref="Qty1UOM"/>
+						<xs:element ref="DateTimeQualifier1"/>
+						<xs:element ref="Date1"/>
+						<xs:sequence minOccurs="0">
+							<xs:sequence minOccurs="0">
+								<xs:element ref="Qty2"/>
+								<xs:element name="Qty2UOM"/>
+							</xs:sequence>
+							<xs:element ref="DateTimeQualifier2"/>
+							<xs:element ref="Date2"/>
+						</xs:sequence>
+						<xs:sequence minOccurs="0">
+							<xs:element ref="Qty3"/>
+							<xs:element ref="Qty3UOM"/>
+							<xs:element ref="DateTimeQualifier3"/>
+							<xs:element ref="Date3"/>
+						</xs:sequence>
+						<xs:sequence minOccurs="0">
+							<xs:element ref="Qty4"/>
+							<xs:element ref="Qty4UOM"/>
+							<xs:element ref="DateTimeQualifier4"/>
+							<xs:element ref="Date4"/>
+						</xs:sequence>
+						<xs:sequence minOccurs="0">
+							<xs:element ref="Qty5"/>
+							<xs:element ref="Qty5UOM"/>
+							<xs:element ref="DateTimeQualifier5"/>
+							<xs:element ref="Date5"/>
+						</xs:sequence>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Date4" type="xs:date"/>
+	<xs:element name="Date5" type="xs:date"/>
+	<xs:element name="DateTimeQualifier1" type="xs:string"/>
+	<xs:element name="DateTimeQualifier2" type="xs:string"/>
+	<xs:element name="DateTimeQualifier3" type="xs:string"/>
+	<xs:element name="DateTimeQualifier4" type="xs:string"/>
+	<xs:element name="DateTimeQualifier5" type="xs:string"/>
+	<xs:element name="Qty1UOM" type="xs:string"/>
+	<xs:element name="Qty2UOM" type="xs:string"/>
+	<xs:element name="Qty3UOM" type="xs:string"/>
+	<xs:element name="Qty4UOM" type="xs:string"/>
+	<xs:element name="Qty5UOM" type="xs:string"/>
+	<!-- Tax element -->
+	<xs:element name="Tax">
+		<xs:annotation>
+			<xs:documentation>Generic tax SIP record (TX, XL, etc).  Corresponds to EDI TXI segment.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="sipRecordType">
+					<xs:sequence>
+						<xs:element ref="TaxTypeCode" minOccurs="0"/>
+						<xs:element ref="TaxAmount" minOccurs="0"/>
+						<xs:element ref="TaxPercent" minOccurs="0"/>
+						<xs:element ref="JurisdictionQual" minOccurs="0"/>
+						<xs:element ref="JurisdictionCode" minOccurs="0"/>
+						<xs:element ref="TaxExemptCode" minOccurs="0"/>
+						<xs:element ref="RelationshipCode" minOccurs="0"/>
+						<xs:element ref="PctDollarBasis" minOccurs="0"/>
+						<xs:element ref="TaxID" minOccurs="0"/>
+						<xs:element ref="AssignedID" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AssignedID" type="xs:string"/>
+	<xs:element name="JurisdictionCode" type="xs:string"/>
+	<xs:element name="JurisdictionQual" type="xs:string"/>
+	<xs:element name="PctDollarBasis" type="xs:string"/>
+	<xs:element name="RelationshipCode" type="xs:string"/>
+	<xs:element name="TaxAmount" type="xs:string"/>
+	<xs:element name="TaxExemptCode" type="xs:string"/>
+	<xs:element name="TaxID" type="xs:string"/>
+	<xs:element name="TaxPercent" type="xs:string"/>
+	<xs:element name="TaxTypeCode" type="xs:string"/>
+	<!--ProductOrItemDescription elements -->
+	<xs:element name="ProductOrItemDescription">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="sipRecordType">
+					<xs:sequence>
+						<xs:element ref="ItemDescriptionType" minOccurs="0"/>
+						<xs:element ref="ProductCharacteristicCode" minOccurs="0"/>
+						<xs:element ref="AgencyQualifierCode" minOccurs="0"/>
+						<xs:element ref="ProductDescriptionCode" minOccurs="0"/>
+						<xs:element ref="ProductDescription" minOccurs="0"/>
+						<xs:element ref="SurfaceLayerPositionCode" minOccurs="0"/>
+						<xs:element ref="SourceSubqualifier" minOccurs="0"/>
+						<xs:element ref="YesOrNoResponse" minOccurs="0"/>
+						<xs:element ref="LanguageCode" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ItemDescriptionType" type="xs:string"/>
+	<xs:element name="ProductCharacteristicCode" type="xs:string"/>
+	<xs:element name="AgencyQualifierCode" type="xs:string"/>
+	<xs:element name="ProductDescription" type="xs:string"/>
+	<xs:element name="ProductDescriptionCode" type="xs:string"/>
+	<xs:element name="SurfaceLayerPositionCode" type="xs:string"/>
+	<xs:element name="SourceSubqualifier" type="xs:string"/>
+	<xs:element name="YesOrNoResponse" type="xs:string"/>
+	<!-- CarrierQuantityAndWeightDetail  elements -->
+	<xs:element name="CarrierQuantityAndWeightDetail">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="sipRecordType">
+					<xs:sequence>
+						<xs:element ref="ShipmentQtyPackingCode" minOccurs="0"/>
+						<xs:element ref="ShipmentLadingQuantity" minOccurs="0"/>
+						<xs:element ref="CommodityCodeQualifier" minOccurs="0"/>
+						<xs:element ref="CommodityCode" minOccurs="0"/>
+						<xs:element ref="LadingDescription" minOccurs="0"/>
+						<xs:element ref="GrossWeightQualifier" minOccurs="0"/>
+						<xs:element ref="ShipmentWeight" minOccurs="0"/>
+						<xs:element ref="ShipmentWeightUOM" minOccurs="0"/>
+						<xs:element ref="Volume" minOccurs="0"/>
+						<xs:element ref="VolumeUOM" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ShipmentQtyPackingCode">
+		<xs:annotation>
+			<xs:documentation> Code identifying the type of packaging; Part 1: Packaging Form, Part 2: Packaging Material; if the Data Element is used, then Part 1 is always required
+        </xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="ShipmentLadingQuantity">
+		<xs:annotation>
+			<xs:documentation> Number of units (pieces) of the lading commodity
+        </xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:int">
+				<xs:totalDigits value="7"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="CommodityCodeQualifier" type="xs:string"/>
+	<xs:element name="CommodityCode">
+		<xs:annotation>
+			<xs:documentation> Code describing a commodity or group of commodities
+        </xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="LadingDescription" type="xs:string"/>
+	<xs:element name="GrossWeightQualifier" type="xs:string"/>
+	<xs:element name="ShipmentWeight" type="xs:decimal"/>
+	<xs:element name="ShipmentWeightUOM" type="xs:string"/>
+	<xs:element name="VolumeUOM" type="xs:string"/>
+	<!-- CarrierEquipmentDetail  elements -->
+	<xs:element name="CarrierEquipmentDetail">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="sipRecordType">
+					<xs:sequence>
+						<xs:element ref="EquipmentDescriptionCode" minOccurs="0"/>
+						<xs:element ref="CarrierEquipmentInitial" minOccurs="0"/>
+						<xs:element ref="CarrierEquipmentNumber" minOccurs="0"/>
+						<xs:element ref="WeightQualifier" minOccurs="0"/>
+						<xs:element ref="Weight" minOccurs="0"/>
+						<xs:element ref="UnitOfMeasure" minOccurs="0"/>
+						<xs:element ref="OwnershipCode" minOccurs="0"/>
+						<xs:element ref="SealStatusCode" minOccurs="0"/>
+						<xs:element ref="SealNumber" minOccurs="0"/>
+						<xs:element ref="EquipmentType" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EquipmentDescriptionCode">
+		<xs:annotation>
+			<xs:documentation> Code identifying type of equipment used for shipment
+        </xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="CarrierEquipmentInitial">
+		<xs:annotation>
+			<xs:documentation> Prefix or alphabetic part of an equipment unit's identifying number
+        </xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="CarrierEquipmentNumber">
+		<xs:annotation>
+			<xs:documentation> Sequencing or serial part of an equipment unit's identifying number (pure numeric form for equipment number is preferred)
+        </xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="WeightQualifier" type="xs:string"/>
+	<xs:element name="UnitOfMeasure" type="xs:string"/>
+	<xs:element name="OwnershipCode" type="xs:string"/>
+	<xs:element name="SealStatusCode" type="xs:string"/>
+	<xs:element name="SealNumber">
+		<xs:annotation>
+			<xs:documentation> Reference information as defined for a particular Transaction Set or as specified by the Reference Identification Qualifier
+        </xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="EquipmentType" type="xs:string"/>
+	<!-- CarrierRoutingDetail elements -->
+	<xs:element name="CarrierRoutingDetail">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="sipRecordType">
+					<xs:sequence>
+						<xs:element ref="RoutingSequenceCode" minOccurs="0"/>
+						<xs:element ref="IdentificationCodeQualifier" minOccurs="0"/>
+						<xs:element ref="CarrierAlphaCode" minOccurs="0"/>
+						<xs:element ref="CarrierTransMethodCode" minOccurs="0"/>
+						<xs:element ref="CarrierRouting" minOccurs="0"/>
+						<xs:element ref="ShipmentOrderStatusCode" minOccurs="0"/>
+						<xs:element ref="LocationQualifier" minOccurs="0"/>
+						<xs:element ref="LocationID" minOccurs="0"/>
+						<xs:element ref="TransitDirectionCode" minOccurs="0"/>
+						<xs:element ref="TransitTimeQual" minOccurs="0"/>
+						<xs:element ref="TransitTime" minOccurs="0"/>
+						<xs:element ref="ServiceLevelCode1" minOccurs="0"/>
+						<xs:element ref="ServiceLevelCode2" minOccurs="0"/>
+						<xs:element ref="ServiceLevelCode3" minOccurs="0"/>
+						<xs:element ref="CountryCode" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RoutingSequenceCode" type="xs:string"/>
+	<xs:element name="IdentificationCodeQualifier" type="xs:string"/>
+	<xs:element name="ShipmentOrderStatusCode">
+		<xs:annotation>
+			<xs:documentation> Code indicating the status of an order or shipment or the disposition of any difference 
+                                              between the quantity ordered and the quantity shipped for a line item or transaction
+        </xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="1"/>
+				<xs:maxLength value="20"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="LocationQualifier" type="xs:string"/>
+	<xs:element name="LocationID" type="xs:string"/>
+	<xs:element name="TransitDirectionCode" type="xs:string"/>
+	<xs:element name="TransitTimeQual" type="xs:string"/>
+	<xs:element name="TransitTime" type="xs:string"/>
+	<xs:element name="ServiceLevelCode1" type="xs:string"/>
+	<xs:element name="ServiceLevelCode2" type="xs:string"/>
+	<xs:element name="ServiceLevelCode3" type="xs:string"/>
+	<xs:element name="CountryCode" type="xs:string"/>
+	<!-- NRFStandardColorAndSize elements -->
+	<xs:element name="NRFStandardColorAndSize">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="sipRecordType">
+					<xs:sequence>
+						<xs:element ref="NRFColorCode" minOccurs="0"/>
+						<xs:element ref="ColorCategoryName" minOccurs="0"/>
+						<xs:element ref="ColorPrimaryDescription" minOccurs="0"/>
+						<xs:element ref="NRFSizeCode" minOccurs="0"/>
+						<xs:element ref="SizeCategoryName" minOccurs="0"/>
+						<xs:element ref="SizePrimaryDescription" minOccurs="0"/>
+						<xs:element ref="SizeSecondaryDescription" minOccurs="0"/>
+						<xs:element ref="SizeTableName" minOccurs="0"/>
+						<xs:element ref="SizeHeading1" minOccurs="0"/>
+						<xs:element ref="SizeHeading2" minOccurs="0"/>
+						<xs:element ref="SizeHeading3" minOccurs="0"/>
+						<xs:element ref="SizeHeading4" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NRFColorCode">
+		<xs:annotation>
+			<xs:documentation> A common language for product color that supplements the information conveyed by UPC codes.
+        </xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="1"/>
+				<xs:maxLength value="3"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="ColorCategoryName">
+		<xs:annotation>
+			<xs:documentation> A name describing a group of associated colors.
+        </xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="1"/>
+				<xs:maxLength value="255"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="ColorPrimaryDescription">
+		<xs:annotation>
+			<xs:documentation> Human readable text defining the color code.
+        </xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="1"/>
+				<xs:maxLength value="255"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="NRFSizeCode">
+		<xs:annotation>
+			<xs:documentation> A common language for product size that supplements the information conveyed by UPC codes.
+        </xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="1"/>
+				<xs:maxLength value="3"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="SizeCategoryName">
+		<xs:annotation>
+			<xs:documentation> A name describing a group of associated sizes.
+        </xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="1"/>
+				<xs:maxLength value="255"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="SizePrimaryDescription">
+		<xs:annotation>
+			<xs:documentation> Human readable text defining the size code.
+        </xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="1"/>
+				<xs:maxLength value="255"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="SizeSecondaryDescription">
+		<xs:annotation>
+			<xs:documentation> Additional human readable text defining the size code.
+        </xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="1"/>
+				<xs:maxLength value="255"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="SizeTableName" type="xs:string"/>
+	<xs:element name="SizeHeading1" type="xs:string"/>
+	<xs:element name="SizeHeading2" type="xs:string"/>
+	<xs:element name="SizeHeading3" type="xs:string"/>
+	<xs:element name="SizeHeading4" type="xs:string"/>
+	<!-- CarrierTransportationDetail elements -->
+	<xs:element name="CarrierTransportationDetail">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="sipRecordType">
+					<xs:sequence>
+						<xs:element ref="CarrierTransMethodCode" minOccurs="0"/>
+						<xs:element ref="CarrierEquipmentInitial" minOccurs="0"/>
+						<xs:element ref="CarrierEquipmentNumber" minOccurs="0"/>
+						<xs:element ref="CarrierAlphaCode" minOccurs="0"/>
+						<xs:element ref="CarrierRouting" minOccurs="0"/>
+						<xs:element ref="ShipmentStatusCode" minOccurs="0"/>
+						<xs:element ref="CarrierProNumber" minOccurs="0"/>
+						<xs:element ref="BillOfLadingNumber" minOccurs="0"/>
+						<xs:element ref="ReferenceQual" minOccurs="0"/>
+						<xs:element ref="ReferenceID" minOccurs="0"/>
+						<xs:element ref="ServiceLevelCode" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ShipmentStatusCode" type="xs:string"/>
+	<xs:element name="ServiceLevelCode">
+		<xs:annotation>
+			<xs:documentation>Code indicating the level of transportation service or the billing service offered by the transportation carrier 
+        </xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="2"/>
+				<xs:maxLength value="2"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<!-- Flex element -->
+	<xs:element name="Flex" type="FlexType"/>
+	<xs:element name="Flex1" type="FlexType"/>
+	<xs:element name="Flex2" type="FlexType"/>
+	<xs:element name="Flex3" type="FlexType"/>
+	<xs:element name="Flex4" type="FlexType"/>
+	<xs:element name="Flex5" type="FlexType"/>
+	<xs:element name="Flex6" type="FlexType"/>
+	<xs:element name="Flex7" type="FlexType"/>
+	<xs:element name="Flex8" type="FlexType"/>
+	<xs:element name="Flex9" type="FlexType"/>
+	<xs:element name="Flex10" type="FlexType"/>
+	<xs:element name="Flex11" type="FlexType"/>
+	<xs:element name="Flex12" type="FlexType"/>
+	<xs:element name="Flex13" type="FlexType"/>
+	<xs:element name="Flex14" type="FlexType"/>
+	<xs:element name="Flex15" type="FlexType"/>
+	<xs:element name="Flex16" type="FlexType"/>
+	<xs:element name="Flex17" type="FlexType"/>
+	<xs:element name="Flex18" type="FlexType"/>
+	<xs:element name="Flex19" type="FlexType"/>
+	<xs:element name="Flex20" type="FlexType"/>
+	<xs:element name="Flex21" type="FlexType"/>
+	<xs:element name="Flex22" type="FlexType"/>
+	<xs:element name="Flex23" type="FlexType"/>
+	<xs:element name="Flex24" type="FlexType"/>
+	<xs:element name="Flex25" type="FlexType"/>
+	<xs:element name="AdditionalFlex" type="AdditionalFlexType"/>
+	<xs:element name="AdditionalFlex1" type="AdditionalFlexType"/>
+	<xs:element name="AdditionalFlex2" type="AdditionalFlexType"/>
+	<xs:element name="AdditionalFlex3" type="AdditionalFlexType"/>
+	<xs:element name="AdditionalFlex4" type="AdditionalFlexType"/>
+	<xs:element name="AdditionalFlex5" type="AdditionalFlexType"/>
+	<xs:element name="AdditionalFlex6" type="AdditionalFlexType"/>
+	<xs:element name="AdditionalFlex7" type="AdditionalFlexType"/>
+	<xs:element name="AdditionalFlex8" type="AdditionalFlexType"/>
+	<xs:element name="AdditionalFlex9" type="AdditionalFlexType"/>
+	<xs:element name="AdditionalFlex10" type="AdditionalFlexType"/>
+	<xs:element name="AdditionalFlex11" type="AdditionalFlexType"/>
+	<xs:element name="AdditionalFlex12" type="AdditionalFlexType"/>
+	<xs:element name="AdditionalFlex13" type="AdditionalFlexType"/>
+	<xs:element name="AdditionalFlex14" type="AdditionalFlexType"/>
+	<xs:element name="AdditionalFlex15" type="AdditionalFlexType"/>
+	<xs:element name="AdditionalFlex16" type="AdditionalFlexType"/>
+	<xs:element name="AdditionalFlex17" type="AdditionalFlexType"/>
+	<xs:element name="AdditionalFlex18" type="AdditionalFlexType"/>
+	<xs:element name="AdditionalFlex19" type="AdditionalFlexType"/>
+	<xs:element name="AdditionalFlex20" type="AdditionalFlexType"/>
+	<xs:element name="AdditionalFlex21" type="AdditionalFlexType"/>
+	<xs:element name="AdditionalFlex22" type="AdditionalFlexType"/>
+	<xs:element name="AdditionalFlex23" type="AdditionalFlexType"/>
+	<xs:element name="AdditionalFlex24" type="AdditionalFlexType"/>
+	<xs:element name="AdditionalFlex25" type="AdditionalFlexType"/>
+	<xs:complexType name="FlexType">
+		<xs:annotation>
+			<xs:documentation>Record for groups and elements not used in standard SIP.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="FlexRecordDescription" minOccurs="0"/>
+					<xs:element ref="FlexFieldDescription1" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue1" minOccurs="0"/>
+					<xs:element ref="AdditionalFlex1" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Flex1" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FlexFieldDescription2" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue2" minOccurs="0"/>
+					<xs:element ref="AdditionalFlex2" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Flex2" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FlexFieldDescription3" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue3" minOccurs="0"/>
+					<xs:element ref="AdditionalFlex3" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Flex3" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FlexFieldDescription4" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue4" minOccurs="0"/>
+					<xs:element ref="AdditionalFlex4" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Flex4" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FlexFieldDescription5" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue5" minOccurs="0"/>
+					<xs:element ref="AdditionalFlex5" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Flex5" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FlexFieldDescription6" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue6" minOccurs="0"/>
+					<xs:element ref="AdditionalFlex6" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Flex6" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FlexFieldDescription7" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue7" minOccurs="0"/>
+					<xs:element ref="AdditionalFlex7" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Flex7" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FlexFieldDescription8" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue8" minOccurs="0"/>
+					<xs:element ref="AdditionalFlex8" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Flex8" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FlexFieldDescription9" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue9" minOccurs="0"/>
+					<xs:element ref="AdditionalFlex9" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Flex9" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FlexFieldDescription10" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue10" minOccurs="0"/>
+					<xs:element ref="AdditionalFlex10" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Flex10" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FlexFieldDescription11" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue11" minOccurs="0"/>
+					<xs:element ref="AdditionalFlex11" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Flex11" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FlexFieldDescription12" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue12" minOccurs="0"/>
+					<xs:element ref="AdditionalFlex12" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Flex12" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FlexFieldDescription13" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue13" minOccurs="0"/>
+					<xs:element ref="AdditionalFlex13" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Flex13" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FlexFieldDescription14" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue14" minOccurs="0"/>
+					<xs:element ref="AdditionalFlex14" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Flex14" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FlexFieldDescription15" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue15" minOccurs="0"/>
+					<xs:element ref="AdditionalFlex15" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Flex15" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FlexFieldDescription16" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue16" minOccurs="0"/>
+					<xs:element ref="AdditionalFlex16" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Flex16" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FlexFieldDescription17" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue17" minOccurs="0"/>
+					<xs:element ref="AdditionalFlex17" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Flex17" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FlexFieldDescription18" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue18" minOccurs="0"/>
+					<xs:element ref="AdditionalFlex18" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Flex18" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FlexFieldDescription19" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue19" minOccurs="0"/>
+					<xs:element ref="AdditionalFlex19" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Flex19" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FlexFieldDescription20" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue20" minOccurs="0"/>
+					<xs:element ref="AdditionalFlex20" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Flex20" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FlexFieldDescription21" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue21" minOccurs="0"/>
+					<xs:element ref="AdditionalFlex21" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Flex21" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FlexFieldDescription22" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue22" minOccurs="0"/>
+					<xs:element ref="AdditionalFlex22" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Flex22" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FlexFieldDescription23" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue23" minOccurs="0"/>
+					<xs:element ref="AdditionalFlex23" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Flex23" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FlexFieldDescription24" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue24" minOccurs="0"/>
+					<xs:element ref="AdditionalFlex24" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Flex24" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FlexFieldDescription25" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue25" minOccurs="0"/>
+					<xs:element ref="AdditionalFlex25" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Flex25" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Flex" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AdditionalFlexType">
+		<xs:annotation>
+			<xs:documentation>Record for groups and elements not used in standard SIP.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="FlexRecordDescription" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue1" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue2" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue3" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue4" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue5" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue6" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue7" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue8" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue9" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue10" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue11" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue12" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue13" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue14" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue15" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue16" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue17" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue18" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue19" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue20" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue21" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue22" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue23" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue24" minOccurs="0"/>
+					<xs:element ref="FlexFieldValue25" minOccurs="0"/>
+					<xs:element ref="Flex" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="FlexRecordDescription" type="xs:string"/>
+	<xs:element name="FlexFieldDescription1" type="xs:string"/>
+	<xs:element name="FlexFieldDescription2" type="xs:string"/>
+	<xs:element name="FlexFieldDescription3" type="xs:string"/>
+	<xs:element name="FlexFieldDescription4" type="xs:string"/>
+	<xs:element name="FlexFieldDescription5" type="xs:string"/>
+	<xs:element name="FlexFieldDescription6" type="xs:string"/>
+	<xs:element name="FlexFieldDescription7" type="xs:string"/>
+	<xs:element name="FlexFieldDescription8" type="xs:string"/>
+	<xs:element name="FlexFieldDescription9" type="xs:string"/>
+	<xs:element name="FlexFieldDescription10" type="xs:string"/>
+	<xs:element name="FlexFieldDescription11" type="xs:string"/>
+	<xs:element name="FlexFieldDescription12" type="xs:string"/>
+	<xs:element name="FlexFieldDescription13" type="xs:string"/>
+	<xs:element name="FlexFieldDescription14" type="xs:string"/>
+	<xs:element name="FlexFieldDescription15" type="xs:string"/>
+	<xs:element name="FlexFieldDescription16" type="xs:string"/>
+	<xs:element name="FlexFieldDescription17" type="xs:string"/>
+	<xs:element name="FlexFieldDescription18" type="xs:string"/>
+	<xs:element name="FlexFieldDescription19" type="xs:string"/>
+	<xs:element name="FlexFieldDescription20" type="xs:string"/>
+	<xs:element name="FlexFieldDescription21" type="xs:string"/>
+	<xs:element name="FlexFieldDescription22" type="xs:string"/>
+	<xs:element name="FlexFieldDescription23" type="xs:string"/>
+	<xs:element name="FlexFieldDescription24" type="xs:string"/>
+	<xs:element name="FlexFieldDescription25" type="xs:string"/>
+	<xs:element name="FlexFieldValue1" type="xs:string"/>
+	<xs:element name="FlexFieldValue2" type="xs:string"/>
+	<xs:element name="FlexFieldValue3" type="xs:string"/>
+	<xs:element name="FlexFieldValue4" type="xs:string"/>
+	<xs:element name="FlexFieldValue5" type="xs:string"/>
+	<xs:element name="FlexFieldValue6" type="xs:string"/>
+	<xs:element name="FlexFieldValue7" type="xs:string"/>
+	<xs:element name="FlexFieldValue8" type="xs:string"/>
+	<xs:element name="FlexFieldValue9" type="xs:string"/>
+	<xs:element name="FlexFieldValue10" type="xs:string"/>
+	<xs:element name="FlexFieldValue11" type="xs:string"/>
+	<xs:element name="FlexFieldValue12" type="xs:string"/>
+	<xs:element name="FlexFieldValue13" type="xs:string"/>
+	<xs:element name="FlexFieldValue14" type="xs:string"/>
+	<xs:element name="FlexFieldValue15" type="xs:string"/>
+	<xs:element name="FlexFieldValue16" type="xs:string"/>
+	<xs:element name="FlexFieldValue17" type="xs:string"/>
+	<xs:element name="FlexFieldValue18" type="xs:string"/>
+	<xs:element name="FlexFieldValue19" type="xs:string"/>
+	<xs:element name="FlexFieldValue20" type="xs:string"/>
+	<xs:element name="FlexFieldValue21" type="xs:string"/>
+	<xs:element name="FlexFieldValue22" type="xs:string"/>
+	<xs:element name="FlexFieldValue23" type="xs:string"/>
+	<xs:element name="FlexFieldValue24" type="xs:string"/>
+	<xs:element name="FlexFieldValue25" type="xs:string"/>
+</xs:schema>

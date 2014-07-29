@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SIP XML Air Freight Details and Invoice (EDIDOC 110)-->
+<!-- C SPS Commerce, Inc., 2012
+
+SPS Commerce is providing this XML schema (XSD) and resultant XML Message as a service to its customers and partners. This schema and resultant XML message were developed by SPS Commerce and are based on years of experience with our Standard Interface Program (SIP). 
+
+Although efforts have been made to assure that the XML schema and resultant XML message are correct, reliable, and technically accurate, SPS COMMERCE MAKES NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML SCHEMA AND RESULTANT XML MESSAGE ARE CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE MERCHANTABLE OR SUITABLE FOR ANY PARTICULAR PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  THE USE OF THE DTD AND RESULTANT MESSAGE BY ANY PARTY ARE WITH THE EXPRESS UNDERSTANDING THAT SPS COMMERCE  ASSUMES NO LIABILITY FOR ANY CLAIM, DAMAGE OR LOSS OF ANY KIND OR NATURE.
+
+    Version Information:
+    Version 7.1.0
+    Date of Creation: September 28, 2012
+
+COMMENTS:
+
+The mandatory XML elements, specific codes and qualifiers used between Trading partners are defined in separate trading partner guidelines between the partners and are not part of this schema and resultant XML message. 
+ -->
+<xs:schema xmlns="http://www.spscommerce.net/SIP" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.spscommerce.net/SIP" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- inclusion of SIPbase-->
+	<xs:include schemaLocation="SIPbase.xsd"/>
+	<!-- top level elements -->
+	<xs:element name="AirFreightDetailsAndInvoices">
+		<xs:annotation>
+			<xs:appinfo>Version 7.1.0</xs:appinfo>
+			<xs:documentation/>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AirFreightDetailsAndInvoice" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AddlDocID" type="xs:string"/>
+	<xs:element name="AdjReasonCode" type="xs:string"/>
+	<xs:element name="Advances" type="xs:decimal"/>
+	<xs:element name="AirCarrierCode1" type="xs:string"/>
+	<xs:element name="AirCarrierCode2" type="xs:string"/>
+	<xs:element name="AirCarrierCode3" type="xs:string"/>
+	<xs:element name="AirCarrierCode4" type="xs:string"/>
+	<xs:element name="AirCarrierCode5" type="xs:string"/>
+	<xs:element name="AirFreightDetailsAndInvoice" type="AirFreightDetailsAndInvoiceType"/>
+	<xs:element name="AirFreightDetailsHeader" type="AirFreightDetailsHeaderType"/>
+	<xs:element name="AirportCode1" type="xs:string"/>
+	<xs:element name="AirportCode2" type="xs:string"/>
+	<xs:element name="AirportCode3" type="xs:string"/>
+	<xs:element name="AirportCode4" type="xs:string"/>
+	<xs:element name="AirportCode5" type="xs:string"/>
+	<xs:element name="AncillaryAmount" type="xs:decimal"/>
+	<xs:element name="AncillaryChargeOrAllowanceCode" type="xs:string"/>
+	<xs:element name="AncillaryDescription" type="xs:string"/>
+	<xs:element name="AncillaryShipmentMethodofPayment" type="xs:string"/>
+	<xs:element name="BankClientCode" type="xs:string"/>
+	<xs:element name="BilledOrRateAsQualifier" type="xs:string"/>
+	<xs:element name="BilledOrRateAsQuantity" type="xs:decimal"/>
+	<xs:element name="Charge" type="xs:decimal"/>
+	<xs:element name="ChargeMethodOfPayment" type="xs:string"/>
+	<xs:element name="ChargeOrAllowanceCode" type="xs:string"/>
+	<xs:element name="CommodityCode1" type="xs:string"/>
+	<xs:element name="CommodityCodeQual1" type="xs:string"/>
+	<xs:element name="CommodityCode2" type="xs:string"/>
+	<xs:element name="CommodityCodeQual2" type="xs:string"/>
+	<xs:element name="CompartmentIDCode" type="xs:string"/>
+	<xs:element name="ConditionResponseCode1" type="xs:string"/>
+	<xs:element name="CorrectionIndicator" type="xs:string"/>
+	<xs:element name="DataSourceCode" type="xs:string"/>
+	<xs:element name="DateQualifier" type="xs:string"/>
+	<xs:element name="DeclaredValue" type="xs:decimal"/>
+	<xs:element name="DeliveryDate" type="xs:date"/>
+	<xs:element name="Detail" type="DetailType"/>
+	<xs:element name="Details" type="DetailsType"/>
+	<xs:element name="DiscAmountTaken" type="xs:decimal"/>
+	<xs:element name="DocDate" type="xs:string"/>
+	<xs:element name="DocDescription" type="xs:string"/>
+	<xs:element name="DocNumber" type="xs:string"/>
+	<xs:element name="DocNumberTypeCode" type="xs:string"/>
+	<xs:element name="DunnageDescription" type="xs:string"/>
+	<xs:element name="EntitlementCode" type="xs:string"/>
+	<xs:element name="Event" type="xs:string"/>
+	<xs:element name="EventCode" type="xs:string"/>
+	<xs:element name="EventDetail" type="EventDetailType"/>
+	<xs:element name="EstimatedDeliveryDate" type="xs:date"/>
+	<xs:element name="FreeFormMessage" type="xs:string"/>
+	<xs:element name="FreightRate" type="xs:decimal"/>
+	<xs:element name="Header" type="HeaderType"/>
+	<xs:element name="Height" type="xs:decimal"/>
+	<xs:element name="IdentificationCode" type="xs:string"/>
+	<xs:element name="IndustryCode" type="xs:string"/>
+	<xs:element name="InternationalOrDomesticeCode" type="xs:string"/>
+	<xs:element name="InvoiceAmtDueByTermsDate" type="xs:decimal"/>
+	<xs:element name="InvoiceDate" type="xs:date"/>
+	<xs:element name="LadingLiabilityCode" type="xs:string"/>
+	<xs:element name="LadingLineItemNumber" type="xs:int"/>
+	<xs:element name="LadingValue" type="xs:decimal"/>
+	<xs:element name="LineItems" type="LineItemsType"/>
+	<xs:element name="LineItem" type="LineItemType"/>
+	<xs:element name="LineItemRatesAndCharges" type="LineItemRatesAndChargesType"/>
+	<xs:element name="Length" type="xs:decimal"/>
+	<xs:element name="MarksAndNumbers" type="MarksAndNumbersType"/>
+	<xs:element name="MarksAndNumbersQual1" type="xs:string"/>
+	<xs:element name="Measurement" type="MeasurementType"/>
+	<xs:element name="MeasurementUnitQualifier" type="xs:string"/>
+	<xs:element name="Name" type="xs:string"/>
+	<xs:element name="NetAmountDue" type="xs:decimal"/>
+	<xs:element name="NetPaidAmount" type="xs:decimal"/>
+	<xs:element name="NumberOfShipments" type="xs:int"/>
+	<xs:element name="OrigAmount" type="xs:decimal"/>
+	<xs:element name="PackagingCode" type="xs:string"/>
+	<xs:element name="PackagingFormCode2" type="xs:string"/>
+	<xs:element name="PackagingFormCode" type="xs:string"/>
+	<xs:element name="PaymentActionCode" type="xs:string"/>
+	<xs:element name="Pickup" type="PickupType"/>
+	<xs:element name="PickupOrDeliveryCode" type="xs:string"/>
+	<xs:element name="PrepaidAmount" type="xs:decimal"/>
+	<xs:element name="ProofOfDelivery" type="ProofOfDeliveryType"/>
+	<xs:element name="QuantityAndWeight" type="QuantityAndWeightType"/>
+	<xs:element name="RatesAndCharges" type="RatesAndChargesType"/>
+	<xs:element name="RateAndChargeCurrencyCode" type="xs:string"/>
+	<xs:element name="RateClassCode" type="xs:string"/>
+	<xs:element name="RateCombinationPointCode" type="xs:string"/>
+	<xs:element name="RateOrValueQualifier1" type="xs:string"/>
+	<xs:element name="RateOrValueQualifier2" type="xs:string"/>
+	<xs:element name="RemittanceLine" type="RemittanceLineType"/>
+	<xs:element name="RouteInformation" type="RouteInformationType"/>
+	<xs:element name="Scale" type="xs:string"/>
+	<xs:element name="ShipmentIdentifier" type="xs:string"/>
+	<xs:element name="ShipmentMethodOfPayment" type="xs:string"/>
+	<xs:element name="ShipmentQualifier" type="xs:string"/>
+	<xs:element name="StatementIdentification" type="StatementIdentificationType"/>
+	<xs:element name="StatementNumber" type="xs:string"/>
+	<xs:element name="StatusReasonCode" type="xs:string"/>
+	<xs:element name="Summary" type="SummaryType"/>
+	<xs:element name="SystemDate" type="xs:date"/>
+	<xs:element name="TariffApplicationCode" type="xs:string"/>
+	<xs:element name="TariffNumber" type="xs:string"/>
+	<xs:element name="TariffReference" type="TariffReferenceType"/>
+	<xs:element name="TariffServiceCode" type="xs:string"/>
+	<xs:element name="TimeCode" type="xs:string"/>
+	<xs:element name="TotalEquipment1" type="xs:int"/>
+	<xs:element name="TotalEquipment2" type="xs:int"/>
+	<xs:element name="TotalEquipment3" type="xs:int"/>
+	<xs:element name="TotalNetSalesAmount" type="xs:decimal"/>
+	<xs:element name="TotalWeight" type="xs:decimal"/>
+	<xs:element name="TrainDelayReasonCode" type="xs:string"/>
+	<xs:element name="TransactionTypeCode" type="xs:string"/>
+	<xs:element name="TypeOfServiceCode" type="xs:string"/>
+	<xs:element name="WeightDetail" type="WeightDetailType"/>
+	<xs:element name="Width" type="xs:decimal"/>
+	<!-- AirFreightDetailsAndInvoice elements -->
+	<xs:complexType name="AirFreightDetailsAndInvoiceType">
+		<xs:complexContent>
+			<xs:extension base="sipDocumentType">
+				<xs:sequence>
+					<xs:element ref="Header"/>
+					<xs:element ref="Details"/>
+					<xs:element ref="Summary"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Header elements -->
+	<xs:complexType name="HeaderType">
+		<xs:complexContent>
+			<xs:extension base="sipHeaderType">
+				<xs:sequence>
+					<xs:element ref="AirFreightDetailsHeader"/>
+					<xs:element ref="PaymentTerms" minOccurs="0"/>
+					<xs:element ref="Address" minOccurs="0" maxOccurs="3"/>
+					<xs:element ref="Notes" minOccurs="0" maxOccurs="5"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- AirShipmentInformationHeader elements -->
+	<xs:complexType name="AirFreightDetailsHeaderType">
+		<xs:complexContent>
+			<xs:extension base="firstSipRecordType">
+				<xs:sequence>
+					<xs:element ref="ShipmentQualifier" minOccurs="0"/>
+					<xs:element ref="ShipmentIdentifier" minOccurs="0"/>
+					<xs:element ref="ShipmentMethodOfPayment" minOccurs="0"/>
+					<xs:element ref="WeightUnitCode" minOccurs="0"/>
+					<xs:element ref="InvoiceDate" minOccurs="0"/>
+					<xs:element ref="NetAmountDue" minOccurs="0"/>
+					<xs:element ref="CorrectionIndicator" minOccurs="0"/>
+					<xs:element ref="DeliveryDate" minOccurs="0"/>
+					<xs:element ref="EstimatedDeliveryDate" minOccurs="0"/>
+					<xs:element ref="Date1" minOccurs="0"/>
+					<xs:element ref="DateQualifier" minOccurs="0"/>
+					<xs:element ref="CarrierAlphaCode" minOccurs="0"/>
+					<xs:element ref="SystemDate" minOccurs="0"/>
+					<xs:element ref="TariffServiceCode" minOccurs="0"/>
+					<xs:element ref="TransportationTermsCode" minOccurs="0"/>
+					<xs:element ref="BankClientCode" minOccurs="0"/>
+					<xs:element ref="IdentificationCodeQualifier" minOccurs="0"/>
+					<xs:element ref="IdentificationCode" minOccurs="0"/>
+					<xs:element ref="CurrencyCode1" minOccurs="0"/>
+					<xs:element ref="ExchangeRate" minOccurs="0"/>
+					<xs:element ref="CurrencyCode2" minOccurs="0"/>
+					<xs:element ref="CurrencyCode3" minOccurs="0"/>
+					<xs:element ref="TransactionTypeCode" minOccurs="0"/>
+					<xs:element ref="NumberOfShipments" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--  Details dataset definition-->
+	<xs:complexType name="DetailsType">
+		<xs:complexContent>
+			<xs:extension base="sipDatasetType">
+				<xs:sequence>
+					<xs:element ref="Detail" maxOccurs="100000"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--  Detail group definition-->
+	<xs:complexType name="DetailType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="Address" minOccurs="0"/>
+					<xs:element ref="Pickup" minOccurs="0"/>
+					<xs:element ref="RouteInformation" minOccurs="0"/>
+					<xs:element ref="ProofOfDelivery" minOccurs="0"/>
+					<xs:element ref="EventDetail" minOccurs="0"/>
+					<xs:element ref="RemittanceLine" minOccurs="0" maxOccurs="10"/>
+					<xs:element ref="StatementIdentification" minOccurs="0"/>
+					<xs:element ref="Notes" minOccurs="0" maxOccurs="10"/>
+					<xs:element ref="LineItems"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Pickup elements-->
+	<xs:complexType name="PickupType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="PickupOrDeliveryCode" minOccurs="0"/>
+					<xs:element ref="Date1" minOccurs="0"/>
+					<xs:element ref="DateTimeQualifier1" minOccurs="0"/>
+					<xs:element ref="Time1" minOccurs="0"/>
+					<xs:element ref="CarrierEquipmentInitial" minOccurs="0"/>
+					<xs:element ref="CarrierEquipmentNumber" minOccurs="0"/>
+					<xs:element ref="NumberOfShipments" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- RouteInformation-->
+	<xs:complexType name="RouteInformationType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="CarrierAlphaCode1" minOccurs="0"/>
+					<xs:element ref="CarrierAlphaCode2" minOccurs="0"/>
+					<xs:element ref="AirportCode1" minOccurs="0"/>
+					<xs:element ref="AirCarrierCode1" minOccurs="0"/>
+					<xs:element ref="AirportCode2" minOccurs="0"/>
+					<xs:element ref="AirCarrierCode2" minOccurs="0"/>
+					<xs:element ref="AirportCode3" minOccurs="0"/>
+					<xs:element ref="AirCarrierCode3" minOccurs="0"/>
+					<xs:element ref="AirportCode4" minOccurs="0"/>
+					<xs:element ref="AirCarrierCode4" minOccurs="0"/>
+					<xs:element ref="AirportCode5" minOccurs="0"/>
+					<xs:element ref="AirCarrierCode5" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ProofOfDelivery-->
+	<xs:complexType name="ProofOfDeliveryType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="Date1" minOccurs="0"/>
+					<xs:element ref="Time1" minOccurs="0"/>
+					<xs:element ref="Name" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- EventDetail-->
+	<xs:complexType name="EventDetailType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="EventCode" minOccurs="0"/>
+					<xs:element ref="Event" minOccurs="0"/>
+					<xs:element ref="Date1" minOccurs="0"/>
+					<xs:element ref="Time1" minOccurs="0"/>
+					<xs:element ref="City" minOccurs="0"/>
+					<xs:element ref="State" minOccurs="0"/>
+					<xs:element ref="Country" minOccurs="0"/>
+					<xs:element ref="StatusReasonCode" minOccurs="0"/>
+					<xs:element ref="AddressLocationNumber" minOccurs="0"/>
+					<xs:element ref="Quantity1" minOccurs="0"/>
+					<xs:element ref="TrainDelayReasonCode" minOccurs="0"/>
+					<xs:element ref="FreeFormMessage" minOccurs="0"/>
+					<xs:element ref="TimeCode" minOccurs="0"/>
+					<xs:element ref="Quantity2" minOccurs="0"/>
+					<xs:element ref="AddressLocationNumber2" minOccurs="0"/>
+					<xs:element ref="TotalEquipment1" minOccurs="0"/>
+					<xs:element ref="TotalEquipment2" minOccurs="0"/>
+					<xs:element ref="TotalEquipment3" minOccurs="0"/>
+					<xs:element ref="Weight" minOccurs="0"/>
+					<xs:element ref="Length" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- RemittanceLine -->
+	<xs:complexType name="RemittanceLineType">
+		<xs:sequence>
+			<xs:element ref="TradingPartnerId" minOccurs="0"/>
+			<xs:element ref="InvoiceNumber" minOccurs="0"/>
+			<xs:element ref="RecordType" minOccurs="0"/>
+			<xs:element ref="DocNumberTypeCode" minOccurs="0"/>
+			<xs:element ref="DocNumber" minOccurs="0"/>
+			<xs:element ref="PaymentActionCode" minOccurs="0"/>
+			<xs:element ref="NetPaidAmount" minOccurs="0"/>
+			<xs:element ref="OrigAmount" minOccurs="0"/>
+			<xs:element ref="TotalNetSalesAmount" minOccurs="0"/>
+			<xs:element ref="InvoiceAmtDueByTermsDate" minOccurs="0"/>
+			<xs:element ref="DiscAmountTaken" minOccurs="0"/>
+			<xs:element ref="AdjReasonCode" minOccurs="0"/>
+			<xs:element ref="MonetaryAmount" minOccurs="0"/>
+			<xs:element ref="DocDate" minOccurs="0"/>
+			<xs:element ref="PurchaseOrderNumber" minOccurs="0"/>
+			<xs:element ref="Department" minOccurs="0"/>
+			<xs:element ref="AddlDocID" minOccurs="0"/>
+			<xs:element ref="DocDescription" minOccurs="0"/>
+			<xs:element ref="ReferenceDate" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- StatementIdentification -->
+	<xs:complexType name="StatementIdentificationType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="Date1" minOccurs="0"/>
+					<xs:element ref="StatementNumber" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--  LineItems elements-->
+	<xs:complexType name="LineItemsType">
+		<xs:complexContent>
+			<xs:extension base="sipDatasetType">
+				<xs:sequence>
+					<xs:element ref="LineItem" minOccurs="1" maxOccurs="4"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- LineItem elements -->
+	<xs:complexType name="LineItemType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="MarksAndNumbers"/>
+					<xs:element ref="QuantityAndWeight" minOccurs="0"/>
+					<xs:element ref="Measurement" minOccurs="0" maxOccurs="4"/>
+					<xs:element ref="WeightDetail" minOccurs="0" maxOccurs="4"/>
+					<xs:element ref="TariffReference" minOccurs="0"/>
+					<xs:element ref="LineItemRatesAndCharges" minOccurs="0" maxOccurs="30"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- LineItemRatesAndCharges elements -->
+	<xs:complexType name="LineItemRatesAndChargesType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="RatesAndCharges"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--  MarksAndNumbers elements -->
+	<xs:complexType name="MarksAndNumbersType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="LadingLineItemNumber" minOccurs="0"/>
+					<xs:element ref="LadingDescription" minOccurs="0"/>
+					<xs:element ref="CommodityCode1" minOccurs="0"/>
+					<xs:element ref="CommodityCodeQual1" minOccurs="0"/>
+					<xs:element ref="PackagingCode" minOccurs="0"/>
+					<xs:element ref="MarksAndNumbers1" minOccurs="0"/>
+					<xs:element ref="MarksAndNumbersQual1" minOccurs="0"/>
+					<xs:element ref="CommodityCodeQual2" minOccurs="0"/>
+					<xs:element ref="CommodityCode2" minOccurs="0"/>
+					<xs:element ref="CompartmentIDCode" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--  QuantityAndWeights elements -->
+	<xs:complexType name="QuantityAndWeightType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="LadingLineItemNumber" minOccurs="0"/>
+					<xs:element ref="BilledOrRateAsQuantity" minOccurs="0"/>
+					<xs:element ref="BilledOrRateAsQualifier" minOccurs="0"/>
+					<xs:element ref="Weight" minOccurs="0"/>
+					<xs:element ref="WeightQualifier" minOccurs="0"/>
+					<xs:element ref="Volume" minOccurs="0"/>
+					<xs:element ref="VolumeQualifier" minOccurs="0"/>
+					<xs:element ref="LadingQuantity" minOccurs="0"/>
+					<xs:element ref="PackagingFormCode" minOccurs="0"/>
+					<xs:element ref="DunnageDescription" minOccurs="0"/>
+					<xs:element ref="WeightUnitCode" minOccurs="0"/>
+					<xs:element ref="TypeOfServiceCode" minOccurs="0"/>
+					<xs:element ref="Quantity1" minOccurs="0"/>
+					<xs:element ref="PackagingFormCode2" minOccurs="0"/>
+					<xs:element ref="ConditionResponseCode1" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--  Measurement elements -->
+	<xs:complexType name="MeasurementType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="Length" minOccurs="0"/>
+					<xs:element ref="Width" minOccurs="0"/>
+					<xs:element ref="Height" minOccurs="0"/>
+					<xs:element ref="MeasurementUnitQualifier" minOccurs="0"/>
+					<xs:element ref="Quantity1" minOccurs="0"/>
+					<xs:element ref="IndustryCode" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--  WeightDetail elements -->
+	<xs:complexType name="WeightDetailType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="Weight" minOccurs="0"/>
+					<xs:element ref="WeightQualifier" minOccurs="0"/>
+					<xs:element ref="WeightUnitCode" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--  TariffReference elements -->
+	<xs:complexType name="TariffReferenceType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="ServiceLevelCode1" minOccurs="0"/>
+					<xs:element ref="TariffNumber" minOccurs="0"/>
+					<xs:element ref="CommodityCode1" minOccurs="0"/>
+					<xs:element ref="Scale" minOccurs="0"/>
+					<xs:element ref="Date1" minOccurs="0"/>
+					<xs:element ref="ServiceLevelCode2" minOccurs="0"/>
+					<xs:element ref="ShipmentMethodOfPayment" minOccurs="0"/>
+					<xs:element ref="DataSourceCode" minOccurs="0"/>
+					<xs:element ref="InternationalOrDomesticeCode" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- RateAndCharge elements -->
+	<xs:complexType name="RatesAndChargesType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="LadingLineItemNumber" minOccurs="0"/>
+					<xs:element ref="FreightRate" minOccurs="0"/>
+					<xs:element ref="RateOrValueQualifier1" minOccurs="0"/>
+					<xs:element ref="Charge" minOccurs="0"/>
+					<xs:element ref="Advances" minOccurs="0"/>
+					<xs:element ref="PrepaidAmount" minOccurs="0"/>
+					<xs:element ref="RateCombinationPointCode" minOccurs="0"/>
+					<xs:element ref="ChargeOrAllowanceCode" minOccurs="0"/>
+					<xs:element ref="RateClassCode" minOccurs="0"/>
+					<xs:element ref="EntitlementCode" minOccurs="0"/>
+					<xs:element ref="ChargeMethodOfPayment" minOccurs="0"/>
+					<xs:element ref="Description" minOccurs="0"/>
+					<xs:element ref="TariffApplicationCode" minOccurs="0"/>
+					<xs:element ref="DeclaredValue" minOccurs="0"/>
+					<xs:element ref="RateOrValueQualifier2" minOccurs="0"/>
+					<xs:element ref="LadingLiabilityCode" minOccurs="0"/>
+					<xs:element ref="BilledOrRateAsQuantity" minOccurs="0"/>
+					<xs:element ref="BilledOrRateAsQualifier" minOccurs="0"/>
+					<xs:element ref="Percent" minOccurs="0"/>
+					<xs:element ref="RateAndChargeCurrencyCode" minOccurs="0"/>
+					<xs:element ref="Amount" minOccurs="0"/>
+					<xs:element ref="LadingValue" minOccurs="0"/>
+					<xs:element ref="CurrencyCode1" minOccurs="0"/>
+					<xs:element ref="ExchangeRate" minOccurs="0"/>
+					<xs:element ref="CurrencyCode2" minOccurs="0"/>
+					<xs:element ref="CurrencyCode3" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--  Summary elements -->
+	<xs:complexType name="SummaryType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="TotalWeight" minOccurs="0"/>
+					<xs:element ref="WeightQualifier" minOccurs="0"/>
+					<xs:element ref="FreightRate" minOccurs="0"/>
+					<xs:element ref="RateOrValueQualifier1" minOccurs="0"/>
+					<xs:element ref="Charge" minOccurs="0"/>
+					<xs:element ref="Advances" minOccurs="0"/>
+					<xs:element ref="PrepaidAmount" minOccurs="0"/>
+					<xs:element ref="ChargeOrAllowanceCode" minOccurs="0"/>
+					<xs:element ref="Volume" minOccurs="0"/>
+					<xs:element ref="VolumeUnitCode" minOccurs="0"/>
+					<xs:element ref="LadingQuantity" minOccurs="0"/>
+					<xs:element ref="WeightUnitCode" minOccurs="0"/>
+					<xs:element ref="TariffNumber" minOccurs="0"/>
+					<xs:element ref="DeclaredValue" minOccurs="0"/>
+					<xs:element ref="RateOrValueQualifier2" minOccurs="0"/>
+					<xs:element ref="AncillaryAmount" minOccurs="0"/>
+					<xs:element ref="AncillaryChargeOrAllowanceCode" minOccurs="0"/>
+					<xs:element ref="AncillaryDescription" minOccurs="0"/>
+					<xs:element ref="AncillaryShipmentMethodofPayment" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

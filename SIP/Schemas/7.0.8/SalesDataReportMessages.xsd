@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SIP XML SalesDataReportMessage (EDIDOC D99A-SLSRPT) -->
+<!-- C SPS Commerce, Inc., 2012
+
+SPS Commerce is providing this XML schema (XSD) and resultant XML Message as a service to its customers and partners.
+This schema and resultant XML message were developed by SPS Commerce and are based on over years of experience with our 
+Standard Interface Program (SIP).
+Although efforts have been made to assure that the XML schema and resultant XML message are correct, reliable, and technically accurate,
+SPS COMMERCE MAKES NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML SCHEMA AND RESULTANT XML MESSAGE ARE CORRECT,
+WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE,
+OR WILL BE MERCHANTABLE OR SUITABLE FOR ANY PARTICULAR PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.
+THE USE OF THE SCHEMA AND RESULTANT MESSAGE BY ANY PARTY ARE WITH THE EXPRESS UNDERSTANDING THAT SPS COMMERCE
+ASSUMES NO LIABILITY FOR ANY CLAIM, DAMAGE OR LOSS OF ANY KIND OR NATURE.
+
+	Version Information:
+	Version 7.12.3
+	Date of Creation: March 5, 2012
+
+COMMENTS:
+
+The mandatory XML elements, specific codes and qualifiers used between Trading partners are defined in separate trading partner guidelines between the partners and are not part of this schema and resultant XML message. 
+ -->
+<xs:schema xmlns="http://www.spscommerce.net/SIP" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.spscommerce.net/SIP" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- inclusion of SIPbase -->
+	<xs:include schemaLocation="SIPbase.xsd"/>
+	<!-- top level elements -->
+	<xs:element name="CodeListAgency" type="xs:string"/>
+	<xs:element name="CodeListQualifier" type="xs:string"/>
+	<xs:element name="ContactParty" type="ContactPartyType"/>
+	<xs:element name="Currency" type="CurrencyType"/>
+	<xs:element name="CurrencyDate" type="CurrencyDateType"/>
+	<xs:element name="GeneralIndicator" type="GeneralIndicatorType"/>
+	<xs:element name="Header" type="HeaderType"/>
+	<xs:element name="ItemQuantity" type="ItemQuantityType"/>
+	<xs:element name="LineItem" type="LineItemType"/>
+	<xs:element name="LineItemLocation" type="LineItemLocationType"/>
+	<xs:element name="LineItemLocationInfo" type="LineItemLocationInfoType"/>
+	<xs:element name="LineItemLocationActivityInfo" type="LineItemLocationActivityInfoType"/>
+	<xs:element name="LineItems" type="LineItemsType"/>
+	<xs:element name="LineNumber" type="xs:string"/>
+	<xs:element name="Location" type="LocationType"/>
+	<xs:element name="LocationLineItem" type="LocationLineItemType"/>
+	<xs:element name="LocationLineItemInfo" type="LocationLineItemInfoType"/>
+	<xs:element name="LocationLineItemActivityInfo" type="LocationLineItemActivityInfoType"/>
+	<xs:element name="MessageDate" type="xs:string"/>
+	<xs:element name="MessageFunction" type="xs:string"/>
+	<xs:element name="MessageName" type="xs:string"/>
+	<xs:element name="MessageNumber" type="xs:string"/>
+	<xs:element name="MessageTypeCode" type="xs:string"/>
+	<xs:element name="ProcessingIndicator" type="xs:string"/>
+	<xs:element name="OrderHeader" type="OrderHeaderType"/>
+	<xs:element name="ProcessType" type="xs:string"/>
+	<xs:element name="ReferencesDate" type="ReferencesDateType"/>
+	<xs:element name="References" type="ReferencesType"/>
+	<xs:element name="RevisionNumber" type="xs:string"/>
+	<xs:element name="SalesDataReportMessage" type="SalesDataReportMessageType"/>
+	<xs:element name="VersionNumber" type="xs:string"/>
+	<!-- top level elements -->
+	<xs:element name="SalesDataReportMessages">
+		<xs:annotation>
+			<xs:appinfo>7.12.3</xs:appinfo>
+			<xs:documentation>SIP XML SalesDataReportMessages schema, Version 7.12.3</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="SalesDataReportMessage" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="SalesDataReportMessageType">
+		<xs:complexContent>
+			<xs:extension base="sipDocumentType">
+				<xs:sequence>
+					<xs:element ref="Header"/>
+					<xs:element ref="LineItems"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="HeaderType">
+		<xs:complexContent>
+			<xs:extension base="sipHeaderType">
+				<xs:sequence>
+					<xs:element ref="OrderHeader"/>
+					<xs:element ref="Date" maxOccurs="5"/>
+					<xs:element ref="ContactParty" maxOccurs="5"/>
+					<xs:element ref="ReferencesDate" minOccurs="0" maxOccurs="5"/>
+					<xs:element ref="CurrencyDate" minOccurs="0" maxOccurs="5"/>
+					<xs:element ref="Miscellaneous" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ContactParty elements -->
+	<xs:complexType name="ContactPartyType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="Address"/>
+					<xs:element ref="Contact" minOccurs="0" maxOccurs="5"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ReferencesDate elements -->
+	<xs:complexType name="ReferencesDateType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="References"/>
+					<xs:element ref="Date" minOccurs="0" maxOccurs="5"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- CurrencyDate elements -->
+	<xs:complexType name="CurrencyDateType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="Currency"/>
+					<xs:element ref="Date" minOccurs="0" maxOccurs="5"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Currency elements -->
+	<xs:complexType name="CurrencyType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="BuyersCurrency" minOccurs="0"/>
+					<xs:element ref="SellersCurrency" minOccurs="0"/>
+					<xs:element ref="ExchangeRate" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--  References elements -->
+	<xs:complexType name="ReferencesType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="ReferenceQual"/>
+					<xs:element ref="ReferenceID" minOccurs="0"/>
+					<xs:element ref="Description" minOccurs="0"/>
+					<xs:element ref="LineNumber" minOccurs="0"/>
+					<xs:element ref="VersionNumber" minOccurs="0"/>
+					<xs:element ref="RevisionNumber" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- OrderHeader elements -->
+	<xs:complexType name="OrderHeaderType">
+		<xs:complexContent>
+			<xs:extension base="firstSipRecordType">
+				<xs:sequence>
+					<xs:element ref="MessageName" minOccurs="0"/>
+					<xs:element ref="MessageNumber" minOccurs="0"/>
+					<xs:element ref="MessageFunction"/>
+					<xs:element ref="MessageTypeCode" minOccurs="0"/>
+					<xs:element ref="MessageDate" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--LineItems defined -->
+	<xs:complexType name="LineItemsType">
+		<xs:complexContent>
+			<xs:extension base="sipDatasetType">
+				<xs:sequence>
+					<xs:element ref="LineItem" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- LineItem elements -->
+	<xs:complexType name="LineItemType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:choice>
+						<xs:element ref="LocationLineItem" maxOccurs="unbounded"/>
+						<xs:element ref="LineItemLocation"/>
+					</xs:choice>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- LocationLineItem elements -->
+	<xs:complexType name="LocationLineItemType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="Location"/>
+					<xs:element ref="Date" minOccurs="0" maxOccurs="5"/>
+					<xs:element ref="ReferencesDate" minOccurs="0" maxOccurs="5"/>
+					<xs:element ref="LocationLineItemInfo" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Miscellaneous" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--Location elements -->
+	<xs:complexType name="LocationType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="FOBLocationQualifier"/>
+					<xs:element ref="FOBLocationDescription" minOccurs="0"/>
+					<xs:element ref="Qualifier1" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- LocationLineItemInfo elements -->
+	<xs:complexType name="LocationLineItemInfoType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="OrderLine"/>
+					<xs:element ref="Date" minOccurs="0" maxOccurs="5"/>
+					<xs:element ref="References" minOccurs="0" maxOccurs="5"/>
+					<xs:element ref="LocationLineItemActivityInfo" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Miscellaneous" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- LocationLineItemActivityInfo elements -->
+	<xs:complexType name="LocationLineItemActivityInfoType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="ItemQuantity"/>
+					<xs:element ref="Address" minOccurs="0"/>
+					<xs:element ref="Date" minOccurs="0" maxOccurs="9"/>
+					<xs:element ref="References" minOccurs="0" maxOccurs="9"/>
+					<xs:element ref="Miscellaneous" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- LineItemLocation elements -->
+	<xs:complexType name="LineItemLocationType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="GeneralIndicator"/>
+					<xs:element ref="LineItemLocationInfo" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- LineItemLocationInfo elements -->
+	<xs:complexType name="LineItemLocationInfoType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="OrderLine"/>
+					<xs:element ref="LineItemLocationActivityInfo" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--GeneralIndicator elements -->
+	<xs:complexType name="GeneralIndicatorType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="ProcessingIndicator"/>
+					<xs:element ref="CodeListQualifier" minOccurs="0"/>
+					<xs:element ref="CodeListAgency" minOccurs="0"/>
+					<xs:element ref="ProcessType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- LineItemLocationActivityInfo elements -->
+	<xs:complexType name="LineItemLocationActivityInfoType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="ShipDestinationQty" maxOccurs="unbounded"/>
+					<xs:element ref="Schedule" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Date" minOccurs="0" maxOccurs="9"/>
+					<xs:element ref="References" minOccurs="0" maxOccurs="9"/>
+					<xs:element ref="Miscellaneous" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="OrderLine" type="OrderLineType"/>
+	<xs:complexType name="OrderLineType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="LineSequenceNumber" minOccurs="0"/>
+					<xs:group ref="ItemPartInfo"/>
+					<xs:group ref="PartInfo"/>
+					<xs:group ref="LineQty"/>
+					<xs:element ref="MfgSuggestedRetailPrice" minOccurs="0"/>
+					<xs:element ref="RetailUnitPrice" minOccurs="0"/>
+					<xs:element ref="OuterPack" minOccurs="0"/>
+					<xs:element ref="ShipDate" minOccurs="0"/>
+					<xs:element ref="QtyLeftToReceive" minOccurs="0"/>
+					<xs:element ref="ExtendedItemTotal" minOccurs="0"/>
+					<xs:group ref="ProductData"/>
+					<xs:element ref="Department" minOccurs="0"/>
+					<xs:element ref="Class" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="MfgSuggestedRetailPrice" type="xs:decimal"/>
+	<xs:element name="RetailUnitPrice" type="xs:decimal"/>
+	<!--ItemQuantity elements -->
+	<xs:complexType name="ItemQuantityType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="QuantityQualifier"/>
+					<xs:element ref="Quantity1" minOccurs="0"/>
+					<xs:element ref="QtyUOM" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

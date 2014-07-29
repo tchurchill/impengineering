@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SIP XML WarehouseInventoryAdjustmentAdvice (EDIDOC 947) -->
+<!-- C SPS Commerce, Inc., 2004
+
+SPS Commerce is providing this XML schema (XSD) and resultant XML Message as a service to its customers and partners. This schema and resultant XML message were developed by SPS Commerce and are based on over six years of experience with our Standard Interface Program (SIP). The XML Tag names used are the same as our Field Names in the SIP 5.0 Flat File definition. 
+
+Although efforts have been made to assure that the XML schema and resultant XML message are correct, reliable, and technically accurate, SPS COMMERCE MAKES NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML SCHEMA AND RESULTANT XML MESSAGE ARE CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE MERCHANTABLE OR SUITABLE FOR ANY PARTICULAR PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  THE USE OF THE DTD AND RESULTANT MESSAGE BY ANY PARTY ARE WITH THE EXPRESS UNDERSTANDING THAT SPS COMMERCE  ASSUMES NO LIABILITY FOR ANY CLAIM, DAMAGE OR LOSS OF ANY KIND OR NATURE.
+
+    Version Information:
+    Version 7.0
+    Date of Creation: April 15, 2007
+
+COMMENTS:
+
+The mandatory XML elements, specific codes and qualifiers used between Trading partners are defined in separate trading partner guidelines between the partners and are not part of this schema and resultant XML message. 
+ -->
+<xs:schema xmlns="http://www.spscommerce.net/SIP" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.spscommerce.net/SIP" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <!-- inclusion of SIPbase -->
+    <xs:include schemaLocation="SIPbase.xsd"/>
+    <xs:element name="ActionCode" type="xs:string"/>
+    <xs:element name="AdjustmentNumber1" type="xs:string"/>
+    <xs:element name="AdjustmentNumber2" type="xs:string"/>
+    <xs:element name="AdjReasonCode" type="xs:string"/>
+    <xs:element name="Header" type="HeaderType"/>
+    <xs:element name="HeaderOrder" type="HeaderOrderType"/>
+    <xs:element name="InventoryTransaction" type="xs:string"/>
+    <xs:element name="ItemDetail" type="ItemDetailType"/>
+    <xs:element name="LineItem" type="LineItemType"/>
+    <xs:element name="LineItems" type="LineItemsType"/>
+    <xs:element name="QtyAdjusted" type="xs:decimal"/>
+    <xs:element name="QtyAdjustedUOM" type="xs:string"/>
+    <xs:element name="Size" type="xs:decimal"/>
+    <xs:element name="Summary" type="SummaryType"/>
+    <xs:element name="TotalOrders" type="xs:decimal"/>
+    <xs:element name="TotalVolume" type="xs:decimal"/>
+    <xs:element name="TotalWeight" type="xs:decimal"/>
+    <xs:element name="TransactionTypeCode" type="xs:string"/>
+    <xs:element name="UnitWeight" type="xs:decimal"/>
+    <xs:element name="WarehouseInventoryAdjustmentAdvice" type="WarehouseInventoryAdjustmentAdviceType"/>
+    <xs:element name="Weight1" type="xs:decimal"/>
+    <xs:element name="WeightQualifier1" type="xs:string"/>
+    <xs:element name="WeightUOM" type="xs:string"/>
+    <xs:element name="WeightUOM1" type="xs:string"/>
+    <xs:element name="Weight2" type="xs:decimal"/>
+    <xs:element name="WeightQualifier2" type="xs:string"/>
+    <xs:element name="WeightUOM2" type="xs:string"/>
+    <xs:element name="WarehouseLotID" type="xs:string"/>
+    <xs:element name="WarehouseInventoryAdjustmentAdvices">
+        <xs:annotation>
+            <xs:appinfo>7.0</xs:appinfo>
+            <xs:documentation>SIP XML WarehouseInventoryAdjustmentAdvices schema, Version 7.0</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="WarehouseInventoryAdjustmentAdvice" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="WarehouseInventoryAdjustmentAdviceType">
+        <xs:complexContent>
+            <xs:extension base="sipDocumentType">
+                <xs:sequence>
+                    <xs:element ref="Header"/>
+                    <xs:element ref="LineItems"/>
+                    <xs:element ref="Summary"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="HeaderType">
+        <xs:complexContent>
+            <xs:extension base="sipHeaderType">
+                <xs:sequence>
+                    <xs:element ref="HeaderOrder"/>
+                    <xs:element ref="Reference" minOccurs="0" maxOccurs="10"/>
+                    <xs:element ref="Date" minOccurs="0" maxOccurs="5"/>
+                    <xs:element ref="Contact" minOccurs="0" maxOccurs="3"/>
+                    <xs:element ref="Address" maxOccurs="100"/>
+                    <xs:element ref="Notes" minOccurs="0" maxOccurs="20"/>
+                    <xs:element ref="Miscellaneous" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- Header elements -->
+    <!-- cannot derive from siprecord due to name conflicts -->
+    <xs:complexType name="HeaderOrderType">
+        <xs:sequence>
+            <xs:element ref="TradingPartnerId"/>
+            <xs:element ref="DocumentId"/>
+            <xs:element ref="RecordType" minOccurs="0"/>
+            <xs:element ref="Date1"/>
+            <xs:element ref="AdjustmentNumber1" minOccurs="0"/>
+            <xs:element ref="AdjustmentNumber2" minOccurs="0"/>
+            <xs:element ref="TsetPurposeCode" minOccurs="0"/>
+            <xs:element ref="PurchaseOrderNumber" minOccurs="0"/>
+            <xs:element ref="TransactionTypeCode" minOccurs="0"/>
+            <xs:element ref="ActionCode" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- LineItems collection element -->
+    <xs:complexType name="LineItemsType">
+        <xs:complexContent>
+            <xs:extension base="sipDatasetType">
+                <xs:sequence>
+                    <xs:element name="LineItem" type="LineItemType" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- LineItem elements -->
+    <xs:complexType name="LineItemType">
+        <xs:complexContent>
+            <xs:extension base="sipGroupType">
+                <xs:sequence>
+                    <xs:element ref="ItemDetail"/>
+                    <xs:element ref="Reference" minOccurs="0" maxOccurs="10"/>
+                    <xs:element ref="Date" minOccurs="0" maxOccurs="10"/>
+                    <xs:element ref="Address" minOccurs="0" maxOccurs="50"/>
+                    <xs:element ref="Miscellaneous" minOccurs="0" maxOccurs="20"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- ItemDetail elements -->
+    <xs:complexType name="ItemDetailType">
+        <xs:complexContent>
+            <xs:extension base="sipRecordType">
+                <xs:sequence>
+                    <xs:element ref="LineSequenceNumber" minOccurs="0"/>
+                    <xs:group ref="ItemPartInfo"/>
+                    <xs:group ref="PartNumbers"/>
+                    <xs:element ref="PartDescription1" minOccurs="0"/>
+                    <xs:element ref="PartDescription2" minOccurs="0"/>
+                    <xs:element ref="AdjReasonCode"/>
+                    <xs:element ref="QtyAdjusted"/>
+                    <xs:element ref="QtyAdjustedUOM"/>
+                    <xs:element ref="WarehouseLotID" minOccurs="0"/>
+                    <xs:element ref="Weight1" minOccurs="0"/>
+                    <xs:element ref="WeightQualifier1" minOccurs="0"/>
+                    <xs:element ref="WeightUOM1" minOccurs="0"/>
+                    <xs:element ref="Weight2" minOccurs="0"/>
+                    <xs:element ref="WeightQualifier2" minOccurs="0"/>
+                    <xs:element ref="WeightUOM2" minOccurs="0"/>
+                    <xs:element ref="InventoryTransaction" minOccurs="0"/>
+                    <xs:element ref="ExtendedItemTotal" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- Summary elements -->
+    <xs:complexType name="SummaryType">
+        <xs:complexContent>
+            <xs:extension base="sipRecordType">
+                <xs:sequence>
+                    <xs:element ref="TotalOrders" minOccurs="0"/>
+                    <xs:element ref="TotalWeight" minOccurs="0"/>
+                    <xs:element ref="WeightUOM" minOccurs="0"/>
+                    <xs:element ref="TotalVolume" minOccurs="0"/>
+                    <xs:element ref="VolumeUOM" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>

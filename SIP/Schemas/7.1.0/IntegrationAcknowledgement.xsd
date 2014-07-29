@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:iak="http://www.spscommerce.com/Integration" targetNamespace="http://www.spscommerce.com/Integration" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="IntegrationAcknowledgement" type="iak:IntegrationAcknowledgementType"/>
+	<xs:complexType name="IntegrationAcknowledgementType">
+		<xs:sequence>
+			<xs:element name="AcknowledgementType" type="xs:string"/>
+			<xs:element name="SPSDocumentKey" type="xs:string"/>
+			<xs:element name="TradingPartnerName" type="xs:string"/>
+			<xs:element name="DocumentType" type="xs:string"/>
+			<xs:element name="DocumentIdentifierType" type="xs:string"/>
+			<xs:element name="DocumentIdentifier" type="xs:string"/>
+			<xs:element name="DocumentStatus" type="xs:string"/>
+			<xs:element name="AcknowledgementDateTime" type="xs:dateTime"/>
+			<xs:element name="PartnerService" type="xs:string"/>
+			<xs:element name="ControlNumbers" type="iak:ControlNumbersType" minOccurs="0"/>
+			<xs:element name="FlexField" type="iak:FlexFieldType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ControlNumbersType">
+		<xs:sequence>
+			<xs:element name="Envelope" type="xs:string" minOccurs="0"/>
+			<xs:element name="Group" type="xs:string" minOccurs="0"/>
+			<xs:element name="Document" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FlexFieldType">
+		<xs:sequence>
+			<xs:element name="Label" type="xs:string"/>
+			<xs:element name="Value" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string"/>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,745 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SPSFILE SYSTEM '../form/Xtencil.dtd'>
+<SPSFILE name='SPS Commerce Xtencil' date='7/18/2012' fileType='FORM' contents='NORM'>
+<DOCUMENTDEF name='ApplicationAdvice' javaName='applicationAdvice' xtencilType='XML' designerversion='2.7.2' designDate='7/18/2012' keys='applicationAdvice.header.applicationAdviceHeader.applicationAdviceHeaderRep.documentId' direction='B' fullyQualifiedJavaName='applicationAdvice' sourceTypeDirection='O' resolverFetch='Y' lastModifiedBy='ljwerner'>
+    <GROUPDEF name='Meta' javaName='meta' exclude='N' justification='Left' display='Y' enable='Y' print='Y' nextRow='N' sourceFilter='No Filter' isRecord='N' persistent='Y' present='Y'>
+        <FIELDDEF name='TradingPartnerId' javaName='tradingPartnerId'>
+        </FIELDDEF>
+        <FIELDDEF name='DocumentId' javaName='documentId'>
+        </FIELDDEF>
+        <FIELDDEF name='InvoiceNumber' javaName='invoiceNumber'>
+        </FIELDDEF>
+        <FIELDDEF name='ReportStartDate' javaName='reportStartDate'>
+        </FIELDDEF>
+        <FIELDDEF name='CatalogNumber' javaName='catalogNumber'>
+        </FIELDDEF>
+        <FIELDDEF name='ShipmentIdentification' javaName='shipmentIdentification'>
+        </FIELDDEF>
+        <FIELDDEF name='PurchaseOrderNumber' javaName='purchaseOrderNumber'>
+        </FIELDDEF>
+        <FIELDDEF name='CreditDebitNumber' javaName='creditDebitNumber'>
+        </FIELDDEF>
+        <FIELDDEF name='DepositorOrderNumber' javaName='depositorOrderNumber'>
+        </FIELDDEF>
+        <FIELDDEF name='RecordType' javaName='recordType'>
+        </FIELDDEF>
+    </GROUPDEF>
+    <GROUPDEF name='Header' javaName='header'>
+        <GROUPDEF name='ApplicationAdviceHeader' javaName='applicationAdviceHeader' exclude='N' justification='Left' display='Y' enable='Y' print='Y' nextRow='N' sourceFilter='No Filter' isRecord='N' persistent='Y' present='Y'>
+            <FIELDDEF name='TradingPartnerId' javaName='tradingPartnerId' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+            </FIELDDEF>
+            <FIELDDEF name='DocumentId' javaName='documentId' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+            </FIELDDEF>
+            <FIELDDEF name='InvoiceNumber' javaName='invoiceNumber' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+            </FIELDDEF>
+            <FIELDDEF name='ShipmentIdentification' javaName='shipmentIdentification'>
+            </FIELDDEF>
+            <FIELDDEF name='PurchaseOrderNumber' javaName='purchaseOrderNumber'>
+            </FIELDDEF>
+            <FIELDDEF name='CatalogNumber' javaName='catalogNumber'>
+            </FIELDDEF>
+            <FIELDDEF name='CreditDebitNumber' javaName='creditDebitNumber'>
+            </FIELDDEF>
+            <FIELDDEF name='DepositorOrderNumber' javaName='depositorOrderNumber'>
+            </FIELDDEF>
+            <FIELDDEF name='ReportStartDate' javaName='reportStartDate'>
+            </FIELDDEF>
+            <FIELDDEF name='RecordType' javaName='recordType'>
+            </FIELDDEF>
+            <FIELDDEF name='TsetPurposeCode' javaName='tsetPurposeCode' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+            </FIELDDEF>
+            <FIELDDEF name='TsetTypeCode' javaName='tsetTypeCode'>
+            </FIELDDEF>
+            <FIELDDEF name='Date1' javaName='date1' dataType='JDate' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                <FORMAT>
+                    <FIELDFMT maxLength="2147483647" minLength="0" justify="NONE" trim="NONE" dataType="DATE" name="all" keyType="all" desc="all">yyyy-MM-dd</FIELDFMT>
+                </FORMAT>
+            </FIELDDEF>
+            <FIELDDEF name='Time1' javaName='time1'>
+            </FIELDDEF>
+            <FIELDDEF name='ReferenceID' javaName='referenceID'>
+            </FIELDDEF>
+            <FIELDDEF name='TimeCode1' javaName='timeCode1'>
+            </FIELDDEF>
+            <FIELDDEF name='ActionCode' javaName='actionCode'>
+            </FIELDDEF>
+            <FIELDDEF name='SecurityLevel' javaName='securityLevel'>
+            </FIELDDEF>
+        </GROUPDEF>
+        <GROUPDEF name='Address' javaName='address' min='0' max='999999' exclude='N' justification='Left' display='Y' enable='Y' print='Y' nextRow='N' sourceFilter='No Filter' isRecord='N' persistent='Y' present='Y'>
+            <FIELDDEF name='TradingPartnerId' javaName='tradingPartnerId'>
+            </FIELDDEF>
+            <FIELDDEF name='DocumentId' javaName='documentId'>
+            </FIELDDEF>
+            <FIELDDEF name='InvoiceNumber' javaName='invoiceNumber'>
+            </FIELDDEF>
+            <FIELDDEF name='ReportStartDate' javaName='reportStartDate'>
+            </FIELDDEF>
+            <FIELDDEF name='CatalogNumber' javaName='catalogNumber'>
+            </FIELDDEF>
+            <FIELDDEF name='ShipmentIdentification' javaName='shipmentIdentification'>
+            </FIELDDEF>
+            <FIELDDEF name='PurchaseOrderNumber' javaName='purchaseOrderNumber'>
+            </FIELDDEF>
+            <FIELDDEF name='CreditDebitNumber' javaName='creditDebitNumber'>
+            </FIELDDEF>
+            <FIELDDEF name='DepositorOrderNumber' javaName='depositorOrderNumber' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+            </FIELDDEF>
+            <FIELDDEF name='RecordType' javaName='recordType'>
+            </FIELDDEF>
+            <FIELDDEF name='AddressTypeCode' javaName='addressTypeCode' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+            </FIELDDEF>
+            <FIELDDEF name='LocationCodeQualifier' javaName='locationCodeQualifier'>
+            </FIELDDEF>
+            <FIELDDEF name='AddressLocationNumber' javaName='addressLocationNumber' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+            </FIELDDEF>
+            <FIELDDEF name='AddressName' javaName='addressName' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+            </FIELDDEF>
+            <FIELDDEF name='AddressAlternateName' javaName='addressAlternateName'>
+            </FIELDDEF>
+            <FIELDDEF name='Address1' javaName='address1'>
+            </FIELDDEF>
+            <FIELDDEF name='Address2' javaName='address2'>
+            </FIELDDEF>
+            <FIELDDEF name='Address3' javaName='address3'>
+            </FIELDDEF>
+            <FIELDDEF name='Address4' javaName='address4'>
+            </FIELDDEF>
+            <FIELDDEF name='City' javaName='city'>
+            </FIELDDEF>
+            <FIELDDEF name='State' javaName='state'>
+            </FIELDDEF>
+            <FIELDDEF name='PostalCode' javaName='postalCode'>
+            </FIELDDEF>
+            <FIELDDEF name='Country' javaName='country'>
+            </FIELDDEF>
+            <FIELDDEF name='ContactName' javaName='contactName'>
+            </FIELDDEF>
+            <FIELDDEF name='ContactPhone' javaName='contactPhone'>
+            </FIELDDEF>
+            <FIELDDEF name='ContactFax' javaName='contactFax'>
+            </FIELDDEF>
+            <FIELDDEF name='ContactEmail' javaName='contactEmail'>
+            </FIELDDEF>
+            <FIELDDEF name='AddressTaxIdNumber' javaName='addressTaxIdNumber'>
+            </FIELDDEF>
+            <FIELDDEF name='AddressTaxExemptNumber' javaName='addressTaxExemptNumber'>
+            </FIELDDEF>
+            <FIELDDEF name='AddressAlternateName2' javaName='addressAlternateName2'>
+            </FIELDDEF>
+            <GROUPDEF name='Reference' javaName='reference'>
+                <FIELDDEF name='TradingPartnerId' javaName='tradingPartnerId'>
+                </FIELDDEF>
+                <FIELDDEF name='DocumentId' javaName='documentId'>
+                </FIELDDEF>
+                <FIELDDEF name='InvoiceNumber' javaName='invoiceNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='ReportStartDate' javaName='reportStartDate'>
+                </FIELDDEF>
+                <FIELDDEF name='CatalogNumber' javaName='catalogNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='ShipmentIdentification' javaName='shipmentIdentification'>
+                </FIELDDEF>
+                <FIELDDEF name='PurchaseOrderNumber' javaName='purchaseOrderNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='CreditDebitNumber' javaName='creditDebitNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='DepositorOrderNumber' javaName='depositorOrderNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='RecordType' javaName='recordType'>
+                </FIELDDEF>
+                <FIELDDEF name='ReferenceQual' javaName='referenceQual'>
+                </FIELDDEF>
+                <FIELDDEF name='ReferenceID' javaName='referenceID'>
+                </FIELDDEF>
+                <FIELDDEF name='Description' javaName='description'>
+                </FIELDDEF>
+            </GROUPDEF>
+            <GROUPDEF name='Contact' javaName='contact' min='0' max='200000'>
+                <FIELDDEF name='TradingPartnerId' javaName='tradingPartnerId'>
+                </FIELDDEF>
+                <FIELDDEF name='DocumentId' javaName='documentId'>
+                </FIELDDEF>
+                <FIELDDEF name='InvoiceNumber' javaName='invoiceNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='ReportStartDate' javaName='reportStartDate'>
+                </FIELDDEF>
+                <FIELDDEF name='CatalogNumber' javaName='catalogNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='ShipmentIdentification' javaName='shipmentIdentification'>
+                </FIELDDEF>
+                <FIELDDEF name='PurchaseOrderNumber' javaName='purchaseOrderNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='CreditDebitNumber' javaName='creditDebitNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='DepositorOrderNumber' javaName='depositorOrderNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='RecordType' javaName='recordType'>
+                </FIELDDEF>
+                <FIELDDEF name='ContactTypeCode' javaName='contactTypeCode'>
+                </FIELDDEF>
+                <FIELDDEF name='ContactName' javaName='contactName'>
+                </FIELDDEF>
+                <FIELDDEF name='ContactPhone' javaName='contactPhone'>
+                </FIELDDEF>
+                <FIELDDEF name='ContactFax' javaName='contactFax'>
+                </FIELDDEF>
+                <FIELDDEF name='ContactEmail' javaName='contactEmail'>
+                </FIELDDEF>
+                <FIELDDEF name='ContactReference' javaName='contactReference'>
+                </FIELDDEF>
+            </GROUPDEF>
+            <GROUPDEF name='Date' javaName='date'>
+                <FIELDDEF name='TradingPartnerId' javaName='tradingPartnerId'>
+                </FIELDDEF>
+                <FIELDDEF name='DocumentId' javaName='documentId'>
+                </FIELDDEF>
+                <FIELDDEF name='InvoiceNumber' javaName='invoiceNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='ReportStartDate' javaName='reportStartDate'>
+                </FIELDDEF>
+                <FIELDDEF name='CatalogNumber' javaName='catalogNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='ShipmentIdentification' javaName='shipmentIdentification'>
+                </FIELDDEF>
+                <FIELDDEF name='PurchaseOrderNumber' javaName='purchaseOrderNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='CreditDebitNumber' javaName='creditDebitNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='DepositorOrderNumber' javaName='depositorOrderNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='RecordType' javaName='recordType'>
+                </FIELDDEF>
+                <FIELDDEF name='DateTimeQualifier1' javaName='dateTimeQualifier1'>
+                </FIELDDEF>
+                <FIELDDEF name='Date1' javaName='date1'>
+                </FIELDDEF>
+                <FIELDDEF name='Time1' javaName='time1'>
+                </FIELDDEF>
+                <FIELDDEF name='TimeCode1' javaName='timeCode1'>
+                </FIELDDEF>
+                <FIELDDEF name='DateTimeFormQualifier1' javaName='dateTimeFormQualifier1'>
+                </FIELDDEF>
+                <FIELDDEF name='DateTimePeriod' javaName='dateTimePeriod'>
+                </FIELDDEF>
+            </GROUPDEF>
+        </GROUPDEF>
+        <GROUPDEF name='Reference' javaName='reference'>
+            <FIELDDEF name='TradingPartnerId' javaName='tradingPartnerId'>
+            </FIELDDEF>
+            <FIELDDEF name='DocumentId' javaName='documentId'>
+            </FIELDDEF>
+            <FIELDDEF name='InvoiceNumber' javaName='invoiceNumber'>
+            </FIELDDEF>
+            <FIELDDEF name='ReportStartDate' javaName='reportStartDate'>
+            </FIELDDEF>
+            <FIELDDEF name='CatalogNumber' javaName='catalogNumber'>
+            </FIELDDEF>
+            <FIELDDEF name='ShipmentIdentification' javaName='shipmentIdentification'>
+            </FIELDDEF>
+            <FIELDDEF name='PurchaseOrderNumber' javaName='purchaseOrderNumber'>
+            </FIELDDEF>
+            <FIELDDEF name='CreditDebitNumber' javaName='creditDebitNumber'>
+            </FIELDDEF>
+            <FIELDDEF name='DepositorOrderNumber' javaName='depositorOrderNumber'>
+            </FIELDDEF>
+            <FIELDDEF name='RecordType' javaName='recordType'>
+            </FIELDDEF>
+            <FIELDDEF name='ReferenceQual' javaName='referenceQual'>
+            </FIELDDEF>
+            <FIELDDEF name='ReferenceID' javaName='referenceID'>
+            </FIELDDEF>
+            <FIELDDEF name='Description' javaName='description'>
+            </FIELDDEF>
+        </GROUPDEF>
+        <GROUPDEF name='Miscellaneous' javaName='miscellaneous'>
+            <FIELDDEF name='TradingPartnerId' javaName='tradingPartnerId'>
+            </FIELDDEF>
+            <FIELDDEF name='DocumentId' javaName='documentId'>
+            </FIELDDEF>
+            <FIELDDEF name='InvoiceNumber' javaName='invoiceNumber'>
+            </FIELDDEF>
+            <FIELDDEF name='ReportStartDate' javaName='reportStartDate'>
+            </FIELDDEF>
+            <FIELDDEF name='CatalogNumber' javaName='catalogNumber'>
+            </FIELDDEF>
+            <FIELDDEF name='ShipmentIdentification' javaName='shipmentIdentification'>
+            </FIELDDEF>
+            <FIELDDEF name='PurchaseOrderNumber' javaName='purchaseOrderNumber'>
+            </FIELDDEF>
+            <FIELDDEF name='CreditDebitNumber' javaName='creditDebitNumber'>
+            </FIELDDEF>
+            <FIELDDEF name='DepositorOrderNumber' javaName='depositorOrderNumber'>
+            </FIELDDEF>
+            <FIELDDEF name='RecordType' javaName='recordType'>
+            </FIELDDEF>
+            <FIELDDEF name='Qualifier1' javaName='qualifier1'>
+            </FIELDDEF>
+            <FIELDDEF name='Description1' javaName='description1'>
+            </FIELDDEF>
+            <FIELDDEF name='Qualifier2' javaName='qualifier2'>
+            </FIELDDEF>
+            <FIELDDEF name='Description2' javaName='description2'>
+            </FIELDDEF>
+        </GROUPDEF>
+    </GROUPDEF>
+    <GROUPDEF name='LineItems' javaName='lineItems' min='1' max='1' exclude='N' justification='Left' display='Y' enable='Y' print='Y' nextRow='N' sourceFilter='No Filter' isRecord='N' persistent='Y' present='Y'>
+        <GROUPDEF name='LineItem' javaName='lineItem' min='0' max='200000' exclude='N' justification='Left' display='Y' enable='Y' print='Y' nextRow='N' sourceFilter='No Filter' isRecord='N' persistent='Y' present='Y'>
+            <GROUPDEF name='OriginalTransaction' javaName='originalTransaction' exclude='N' justification='Left' display='Y' enable='Y' print='Y' nextRow='N' sourceFilter='No Filter' isRecord='N' persistent='Y' present='Y'>
+                <FIELDDEF name='TradingPartnerId' javaName='tradingPartnerId' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                </FIELDDEF>
+                <FIELDDEF name='DocumentId' javaName='documentId'>
+                </FIELDDEF>
+                <FIELDDEF name='InvoiceNumber' javaName='invoiceNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='ReportStartDate' javaName='reportStartDate'>
+                </FIELDDEF>
+                <FIELDDEF name='CatalogNumber' javaName='catalogNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='ShipmentIdentification' javaName='shipmentIdentification'>
+                </FIELDDEF>
+                <FIELDDEF name='PurchaseOrderNumber' javaName='purchaseOrderNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='CreditDebitNumber' javaName='creditDebitNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='DepositorOrderNumber' javaName='depositorOrderNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='RecordType' javaName='recordType'>
+                </FIELDDEF>
+                <FIELDDEF name='ApplicationAckCode' javaName='applicationAckCode' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                </FIELDDEF>
+                <FIELDDEF name='ReferenceQual' javaName='referenceQual'>
+                </FIELDDEF>
+                <FIELDDEF name='ReferenceID' javaName='referenceID' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                </FIELDDEF>
+                <FIELDDEF name='SenderCode' javaName='senderCode'>
+                </FIELDDEF>
+                <FIELDDEF name='ReceiverCode' javaName='receiverCode' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                </FIELDDEF>
+                <FIELDDEF name='Date1' javaName='date1'>
+                </FIELDDEF>
+                <FIELDDEF name='Time1' javaName='time1' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                </FIELDDEF>
+                <FIELDDEF name='GroupControlNumber' javaName='groupControlNumber' minLength='0' maxLength='9' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                </FIELDDEF>
+                <FIELDDEF name='TransactionSetControlNumber' javaName='transactionSetControlNumber' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                </FIELDDEF>
+                <FIELDDEF name='TransactionSetIndentifierCode' javaName='transactionSetIndentifierCode' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                </FIELDDEF>
+                <FIELDDEF name='IdentifierCode' javaName='identifierCode'>
+                </FIELDDEF>
+                <FIELDDEF name='TsetPurposeCode' javaName='tsetPurposeCode' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                </FIELDDEF>
+                <FIELDDEF name='TransactionTypeCode' javaName='transactionTypeCode'>
+                </FIELDDEF>
+                <FIELDDEF name='ApplicationTypeCode' javaName='applicationTypeCode'>
+                </FIELDDEF>
+                <FIELDDEF name='ActionCode' javaName='actionCode'>
+                </FIELDDEF>
+                <FIELDDEF name='TransactionHandlingCode' javaName='transactionHandlingCode'>
+                </FIELDDEF>
+                <FIELDDEF name='StatusReasonCode' javaName='statusReasonCode' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                </FIELDDEF>
+            </GROUPDEF>
+            <GROUPDEF name='ItemQuantity' javaName='itemQuantity' min='0' max='200000'>
+                <FIELDDEF name='TradingPartnerId' javaName='tradingPartnerId'>
+                </FIELDDEF>
+                <FIELDDEF name='DocumentId' javaName='documentId'>
+                </FIELDDEF>
+                <FIELDDEF name='InvoiceNumber' javaName='invoiceNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='ReportStartDate' javaName='reportStartDate'>
+                </FIELDDEF>
+                <FIELDDEF name='CatalogNumber' javaName='catalogNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='ShipmentIdentification' javaName='shipmentIdentification'>
+                </FIELDDEF>
+                <FIELDDEF name='PurchaseOrderNumber' javaName='purchaseOrderNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='CreditDebitNumber' javaName='creditDebitNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='DepositorOrderNumber' javaName='depositorOrderNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='RecordType' javaName='recordType'>
+                </FIELDDEF>
+                <FIELDDEF name='QuantityQualifier' javaName='quantityQualifier'>
+                </FIELDDEF>
+                <FIELDDEF name='Quantity1' javaName='quantity1'>
+                </FIELDDEF>
+                <FIELDDEF name='QtyUOM' javaName='qtyUOM'>
+                </FIELDDEF>
+                <FIELDDEF name='FreeFormMessage' javaName='freeFormMessage'>
+                </FIELDDEF>
+            </GROUPDEF>
+            <GROUPDEF name='MonetaryAmounts' javaName='monetaryAmounts' min='0' max='200000'>
+                <FIELDDEF name='TradingPartnerId' javaName='tradingPartnerId'>
+                </FIELDDEF>
+                <FIELDDEF name='DocumentId' javaName='documentId'>
+                </FIELDDEF>
+                <FIELDDEF name='InvoiceNumber' javaName='invoiceNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='ReportStartDate' javaName='reportStartDate'>
+                </FIELDDEF>
+                <FIELDDEF name='CatalogNumber' javaName='catalogNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='ShipmentIdentification' javaName='shipmentIdentification'>
+                </FIELDDEF>
+                <FIELDDEF name='PurchaseOrderNumber' javaName='purchaseOrderNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='CreditDebitNumber' javaName='creditDebitNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='DepositorOrderNumber' javaName='depositorOrderNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='RecordType' javaName='recordType'>
+                </FIELDDEF>
+                <FIELDDEF name='QuantityQualifier' javaName='quantityQualifier'>
+                </FIELDDEF>
+                <FIELDDEF name='MonetaryAmount' javaName='monetaryAmount'>
+                </FIELDDEF>
+                <FIELDDEF name='CreditDebitFlag' javaName='creditDebitFlag'>
+                </FIELDDEF>
+            </GROUPDEF>
+            <GROUPDEF name='Reference' javaName='reference'>
+                <FIELDDEF name='TradingPartnerId' javaName='tradingPartnerId'>
+                </FIELDDEF>
+                <FIELDDEF name='DocumentId' javaName='documentId'>
+                </FIELDDEF>
+                <FIELDDEF name='InvoiceNumber' javaName='invoiceNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='ReportStartDate' javaName='reportStartDate'>
+                </FIELDDEF>
+                <FIELDDEF name='CatalogNumber' javaName='catalogNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='ShipmentIdentification' javaName='shipmentIdentification'>
+                </FIELDDEF>
+                <FIELDDEF name='PurchaseOrderNumber' javaName='purchaseOrderNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='CreditDebitNumber' javaName='creditDebitNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='DepositorOrderNumber' javaName='depositorOrderNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='RecordType' javaName='recordType'>
+                </FIELDDEF>
+                <FIELDDEF name='ReferenceQual' javaName='referenceQual'>
+                </FIELDDEF>
+                <FIELDDEF name='ReferenceID' javaName='referenceID'>
+                </FIELDDEF>
+                <FIELDDEF name='Description' javaName='description'>
+                </FIELDDEF>
+            </GROUPDEF>
+            <GROUPDEF name='Date' javaName='date'>
+                <FIELDDEF name='TradingPartnerId' javaName='tradingPartnerId'>
+                </FIELDDEF>
+                <FIELDDEF name='DocumentId' javaName='documentId'>
+                </FIELDDEF>
+                <FIELDDEF name='InvoiceNumber' javaName='invoiceNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='ReportStartDate' javaName='reportStartDate'>
+                </FIELDDEF>
+                <FIELDDEF name='CatalogNumber' javaName='catalogNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='ShipmentIdentification' javaName='shipmentIdentification'>
+                </FIELDDEF>
+                <FIELDDEF name='PurchaseOrderNumber' javaName='purchaseOrderNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='CreditDebitNumber' javaName='creditDebitNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='DepositorOrderNumber' javaName='depositorOrderNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='RecordType' javaName='recordType'>
+                </FIELDDEF>
+                <FIELDDEF name='DateTimeQualifier1' javaName='dateTimeQualifier1'>
+                </FIELDDEF>
+                <FIELDDEF name='Date1' javaName='date1'>
+                </FIELDDEF>
+                <FIELDDEF name='Time1' javaName='time1'>
+                </FIELDDEF>
+                <FIELDDEF name='TimeCode1' javaName='timeCode1'>
+                </FIELDDEF>
+                <FIELDDEF name='DateTimeFormQualifier1' javaName='dateTimeFormQualifier1'>
+                </FIELDDEF>
+                <FIELDDEF name='DateTimePeriod' javaName='dateTimePeriod'>
+                </FIELDDEF>
+            </GROUPDEF>
+            <GROUPDEF name='Contact' javaName='contact' min='0' max='3'>
+                <FIELDDEF name='TradingPartnerId' javaName='tradingPartnerId'>
+                </FIELDDEF>
+                <FIELDDEF name='DocumentId' javaName='documentId'>
+                </FIELDDEF>
+                <FIELDDEF name='InvoiceNumber' javaName='invoiceNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='ReportStartDate' javaName='reportStartDate'>
+                </FIELDDEF>
+                <FIELDDEF name='CatalogNumber' javaName='catalogNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='ShipmentIdentification' javaName='shipmentIdentification'>
+                </FIELDDEF>
+                <FIELDDEF name='PurchaseOrderNumber' javaName='purchaseOrderNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='CreditDebitNumber' javaName='creditDebitNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='DepositorOrderNumber' javaName='depositorOrderNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='RecordType' javaName='recordType'>
+                </FIELDDEF>
+                <FIELDDEF name='ContactTypeCode' javaName='contactTypeCode'>
+                </FIELDDEF>
+                <FIELDDEF name='ContactName' javaName='contactName'>
+                </FIELDDEF>
+                <FIELDDEF name='ContactPhone' javaName='contactPhone'>
+                </FIELDDEF>
+                <FIELDDEF name='ContactFax' javaName='contactFax'>
+                </FIELDDEF>
+                <FIELDDEF name='ContactEmail' javaName='contactEmail'>
+                </FIELDDEF>
+                <FIELDDEF name='ContactReference' javaName='contactReference'>
+                </FIELDDEF>
+            </GROUPDEF>
+            <GROUPDEF name='OrganizationalAddress' javaName='organizationalAddress' min='0' max='9'>
+                <FIELDDEF name='TradingPartnerId' javaName='tradingPartnerId'>
+                </FIELDDEF>
+                <FIELDDEF name='DocumentId' javaName='documentId'>
+                </FIELDDEF>
+                <FIELDDEF name='InvoiceNumber' javaName='invoiceNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='ReportStartDate' javaName='reportStartDate'>
+                </FIELDDEF>
+                <FIELDDEF name='CatalogNumber' javaName='catalogNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='ShipmentIdentification' javaName='shipmentIdentification'>
+                </FIELDDEF>
+                <FIELDDEF name='PurchaseOrderNumber' javaName='purchaseOrderNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='CreditDebitNumber' javaName='creditDebitNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='DepositorOrderNumber' javaName='depositorOrderNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='RecordType' javaName='recordType'>
+                </FIELDDEF>
+                <FIELDDEF name='EntityIdentifierCode' javaName='entityIdentifierCode'>
+                </FIELDDEF>
+                <FIELDDEF name='EntityTypeQual' javaName='entityTypeQual'>
+                </FIELDDEF>
+                <FIELDDEF name='LastOrgName' javaName='lastOrgName'>
+                </FIELDDEF>
+                <FIELDDEF name='NameFirst' javaName='nameFirst'>
+                </FIELDDEF>
+                <FIELDDEF name='NameMiddle' javaName='nameMiddle'>
+                </FIELDDEF>
+                <FIELDDEF name='NamePrefix' javaName='namePrefix'>
+                </FIELDDEF>
+                <FIELDDEF name='NameSuffix' javaName='nameSuffix'>
+                </FIELDDEF>
+                <FIELDDEF name='LocationCodeQualifier' javaName='locationCodeQualifier'>
+                </FIELDDEF>
+                <FIELDDEF name='IDNumber' javaName='iDNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='EntityRelationshipCode' javaName='entityRelationshipCode'>
+                </FIELDDEF>
+                <FIELDDEF name='EntityIdentifierCode2' javaName='entityIdentifierCode2'>
+                </FIELDDEF>
+                <FIELDDEF name='AddressAlternateName' javaName='addressAlternateName'>
+                </FIELDDEF>
+                <FIELDDEF name='Address1' javaName='address1'>
+                </FIELDDEF>
+                <FIELDDEF name='Address2' javaName='address2'>
+                </FIELDDEF>
+                <FIELDDEF name='Address3' javaName='address3'>
+                </FIELDDEF>
+                <FIELDDEF name='Address4' javaName='address4'>
+                </FIELDDEF>
+                <FIELDDEF name='City' javaName='city'>
+                </FIELDDEF>
+                <FIELDDEF name='State' javaName='state'>
+                </FIELDDEF>
+                <FIELDDEF name='PostalCode' javaName='postalCode'>
+                </FIELDDEF>
+                <FIELDDEF name='Country' javaName='country'>
+                </FIELDDEF>
+                <FIELDDEF name='ContactName' javaName='contactName'>
+                </FIELDDEF>
+                <FIELDDEF name='ContactPhone' javaName='contactPhone'>
+                </FIELDDEF>
+                <FIELDDEF name='ContactFax' javaName='contactFax'>
+                </FIELDDEF>
+                <FIELDDEF name='ContactEmail' javaName='contactEmail'>
+                </FIELDDEF>
+                <FIELDDEF name='AddressTaxIdNumber' javaName='addressTaxIdNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='AddressTaxExemptNumber' javaName='addressTaxExemptNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='AddressAlternateName2' javaName='addressAlternateName2'>
+                </FIELDDEF>
+            </GROUPDEF>
+            <GROUPDEF name='TechnicalErrors' javaName='technicalErrors' min='0' max='1' exclude='N' justification='Left' display='Y' enable='Y' print='Y' nextRow='N' sourceFilter='No Filter' isRecord='N' persistent='Y' present='Y'>
+                <GROUPDEF name='TechnicalError' javaName='technicalError' min='0' max='200000' exclude='N' justification='Left' display='Y' enable='Y' print='Y' nextRow='N' sourceFilter='No Filter' isRecord='N' persistent='Y' present='Y'>
+                    <GROUPDEF name='TechnicalErrorDescription' javaName='technicalErrorDescription' min='1' max='1' exclude='N' justification='Left' display='Y' enable='Y' print='Y' nextRow='N' sourceFilter='No Filter' isRecord='N' persistent='Y' present='Y'>
+                        <FIELDDEF name='TradingPartnerId' javaName='tradingPartnerId' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                        </FIELDDEF>
+                        <FIELDDEF name='DocumentId' javaName='documentId'>
+                        </FIELDDEF>
+                        <FIELDDEF name='InvoiceNumber' javaName='invoiceNumber'>
+                        </FIELDDEF>
+                        <FIELDDEF name='ReportStartDate' javaName='reportStartDate'>
+                        </FIELDDEF>
+                        <FIELDDEF name='CatalogNumber' javaName='catalogNumber'>
+                        </FIELDDEF>
+                        <FIELDDEF name='ShipmentIdentification' javaName='shipmentIdentification'>
+                        </FIELDDEF>
+                        <FIELDDEF name='PurchaseOrderNumber' javaName='purchaseOrderNumber'>
+                        </FIELDDEF>
+                        <FIELDDEF name='CreditDebitNumber' javaName='creditDebitNumber'>
+                        </FIELDDEF>
+                        <FIELDDEF name='DepositorOrderNumber' javaName='depositorOrderNumber'>
+                        </FIELDDEF>
+                        <FIELDDEF name='RecordType' javaName='recordType'>
+                        </FIELDDEF>
+                        <FIELDDEF name='ApplicationErrorCode' javaName='applicationErrorCode' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                        </FIELDDEF>
+                        <FIELDDEF name='FreeFormMessage' javaName='freeFormMessage' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                        </FIELDDEF>
+                        <FIELDDEF name='SegmentIDCode' javaName='segmentIDCode'>
+                        </FIELDDEF>
+                        <FIELDDEF name='SegmentPositionInTransactionSet' javaName='segmentPositionInTransactionSet'>
+                        </FIELDDEF>
+                        <FIELDDEF name='ElementPositionInSegment' javaName='elementPositionInSegment'>
+                        </FIELDDEF>
+                        <FIELDDEF name='ComponentElementPositionInComposite' javaName='componentElementPositionInComposite'>
+                        </FIELDDEF>
+                        <FIELDDEF name='RepeatingDataElementPosition' javaName='repeatingDataElementPosition'>
+                        </FIELDDEF>
+                        <FIELDDEF name='ElementReferenceNumber1' javaName='elementReferenceNumber1'>
+                        </FIELDDEF>
+                        <FIELDDEF name='ElementReferenceNumber2' javaName='elementReferenceNumber2'>
+                        </FIELDDEF>
+                        <FIELDDEF name='CopyOfBadDataElement' javaName='copyOfBadDataElement' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                        </FIELDDEF>
+                        <FIELDDEF name='DataElementNewContent' javaName='dataElementNewContent' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                        </FIELDDEF>
+                    </GROUPDEF>
+                    <GROUPDEF name='Notes' javaName='notes' exclude='N' justification='Left' display='Y' enable='Y' print='Y' nextRow='N' sourceFilter='No Filter' isRecord='N' persistent='Y' present='Y'>
+                        <FIELDDEF name='TradingPartnerId' javaName='tradingPartnerId'>
+                        </FIELDDEF>
+                        <FIELDDEF name='DocumentId' javaName='documentId'>
+                        </FIELDDEF>
+                        <FIELDDEF name='InvoiceNumber' javaName='invoiceNumber'>
+                        </FIELDDEF>
+                        <FIELDDEF name='ReportStartDate' javaName='reportStartDate'>
+                        </FIELDDEF>
+                        <FIELDDEF name='CatalogNumber' javaName='catalogNumber'>
+                        </FIELDDEF>
+                        <FIELDDEF name='ShipmentIdentification' javaName='shipmentIdentification'>
+                        </FIELDDEF>
+                        <FIELDDEF name='PurchaseOrderNumber' javaName='purchaseOrderNumber'>
+                        </FIELDDEF>
+                        <FIELDDEF name='CreditDebitNumber' javaName='creditDebitNumber'>
+                        </FIELDDEF>
+                        <FIELDDEF name='DepositorOrderNumber' javaName='depositorOrderNumber'>
+                        </FIELDDEF>
+                        <FIELDDEF name='RecordType' javaName='recordType'>
+                        </FIELDDEF>
+                        <FIELDDEF name='NoteInformationField' javaName='noteInformationField' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                        </FIELDDEF>
+                        <FIELDDEF name='NoteFormatCode' javaName='noteFormatCode'>
+                        </FIELDDEF>
+                        <FIELDDEF name='NoteFunctionCode' javaName='noteFunctionCode'>
+                        </FIELDDEF>
+                    </GROUPDEF>
+                    <GROUPDEF name='RelatedData' javaName='relatedData' min='0' max='100'>
+                        <FIELDDEF name='TradingPartnerId' javaName='tradingPartnerId'>
+                        </FIELDDEF>
+                        <FIELDDEF name='DocumentId' javaName='documentId'>
+                        </FIELDDEF>
+                        <FIELDDEF name='InvoiceNumber' javaName='invoiceNumber'>
+                        </FIELDDEF>
+                        <FIELDDEF name='ReportStartDate' javaName='reportStartDate'>
+                        </FIELDDEF>
+                        <FIELDDEF name='CatalogNumber' javaName='catalogNumber'>
+                        </FIELDDEF>
+                        <FIELDDEF name='ShipmentIdentification' javaName='shipmentIdentification'>
+                        </FIELDDEF>
+                        <FIELDDEF name='PurchaseOrderNumber' javaName='purchaseOrderNumber'>
+                        </FIELDDEF>
+                        <FIELDDEF name='CreditDebitNumber' javaName='creditDebitNumber'>
+                        </FIELDDEF>
+                        <FIELDDEF name='DepositorOrderNumber' javaName='depositorOrderNumber'>
+                        </FIELDDEF>
+                        <FIELDDEF name='RecordType' javaName='recordType'>
+                        </FIELDDEF>
+                        <FIELDDEF name='Description' javaName='description'>
+                        </FIELDDEF>
+                        <FIELDDEF name='IdentificationCode' javaName='identificationCode'>
+                        </FIELDDEF>
+                        <FIELDDEF name='AgencyQualifierCode' javaName='agencyQualifierCode'>
+                        </FIELDDEF>
+                        <FIELDDEF name='IndustryQualifierCode' javaName='industryQualifierCode'>
+                        </FIELDDEF>
+                        <FIELDDEF name='IndustryCode' javaName='industryCode'>
+                        </FIELDDEF>
+                    </GROUPDEF>
+                </GROUPDEF>
+            </GROUPDEF>
+            <GROUPDEF name='Miscellaneous' javaName='miscellaneous'>
+                <FIELDDEF name='TradingPartnerId' javaName='tradingPartnerId'>
+                </FIELDDEF>
+                <FIELDDEF name='DocumentId' javaName='documentId'>
+                </FIELDDEF>
+                <FIELDDEF name='InvoiceNumber' javaName='invoiceNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='ReportStartDate' javaName='reportStartDate'>
+                </FIELDDEF>
+                <FIELDDEF name='CatalogNumber' javaName='catalogNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='ShipmentIdentification' javaName='shipmentIdentification'>
+                </FIELDDEF>
+                <FIELDDEF name='PurchaseOrderNumber' javaName='purchaseOrderNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='CreditDebitNumber' javaName='creditDebitNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='DepositorOrderNumber' javaName='depositorOrderNumber'>
+                </FIELDDEF>
+                <FIELDDEF name='RecordType' javaName='recordType'>
+                </FIELDDEF>
+                <FIELDDEF name='Qualifier1' javaName='qualifier1'>
+                </FIELDDEF>
+                <FIELDDEF name='Description1' javaName='description1'>
+                </FIELDDEF>
+                <FIELDDEF name='Qualifier2' javaName='qualifier2'>
+                </FIELDDEF>
+                <FIELDDEF name='Description2' javaName='description2'>
+                </FIELDDEF>
+            </GROUPDEF>
+        </GROUPDEF>
+    </GROUPDEF>
+    <GROUPDEF name='Summary' javaName='summary'>
+        <FIELDDEF name='TradingPartnerId' javaName='tradingPartnerId'>
+        </FIELDDEF>
+        <FIELDDEF name='DocumentId' javaName='documentId'>
+        </FIELDDEF>
+        <FIELDDEF name='InvoiceNumber' javaName='invoiceNumber'>
+        </FIELDDEF>
+        <FIELDDEF name='ReportStartDate' javaName='reportStartDate'>
+        </FIELDDEF>
+        <FIELDDEF name='CatalogNumber' javaName='catalogNumber'>
+        </FIELDDEF>
+        <FIELDDEF name='ShipmentIdentification' javaName='shipmentIdentification'>
+        </FIELDDEF>
+        <FIELDDEF name='PurchaseOrderNumber' javaName='purchaseOrderNumber'>
+        </FIELDDEF>
+        <FIELDDEF name='CreditDebitNumber' javaName='creditDebitNumber'>
+        </FIELDDEF>
+        <FIELDDEF name='DepositorOrderNumber' javaName='depositorOrderNumber'>
+        </FIELDDEF>
+        <FIELDDEF name='RecordType' javaName='recordType'>
+        </FIELDDEF>
+        <FIELDDEF name='TotalOrders' javaName='totalOrders'>
+        </FIELDDEF>
+        <FIELDDEF name='TotalLineItems' javaName='totalLineItems'>
+        </FIELDDEF>
+        <FIELDDEF name='TotalQuantity' javaName='totalQuantity'>
+        </FIELDDEF>
+        <FIELDDEF name='TotalWeight' javaName='totalWeight' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+        </FIELDDEF>
+    </GROUPDEF>
+</DOCUMENTDEF>
+</SPSFILE>

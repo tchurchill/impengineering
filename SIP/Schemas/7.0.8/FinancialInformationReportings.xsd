@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SIP XML FinancialInformationReportings (EDIDOC 821) -->
+<!-- C SPS Commerce, Inc., 2012
+
+SPS Commerce is providing this XML schema (XSD) and resultant XML Message as a service to its customers and partners. This schema and resultant XML message were developed by SPS Commerce and are based on years of experience with our Standard Interface Program (SIP).
+
+Although efforts have been made to assure that the XML schema and resultant XML message are correct, reliable, and technically accurate, SPS COMMERCE MAKES NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML SCHEMA AND RESULTANT XML MESSAGE ARE CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE MERCHANTABLE OR SUITABLE FOR ANY PARTICULAR PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  THE USE OF THE SCHEMA AND RESULTANT MESSAGE BY ANY PARTY ARE WITH THE EXPRESS UNDERSTANDING THAT SPS COMMERCE  ASSUMES NO LIABILITY FOR ANY CLAIM, DAMAGE OR LOSS OF ANY KIND OR NATURE.
+
+	Version Information:
+	Version 7.12.3
+    Original Version: June 08 , 2007
+
+COMMENTS:
+
+The mandatory XML elements, specific codes and qualifiers used between Trading partners are defined in separate trading partner guidelines between the partners and are not part of this schema and resultant XML message. 
+ -->
+<xs:schema xmlns="http://www.spscommerce.net/SIP" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.spscommerce.net/SIP" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- inclusion of SIPbase -->
+	<xs:include schemaLocation="SIPbase.xsd"/>
+	<xs:element name="AccountIdentification" type="AccountIdentificationType"/>
+	<xs:element name="AccountIdentificationLine" type="AccountIdentificationLineType"/>
+	<xs:element name="AccountIdentifications" type="AccountIdentificationsType"/>
+	<xs:element name="AgencyCode" type="xs:string"/>
+	<xs:element name="ApplicationTypeCode" type="xs:string"/>
+	<xs:element name="AssignedNumber" type="xs:int"/>
+	<xs:element name="Availability" type="xs:decimal"/>
+	<xs:element name="BalanceInformation" type="BalanceInformationType"/>
+	<xs:element name="BalanceInformationLine" type="BalanceInformationLineType"/>
+	<xs:element name="BalanceInformations" type="BalanceInformationsType"/>
+	<xs:element name="BenefitStatusCode" type="xs:string"/>
+	<xs:element name="BreakdownStructureCode" type="xs:string"/>
+	<xs:element name="CustomerAccountNumber2" type="xs:string"/>
+	<xs:element name="EntityIDCode1" type="xs:string"/>
+	<xs:element name="EntityIDCode2" type="xs:string"/>
+	<xs:element name="EntityIDCodeQual1" type="xs:string"/>
+	<xs:element name="EntityIDCodeQual2" type="xs:string"/>
+	<xs:element name="EntityIdentifierCode" type="xs:string"/>
+	<xs:element name="EntityIdentifierCode2" type="xs:string"/>
+	<xs:element name="EntityLine" type="EntityLineType"/>
+	<xs:element name="EntityTypeQual" type="xs:string"/>
+	<xs:element name="EntityRelationshipCode" type="xs:string"/>
+	<xs:element name="FinancialAccountingData" type="FinancialAccountingDataType"/>
+	<xs:element name="FinancialInformation" type="FinancialInformationType"/>
+	<xs:element name="FinancialInformationCode" type="xs:string"/>
+	<xs:element name="FinancialInformationLine" type="FinancialInformationLineType"/>
+	<xs:element name="FinancialInformationReporting" type="FinancialInformationReportingType"/>
+	<xs:element name="FinancialInformations" type="FinancialInformationsType"/>
+	<xs:element name="FinancialStatusCode" type="xs:string"/>
+	<xs:element name="FundsAvailablility" type="FundsAvailablilityType"/>
+	<xs:element name="Header" type="HeaderType"/>
+	<xs:element name="IndustryCode" type="xs:string"/>
+	<xs:element name="IndustryCodeQualifier" type="xs:string"/>
+	<xs:element name="IDCode1" type="xs:string"/>
+	<xs:element name="IDCode2" type="xs:string"/>
+	<xs:element name="IDNumber" type="xs:string"/>
+	<xs:element name="InterestRate" type="xs:decimal"/>
+	<xs:element name="LastOrgName" type="xs:string"/>
+	<xs:element name="LineItem" type="LineItemType"/>
+	<xs:element name="LineItems" type="LineItemsType"/>
+	<xs:element name="MonetaryAmount2" type="xs:decimal"/>
+	<xs:element name="MonetaryAmounts" type="MonetaryAmountsType"/>
+	<xs:element name="OrderHeader" type="OrderHeaderType"/>
+	<xs:element name="Organizational" type="OrganizationalType"/>
+	<xs:element name="OrganizationalAddress" type="OrganizationalAddressType"/>
+	<xs:element name="Organizationals" type="OrganizationalsType"/>
+	<xs:element name="OriginatingCompanyIdentifier" type="xs:string"/>
+	<xs:element name="Name" type="xs:string"/>
+	<xs:element name="NameFirst" type="xs:string"/>
+	<xs:element name="NameMiddle" type="xs:string"/>
+	<xs:element name="NamePrefix" type="xs:string"/>
+	<xs:element name="NameSuffix" type="xs:string"/>
+	<xs:element name="Pricing" type="PricingType"/>
+	<xs:element name="Rate" type="RateType"/>
+	<xs:element name="RateDate" type="RateDateType"/>
+	<xs:element name="RateOrValueQualifier1" type="xs:string"/>
+	<xs:element name="ReferenceIDQual" type="xs:string"/>
+	<xs:element name="Summary" type="SummaryType"/>
+	<xs:element name="TotalEntityNumber" type="xs:decimal"/>
+	<xs:element name="TotalRemitLineNumber" type="xs:decimal"/>
+	<xs:element name="Trace" type="TraceType"/>
+	<xs:element name="TraceTypeCode" type="xs:string"/>
+	<xs:element name="TransactionSummary" type="TransactionSummaryType"/>
+	<xs:element name="TransactionSummaryLine" type="TransactionSummaryLineType"/>
+	<xs:element name="TransactionSummaries" type="TransactionSummariesType"/>
+	<!-- top level elements -->
+	<xs:element name="FinancialInformationReportings">
+		<xs:annotation>
+			<xs:appinfo>7.12.3</xs:appinfo>
+			<xs:documentation>SIP XML FinancialInformationReportings schema, Version 7.12.3</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FinancialInformationReporting" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- FinancialInformationReporting elements  -->
+	<xs:complexType name="FinancialInformationReportingType">
+		<xs:complexContent>
+			<xs:extension base="sipDocumentType">
+				<xs:sequence>
+					<xs:element ref="Header"/>
+					<xs:element ref="LineItems"/>
+					<xs:element ref="Summary"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Header elements  -->
+	<xs:complexType name="HeaderType">
+		<xs:complexContent>
+			<xs:extension base="sipHeaderType">
+				<xs:sequence>
+					<xs:element ref="OrderHeader"/>
+					<xs:element ref="Trace" maxOccurs="2"/>
+					<xs:element ref="Reference" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Date" maxOccurs="4"/>
+					<xs:element ref="Address" minOccurs="0" maxOccurs="2"/>
+					<xs:element ref="Contact" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Miscellaneous" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FinancialAccountingData" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- OrderHeader elements -->
+	<xs:complexType name="OrderHeaderType">
+		<xs:complexContent>
+			<xs:extension base="firstSipRecordType">
+				<xs:sequence>
+					<xs:element ref="TsetPurposeCode"/>
+					<xs:element ref="ApplicationTypeCode" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Trace Elements -->
+	<xs:complexType name="TraceType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="TraceTypeCode"/>
+					<xs:element ref="ReferenceID1"/>
+					<xs:element ref="OriginatingCompanyIdentifier" minOccurs="0"/>
+					<xs:element ref="ReferenceID2" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- FinancialAccountingData Elements -->
+	<xs:complexType name="FinancialAccountingDataType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="AgencyCode"/>
+					<xs:element ref="AllowChrgCode" minOccurs="0"/>
+					<xs:element ref="AllowChrgIndicator" minOccurs="0"/>
+					<xs:element ref="BreakdownStructureCode" minOccurs="0"/>
+					<xs:element ref="FinancialInformationCode" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--  LineItems elements -->
+	<xs:complexType name="LineItemsType">
+		<xs:complexContent>
+			<xs:extension base="sipDatasetType">
+				<xs:sequence>
+					<xs:element ref="LineItem" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- LineItem elements -->
+	<xs:complexType name="LineItemType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="EntityLine"/>
+					<xs:element ref="Address" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Contact" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="AccountIdentifications" minOccurs="0"/>
+					<xs:element ref="FinancialAccountingData" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- EntityLine elements  -->
+	<xs:complexType name="EntityLineType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="AssignedNumber" minOccurs="0"/>
+					<xs:element ref="EntityIDCode1" minOccurs="0"/>
+					<xs:element ref="EntityIDCodeQual1" minOccurs="0"/>
+					<xs:element ref="IDCode1" minOccurs="0"/>
+					<xs:element ref="EntityIDCode2" minOccurs="0"/>
+					<xs:element ref="EntityIDCodeQual2" minOccurs="0"/>
+					<xs:element ref="IDCode2" minOccurs="0"/>
+					<xs:element ref="ReferenceID" minOccurs="0"/>
+					<xs:element ref="ReferenceIDQual" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- AccountIdentifications elements-->
+	<xs:complexType name="AccountIdentificationsType">
+		<xs:complexContent>
+			<xs:extension base="sipDatasetType">
+				<xs:sequence>
+					<xs:element ref="AccountIdentification" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- AccountIdentification elements-->
+	<xs:complexType name="AccountIdentificationType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="AccountIdentificationLine"/>
+					<xs:element ref="RateDate" minOccurs="0" maxOccurs="13"/>
+					<xs:element ref="BalanceInformations" minOccurs="0"/>
+					<xs:element ref="TransactionSummaries" minOccurs="0"/>
+					<xs:element ref="FinancialInformations" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- AccountIdentificationLine elements -->
+	<xs:complexType name="AccountIdentificationLineType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="CustomerAccountNumber"/>
+					<xs:element ref="Name" minOccurs="0"/>
+					<xs:element ref="EntityIDCodeQual1" minOccurs="0"/>
+					<xs:element ref="EntityIDCode1" minOccurs="0"/>
+					<xs:element ref="CustomerAccountNumber2" minOccurs="0"/>
+					<xs:element ref="Description" minOccurs="0"/>
+					<xs:element ref="PaymentMethodCode" minOccurs="0"/>
+					<xs:element ref="BenefitStatusCode" minOccurs="0"/>
+					<xs:element ref="BuyersCurrency" minOccurs="0"/>
+					<xs:element ref="SellersCurrency" minOccurs="0"/>
+					<xs:element ref="ExchangeRate" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- RateDate elements -->
+	<xs:complexType name="RateDateType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="RateOrValueQualifier1"/>
+					<xs:element ref="InterestRate"/>
+					<xs:element ref="MonetaryAmount" minOccurs="0"/>
+					<xs:element ref="DateTimeQualifier1" minOccurs="0"/>
+					<xs:element ref="Date1" minOccurs="0"/>
+					<xs:element ref="Time1" minOccurs="0"/>
+					<xs:element ref="TimeCode1" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- BalanceInformations elements-->
+	<xs:complexType name="BalanceInformationsType">
+		<xs:complexContent>
+			<xs:extension base="sipDatasetType">
+				<xs:sequence>
+					<xs:element ref="BalanceInformation" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- BalanceInformation elements-->
+	<xs:complexType name="BalanceInformationType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="BalanceInformationLine"/>
+					<xs:element ref="FundsAvailablility" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--BalanceInformationLine elements -->
+	<xs:complexType name="BalanceInformationLineType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="IndustryCodeQualifier"/>
+					<xs:element ref="IndustryCode"/>
+					<xs:element ref="MonetaryAmount"/>
+					<xs:element ref="Date1" minOccurs="0"/>
+					<xs:element ref="Time1" minOccurs="0"/>
+					<xs:element ref="TimeCode1" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--FundsAvailablilityLine elements -->
+	<xs:complexType name="FundsAvailablilityType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="MonetaryAmount"/>
+					<xs:element ref="Availability"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- TransactionSummaries elements-->
+	<xs:complexType name="TransactionSummariesType">
+		<xs:complexContent>
+			<xs:extension base="sipDatasetType">
+				<xs:sequence>
+					<xs:element ref="TransactionSummary" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- TransactionSummary elements-->
+	<xs:complexType name="TransactionSummaryType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="TransactionSummaryLine"/>
+					<xs:element ref="FundsAvailablility" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--TransactionSummaryLine elements -->
+	<xs:complexType name="TransactionSummaryLineType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="IndustryCodeQualifier"/>
+					<xs:element ref="IndustryCode"/>
+					<xs:element ref="MonetaryAmount"/>
+					<xs:element ref="Quantity1" minOccurs="0"/>
+					<xs:element ref="Quantity2" minOccurs="0"/>
+					<xs:element ref="Date1" minOccurs="0"/>
+					<xs:element ref="Time1" minOccurs="0"/>
+					<xs:element ref="TimeCode1" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- FinancialInformations elements-->
+	<xs:complexType name="FinancialInformationsType">
+		<xs:complexContent>
+			<xs:extension base="sipDatasetType">
+				<xs:sequence>
+					<xs:element ref="FinancialInformation"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- FinancialInformation elements-->
+	<xs:complexType name="FinancialInformationType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="FinancialInformationLine"/>
+					<xs:element ref="Date" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Reference" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Notes" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="FundsAvailablility" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Trace" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="MonetaryAmounts" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Pricing" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Rate" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Organizationals" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--FinancialInformationLineLine elements -->
+	<xs:complexType name="FinancialInformationLineType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="IndustryCodeQualifier"/>
+					<xs:element ref="IndustryCode"/>
+					<xs:element ref="MonetaryAmount"/>
+					<xs:element ref="Date1" minOccurs="0"/>
+					<xs:element ref="Time1" minOccurs="0"/>
+					<xs:element ref="TimeCode1" minOccurs="0"/>
+					<xs:element ref="Quantity1" minOccurs="0"/>
+					<xs:element ref="Quantity2" minOccurs="0"/>
+					<xs:element ref="CreditDebitFlag" minOccurs="0"/>
+					<xs:element ref="FinancialStatusCode" minOccurs="0"/>
+					<xs:element ref="CurrencyCode1" minOccurs="0"/>
+					<xs:element ref="MonetaryAmount2" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--MonetaryAmounts elements -->
+	<xs:complexType name="MonetaryAmountsType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="QuantityQualifier" minOccurs="0"/>
+					<xs:element ref="MonetaryAmount" minOccurs="0"/>
+					<xs:element ref="CreditDebitFlag" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--Pricing elements -->
+	<xs:complexType name="PricingType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="LineSequenceNumber" minOccurs="0"/>
+					<xs:element ref="ClassOfTradeCode" minOccurs="0"/>
+					<xs:element ref="PriceTypeIDCode" minOccurs="0"/>
+					<xs:element ref="UnitPrice" minOccurs="0"/>
+					<xs:element ref="ItemQty" minOccurs="0"/>
+					<xs:element ref="ItemQtyUOM" minOccurs="0"/>
+					<xs:element ref="PriceMultiplierQual" minOccurs="0"/>
+					<xs:element ref="PriceMultiplier" minOccurs="0"/>
+					<xs:element ref="Amount" minOccurs="0"/>
+					<xs:element ref="UnitPriceBasis" minOccurs="0"/>
+					<xs:element ref="ConditionValue" minOccurs="0"/>
+					<xs:element ref="MultiplePriceQuantity" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Rate elements -->
+	<xs:complexType name="RateType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="RateOrValueQualifier1"/>
+					<xs:element ref="InterestRate"/>
+					<xs:element ref="MonetaryAmount" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Organizationals elements-->
+	<xs:complexType name="OrganizationalsType">
+		<xs:complexContent>
+			<xs:extension base="sipDatasetType">
+				<xs:sequence>
+					<xs:element ref="Organizational" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Organizational elements-->
+	<xs:complexType name="OrganizationalType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="OrganizationalAddress"/>
+					<xs:element ref="Date" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- OrganizationalAddress elements -->
+	<xs:complexType name="OrganizationalAddressType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="EntityIdentifierCode" minOccurs="0"/>
+					<xs:element ref="EntityTypeQual" minOccurs="0"/>
+					<xs:element ref="LastOrgName" minOccurs="0"/>
+					<xs:element ref="NameFirst" minOccurs="0"/>
+					<xs:element ref="NameMiddle" minOccurs="0"/>
+					<xs:element ref="NamePrefix" minOccurs="0"/>
+					<xs:element ref="NameSuffix" minOccurs="0"/>
+					<xs:element ref="LocationCodeQualifier" minOccurs="0"/>
+					<xs:element ref="IDNumber" minOccurs="0"/>
+					<xs:element ref="EntityRelationshipCode" minOccurs="0"/>
+					<xs:element ref="EntityIdentifierCode2" minOccurs="0"/>
+					<xs:element ref="AddressAlternateName" minOccurs="0"/>
+					<xs:element ref="Address1" minOccurs="0"/>
+					<xs:element ref="Address2" minOccurs="0"/>
+					<xs:element ref="Address3" minOccurs="0"/>
+					<xs:element ref="Address4" minOccurs="0"/>
+					<xs:element ref="City" minOccurs="0"/>
+					<xs:element ref="State" minOccurs="0"/>
+					<xs:element ref="PostalCode" minOccurs="0"/>
+					<xs:element ref="Country" minOccurs="0"/>
+					<xs:element ref="ContactName" minOccurs="0"/>
+					<xs:element ref="ContactPhone" minOccurs="0"/>
+					<xs:element ref="ContactFax" minOccurs="0"/>
+					<xs:element ref="ContactEmail" minOccurs="0"/>
+					<xs:element ref="AddressTaxIdNumber" minOccurs="0"/>
+					<xs:element ref="AddressTaxExemptNumber" minOccurs="0"/>
+					<xs:element ref="AddressAlternateName2" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- SummaryType elements-->
+	<xs:complexType name="SummaryType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="TotalEntityNumber" minOccurs="0"/>
+					<xs:element ref="TotalRemitLineNumber" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

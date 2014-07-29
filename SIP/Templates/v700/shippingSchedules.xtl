@@ -1,0 +1,674 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SPSFILE SYSTEM '../form/Xtencil.dtd'>
+<SPSFILE name='SPS Commerce Xtencil' date='5/15/2012' fileType='FORM' contents='NORM'>
+<DOCUMENTDEF name='ShippingSchedule' javaName='shippingSchedule' xtencilType='XML' encoding='UTF-8' designerversion='2.7.2' designDate='5/15/2012' keys='header.shippingScheduleHeader.documentId' direction='B' fullyQualifiedJavaName='shippingSchedule' sourceTypeDirection='O' lastModifiedBy='amcclintock' quoteUnwrap='N'>
+    <GROUPDEF name='Meta' javaName='meta' min='0' max='1'>
+        <FIELDDEF name='TradingPartnerId' javaName='tradingPartnerId'>
+        </FIELDDEF>
+        <FIELDDEF name='DocumentId' javaName='documentId'>
+        </FIELDDEF>
+        <FIELDDEF name='SenderUniqueID' javaName='senderUniqueID'>
+        </FIELDDEF>
+        <FIELDDEF name='SenderCompanyName' javaName='senderCompanyName'>
+        </FIELDDEF>
+        <FIELDDEF name='ReceiverUniqueID' javaName='receiverUniqueID'>
+        </FIELDDEF>
+        <FIELDDEF name='ReceiverCompanyName' javaName='receiverCompanyName'>
+        </FIELDDEF>
+        <FIELDDEF name='IsDropShip' javaName='isDropShip'>
+        </FIELDDEF>
+        <FIELDDEF name='InterchangeControlNumber' javaName='interchangeControlNumber'>
+        </FIELDDEF>
+        <FIELDDEF name='GroupControlIdentifier' javaName='groupControlIdentifier'>
+        </FIELDDEF>
+        <FIELDDEF name='GroupControlNumber' javaName='groupControlNumber'>
+        </FIELDDEF>
+        <FIELDDEF name='DocumentControlIdentifier' javaName='documentControlIdentifier'>
+        </FIELDDEF>
+        <FIELDDEF name='DocumentControlNumber' javaName='documentControlNumber'>
+        </FIELDDEF>
+        <FIELDDEF name='InterchangeSenderID' javaName='interchangeSenderID'>
+        </FIELDDEF>
+        <FIELDDEF name='InterchangeReceiverID' javaName='interchangeReceiverID'>
+        </FIELDDEF>
+        <FIELDDEF name='GroupSenderID' javaName='groupSenderID'>
+        </FIELDDEF>
+        <FIELDDEF name='GroupReceiverID' javaName='groupReceiverID'>
+        </FIELDDEF>
+        <FIELDDEF name='BatchPart' javaName='batchPart'>
+        </FIELDDEF>
+        <FIELDDEF name='BatchTotal' javaName='batchTotal'>
+        </FIELDDEF>
+        <FIELDDEF name='BatchID' javaName='batchID'>
+        </FIELDDEF>
+        <FIELDDEF name='Comments' javaName='comments'>
+        </FIELDDEF>
+        <FIELDDEF name='Validation' javaName='validation'>
+        </FIELDDEF>
+        <FIELDDEF name='OrderManagement' javaName='orderManagement' dataType='JStringSet' choices='Alternate Address,Blanket,Bulk,Bulk-RDC,Bulk - Ship to DC,Bulk - Ship to DC/Store,Case 1 - Grainger Parts,Case 2 - Grainger 3rd Party,Case 3 - FindMRO 3rd Party,Case 4 - Grainger DC,Cross Dock,Cross Dock - TF,Cross (Stock) Ship to DC/Store,DC-Assorted,DC-Mixed,Direct to Consumer,Direct to Customer,Direct to Store,Direct Ship,Direct Store Delivery,Domestic,Drop Ship,Drop Ship - Cancel,Import,International,PrePack,Publisher,Ship to DC,Ship to DC/Store,Ship to Store,Special Order,Standard,Stand Alone Bulk,Store Release,Studio,Test Scenario 1 - Drop Ship,Test Scenario 2 - Test Delete,Test Scenario 3 - Drop Ship/180,VMI,Warehouse or Ship to Warehouse,Warehouse/Store/Consumer,(CTL DIST CENTER) Bulk'>
+        </FIELDDEF>
+    </GROUPDEF>
+    <GROUPDEF name='Header' javaName='header' min='0' max='1'>
+        <GROUPDEF name='ShippingScheduleHeader' javaName='shippingScheduleHeader' min='0' max='1'>
+            <FIELDDEF name='TradingPartnerId' javaName='tradingPartnerId'>
+            </FIELDDEF>
+            <FIELDDEF name='DocumentId' javaName='documentId' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+            </FIELDDEF>
+            <FIELDDEF name='TsetPurposeCode' javaName='tsetPurposeCode'>
+            </FIELDDEF>
+            <FIELDDEF name='CreationDate' javaName='creationDate' dataType='JDate' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+            </FIELDDEF>
+            <FIELDDEF name='ScheduleTypeCode' javaName='scheduleTypeCode'>
+            </FIELDDEF>
+            <FIELDDEF name='StartDate' javaName='startDate' dataType='JDate' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+            </FIELDDEF>
+            <FIELDDEF name='EndDate' javaName='endDate' dataType='JDate' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+            </FIELDDEF>
+            <FIELDDEF name='ReleaseNumber' javaName='releaseNumber'>
+            </FIELDDEF>
+            <FIELDDEF name='ReferenceIdentification' javaName='referenceIdentification'>
+            </FIELDDEF>
+            <FIELDDEF name='ContractNumber' javaName='contractNumber'>
+            </FIELDDEF>
+            <FIELDDEF name='PurchaseOrderNumber' javaName='purchaseOrderNumber'>
+            </FIELDDEF>
+            <FIELDDEF name='ScheduleTypeQualifier' javaName='scheduleTypeQualifier'>
+            </FIELDDEF>
+        </GROUPDEF>
+        <GROUPDEF name='Date' javaName='date' min='0' max='10'>
+            <GROUPDEF name='DateRep' javaName='dateRep' min='1' max='1'>
+                <FIELDDEF name='DateTimeQualifier1' javaName='dateTimeQualifier1' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                </FIELDDEF>
+                <FIELDDEF name='Date1' javaName='date1' dataType='JDate' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                </FIELDDEF>
+                <FIELDDEF name='Time1' javaName='time1' dataType='JTime' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                </FIELDDEF>
+                <FIELDDEF name='TimeCode1' javaName='timeCode1'>
+                </FIELDDEF>
+                <FIELDDEF name='DateTimeFormQualifier1' javaName='dateTimeFormQualifier1'>
+                </FIELDDEF>
+                <FIELDDEF name='DateTimePeriod' javaName='dateTimePeriod'>
+                </FIELDDEF>
+            </GROUPDEF>
+        </GROUPDEF>
+        <GROUPDEF name='HeaderAddresses' javaName='headerAddresses' min='0' max='200'>
+            <GROUPDEF name='HeaderAddressesRep' javaName='headerAddressesRep' min='1' max='1'>
+                <GROUPDEF name='HeaderAddress' javaName='headerAddress' min='0' max='200'>
+                    <GROUPDEF name='HeaderAddressRep' javaName='headerAddressRep' min='1' max='1'>
+                        <GROUPDEF name='Address' javaName='address' min='0' max='1'>
+                            <FIELDDEF name='AddressTypeCode' javaName='addressTypeCode' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                            </FIELDDEF>
+                            <FIELDDEF name='LocationCodeQualifier' javaName='locationCodeQualifier' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                            </FIELDDEF>
+                            <FIELDDEF name='AddressLocationNumber' javaName='addressLocationNumber'>
+                            </FIELDDEF>
+                            <FIELDDEF name='AddressName' javaName='addressName'>
+                            </FIELDDEF>
+                            <FIELDDEF name='AddressAlternateName' javaName='addressAlternateName'>
+                            </FIELDDEF>
+                            <FIELDDEF name='Address1' javaName='address1'>
+                            </FIELDDEF>
+                            <FIELDDEF name='Address2' javaName='address2'>
+                            </FIELDDEF>
+                            <FIELDDEF name='Address3' javaName='address3'>
+                            </FIELDDEF>
+                            <FIELDDEF name='Address4' javaName='address4'>
+                            </FIELDDEF>
+                            <FIELDDEF name='City' javaName='city'>
+                            </FIELDDEF>
+                            <FIELDDEF name='State' javaName='state'>
+                            </FIELDDEF>
+                            <FIELDDEF name='PostalCode' javaName='postalCode'>
+                            </FIELDDEF>
+                            <FIELDDEF name='Country' javaName='country'>
+                            </FIELDDEF>
+                            <FIELDDEF name='ContactName' javaName='contactName'>
+                            </FIELDDEF>
+                            <FIELDDEF name='ContactPhone' javaName='contactPhone'>
+                            </FIELDDEF>
+                            <FIELDDEF name='ContactFax' javaName='contactFax'>
+                            </FIELDDEF>
+                            <FIELDDEF name='ContactEmail' javaName='contactEmail'>
+                            </FIELDDEF>
+                            <FIELDDEF name='AddressTaxIdNumber' javaName='addressTaxIdNumber'>
+                            </FIELDDEF>
+                            <FIELDDEF name='AddressTaxExemptNumber' javaName='addressTaxExemptNumber'>
+                            </FIELDDEF>
+                            <FIELDDEF name='AddressAlternateName2' javaName='addressAlternateName2'>
+                            </FIELDDEF>
+                            <GROUPDEF name='Reference' javaName='reference' min='0' max='200000'>
+                                <GROUPDEF name='ReferenceRep' javaName='referenceRep' min='1' max='1' exclude='N' justification='Left' display='Y' enable='Y' print='Y' nextRow='N' sourceFilter='No Filter' isRecord='N' persistent='Y' present='Y'>
+                                    <FIELDDEF name='ReferenceQual' javaName='referenceQual' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='ReferenceID' javaName='referenceID'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='Description' javaName='description'>
+                                    </FIELDDEF>
+                                </GROUPDEF>
+                            </GROUPDEF>
+                            <GROUPDEF name='Contact' javaName='contact' min='0' max='200000'>
+                                <GROUPDEF name='ContactRep' javaName='contactRep' min='1' max='1'>
+                                    <FIELDDEF name='ContactTypeCode' javaName='contactTypeCode' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='ContactName' javaName='contactName'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='ContactPhone' javaName='contactPhone'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='ContactFax' javaName='contactFax'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='ContactEmail' javaName='contactEmail'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='ContactReference' javaName='contactReference'>
+                                    </FIELDDEF>
+                                </GROUPDEF>
+                            </GROUPDEF>
+                            <GROUPDEF name='Date' javaName='date' min='0' max='200000'>
+                                <GROUPDEF name='DateRep' javaName='dateRep' min='1' max='1'>
+                                    <FIELDDEF name='DateTimeQualifier1' javaName='dateTimeQualifier1' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='Date1' javaName='date1' dataType='JDate' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='Time1' javaName='time1' dataType='JTime' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='TimeCode1' javaName='timeCode1'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='DateTimeFormQualifier1' javaName='dateTimeFormQualifier1'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='DateTimePeriod' javaName='dateTimePeriod'>
+                                    </FIELDDEF>
+                                </GROUPDEF>
+                            </GROUPDEF>
+                        </GROUPDEF>
+                        <GROUPDEF name='FOBRelatedInstruction' javaName='fOBRelatedInstruction' min='0' max='1'>
+                            <FIELDDEF name='FOBPayCode' javaName='fOBPayCode' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                            </FIELDDEF>
+                            <FIELDDEF name='FOBLocationQualifier' javaName='fOBLocationQualifier'>
+                            </FIELDDEF>
+                            <FIELDDEF name='FOBLocationDescription' javaName='fOBLocationDescription'>
+                            </FIELDDEF>
+                            <FIELDDEF name='FOBTitlePassageCode' javaName='fOBTitlePassageCode'>
+                            </FIELDDEF>
+                            <FIELDDEF name='FOBTitlePassageLocation' javaName='fOBTitlePassageLocation'>
+                            </FIELDDEF>
+                            <FIELDDEF name='TransportationTermsQualifierCode' javaName='transportationTermsQualifierCode'>
+                            </FIELDDEF>
+                            <FIELDDEF name='TransportationTermsCode' javaName='transportationTermsCode'>
+                            </FIELDDEF>
+                            <FIELDDEF name='RiskOfLossCode' javaName='riskOfLossCode'>
+                            </FIELDDEF>
+                            <FIELDDEF name='Description' javaName='description'>
+                            </FIELDDEF>
+                        </GROUPDEF>
+                    </GROUPDEF>
+                </GROUPDEF>
+            </GROUPDEF>
+        </GROUPDEF>
+        <GROUPDEF name='Miscellaneous' javaName='miscellaneous' min='0' max='200000'>
+            <GROUPDEF name='MiscellaneousRep' javaName='miscellaneousRep' min='1' max='1' exclude='N' justification='Left' display='Y' enable='Y' print='Y' nextRow='N' sourceFilter='No Filter' isRecord='N' persistent='Y' present='Y'>
+                <FIELDDEF name='Qualifier1' javaName='qualifier1' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                </FIELDDEF>
+                <FIELDDEF name='Description1' javaName='description1'>
+                </FIELDDEF>
+                <FIELDDEF name='Qualifier2' javaName='qualifier2'>
+                </FIELDDEF>
+                <FIELDDEF name='Description2' javaName='description2'>
+                </FIELDDEF>
+            </GROUPDEF>
+        </GROUPDEF>
+    </GROUPDEF>
+    <GROUPDEF name='LineItems' javaName='lineItems' min='0' max='1'>
+        <GROUPDEF name='LineItem' javaName='lineItem' min='0' max='200000'>
+            <GROUPDEF name='LineItemRep' javaName='lineItemRep' min='1' max='1'>
+                <GROUPDEF name='ShippingScheduleLine' javaName='shippingScheduleLine' min='0' max='1'>
+                    <FIELDDEF name='LineSequenceNumber' javaName='lineSequenceNumber' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='BuyerPartNumber' javaName='buyerPartNumber'>
+                    </FIELDDEF>
+                    <FIELDDEF name='VendorPartNumber' javaName='vendorPartNumber'>
+                    </FIELDDEF>
+                    <FIELDDEF name='ConsumerPackageCode' javaName='consumerPackageCode'>
+                    </FIELDDEF>
+                    <FIELDDEF name='GTIN' javaName='gTIN'>
+                    </FIELDDEF>
+                    <FIELDDEF name='UPCCaseCode' javaName='uPCCaseCode'>
+                    </FIELDDEF>
+                    <FIELDDEF name='NatlDrugCode' javaName='natlDrugCode'>
+                    </FIELDDEF>
+                    <FIELDDEF name='PartNumberQualifier1' javaName='partNumberQualifier1'>
+                    </FIELDDEF>
+                    <FIELDDEF name='PartNumber1' javaName='partNumber1'>
+                    </FIELDDEF>
+                    <FIELDDEF name='PartNumberQualifier2' javaName='partNumberQualifier2'>
+                    </FIELDDEF>
+                    <FIELDDEF name='PartNumber2' javaName='partNumber2'>
+                    </FIELDDEF>
+                    <FIELDDEF name='PartNumberQualifier3' javaName='partNumberQualifier3'>
+                    </FIELDDEF>
+                    <FIELDDEF name='PartNumber3' javaName='partNumber3'>
+                    </FIELDDEF>
+                    <FIELDDEF name='PartNumberQualifier4' javaName='partNumberQualifier4'>
+                    </FIELDDEF>
+                    <FIELDDEF name='PartNumber4' javaName='partNumber4'>
+                    </FIELDDEF>
+                    <FIELDDEF name='RetailInformation' javaName='retailInformation'>
+                    </FIELDDEF>
+                    <FIELDDEF name='PartDescription1' javaName='partDescription1'>
+                    </FIELDDEF>
+                    <FIELDDEF name='PartDescription2' javaName='partDescription2'>
+                    </FIELDDEF>
+                    <FIELDDEF name='OrderQty' javaName='orderQty' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='OrderQtyUOM' javaName='orderQtyUOM'>
+                    </FIELDDEF>
+                    <FIELDDEF name='UnitPriceUOM' javaName='unitPriceUOM'>
+                    </FIELDDEF>
+                    <FIELDDEF name='UnitPrice' javaName='unitPrice' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='UnitPriceBasis' javaName='unitPriceBasis'>
+                    </FIELDDEF>
+                    <FIELDDEF name='MfgSuggestedRetailPrice' javaName='mfgSuggestedRetailPrice' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='RetailUnitPrice' javaName='retailUnitPrice' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='OuterPack' javaName='outerPack' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='PackSize' javaName='packSize' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='PackUOM' javaName='packUOM'>
+                    </FIELDDEF>
+                    <FIELDDEF name='PackWeight' javaName='packWeight' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='PackWeightUOM' javaName='packWeightUOM'>
+                    </FIELDDEF>
+                    <FIELDDEF name='PackVolume' javaName='packVolume' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='PackVolumeUOM' javaName='packVolumeUOM'>
+                    </FIELDDEF>
+                    <FIELDDEF name='PackLength' javaName='packLength' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='PackWidth' javaName='packWidth' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='PackHeight' javaName='packHeight' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='InnerPack' javaName='innerPack' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='ShipQty' javaName='shipQty' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='ShipQtyUOM' javaName='shipQtyUOM'>
+                    </FIELDDEF>
+                    <FIELDDEF name='ShipDate' javaName='shipDate' dataType='JDate' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='QtyLeftToReceive' javaName='qtyLeftToReceive' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='ExtendedItemTotal' javaName='extendedItemTotal' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='ProductSizeCode' javaName='productSizeCode'>
+                    </FIELDDEF>
+                    <FIELDDEF name='ProductSizeDescription' javaName='productSizeDescription'>
+                    </FIELDDEF>
+                    <FIELDDEF name='ProductColorCode' javaName='productColorCode'>
+                    </FIELDDEF>
+                    <FIELDDEF name='ProductColorDescription' javaName='productColorDescription'>
+                    </FIELDDEF>
+                    <FIELDDEF name='ProductFabricCode' javaName='productFabricCode'>
+                    </FIELDDEF>
+                    <FIELDDEF name='ProductFabricDescription' javaName='productFabricDescription'>
+                    </FIELDDEF>
+                    <FIELDDEF name='ProductProcessCode' javaName='productProcessCode'>
+                    </FIELDDEF>
+                    <FIELDDEF name='ProductProcessDescription' javaName='productProcessDescription'>
+                    </FIELDDEF>
+                    <FIELDDEF name='Department' javaName='department'>
+                    </FIELDDEF>
+                    <FIELDDEF name='Class' javaName='cls'>
+                    </FIELDDEF>
+                    <FIELDDEF name='Gender' javaName='gender'>
+                    </FIELDDEF>
+                    <FIELDDEF name='SellerDateCode' javaName='sellerDateCode'>
+                    </FIELDDEF>
+                    <FIELDDEF name='ItemStatusCode' javaName='itemStatusCode'>
+                    </FIELDDEF>
+                </GROUPDEF>
+                <GROUPDEF name='Packaging' javaName='packaging' min='0' max='200000'>
+                    <GROUPDEF name='PackagingRep' javaName='packagingRep' min='1' max='1'>
+                        <FIELDDEF name='ItemDescriptionType' javaName='itemDescriptionType' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                        </FIELDDEF>
+                        <FIELDDEF name='PackagingCharacteristicCode' javaName='packagingCharacteristicCode'>
+                        </FIELDDEF>
+                        <FIELDDEF name='AgencyQualifierCode' javaName='agencyQualifierCode'>
+                        </FIELDDEF>
+                        <FIELDDEF name='PackagingDescriptionCode' javaName='packagingDescriptionCode'>
+                        </FIELDDEF>
+                        <FIELDDEF name='PackagingDescription' javaName='packagingDescription'>
+                        </FIELDDEF>
+                        <FIELDDEF name='UnitLoadOptionCode' javaName='unitLoadOptionCode'>
+                        </FIELDDEF>
+                    </GROUPDEF>
+                </GROUPDEF>
+                <GROUPDEF name='ItemQuantity' javaName='itemQuantity' min='0' max='1'>
+                    <FIELDDEF name='QuantityQualifier' javaName='quantityQualifier' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='Quantity1' javaName='quantity1' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='QtyUOM' javaName='qtyUOM'>
+                    </FIELDDEF>
+                    <FIELDDEF name='FreeFormMessage' javaName='freeFormMessage'>
+                    </FIELDDEF>
+                </GROUPDEF>
+                <GROUPDEF name='Reference' javaName='reference' min='0' max='12'>
+                    <GROUPDEF name='ReferenceRep' javaName='referenceRep' min='1' max='1'>
+                        <FIELDDEF name='ReferenceQual' javaName='referenceQual' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                        </FIELDDEF>
+                        <FIELDDEF name='ReferenceID' javaName='referenceID'>
+                        </FIELDDEF>
+                        <FIELDDEF name='Description' javaName='description'>
+                        </FIELDDEF>
+                    </GROUPDEF>
+                </GROUPDEF>
+                <GROUPDEF name='Contact' javaName='contact' min='0' max='1'>
+                    <FIELDDEF name='ContactTypeCode' javaName='contactTypeCode' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='ContactName' javaName='contactName'>
+                    </FIELDDEF>
+                    <FIELDDEF name='ContactPhone' javaName='contactPhone'>
+                    </FIELDDEF>
+                    <FIELDDEF name='ContactFax' javaName='contactFax'>
+                    </FIELDDEF>
+                    <FIELDDEF name='ContactEmail' javaName='contactEmail'>
+                    </FIELDDEF>
+                    <FIELDDEF name='ContactReference' javaName='contactReference'>
+                    </FIELDDEF>
+                </GROUPDEF>
+                <GROUPDEF name='ShipDelivery' javaName='shipDelivery' min='0' max='1'>
+                    <FIELDDEF name='PatternCode1' javaName='patternCode1' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='PatternTimeCode1' javaName='patternTimeCode1'>
+                    </FIELDDEF>
+                    <FIELDDEF name='PatternCode2' javaName='patternCode2'>
+                    </FIELDDEF>
+                    <FIELDDEF name='PatternTimeCode2' javaName='patternTimeCode2'>
+                    </FIELDDEF>
+                    <FIELDDEF name='PatternCode3' javaName='patternCode3'>
+                    </FIELDDEF>
+                    <FIELDDEF name='PatternTimeCode3' javaName='patternTimeCode3'>
+                    </FIELDDEF>
+                    <FIELDDEF name='PatternCode4' javaName='patternCode4'>
+                    </FIELDDEF>
+                    <FIELDDEF name='PatternTimeCode4' javaName='patternTimeCode4'>
+                    </FIELDDEF>
+                </GROUPDEF>
+                <GROUPDEF name='ForecastSchedules' javaName='forecastSchedules' min='0' max='1'>
+                    <GROUPDEF name='ForecastSchedule' javaName='forecastSchedule' min='0' max='9999'>
+                        <GROUPDEF name='ForecastScheduleRep' javaName='forecastScheduleRep' min='1' max='1'>
+                            <GROUPDEF name='ForecastScheduleLine' javaName='forecastScheduleLine' min='0' max='1'>
+                                <FIELDDEF name='ForecastQuantity' javaName='forecastQuantity' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                </FIELDDEF>
+                                <FIELDDEF name='ForecastQualifier' javaName='forecastQualifier'>
+                                </FIELDDEF>
+                                <FIELDDEF name='ForecastTimingQualifier' javaName='forecastTimingQualifier'>
+                                </FIELDDEF>
+                                <FIELDDEF name='ForecastStartDate' javaName='forecastStartDate' dataType='JDate' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                </FIELDDEF>
+                                <FIELDDEF name='ForecastEndDate' javaName='forecastEndDate' dataType='JDate' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                </FIELDDEF>
+                                <FIELDDEF name='DateTimeQualifier' javaName='dateTimeQualifier'>
+                                </FIELDDEF>
+                                <FIELDDEF name='ForecastTime' javaName='forecastTime' dataType='JTime' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                </FIELDDEF>
+                                <FIELDDEF name='ReferenceQual' javaName='referenceQual'>
+                                </FIELDDEF>
+                                <FIELDDEF name='ReferenceID' javaName='referenceID'>
+                                </FIELDDEF>
+                                <FIELDDEF name='ScheduleType' javaName='scheduleType'>
+                                </FIELDDEF>
+                                <FIELDDEF name='QuantityQualifier' javaName='quantityQualifier'>
+                                </FIELDDEF>
+                                <FIELDDEF name='AdjReasonCode' javaName='adjReasonCode'>
+                                </FIELDDEF>
+                                <FIELDDEF name='Description' javaName='description'>
+                                </FIELDDEF>
+                            </GROUPDEF>
+                            <GROUPDEF name='Date' javaName='date' min='0' max='100'>
+                                <GROUPDEF name='DateRep' javaName='dateRep' min='1' max='1'>
+                                    <FIELDDEF name='DateTimeQualifier1' javaName='dateTimeQualifier1' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='Date1' javaName='date1' dataType='JDate' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='Time1' javaName='time1' dataType='JTime' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='TimeCode1' javaName='timeCode1'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='DateTimeFormQualifier1' javaName='dateTimeFormQualifier1'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='DateTimePeriod' javaName='dateTimePeriod'>
+                                    </FIELDDEF>
+                                </GROUPDEF>
+                            </GROUPDEF>
+                            <GROUPDEF name='ShipDestinationQty' javaName='shipDestinationQty' min='0' max='200000'>
+                                <GROUPDEF name='ShipDestinationQtyRep' javaName='shipDestinationQtyRep' min='1' max='1'>
+                                    <FIELDDEF name='Destination1' javaName='destination1' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='Qty1' javaName='qty1' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='Destination2' javaName='destination2'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='Qty2' javaName='qty2' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='Destination3' javaName='destination3'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='Qty3' javaName='qty3' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='Destination4' javaName='destination4'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='Qty4' javaName='qty4' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='Destination5' javaName='destination5'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='Qty5' javaName='qty5' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='Destination6' javaName='destination6'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='Qty6' javaName='qty6' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='Destination7' javaName='destination7'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='Qty7' javaName='qty7' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='Destination8' javaName='destination8'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='Qty8' javaName='qty8' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='Destination9' javaName='destination9'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='Qty9' javaName='qty9' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='Destination10' javaName='destination10'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='Qty10' javaName='qty10' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='QtyUOM' javaName='qtyUOM'>
+                                    </FIELDDEF>
+                                </GROUPDEF>
+                            </GROUPDEF>
+                            <GROUPDEF name='JustInTimeSchedules' javaName='justInTimeSchedules' min='0' max='1'>
+                                <GROUPDEF name='JustInTimeSchedule' javaName='justInTimeSchedule' min='0' max='9999'>
+                                    <GROUPDEF name='JustInTimeScheduleRep' javaName='justInTimeScheduleRep' min='1' max='1'>
+                                        <GROUPDEF name='JustInTimeScheduleLine' javaName='justInTimeScheduleLine' min='0' max='1'>
+                                            <FIELDDEF name='Quantity1' javaName='quantity1' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                            </FIELDDEF>
+                                            <FIELDDEF name='Time1' javaName='time1' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                            </FIELDDEF>
+                                        </GROUPDEF>
+                                        <GROUPDEF name='Reference' javaName='reference' min='0' max='500'>
+                                            <GROUPDEF name='ReferenceRep' javaName='referenceRep' min='1' max='1'>
+                                                <FIELDDEF name='ReferenceQual' javaName='referenceQual' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                                </FIELDDEF>
+                                                <FIELDDEF name='ReferenceID' javaName='referenceID'>
+                                                </FIELDDEF>
+                                                <FIELDDEF name='Description' javaName='description'>
+                                                </FIELDDEF>
+                                            </GROUPDEF>
+                                        </GROUPDEF>
+                                        <GROUPDEF name='Date' javaName='date' min='0' max='200000'>
+                                            <GROUPDEF name='DateRep' javaName='dateRep' min='1' max='1'>
+                                                <FIELDDEF name='DateTimeQualifier1' javaName='dateTimeQualifier1' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                                </FIELDDEF>
+                                                <FIELDDEF name='Date1' javaName='date1' dataType='JDate' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                                </FIELDDEF>
+                                                <FIELDDEF name='Time1' javaName='time1' dataType='JTime' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                                </FIELDDEF>
+                                                <FIELDDEF name='TimeCode1' javaName='timeCode1'>
+                                                </FIELDDEF>
+                                                <FIELDDEF name='DateTimeFormQualifier1' javaName='dateTimeFormQualifier1'>
+                                                </FIELDDEF>
+                                                <FIELDDEF name='DateTimePeriod' javaName='dateTimePeriod'>
+                                                </FIELDDEF>
+                                            </GROUPDEF>
+                                        </GROUPDEF>
+                                    </GROUPDEF>
+                                </GROUPDEF>
+                            </GROUPDEF>
+                        </GROUPDEF>
+                    </GROUPDEF>
+                </GROUPDEF>
+                <GROUPDEF name='ShipReceives' javaName='shipReceives' min='0' max='1'>
+                    <GROUPDEF name='ShipReceive' javaName='shipReceive' min='0' max='10'>
+                        <GROUPDEF name='ShipReceiveRep' javaName='shipReceiveRep' min='1' max='1'>
+                            <GROUPDEF name='ShipReceiveLine' javaName='shipReceiveLine' min='0' max='1'>
+                                <FIELDDEF name='QuantityQualifier' javaName='quantityQualifier' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                </FIELDDEF>
+                                <FIELDDEF name='ShipRcvQty' javaName='shipRcvQty' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                </FIELDDEF>
+                                <FIELDDEF name='ShipRecvQualifier' javaName='shipRecvQualifier'>
+                                </FIELDDEF>
+                                <FIELDDEF name='ShipRcvDate' javaName='shipRcvDate' dataType='JDate' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                </FIELDDEF>
+                                <FIELDDEF name='ShipRcvTime' javaName='shipRcvTime' dataType='JTime' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                </FIELDDEF>
+                                <FIELDDEF name='EndDate' javaName='endDate' dataType='JDate' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                </FIELDDEF>
+                                <FIELDDEF name='EndTime' javaName='endTime' dataType='JTime' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                </FIELDDEF>
+                            </GROUPDEF>
+                            <GROUPDEF name='Reference' javaName='reference' min='0' max='500'>
+                                <GROUPDEF name='ReferenceRep' javaName='referenceRep' min='1' max='1'>
+                                    <FIELDDEF name='ReferenceQual' javaName='referenceQual' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='ReferenceID' javaName='referenceID'>
+                                    </FIELDDEF>
+                                    <FIELDDEF name='Description' javaName='description'>
+                                    </FIELDDEF>
+                                </GROUPDEF>
+                            </GROUPDEF>
+                        </GROUPDEF>
+                    </GROUPDEF>
+                </GROUPDEF>
+                <GROUPDEF name='CarrierQuantityAndWeightDetail' javaName='carrierQuantityAndWeightDetail' min='0' max='1'>
+                    <FIELDDEF name='ShipmentQtyPackingCode' javaName='shipmentQtyPackingCode' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='ShipmentLadingQuantity' javaName='shipmentLadingQuantity'>
+                    </FIELDDEF>
+                    <FIELDDEF name='CommodityCodeQualifier' javaName='commodityCodeQualifier'>
+                    </FIELDDEF>
+                    <FIELDDEF name='CommodityCode' javaName='commodityCode'>
+                    </FIELDDEF>
+                    <FIELDDEF name='LadingDescription' javaName='ladingDescription'>
+                    </FIELDDEF>
+                    <FIELDDEF name='GrossWeightQualifier' javaName='grossWeightQualifier'>
+                    </FIELDDEF>
+                    <FIELDDEF name='ShipmentWeight' javaName='shipmentWeight' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='ShipmentWeightUOM' javaName='shipmentWeightUOM'>
+                    </FIELDDEF>
+                    <FIELDDEF name='Volume' javaName='volume' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='VolumeUOM' javaName='volumeUOM'>
+                    </FIELDDEF>
+                </GROUPDEF>
+                <GROUPDEF name='CarrierEquipmentDetail' javaName='carrierEquipmentDetail' min='0' max='1'>
+                    <FIELDDEF name='EquipmentDescriptionCode' javaName='equipmentDescriptionCode' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='CarrierEquipmentInitial' javaName='carrierEquipmentInitial'>
+                    </FIELDDEF>
+                    <FIELDDEF name='CarrierEquipmentNumber' javaName='carrierEquipmentNumber'>
+                    </FIELDDEF>
+                    <FIELDDEF name='WeightQualifier' javaName='weightQualifier'>
+                    </FIELDDEF>
+                    <FIELDDEF name='Weight' javaName='weight' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='UnitOfMeasure' javaName='unitOfMeasure'>
+                    </FIELDDEF>
+                    <FIELDDEF name='OwnershipCode' javaName='ownershipCode'>
+                    </FIELDDEF>
+                    <FIELDDEF name='SealStatusCode' javaName='sealStatusCode'>
+                    </FIELDDEF>
+                    <FIELDDEF name='SealNumber' javaName='sealNumber'>
+                    </FIELDDEF>
+                    <FIELDDEF name='EquipmentType' javaName='equipmentType'>
+                    </FIELDDEF>
+                </GROUPDEF>
+                <GROUPDEF name='CarrierRoutingDetail' javaName='carrierRoutingDetail' min='0' max='1'>
+                    <FIELDDEF name='RoutingSequenceCode' javaName='routingSequenceCode' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='IdentificationCodeQualifier' javaName='identificationCodeQualifier'>
+                    </FIELDDEF>
+                    <FIELDDEF name='CarrierAlphaCode' javaName='carrierAlphaCode'>
+                    </FIELDDEF>
+                    <FIELDDEF name='CarrierTransMethodCode' javaName='carrierTransMethodCode'>
+                    </FIELDDEF>
+                    <FIELDDEF name='CarrierRouting' javaName='carrierRouting'>
+                    </FIELDDEF>
+                    <FIELDDEF name='ShipmentOrderStatusCode' javaName='shipmentOrderStatusCode'>
+                    </FIELDDEF>
+                    <FIELDDEF name='LocationQualifier' javaName='locationQualifier'>
+                    </FIELDDEF>
+                    <FIELDDEF name='LocationID' javaName='locationID'>
+                    </FIELDDEF>
+                    <FIELDDEF name='TransitDirectionCode' javaName='transitDirectionCode'>
+                    </FIELDDEF>
+                    <FIELDDEF name='TransitTimeQual' javaName='transitTimeQual'>
+                    </FIELDDEF>
+                    <FIELDDEF name='TransitTime' javaName='transitTime' dataType='JTime' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                    </FIELDDEF>
+                    <FIELDDEF name='ServiceLevelCode1' javaName='serviceLevelCode1'>
+                    </FIELDDEF>
+                    <FIELDDEF name='ServiceLevelCode2' javaName='serviceLevelCode2'>
+                    </FIELDDEF>
+                    <FIELDDEF name='ServiceLevelCode3' javaName='serviceLevelCode3'>
+                    </FIELDDEF>
+                    <FIELDDEF name='CountryCode' javaName='countryCode'>
+                    </FIELDDEF>
+                </GROUPDEF>
+                <GROUPDEF name='Miscellaneous' javaName='miscellaneous' min='0' max='200000'>
+                    <GROUPDEF name='MiscellaneousRep' javaName='miscellaneousRep' min='1' max='1'>
+                        <FIELDDEF name='Qualifier1' javaName='qualifier1' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+                        </FIELDDEF>
+                        <FIELDDEF name='Description1' javaName='description1'>
+                        </FIELDDEF>
+                        <FIELDDEF name='Qualifier2' javaName='qualifier2'>
+                        </FIELDDEF>
+                        <FIELDDEF name='Description2' javaName='description2'>
+                        </FIELDDEF>
+                    </GROUPDEF>
+                </GROUPDEF>
+            </GROUPDEF>
+        </GROUPDEF>
+    </GROUPDEF>
+    <GROUPDEF name='Summary' javaName='summary' min='0' max='1' exclude='N' justification='Left' display='Y' enable='Y' print='Y' nextRow='N' sourceFilter='No Filter' isRecord='N' persistent='Y' present='Y'>
+        <FIELDDEF name='TotalLineItemNumber' javaName='totalLineItemNumber' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+        </FIELDDEF>
+        <FIELDDEF name='TotalQuantity' javaName='totalQuantity' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+        </FIELDDEF>
+        <FIELDDEF name='TotalWeight' javaName='totalWeight' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+        </FIELDDEF>
+        <FIELDDEF name='TotalWeightUOM' javaName='totalWeightUOM' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+        </FIELDDEF>
+        <FIELDDEF name='TotalVolume' javaName='totalVolume' dataType='JDouble' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+        </FIELDDEF>
+        <FIELDDEF name='TotalVolumeUOM' javaName='totalVolumeUOM' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+        </FIELDDEF>
+        <FIELDDEF name='Description' javaName='description' dataType='JString' rounding='2' mandatory='N' exclude='N' display='Y' editable='Y' enable='Y' print='Y' nextRow='N' keyType='NONE' persistent='Y' present='Y' templatable='Y' dtdRequired='N' edi='Y'>
+        </FIELDDEF>
+    </GROUPDEF>
+</DOCUMENTDEF>
+</SPSFILE>

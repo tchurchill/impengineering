@@ -1,0 +1,57 @@
+How Dre rules work?
+
+
+Requirements:
+Take in a Schema or a subset of a schema
+Take in a company name
+Be able to select fields and groups to exempt
+Have an option to remove an entry from the database.
+
+
+Be able to put in one of 4 OMM’s (Strikethrough)
+
+
+For the dre rules, we need 
+1.	Customer name
+2.	Xpath
+
+
+Goal:  Reporting based on customer names - Might be more of a requirement.
+
+
+
+
+Lunch meeting with Farquahson on Tues.
+
+
+
+BA thoughts and requirements:
+Have a small field where the BA can add a note about why the field is exempt.
+Have an option for 5 or so most used reason codes, and an other code for which they will need a note.
+
+
+Requirements:
+- upload an xml schema and display the tree structure.
+- navigate the xml tree and select fields/groups
+- ability to add notes to each xml field
+- Generate text file with DRE rules for the selected xml fields
+- ability to remove a rule from the database. (based on the sender and rule name)
+- keep track of every sender's rule set with a database
+
+Goals:
+- generate a text file report of what fields are exempt for a specific sender
+-integrate with the current DRE api to atomatically install our new rules
+-integrate with the current DRE api to atomatically remove rules
+
+Scope:
+-create DRE rules that hardcode "exempt" into an xml field
+-does not create DRE rules for anything other than hardcoding "exempt"
+-not a schema validator
+-keeps track of DRE rule that are created with this app
+-does not keep track of DRE rules not created with this app
+-creates a text file with a list of fields that are exempt and why for a sender
+-does not run reports for multiple senders at one time.
+ 
+
+mission:
+create a user friendly web application that creates and keeps track of our customer's DRE rules.

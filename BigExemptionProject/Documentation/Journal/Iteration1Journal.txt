@@ -1,4 +1,6 @@
-﻿Iteration 1 journal.
+Anthony Odufuye and Matt Merth
+
+ICS 499 Iteration 1 journal.
 
 
 8/26/14
@@ -23,3 +25,10 @@ Todo:
 -Procure an amazon EC2 server by Tuesday of next week (2nd of September)
 -Documentation (use cases, sequence diagrams, etc)
 -Basic starting point for the website.
+
+
+9/2/14
+Meeting with David Farqhuarson.  We first procured an amazon EC2 instance and got the funds taken care of.
+We spoke about different possible technologies, and ended up deciding to take a look at nginx, flask, and python for our code.
+We setup our ubuntu server, ran updates, installed nginx, flask, pip, and virtualenv.
+Did some configuration and basic proof of concept with nginx, flask, virtualenv, and also using pythons SimpleHttpServer.

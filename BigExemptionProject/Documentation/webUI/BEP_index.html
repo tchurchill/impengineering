@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src ="fileUpload.js"></script>
+		<link rel="stylesheet" type="text/css" href="indexStyle.css">
+	</head>
+	<body>
+		<div id="wrapper">
+		<form>
+			<fieldset>
+			<span id="senderText">Sender: </span><input type="text" name="sender">
+			<div>
+				<label for="fileselect">Schema to upload:</label>
+				<div id="filedrag"><span>Drag and drop your schema here!</span></div>
+				<div id="browse">
+					Or browse for a file here:<input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
+				</div>
+			</div>
+			<div id="submitButton">
+				<button type="submit">Upload Schema</button>
+			</div>
+			</fieldset>
+		</form>
+		<div id="messages">
+			<p>Status Messages</p>
+		</div>
+		</div>
+	</body>
+</html>

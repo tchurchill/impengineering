@@ -13,13 +13,20 @@ function dragAndDropInit(){
 		filedrag.addEventListener("dragover", fileHover, false);
 		filedrag.addEventListener("dragleave", fileHover, false);
 		filedrag.addEventListener("drop", fileHandler, false);
-		filedrag.style.display = "block";
+		filedrag.style.display = "table";
 	}
 }
 
 function fileHandler(event){
 	fileHover(event);//need to call again, to remove hover style
 	var files = event.target.files || event.dataTransfer.files;
+	
+	//remove the element that didn't trigger this event
+	if(event.target.id == "fileselect"){
+		getId("filedrag").style.display = "none";
+	}else{
+		getId("browse").style.display = "none";
+	}
 	parseFile(files[0]);
 }
 

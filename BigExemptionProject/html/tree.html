@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src ="fileUpload.js"></script>
+		<link rel="stylesheet" type="text/css" href="bepStyle.css">
+	</head>
+	<body>
+		<div id="wrapper">
+			<table id="treeTable">
+				<tr>
+					<td rowspan="2">
+						<div id="tree">
+							<ol>
+								<li id="rootLI">
+									<label for="root">Root</label>
+									<input type="checkbox" id="root" />
+									<div class="groupWrap">
+										<ol>
+											<li>
+												<label for="header">Header</label>
+												<input type="checkbox" id="header" />
+												<div class="groupWrap">
+													<ol>
+														<li>DocumentId</li>
+														<li>ShipmentDate</li>
+													</ol>
+												</div>
+											</li>
+										</ol>
+										<ol>
+											<li>
+												<label for="lineItem">LineItem</label>
+												<input type="checkbox" id="lineItem" />
+												<div class="groupWrap">
+													<ol>
+														<li>
+															<label for="lineItemRep">LineItemRep</label>
+															<input type="checkbox" id="lineItemRep" />
+															<div class="groupWrap">
+																<ol>
+																	<li>
+																		<label for="inventoryLine">InventoryLine</label>
+																		<input type="checkbox" id="inventoryLine" />
+																		<div class="groupWrap">
+																			<ol>
+																				<li>LineSeqNum</li>
+																				<li>BuyerPartNumber</li>
+																			</ol>
+																		</div>
+																	</li>
+																</ol>
+															</div>
+														</li>
+													</ol>
+												</div>
+											</li>
+										</ol>
+									</div>
+								</li>
+							</ol>
+						</div>
+					</td>
+					<td>
+						<div id="info">
+							info
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div id="exemptList">
+							exempt list
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

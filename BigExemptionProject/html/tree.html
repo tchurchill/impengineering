@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<script src ="fileUpload.js"></script>
+		<script src ="tree.js"></script>
 		<link rel="stylesheet" type="text/css" href="bepStyle.css">
 	</head>
 	<body>
+		<div id="messages">
+			
+		</div>
 		<div id="wrapper">
 			<table id="treeTable">
 				<tr>
@@ -12,39 +15,39 @@
 						<div id="tree">
 							<ol>
 								<li id="rootLI">
-									<label for="root">Root</label>
+									<label for="root"><span>Root</span></label>
 									<input type="checkbox" id="root" />
 									<div class="groupWrap">
 										<ol>
 											<li>
-												<label for="header">Header</label>
+												<label for="header"><span class="clickable">Header</span></label>
 												<input type="checkbox" id="header" />
 												<div class="groupWrap">
 													<ol>
-														<li>DocumentId</li>
-														<li>ShipmentDate</li>
+														<li><span class="clickable">DocumentId</span></li>
+														<li><span class="clickable">ShipmentDate</span></li>
 													</ol>
 												</div>
 											</li>
 										</ol>
 										<ol>
 											<li>
-												<label for="lineItem">LineItem</label>
+												<label for="lineItem"><span class="clickable">LineItem</span></label>
 												<input type="checkbox" id="lineItem" />
 												<div class="groupWrap">
 													<ol>
 														<li>
-															<label for="lineItemRep">LineItemRep</label>
+															<label for="lineItemRep"><span class="clickable">LineItemRep</span></label>
 															<input type="checkbox" id="lineItemRep" />
 															<div class="groupWrap">
 																<ol>
 																	<li>
-																		<label for="inventoryLine">InventoryLine</label>
+																		<label for="inventoryLine"><span class="clickable">InventoryLine</span></label>
 																		<input type="checkbox" id="inventoryLine" />
 																		<div class="groupWrap">
 																			<ol>
-																				<li>LineSeqNum</li>
-																				<li>BuyerPartNumber</li>
+																				<li><span class="clickable">LineSeqNum</span></li>
+																				<li><span class="clickable">BuyerPartNumber</span></li>
 																			</ol>
 																		</div>
 																	</li>
@@ -69,7 +72,8 @@
 				<tr>
 					<td>
 						<div id="exemptList">
-							exempt list
+							<form id="exemptForm" action="createDREScript" method="POST">
+							</form>
 						</div>
 					</td>
 				</tr>

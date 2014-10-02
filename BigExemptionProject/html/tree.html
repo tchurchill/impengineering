@@ -20,7 +20,7 @@
 									<div class="groupWrap">
 										<ol>
 											<li>
-												<label for="header"><span class="clickable">Header</span></label>
+												<label for="header"><span>Header</span></label>
 												<input type="checkbox" id="header" />
 												<div class="groupWrap">
 													<ol>
@@ -32,17 +32,17 @@
 										</ol>
 										<ol>
 											<li>
-												<label for="lineItem"><span class="clickable">LineItem</span></label>
+												<label for="lineItem"><span>LineItem</span></label>
 												<input type="checkbox" id="lineItem" />
 												<div class="groupWrap">
 													<ol>
 														<li>
-															<label for="lineItemRep"><span class="clickable">LineItemRep</span></label>
+															<label for="lineItemRep"><span>LineItemRep</span></label>
 															<input type="checkbox" id="lineItemRep" />
 															<div class="groupWrap">
 																<ol>
 																	<li>
-																		<label for="inventoryLine"><span class="clickable">InventoryLine</span></label>
+																		<label for="inventoryLine"><span>InventoryLine</span></label>
 																		<input type="checkbox" id="inventoryLine" />
 																		<div class="groupWrap">
 																			<ol>
@@ -65,7 +65,16 @@
 					</td>
 					<td>
 						<div id="info">
-							info
+							<ul id="infoList">
+								<li><span class="infoLabel">Company Name:</span> Matt Co</li>
+								<li><span class="infoLabel">Document:</span> PurchaseOrder - 850</li>
+								<li><span class="infoLabel">Other documents with exempt rules:</span>
+									<ul id="otherDocList">
+										<li>Advance Ship Notice - 856</li>
+										<li>Invoice - 810</li>
+									</ul>
+								</li>
+							</ul>
 						</div>
 					</td>
 				</tr>
@@ -73,6 +82,7 @@
 					<td>
 						<div id="exemptList">
 							<form id="exemptForm" action="createDREScript" method="POST">
+								<input id ="exemptSubmit" type="submit" name="submit" value="Create DRE Rules"/>
 							</form>
 						</div>
 					</td>

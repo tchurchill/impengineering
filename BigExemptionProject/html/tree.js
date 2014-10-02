@@ -1,8 +1,8 @@
 function treeInit(){
 	var labels = document.getElementsByClassName("clickable");
 	for(i=0; i<labels.length; i++){
-		labels[i].addEventListener("dblclick", exempt, false);
-		labels[i].addEventListener("contextmenu", exempt, false);
+		labels[i].addEventListener("dblclick", exempt);
+		labels[i].addEventListener("contextmenu", exempt);
 	}
 }
 
@@ -10,24 +10,33 @@ function exempt(event){
 	event.preventDefault();
 	//build element path
 	var elementPath = buildPath(event.target)
-	//out(elementPath);
-	//create input tag
-	var inputTag = document.createElement("input");
-	inputTag.type = "checkbox";
-	inputTag.setAttribute("name", "exempt[]");//this name should create an array in the POST data
-	inputTag.setAttribute("value", "test");
-	inputTag.setAttribute("checked", "checked");
+	var elementInList = document.getElementById(elementPath.replace(/\./g, ""));
+	if(elementInList == null){
+		//create input tag
+		var inputTag = document.createElement("input");
+		inputTag.type = "checkbox";
+		inputTag.setAttribute("name", "exempt[]");//this name should create an array in the POST data
+		inputTag.setAttribute("value", elementPath);
+		inputTag.setAttribute("checked", "checked");
+		inputTag.addEventListener("change", removeExempt);
+		
+		var divTag = document.createElement("div");//used to wrap the checkbox and text, so we can remove everything as a group
+		divTag.setAttribute("id", elementPath.replace(/\./g, ""));
+		var spanTag = document.createElement("span");
+		spanTag.innerHTML = elementPath;
+		var brTag = document.createElement("br");
+		divTag.appendChild(inputTag);
+		divTag.appendChild(spanTag);
+		divTag.appendChild(brTag);
+		var exemptForm = document.getElementById("exemptForm");
+		exemptForm.appendChild(divTag);
+		
+	}
 	
-	var spanTag = document.createElement("span");
-	spanTag.innerHTML = elementPath;
-	var brTag = document.createElement("br");
-	
-	var exemptForm = document.getElementById("exemptForm");
-	exemptForm.appendChild(inputTag);
-	exemptForm.appendChild(spanTag);
-	exemptForm.appendChild(brTag);
-	
-	
+}
+
+function removeExempt(event){
+	event.target.parentNode.parentNode.removeChild(event.target.parentNode);
 }
 
 function buildPath(element){

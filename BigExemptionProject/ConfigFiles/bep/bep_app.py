@@ -9,6 +9,7 @@ ALLOWED_EXTENSIONS = set(['xsd'])
 
 app = Flask(__name__, static_url_path='')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['MAX_CONTENT_LENGTH'] = 20 * 1024 * 1024
 
 @app.route('/')
 def index():

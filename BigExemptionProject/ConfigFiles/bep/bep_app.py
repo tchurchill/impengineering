@@ -1,6 +1,6 @@
 #!flask/bin/python
 import os
-from flask import Flask, request, redirect, url_for
+from flask import Flask, request, redirect, url_for, render_template
 from werkzeug import secure_filename
 
 
@@ -29,7 +29,25 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return app.send_static_file('tree.html')
+            treemap = [
+                { 
+                    'title' : 'Header',
+                    'children' : 
+                        [ 
+                            {
+                            'title' : 'Address',
+                            'fields' : ['AddressTypeCode', 'Address1', 'Street', 'City', 'Zip'],
+                            'children' : None
+                            },
+                            {
+                            'title' : 'Date',
+                            'fields' : ['DateTimeQualifier', 'Date1', 'Time1'],
+                            'children' : None
+                            }
+                        ]
+                }
+           ]
+            return render_template('treelist.html', treemap=treemap)
 
 
 if __name__ == '__main__':

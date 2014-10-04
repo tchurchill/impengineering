@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src ="tree.js"></script>
+		<link rel="stylesheet" type="text/css" href="bepStyle.css">
+	</head>
+	<body>
+		<div id="messages">
+			
+		</div>
+		<div id="wrapper">
+			<table id="treeTable">
+				<tr>
+					<td rowspan="2">
+						<div id="tree">
+							<ol>
+								<li id="rootLI">
+									<label for="root"><span>Root</span></label>
+									<input type="checkbox" id="root" />
+									<div class="groupWrap">
+										<ol>
+											<li>
+												<label for="header"><span>Header</span></label>
+												<input type="checkbox" id="header" />
+												<div class="groupWrap">
+													<ol>
+														<li><span class="clickable">DocumentId</span></li>
+														<li><span class="clickable">ShipmentDate</span></li>
+													</ol>
+												</div>
+											</li>
+										</ol>
+										<ol>
+											<li>
+												<label for="lineItem"><span>LineItem</span></label>
+												<input type="checkbox" id="lineItem" />
+												<div class="groupWrap">
+													<ol>
+														<li>
+															<label for="lineItemRep"><span>LineItemRep</span></label>
+															<input type="checkbox" id="lineItemRep" />
+															<div class="groupWrap">
+																<ol>
+																	<li>
+																		<label for="inventoryLine"><span>InventoryLine</span></label>
+																		<input type="checkbox" id="inventoryLine" />
+																		<div class="groupWrap">
+																			<ol>
+																				<li><span class="clickable">LineSeqNum</span></li>
+																				<li><span class="clickable">BuyerPartNumber</span></li>
+																			</ol>
+																		</div>
+																	</li>
+																</ol>
+															</div>
+														</li>
+													</ol>
+												</div>
+											</li>
+										</ol>
+									</div>
+								</li>
+							</ol>
+						</div>
+					</td>
+					<td>
+						<div id="info">
+							<ul id="infoList">
+								<li><span class="infoLabel">Company Name:</span> Matt Co</li>
+								<li><span class="infoLabel">Document:</span> PurchaseOrder - 850</li>
+								<li><span class="infoLabel">Other documents with exempt rules:</span>
+									<ul id="otherDocList">
+										<li>Advance Ship Notice - 856</li>
+										<li>Invoice - 810</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div id="exemptList">
+							<form id="exemptForm" action="createDREScript" method="POST">
+								<input id ="exemptSubmit" type="submit" name="submit" value="Create DRE Rules"/>
+							</form>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

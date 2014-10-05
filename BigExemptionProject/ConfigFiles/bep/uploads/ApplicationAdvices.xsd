@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SIP XML ApplicationAdvices (EDIDOC 824) -->
+<!-- C SPS Commerce, Inc., 2012
+
+SPS Commerce is providing this XML schema (XSD) and resultant XML Message as a service to its customers and partners. This schema and resultant XML message were developed by SPS Commerce and are based on years of experience with our Standard Interface Program (SIP).
+
+Although efforts have been made to assure that the XML schema and resultant XML message are correct, reliable, and technically accurate, SPS COMMERCE MAKES NO WARRANTY, EXPRESS OR IMPLIED, THAT THIS XML SCHEMA AND RESULTANT XML MESSAGE ARE CORRECT, WILL NOT REQUIRE MODIFICATION AS EXPERIENCE AND TECHNOLOGICAL ADVANCES DICTATE, OR WILL BE MERCHANTABLE OR SUITABLE FOR ANY PARTICULAR PURPOSE OR WORKABLE IN ANY APPLICATION, OR OTHERWISE.  THE USE OF THE SCHEMA AND RESULTANT MESSAGE BY ANY PARTY ARE WITH THE EXPRESS UNDERSTANDING THAT SPS COMMERCE  ASSUMES NO LIABILITY FOR ANY CLAIM, DAMAGE OR LOSS OF ANY KIND OR NATURE.
+
+    Version Information:
+    Version 7.1.0
+    Original Version: May 08, 2009
+
+COMMENTS:
+
+The mandatory XML elements, specific codes and qualifiers used between Trading partners are defined in separate trading partner guidelines between the partners and are not part of this schema and resultant XML message. 
+ -->
+<xs:schema xmlns="http://www.spscommerce.net/SIP" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.spscommerce.net/SIP" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- inclusion of SIPbase -->
+	<xs:include schemaLocation="SIPbase.xsd"/>
+	<!-- top level elements -->
+	<xs:element name="ApplicationAdvices">
+		<xs:annotation>
+			<xs:appinfo>Version 7.1.0</xs:appinfo>
+			<xs:documentation/>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ApplicationAdvice" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ApplicationAckCode" type="xs:string"/>
+	<xs:element name="ApplicationAdvice" type="ApplicationAdviceType"/>
+	<xs:element name="ApplicationAdviceHeader" type="ApplicationAdviceHeaderType"/>
+	<xs:element name="ApplicationErrorCode" type="xs:string"/>
+	<xs:element name="ApplicationTypeCode" type="xs:string"/>
+	<xs:element name="AssignedNumber" type="xs:int"/>
+	<xs:element name="ComponentElementPositionInComposite" type="xs:int"/>
+	<xs:element name="CopyOfBadDataElement" type="xs:string"/>
+	<xs:element name="DataElementNewContent" type="xs:string"/>
+	<xs:element name="ElementPositionInSegment" type="xs:int"/>
+	<xs:element name="ElementReferenceNumber1" type="xs:int"/>
+	<xs:element name="ElementReferenceNumber2" type="xs:int"/>
+	<xs:element name="EntityIDCode2" type="xs:string"/>
+	<xs:element name="EntityIDCodeQual2" type="xs:string"/>
+	<xs:element name="EntityIdentifierCode" type="xs:string"/>
+	<xs:element name="EntityIdentifierCode2" type="xs:string"/>
+	<xs:element name="EntityTypeQual" type="xs:string"/>
+	<xs:element name="EntityRelationshipCode" type="xs:string"/>
+	<xs:element name="FinancialStatusCode" type="xs:string"/>
+	<xs:element name="FreeFormMessage" type="xs:string"/>
+	<xs:element name="Header" type="HeaderType"/>
+	<xs:element name="IDCode1" type="xs:string"/>
+	<xs:element name="IDCode2" type="xs:string"/>
+	<xs:element name="IDNumber" type="xs:string"/>
+	<xs:element name="IdentifierCode" type="xs:string"/>
+	<xs:element name="IdentificationCode" type="xs:string"/>
+	<xs:element name="IndustryCode" type="xs:string"/>
+	<xs:element name="IndustryQualifierCode" type="xs:string"/>
+	<xs:element name="ItemQuantity" type="ItemQuantityType"/>
+	<xs:element name="LastOrgName" type="xs:string"/>
+	<xs:element name="LineItem" type="LineItemType"/>
+	<xs:element name="LineItems" type="LineItemsType"/>
+	<xs:element name="MonetaryAmounts" type="MonetaryAmountsType"/>
+	<xs:element name="NameFirst" type="xs:string"/>
+	<xs:element name="NameMiddle" type="xs:string"/>
+	<xs:element name="NamePrefix" type="xs:string"/>
+	<xs:element name="NameSuffix" type="xs:string"/>
+	<xs:element name="OrganizationalAddress" type="OrganizationalAddressType"/>
+	<xs:element name="OriginalTransaction" type="OriginalTransactionType"/>
+	<xs:element name="ReceiverCode" type="xs:string"/>
+	<xs:element name="ReferenceIDQual" type="xs:string"/>
+	<xs:element name="RelatedData" type="RelatedDataType"/>
+	<xs:element name="RepeatingDataElementPosition" type="xs:int"/>
+	<xs:element name="SecurityLevel" type="xs:string"/>
+	<xs:element name="SegmentIDCode" type="xs:string"/>
+	<xs:element name="SegmentPositionInTransactionSet" type="xs:int"/>
+	<xs:element name="SenderCode" type="xs:string"/>
+	<xs:element name="StatusReasonCode" type="xs:string"/>
+	<xs:element name="Summary" type="SummaryType"/>
+	<xs:element name="TechnicalError" type="TechnicalErrorType"/>
+	<xs:element name="TechnicalErrors" type="TechnicalErrorsType"/>
+	<xs:element name="TechnicalErrorDescription" type="TechnicalErrorDescriptionType"/>
+	<xs:element name="TotalLineItems" type="xs:int"/>
+	<xs:element name="TotalOrders" type="xs:int"/>
+	<xs:element name="TotalQuantity" type="xs:decimal"/>
+	<xs:element name="TotalWeight" type="xs:decimal"/>
+	<xs:element name="TransactionHandlingCode" type="xs:string"/>
+	<xs:element name="TransactionTypeCode" type="xs:string"/>
+	<xs:element name="TransactionSetControlNumber" type="xs:string"/>
+	<xs:element name="TransactionSetIndentifierCode" type="xs:string"/>
+	<xs:element name="TsetTypeCode" type="xs:string"/>
+	<!-- ApplicationAdvice elements  -->
+	<xs:complexType name="ApplicationAdviceType">
+		<xs:complexContent>
+			<xs:extension base="sipDocumentType">
+				<xs:sequence>
+					<xs:element ref="Header"/>
+					<xs:element ref="LineItems"/>
+					<xs:element ref="Summary"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Header elements  -->
+	<xs:complexType name="HeaderType">
+		<xs:complexContent>
+			<xs:extension base="sipHeaderType">
+				<xs:sequence>
+					<xs:element ref="ApplicationAdviceHeader"/>
+					<xs:element ref="Address" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Reference" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Miscellaneous" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ApplicationAdviceHeader elements -->
+	<xs:complexType name="ApplicationAdviceHeaderType">
+		<xs:complexContent>
+			<xs:extension base="firstSipRecordType">
+				<xs:sequence>
+					<xs:element ref="TsetPurposeCode"/>
+					<xs:element ref="TsetTypeCode" minOccurs="0"/>
+					<xs:element ref="Date1"/>
+					<xs:element ref="Time1" minOccurs="0"/>
+					<xs:element ref="ReferenceID" minOccurs="0"/>
+					<xs:element ref="TimeCode1" minOccurs="0"/>
+					<xs:element ref="ActionCode" minOccurs="0"/>
+					<xs:element ref="SecurityLevel" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--  LineItems elements -->
+	<xs:complexType name="LineItemsType">
+		<xs:complexContent>
+			<xs:extension base="sipDatasetType">
+				<xs:sequence>
+					<xs:element ref="LineItem" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- LineItem elements -->
+	<xs:complexType name="LineItemType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="OriginalTransaction"/>
+					<xs:element ref="ItemQuantity" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="MonetaryAmounts" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="Reference" minOccurs="0" maxOccurs="12"/>
+					<xs:element ref="Date" minOccurs="0" maxOccurs="2"/>
+					<xs:element ref="Contact" minOccurs="0" maxOccurs="3"/>
+					<xs:element ref="OrganizationalAddress" minOccurs="0" maxOccurs="9"/>
+					<xs:element ref="TechnicalErrors" minOccurs="0"/>
+					<xs:element ref="Miscellaneous" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- OriginalTransaction elements  -->
+	<xs:complexType name="OriginalTransactionType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="ApplicationAckCode"/>
+					<xs:element ref="ReferenceQual"/>
+					<xs:element ref="ReferenceID"/>
+					<xs:element ref="SenderCode" minOccurs="0"/>
+					<xs:element ref="ReceiverCode" minOccurs="0"/>
+					<xs:element ref="Date1" minOccurs="0"/>
+					<xs:element ref="Time1" minOccurs="0"/>
+					<xs:element ref="GroupControlNumber" minOccurs="0"/>
+					<xs:element ref="TransactionSetControlNumber" minOccurs="0"/>
+					<xs:element ref="TransactionSetIndentifierCode" minOccurs="0"/>
+					<xs:element ref="IdentifierCode" minOccurs="0"/>
+					<xs:element ref="TsetPurposeCode" minOccurs="0"/>
+					<xs:element ref="TransactionTypeCode" minOccurs="0"/>
+					<xs:element ref="ApplicationTypeCode" minOccurs="0"/>
+					<xs:element ref="ActionCode" minOccurs="0"/>
+					<xs:element ref="TransactionHandlingCode" minOccurs="0"/>
+					<xs:element ref="StatusReasonCode" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--ItemQuantity elements -->
+	<xs:complexType name="ItemQuantityType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="QuantityQualifier"/>
+					<xs:element ref="Quantity1" minOccurs="0"/>
+					<xs:element ref="QtyUOM" minOccurs="0"/>
+					<xs:element ref="FreeFormMessage" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--MonetaryAmounts elements -->
+	<xs:complexType name="MonetaryAmountsType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="QuantityQualifier"/>
+					<xs:element ref="MonetaryAmount"/>
+					<xs:element ref="CreditDebitFlag" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- OrganizationalAddress elements -->
+	<xs:complexType name="OrganizationalAddressType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="EntityIdentifierCode" minOccurs="0"/>
+					<xs:element ref="EntityTypeQual" minOccurs="0"/>
+					<xs:element ref="LastOrgName" minOccurs="0"/>
+					<xs:element ref="NameFirst" minOccurs="0"/>
+					<xs:element ref="NameMiddle" minOccurs="0"/>
+					<xs:element ref="NamePrefix" minOccurs="0"/>
+					<xs:element ref="NameSuffix" minOccurs="0"/>
+					<xs:element ref="LocationCodeQualifier" minOccurs="0"/>
+					<xs:element ref="IDNumber" minOccurs="0"/>
+					<xs:element ref="EntityRelationshipCode" minOccurs="0"/>
+					<xs:element ref="EntityIdentifierCode2" minOccurs="0"/>
+					<xs:element ref="AddressAlternateName" minOccurs="0"/>
+					<xs:element ref="Address1" minOccurs="0"/>
+					<xs:element ref="Address2" minOccurs="0"/>
+					<xs:element ref="Address3" minOccurs="0"/>
+					<xs:element ref="Address4" minOccurs="0"/>
+					<xs:element ref="City" minOccurs="0"/>
+					<xs:element ref="State" minOccurs="0"/>
+					<xs:element ref="PostalCode" minOccurs="0"/>
+					<xs:element ref="Country" minOccurs="0"/>
+					<xs:element ref="ContactName" minOccurs="0"/>
+					<xs:element ref="ContactPhone" minOccurs="0"/>
+					<xs:element ref="ContactFax" minOccurs="0"/>
+					<xs:element ref="ContactEmail" minOccurs="0"/>
+					<xs:element ref="AddressTaxIdNumber" minOccurs="0"/>
+					<xs:element ref="AddressTaxExemptNumber" minOccurs="0"/>
+					<xs:element ref="AddressAlternateName2" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- TechnicalErrors elements -->
+	<xs:complexType name="TechnicalErrorsType">
+		<xs:complexContent>
+			<xs:extension base="sipDatasetType">
+				<xs:sequence>
+					<xs:element ref="TechnicalError" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- TechnicalError elements -->
+	<xs:complexType name="TechnicalErrorType">
+		<xs:complexContent>
+			<xs:extension base="sipGroupType">
+				<xs:sequence>
+					<xs:element ref="TechnicalErrorDescription"/>
+					<xs:element ref="Notes" minOccurs="0" maxOccurs="100"/>
+					<xs:element ref="RelatedData" minOccurs="0" maxOccurs="100"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--TechnicalErrorDescription elements -->
+	<xs:complexType name="TechnicalErrorDescriptionType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="ApplicationErrorCode"/>
+					<xs:element ref="FreeFormMessage" minOccurs="0"/>
+					<xs:element ref="SegmentIDCode" minOccurs="0"/>
+					<xs:element ref="SegmentPositionInTransactionSet" minOccurs="0"/>
+					<xs:element ref="ElementPositionInSegment"/>
+					<xs:element ref="ComponentElementPositionInComposite" minOccurs="0"/>
+					<xs:element ref="RepeatingDataElementPosition"/>
+					<xs:element ref="ElementReferenceNumber1" minOccurs="0"/>
+					<xs:element ref="ElementReferenceNumber2" minOccurs="0"/>
+					<xs:element ref="CopyOfBadDataElement" minOccurs="0"/>
+					<xs:element ref="DataElementNewContent" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--RelatedData elements -->
+	<xs:complexType name="RelatedDataType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="Description"/>
+					<xs:element ref="IdentificationCode" minOccurs="0"/>
+					<xs:element ref="AgencyQualifierCode" minOccurs="0"/>
+					<xs:element ref="IndustryQualifierCode" minOccurs="0"/>
+					<xs:element ref="IndustryCode" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!--  Summary elements -->
+	<xs:complexType name="SummaryType">
+		<xs:complexContent>
+			<xs:extension base="sipRecordType">
+				<xs:sequence>
+					<xs:element ref="TotalOrders" minOccurs="0"/>
+					<xs:element ref="TotalLineItems" minOccurs="0"/>
+					<xs:element ref="TotalQuantity" minOccurs="0"/>
+					<xs:element ref="TotalWeight" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

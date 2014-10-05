@@ -2,7 +2,9 @@
 import os
 from flask import Flask, request, redirect, url_for, render_template
 from werkzeug import secure_filename
-
+import json
+import subprocess
+import yaml
 
 UPLOAD_FOLDER = '/home/ubuntu/bep/uploads'
 ALLOWED_EXTENSIONS = set(['xsd'])
@@ -31,6 +33,7 @@ def upload_file():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             treeroot = {'title' : 'AdvanceShipNotice'}
+            """
             treebody = [
                 { 
                     'title' : 'Header',
@@ -49,9 +52,17 @@ def upload_file():
                         ]
                 }
            ]
+           """
+            treebody = yaml.load(subprocess.check_output(['./parse_schema.py', 
+                            os.path.join(app.config['UPLOAD_FOLDER'], filename)]))
+
+            with open("Output.txt", "w") as text_file:
+                text_file.write(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                text_file.write(json.dumps(treebody))
+
             return render_template('treelist.html', treeroot=treeroot, treebody=treebody)
 
 
 if __name__ == '__main__':
-    app.run(port=8000, debug=True)
+    app.run(port=8000, debug=False)
 

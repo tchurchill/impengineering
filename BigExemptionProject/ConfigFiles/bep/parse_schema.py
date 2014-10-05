@@ -1,8 +1,10 @@
+#!flask/bin/python
 from lxml import etree
 import os
 import json
 import argparse
 import re
+import json
 
 parser = argparse.ArgumentParser(description = 'Produce an ordered list'
         'representation of an XML document')
@@ -25,7 +27,8 @@ def main():
 
     json_root = node(singular, [], [])
     build_json_tree(root[2], singular)
-    print json_root
+
+    print json.dumps([json_root])
 
 def build_json_tree(tree, singular):
     global json_root
@@ -79,21 +82,6 @@ def find(root, node):
             if found:
                 return found
     return None
-
-"""
-def find(root, node):
-    if  root['title'] is node:
-        print 'Returning the found node', root
-        return root;
-    elif root['children']:
-        for child in root['children']:
-            print 'searching the child node for ' + node + ' ', child
-            found = find(child, node.strip())
-            if found:
-                print 'FOUND ' + found['title']
-                return found
-    return None
-"""
 
 if __name__ == '__main__':
     main()

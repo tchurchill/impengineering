@@ -7,7 +7,7 @@ import subprocess
 import yaml
 
 UPLOAD_FOLDER = '/home/ubuntu/bep/uploads'
-ALLOWED_EXTENSIONS = set(['xsd'])
+ALLOWED_EXTENSIONS = set(['xsd', 'xtl'])
 
 app = Flask(__name__, static_url_path='')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -32,35 +32,20 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            treeroot = {'title' : 'AdvanceShipNotice'}
-            """
-            treebody = [
-                { 
-                    'title' : 'Header',
-                    'children' : 
-                        [ 
-                            {
-                            'title' : 'Address',
-                            'fields' : ['AddressTypeCode', 'Address1', 'Street', 'City', 'Zip'],
-                            'children' : None
-                            },
-                            {
-                            'title' : 'Date',
-                            'fields' : ['DateTimeQualifier', 'Date1', 'Time1'],
-                            'children' : None
-                            }
-                        ]
-                }
-           ]
-           """
-            treebody = yaml.load(subprocess.check_output(['./parse_schema.py', 
+            if (filename.endswith('xsd')):
+                treeroot = {'title' : 'AdvanceShipNotice'}
+                treebody = yaml.load(subprocess.check_output(['./parse_schema.py', 
                             os.path.join(app.config['UPLOAD_FOLDER'], filename)]))
+                return render_template('treelist.html', treeroot=treeroot, treebody=treebody)
 
-            with open("Output.txt", "w") as text_file:
-                text_file.write(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-                text_file.write(json.dumps(treebody))
+            elif (filename.endswith('xtl')):
+                jsontree = yaml.load(subprocess.check_output(['./parse_xtl.py', 
+                            os.path.join(app.config['UPLOAD_FOLDER'], filename)]))
+                treeroot = {'title' : jsontree[0].get('title')}
+                treebody = jsontree[0].get('children')
+                return render_template('treelist.html', treeroot=treeroot, treebody=treebody)
 
-            return render_template('treelist.html', treeroot=treeroot, treebody=treebody)
+
 
 
 if __name__ == '__main__':

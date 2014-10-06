@@ -6,18 +6,18 @@
 {% for item in treebody recursive %}
     <ol>
         <li>
-    <label for="{{ item.title }}"><span>{{ item.title }}</span></label>
-    <input type="checkbox" id="{{ item.title }}" />
+            <label for="{{ item.title }}"><span>{{ item.title }}</span></label>
+            <input type="checkbox" id="{{ item.title }}" />
     {% if item.fields %}
-        <div class="groupWrap">
-        <ol>
+            <div class="groupWrap">
+                <ol>
         {% for field in item.fields %}
-            <li><span class="clickable">{{ field }}</span></li>
+                    <li><span class="clickable">{{ field }}</span></li>
         {% endfor %}
-        </ol>
-    </div>
+                </ol>
+            </div>
     {% else %}
-        <div class="groupWrap">
+            <div class="groupWrap">
     {% endif %}
     {% if item.children %}
         {{ loop(item.children) }}

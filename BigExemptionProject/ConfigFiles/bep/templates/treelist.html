@@ -1,0 +1,28 @@
+{% extends "tree.html" %}
+{% block tree_content %}
+    <label for="{{ treeroot.title }}"><span>{{ treeroot.title }}</span></label>
+    <input type="checkbox" id="root" />
+    <div class="groupWrap">
+{% for item in treebody recursive %}
+    <ol>
+        <li>
+            <label for="{{ item.title }}"><span>{{ item.title }}</span></label>
+            <input type="checkbox" id="{{ item.title }}" />
+    {% if item.fields %}
+            <div class="groupWrap">
+                <ol>
+        {% for field in item.fields %}
+                    <li><span class="clickable">{{ field }}</span></li>
+        {% endfor %}
+                </ol>
+            </div>
+    {% else %}
+            <div class="groupWrap">
+    {% endif %}
+    {% if item.children %}
+        {{ loop(item.children) }}
+    {% endif %}
+        </li>
+    </ol>
+{% endfor %}
+{% endblock %}

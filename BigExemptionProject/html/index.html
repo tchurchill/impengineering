@@ -6,14 +6,14 @@
 	</head>
 	<body>
 		<div id="wrapper">
-		<form action="tree.html" method="post">
+		<form action="upload_file" method="post" enctype="multipart/form-data">
 			<fieldset>
 			<span id="senderText">Sender: </span><input type="text" name="sender">
 			<div>
 				<label for="fileselect">Schema to upload:</label>
 				<div id="filedrag"><span>Drag and drop your schema here!</span></div>
 				<div id="browse">
-					Or browse for a file here:<input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
+					Or browse for a file here:<input type="file" id="fileselect" name="fileupload" multiple="multiple">
 				</div>
 			</div>
 			<div id="submitButton">

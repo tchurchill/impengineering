@@ -49,7 +49,17 @@ function buildPath(element){
 		}
 		curElement = curElement.parentNode;
 	}
-	return path;
+	//reverse order of the path.
+	var pathArr = path.split(".");
+	var newPath = "";
+	for(i=pathArr.length-2; i>=0; i--){
+		if(i == 0){
+			newPath = newPath + pathArr[i];
+		}else{
+			newPath = newPath + pathArr[i] + ".";
+		}
+	}
+	return newPath;
 }
 
 function out(msg){

@@ -1,0 +1,34 @@
+Anthony Odufuye and Matt Merth
+
+ICS 499 Iteration 1 journal.
+
+
+8/26/14
+Initial meeting with stakeholder and project proposal.
+
+
+8/28/14
+10am:  Meeting with stakeholder.  Discussed at a high level what he would like out of our project.  Gathered a list of people who will provide requirements, and user testing of our product (Big Exemption Project).  Setup 3 meetings later in the day with the different groups.
+
+
+1:30pm:  Meeting with David Rommes.  He provided an explanation and demo of our DRE engine.  Also provided us with sample DRE rules that our solution will be expected to generate.
+2pm:  Met with David Farqhuarson.  He advised us on different technologies currently used in other areas of the company.  He will help us procure an amazon EC2 server, and will also talk to us about possible toolkits to utilize.  Briefly spoke about postgres, mysql, nginx, the flask framework for python, and other possible toolkits (django).
+2:30pm: Met with Wes Thayer and Ezekiel Ashamu.  They are part of our Business Analyst team and will be the end users of our product.  They gave us some additional requirements, and other feedback on what would be useful for them.
+
+
+Team meeting: 4:30pm.
+Talked about steps we need to take next.  We will work on project documentation through the weekend and read up on different toolkits we have to use.
+So far, we have decided to do most of our coding in python, and hopefully use it to generate a page based on the schema uploaded by the user.
+
+
+Todo:  
+-Procure an amazon EC2 server by Tuesday of next week (2nd of September)
+-Documentation (use cases, sequence diagrams, etc)
+-Basic starting point for the website.
+
+
+9/2/14
+Meeting with David Farqhuarson.  We first procured an amazon EC2 instance and got the funds taken care of.
+We spoke about different possible technologies, and ended up deciding to take a look at nginx, flask, and python for our code.
+We setup our ubuntu server, ran updates, installed nginx, flask, pip, and virtualenv.
+Did some configuration and basic proof of concept with nginx, flask, virtualenv, and also using pythons SimpleHttpServer.

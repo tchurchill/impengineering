@@ -13,9 +13,13 @@ parser.add_argument('infile', metavar = 'input',
         help = 'Input file to be parsed')
 args = parser.parse_args()
 
+doc = None
+root = None
 json_root = None
 
 def main():
+    global doc
+    global root
     global json_root
     doc = etree.parse(args.infile)
     root = doc.getroot()
@@ -25,21 +29,26 @@ def main():
     plural = root[0].get('name')
     singular = root[1].get('name')
 
-    json_root = node(singular, [], [])
-    build_json_tree(root[2], singular)
+    json_root = {'title' : singular, 'path' : doc.getpath(root[2]), 
+            'version' : version, 'fields' : [], 'children' : []}
+    build_json_tree(root[2])
 
     print json.dumps([json_root])
 
-def build_json_tree(tree, singular):
+def build_json_tree(tree):
+    global doc
     global json_root
     for child in tree.iterchildren():
         if child.tag.endswith('element') and child.get('name'):
+            parent = get_parent(child)
+            json_parent = find(json_root, doc.getpath(parent))
+            if json_parent is None:
+                print 'WARNING: json_parent is Null and child is ' , child.get('name')
             if get_type(child) == 'group':
-                find(json_root, get_parent(child, singular)).get('children').append(node(child.get('name'), [], []))
+                json_parent.get('children').append(node(child.get('name'), doc.getpath(child), [], []))
             elif get_type(child) == 'field':
-                find(json_root, get_parent(child, singular)).get('fields').append(child.get('name'))
-            "print (get_parent(child, singular), child.get('name'), get_type(child))"
-        build_json_tree(child, singular)
+                json_parent.get('fields').append(child.get('name'))
+        build_json_tree(child)
 
 def get_type(child):
     tags = [elem.tag for elem in child.iterchildren()]
@@ -55,30 +64,30 @@ def get_type(child):
     else:
         return None
 
-def get_parent(child, singular):
+def get_parent(child):
+    global root
     parent = child.getparent()
     if parent is None:
-        return singular
+        return root[2]
+    elif parent is not None and parent.tag.endswith('element'):
+        return parent
     else:
-        if parent is not None and parent.tag.endswith('element'):
-            return parent.get('name')
-        else:
-            return get_parent(parent, singular)
+        return get_parent(parent)
 
 
-def node(name='', fields=[], children=[]):
-    return {'title' : name, 'fields' : fields, 'children' : children if children else []}
+def node(name='', path='', fields=[], children=[]):
+    return {'title' : name, 'path' : path, 'fields' : fields, 'children' : children if children else []}
 
 def add(parent, child):
     parent.get('children').append(child)
     return child
 
-def find(root, node):
-    if  root['title'] == node:
+def find(root, path):
+    if  root['path'] == path:
         return root;
     elif root['children']:
         for child in root['children']:
-            found = find(child, node)
+            found = find(child, path)
             if found:
                 return found
     return None

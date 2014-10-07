@@ -17,8 +17,8 @@ def index():
     return app.send_static_file('index.html')
 
 @app.route('/', methods=['POST'])
-def sender_name():
-    text = request.form['sender']
+def company_name():
+    text = request.form['company']
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -46,5 +46,5 @@ def upload_file():
 
 
 if __name__ == '__main__':
-    app.run(port=8000, debug=True)
+    app.run(port=8000, debug=False)
 

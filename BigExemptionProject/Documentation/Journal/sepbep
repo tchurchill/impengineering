@@ -1,2 +1,0 @@
-#!/bin/sh
-scp -i ~/.ssh/bep.pem $1 ubuntu@ec2-54-166-75-94.compute-1.amazonaws.com:$2

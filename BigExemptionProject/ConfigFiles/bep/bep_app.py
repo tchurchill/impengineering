@@ -16,10 +16,6 @@ app.config['MAX_CONTENT_LENGTH'] = 20 * 1024 * 1024
 def index():
     return app.send_static_file('index.html')
 
-@app.route('/', methods=['POST'])
-def company_name():
-    text = request.form['company']
-
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
@@ -41,10 +37,11 @@ def upload_file():
             
             treeroot = {'title' : jsontree[0].get('title')}
             treebody = jsontree[0].get('children')
-            return render_template('treelist.html', treeroot=treeroot, treebody=treebody)
+            infolist = {'company' : request.form['company'], 'document' : jsontree[0].get('title'), 'version' : jsontree[0].get('version')}
+            return render_template('treelist.html', treeroot=treeroot, treebody=treebody, infolist=infolist)
 
 
 
 if __name__ == '__main__':
-    app.run(port=8000, debug=False)
+    app.run(port=8000, debug=True)
 

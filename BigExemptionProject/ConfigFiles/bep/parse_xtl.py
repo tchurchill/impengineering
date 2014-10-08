@@ -26,6 +26,8 @@ def main():
     version = docroot.get('revision')
 
     json_root = node(docroot.get('name'), doc.getpath(docroot), [], [])
+    json_root['version'] = version
+
     build_json_tree(docroot)
 
     cleanup_json(json_root)
